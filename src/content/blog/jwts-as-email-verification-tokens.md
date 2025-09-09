@@ -5,7 +5,7 @@ publishedAt: "2018-09-13"
 updatedAt: "2021-06-14"
 author:
   name: "A&H Solutions Team"
-  email: "team@aandhsolutions.com"
+  email: "contact@aandhsolutions.com"
 tags:
   - "security"
   - "jwt"

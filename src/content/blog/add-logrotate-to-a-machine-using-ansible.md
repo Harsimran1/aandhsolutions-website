@@ -5,7 +5,7 @@ publishedAt: "2021-11-13"
 updatedAt: "2022-07-04"
 author:
   name: "A&H Solutions Team"
-  email: "team@aandhsolutions.com"
+  email: "contact@aandhsolutions.com"
 tags:
   - "linux"
   - "ansible"

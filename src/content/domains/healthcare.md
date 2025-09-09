@@ -5,7 +5,7 @@ excerpt: "Secure, compliant healthcare technology solutions that improve patient
 publishedAt: "2024-01-15"
 author:
   name: "A&H Solutions Team"
-  email: "team@aandhsolutions.com"
+  email: "contact@aandhsolutions.com"
 industry: "Healthcare"
 featured: true
 draft: false

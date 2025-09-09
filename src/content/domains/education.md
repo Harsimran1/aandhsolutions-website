@@ -5,7 +5,7 @@ excerpt: "Advanced education technology solutions that enhance learning outcomes
 publishedAt: "2024-01-15"
 author:
   name: "A&H Solutions Team"
-  email: "team@aandhsolutions.com"
+  email: "contact@aandhsolutions.com"
 industry: "Education"
 featured: true
 draft: false

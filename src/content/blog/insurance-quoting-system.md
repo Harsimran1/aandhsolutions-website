@@ -5,7 +5,7 @@ publishedAt: "2023-07-08"
 updatedAt: "2023-08-08"
 author:
   name: "A&H Solutions Team"
-  email: "team@aandhsolutions.com"
+  email: "contact@aandhsolutions.com"
 tags:
   - "case-study"
   - "react.js"

@@ -5,7 +5,7 @@ publishedAt: "2023-06-06"
 updatedAt: "2024-10-06"
 author:
   name: "A&H Solutions Team"
-  email: "team@aandhsolutions.com"
+  email: "contact@aandhsolutions.com"
 tags:
   - "case-study"
   - "real-estate"

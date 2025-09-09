@@ -5,7 +5,7 @@ excerpt: "Advanced insurance technology solutions that streamline operations, im
 publishedAt: "2024-01-15"
 author:
   name: "A&H Solutions Team"
-  email: "team@aandhsolutions.com"
+  email: "contact@aandhsolutions.com"
 industry: "Insurance"
 featured: true
 draft: false

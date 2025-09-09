@@ -5,7 +5,7 @@ publishedAt: "2020-04-13"
 updatedAt: "2021-06-03"
 author:
   name: "A&H Solutions Team"
-  email: "team@aandhsolutions.com"
+  email: "contact@aandhsolutions.com"
 tags:
   - "golang"
   - "api"

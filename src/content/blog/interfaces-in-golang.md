@@ -5,7 +5,7 @@ publishedAt: "2022-10-03"
 updatedAt: "2022-10-26"
 author:
   name: "A&H Solutions Team"
-  email: "team@aandhsolutions.com"
+  email: "contact@aandhsolutions.com"
 tags:
   - "golang"
   - "interfaces"

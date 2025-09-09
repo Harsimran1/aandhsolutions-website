@@ -5,7 +5,7 @@ publishedAt: "2021-12-29"
 updatedAt: "2022-07-04"
 author:
   name: "A&H Solutions Team"
-  email: "team@aandhsolutions.com"
+  email: "contact@aandhsolutions.com"
 tags:
   - "docker"
   - "debugging"

@@ -5,7 +5,7 @@ excerpt: "Advanced non-profit technology solutions that maximize impact, streaml
 publishedAt: "2024-01-15"
 author:
   name: "A&H Solutions Team"
-  email: "team@aandhsolutions.com"
+  email: "contact@aandhsolutions.com"
 industry: "Non-Profit"
 featured: false
 draft: false

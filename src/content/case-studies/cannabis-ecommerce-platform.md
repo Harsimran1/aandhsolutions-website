@@ -5,7 +5,7 @@ excerpt: "Data integrity and optimization project that enhanced system reliabili
 publishedAt: "2023-04-20"
 author:
   name: "A&H Solutions Team"
-  email: "team@aandhsolutions.com"
+  email: "contact@aandhsolutions.com"
 client:
   name: "Moodiday.com"
   industry: "Cannabis E-commerce"

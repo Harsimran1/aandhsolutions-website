@@ -5,7 +5,7 @@ excerpt: "Comprehensive real estate technology solutions that streamline operati
 publishedAt: "2024-01-15"
 author:
   name: "A&H Solutions Team"
-  email: "team@aandhsolutions.com"
+  email: "contact@aandhsolutions.com"
 industry: "Real Estate"
 featured: true
 draft: false

@@ -5,7 +5,7 @@ excerpt: "Scalable, secure, and high-performance web applications built to power
 publishedAt: "2024-01-01"
 author:
   name: "A&H Solutions Team"
-  email: "team@aandhsolutions.com"
+  email: "contact@aandhsolutions.com"
 category: "Development"
 featured: true
 draft: false

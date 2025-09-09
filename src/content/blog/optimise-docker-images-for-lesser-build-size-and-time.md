@@ -5,7 +5,7 @@ publishedAt: "2020-10-16"
 updatedAt: "2022-03-29"
 author:
   name: "A&H Solutions Team"
-  email: "team@aandhsolutions.com"
+  email: "contact@aandhsolutions.com"
 tags:
   - "docker"
   - "containers"

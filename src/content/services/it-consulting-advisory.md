@@ -5,7 +5,7 @@ excerpt: "Strategic technology guidance to align your business goals with the ri
 publishedAt: "2024-01-01"
 author:
   name: "A&H Solutions Team"
-  email: "team@aandhsolutions.com"
+  email: "contact@aandhsolutions.com"
 category: "Consulting"
 featured: false
 draft: false

@@ -5,7 +5,7 @@ excerpt: "Streamline workflows, personalize customer experiences, and future-pro
 publishedAt: "2024-01-01"
 author:
   name: "A&H Solutions Team"
-  email: "team@aandhsolutions.com"
+  email: "contact@aandhsolutions.com"
 category: "AI & Automation"
 featured: true
 draft: false

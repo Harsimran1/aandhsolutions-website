@@ -5,7 +5,7 @@ publishedAt: "2024-02-25"
 updatedAt: "2024-10-07"
 author:
   name: "A&H Solutions Team"
-  email: "team@aandhsolutions.com"
+  email: "contact@aandhsolutions.com"
 tags:
   - "case-study"
   - "automation"

@@ -5,7 +5,7 @@ publishedAt: "2020-10-18"
 updatedAt: "2022-02-04"
 author:
   name: "A&H Solutions Team"
-  email: "team@aandhsolutions.com"
+  email: "contact@aandhsolutions.com"
 tags:
   - "performance"
   - "load-testing"

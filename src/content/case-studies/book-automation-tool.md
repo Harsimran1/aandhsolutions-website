@@ -5,7 +5,7 @@ excerpt: "Innovative automation tool that streamlined book marketing material cr
 publishedAt: "2023-05-15"
 author:
   name: "A&H Solutions Team"  
-  email: "team@aandhsolutions.com"
+  email: "contact@aandhsolutions.com"
 client:
   name: "Publishing Solutions Inc"
   industry: "Publishing & Media"

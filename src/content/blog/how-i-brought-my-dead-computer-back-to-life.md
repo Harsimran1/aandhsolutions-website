@@ -5,7 +5,7 @@ publishedAt: "2022-01-23"
 updatedAt: "2022-07-04"
 author:
   name: "A&H Solutions Team"
-  email: "team@aandhsolutions.com"
+  email: "contact@aandhsolutions.com"
 tags:
   - "linux"
   - "lvm"

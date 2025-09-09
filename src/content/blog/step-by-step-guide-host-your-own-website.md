@@ -5,7 +5,7 @@ publishedAt: "2021-01-20"
 updatedAt: "2021-06-03"
 author:
   name: "A&H Solutions Team"
-  email: "team@aandhsolutions.com"
+  email: "contact@aandhsolutions.com"
 tags:
   - "hosting"
   - "nginx"
