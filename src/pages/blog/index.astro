@@ -3,8 +3,16 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import HeroSection from '../../components/HeroSection.astro';
+import { getCollection } from 'astro:content';
 
-const posts = [
+const posts = await getCollection('blog', ({ data }) => {
+  return !data.draft;
+});
+
+// Sort posts by published date (newest first)  
+posts.sort((a, b) => new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime());
+
+const oldPosts = [
   {
     id: 'new-dashboard-features',
     title: 'New Dashboard Features Released',
@@ -73,10 +81,12 @@ const posts = [
   }
 ];
 
-const categories = [...new Set(posts.map(post => post.category))];
+// Get all unique tags from all posts
+const allTags = posts.flatMap(post => post.data.tags || []);
+const uniqueTags = [...new Set(allTags)].sort();
 ---
 
-<Layout title="Blog - SaaSify" description="Latest product updates, feature releases, and company news from SaaSify.">
+<Layout title="Blog - A&H Solutions" description="Latest insights, tutorials, and updates from A&H Solutions development team.">
   <Header />
   <main>
     <HeroSection 
@@ -85,50 +95,72 @@ const categories = [...new Set(posts.map(post => post.category))];
       description="Stay up to date with our latest product updates, feature releases, and company news."
     />
     
-    <!-- Category Filter -->
+    <!-- Tag Filter -->
     <div class="container-custom py-8">
-      <div class="flex flex-wrap gap-4 justify-center mb-12">
-        <a href="#" class="px-4 py-2 rounded-full bg-primary-600 text-white font-medium text-sm hover:bg-primary-700 transition-colors">
-          All Posts
-        </a>
-        {categories.map((category) => (
-          <a href={'#' + category.toLowerCase().replace(/\s+/g, '-')} class="px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-medium text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-            {category}
-          </a>
-        ))}
+      <div class="text-center mb-8">
+        <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Browse by Topic</h2>
+        <p class="text-gray-600 dark:text-gray-300">Filter articles by technology, tools, or topic</p>
+      </div>
+      <div class="flex flex-wrap gap-3 justify-center mb-12">
+        <button class="px-4 py-2 rounded-full bg-primary-600 text-white font-medium text-sm hover:bg-primary-700 transition-colors tag-filter active" data-tag="all">
+          All Posts ({posts.length})
+        </button>
+        {uniqueTags.map((tag) => {
+          const tagCount = posts.filter(post => post.data.tags?.includes(tag)).length;
+          return (
+            <button class="px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-medium text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors tag-filter" data-tag={tag}>
+              {tag} ({tagCount})
+            </button>
+          );
+        })}
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="posts-grid">
         {posts.map((post, index) => (
-          <div class="card border border-gray-200 dark:border-gray-700 overflow-hidden slide-up" style={'animation-delay: ' + (index * 100) + 'ms'}>
-            <a href={'/blog/' + post.id} class="block">
-              <img 
-                src={post.image} 
-                alt={post.title}
-                class="w-full h-48 object-cover"
-                loading="lazy"
-              />
-            </a>
-            <div class="p-6">
-              <div class="flex items-center mb-4">
-                <span class="text-sm font-medium text-primary-600 dark:text-primary-400">{post.category}</span>
-                <span class="mx-2 text-gray-300 dark:text-gray-600">•</span>
-                <span class="text-sm text-gray-500 dark:text-gray-400">{post.date}</span>
-              </div>
-              <a href={'/blog/' + post.id} class="block mb-3">
-                <h2 class="text-xl font-semibold text-gray-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-colors">{post.title}</h2>
-              </a>
-              <p class="text-gray-600 dark:text-gray-300 mb-6">{post.excerpt}</p>
-              <div class="flex items-center">
+          <div class="card border border-gray-200 dark:border-gray-700 overflow-hidden slide-up blog-post" style={'animation-delay: ' + (index * 100) + 'ms'} data-tags={JSON.stringify(post.data.tags || [])}>
+            <a href={'/blog/' + post.slug} class="block">
+              {post.data.image && (
                 <img 
-                  src={post.authorAvatar} 
-                  alt={post.author} 
-                  class="w-10 h-10 rounded-full mr-3 object-cover"
+                  src={post.data.image} 
+                  alt={post.data.imageAlt || post.data.title}
+                  class="w-full h-48 object-cover"
                   loading="lazy"
                 />
+              )}
+            </a>
+            <div class="p-6">
+              <div class="flex items-center mb-4 flex-wrap gap-2">
+                {post.data.tags && post.data.tags.length > 0 && (
+                  <>
+                    <div class="flex flex-wrap gap-2">
+                      {post.data.tags.slice(0, 3).map((tag) => (
+                        <span class="px-2 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 text-xs rounded-full font-medium">{tag}</span>
+                      ))}
+                      {post.data.tags.length > 3 && (
+                        <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 text-xs rounded-full">+{post.data.tags.length - 3} more</span>
+                      )}
+                    </div>
+                    <span class="mx-2 text-gray-300 dark:text-gray-600">•</span>
+                  </>
+                )}
+                <span class="text-sm text-gray-500 dark:text-gray-400">{post.data.publishedAt.toLocaleDateString()}</span>
+              </div>
+              <a href={'/blog/' + post.slug} class="block mb-3">
+                <h2 class="text-xl font-semibold text-gray-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-colors">{post.data.title}</h2>
+              </a>
+              <p class="text-gray-600 dark:text-gray-300 mb-6">{post.data.excerpt || post.data.description || ''}</p>
+              <div class="flex items-center">
+                {post.data.author.avatar && (
+                  <img 
+                    src={post.data.author.avatar} 
+                    alt={post.data.author.name} 
+                    class="w-10 h-10 rounded-full mr-3 object-cover"
+                    loading="lazy"
+                  />
+                )}
                 <div>
-                  <p class="font-medium text-gray-900 dark:text-white">{post.author}</p>
-                  <p class="text-sm text-gray-500 dark:text-gray-400">{post.authorRole}</p>
+                  <p class="font-medium text-gray-900 dark:text-white">{post.data.author.name}</p>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">{post.data.author.email}</p>
                 </div>
               </div>
             </div>
@@ -147,4 +179,49 @@ const categories = [...new Set(posts.map(post => post.category))];
     </div>
   </main>
   <Footer />
+  
+  <script>
+    // Tag filtering functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const tagFilters = document.querySelectorAll('.tag-filter');
+      const blogPosts = document.querySelectorAll('.blog-post');
+      
+      tagFilters.forEach(filter => {
+        filter.addEventListener('click', function() {
+          const selectedTag = this.getAttribute('data-tag');
+          
+          // Update active state
+          tagFilters.forEach(f => {
+            f.classList.remove('active', 'bg-primary-600', 'text-white');
+            f.classList.add('bg-gray-100', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-300');
+          });
+          
+          this.classList.add('active', 'bg-primary-600', 'text-white');
+          this.classList.remove('bg-gray-100', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-300');
+          
+          // Filter posts
+          blogPosts.forEach(post => {
+            const postTags = JSON.parse(post.getAttribute('data-tags'));
+            
+            if (selectedTag === 'all' || postTags.includes(selectedTag)) {
+              post.style.display = 'block';
+              post.classList.add('slide-up');
+            } else {
+              post.style.display = 'none';
+              post.classList.remove('slide-up');
+            }
+          });
+          
+          // Update animation delays for visible posts
+          let visibleIndex = 0;
+          blogPosts.forEach(post => {
+            if (post.style.display !== 'none') {
+              post.style.animationDelay = `${visibleIndex * 100}ms`;
+              visibleIndex++;
+            }
+          });
+        });
+      });
+    });
+  </script>
 </Layout>

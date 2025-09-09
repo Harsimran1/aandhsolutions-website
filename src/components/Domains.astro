@@ -1,0 +1,108 @@
+---
+import { getCollection } from 'astro:content';
+
+const domains = await getCollection('domains');
+const featuredDomains = domains.filter(domain => domain.data.featured).slice(0, 8);
+const allDomains = domains.sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+
+<section class="py-20 bg-gradient-to-b from-slate-50 to-white">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-slate-900 mb-6">
+        Industry <span class="text-orange-500">Expertise</span>
+      </h2>
+      <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+        We specialize in delivering tailored technology solutions across diverse industries, 
+        understanding the unique challenges and regulatory requirements of each sector.
+      </p>
+    </div>
+
+    <!-- Featured Domains Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+      {featuredDomains.map((domain) => (
+        <a 
+          href={`/domains/${domain.slug}`}
+          class="group bg-white rounded-xl border border-slate-200 hover:border-orange-500 p-6 transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/10 hover:-translate-y-1"
+        >
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white font-bold text-lg mr-4">
+              {domain.data.industry.charAt(0)}
+            </div>
+            <div>
+              <h3 class="font-semibold text-slate-900 group-hover:text-orange-500 transition-colors">
+                {domain.data.industry}
+              </h3>
+            </div>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">
+            {domain.data.excerpt}
+          </p>
+          <div class="flex flex-wrap gap-1">
+            {domain.data.tags.slice(0, 3).map((tag) => (
+              <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-full">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- All Domains List -->
+    <div class="text-center">
+      <details class="group">
+        <summary class="inline-flex items-center justify-center px-6 py-3 bg-white border border-slate-300 rounded-lg text-slate-700 hover:border-orange-500 hover:text-orange-500 transition-colors cursor-pointer">
+          <span class="mr-2">View All Industries</span>
+          <svg class="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </summary>
+        
+        <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+          {allDomains.map((domain) => (
+            <a 
+              href={`/domains/${domain.slug}`}
+              class="group flex items-center p-4 bg-white rounded-lg border border-slate-200 hover:border-orange-500 hover:bg-orange-50 transition-all duration-200"
+            >
+              <div class="w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white font-bold text-sm mr-3">
+                {domain.data.industry.charAt(0)}
+              </div>
+              <div class="flex-1 min-w-0">
+                <h4 class="font-medium text-slate-900 group-hover:text-orange-500 transition-colors truncate">
+                  {domain.data.industry}
+                </h4>
+                <p class="text-slate-500 text-sm truncate">
+                  {domain.data.title.replace(/Technology Solutions?$/, '').replace(/& .* Technology Solutions?$/, '')}
+                </p>
+              </div>
+              <svg class="w-4 h-4 text-slate-400 group-hover:text-orange-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          ))}
+        </div>
+      </details>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="text-center mt-16 p-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl text-white">
+      <h3 class="text-2xl font-bold mb-4">
+        Don't See Your Industry?
+      </h3>
+      <p class="text-orange-100 mb-6 max-w-2xl mx-auto">
+        We work across many more industries and adapt our solutions to meet unique sector requirements. 
+        Let's discuss how we can help your specific industry challenges.
+      </p>
+      <a 
+        href="/contact" 
+        class="inline-flex items-center px-6 py-3 bg-white text-orange-600 font-semibold rounded-lg hover:bg-orange-50 transition-colors"
+      >
+        Get Industry-Specific Consultation
+        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
