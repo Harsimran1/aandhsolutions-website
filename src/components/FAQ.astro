@@ -1,0 +1,109 @@
+---
+const faqs = [
+  {
+    question: "Do you only work with startups?",
+    answer: "No—we work with both startups and enterprises. But we specialize in helping startups succeed where 90% fail."
+  },
+  {
+    question: "Can you integrate AI into my existing product?",
+    answer: "Yes—our team designs custom AI integrations that enhance performance and user experience."
+  },
+  {
+    question: "How do you keep costs low without losing quality?",
+    answer: "We use smart architecture, AI-driven workflow optimization, and efficient engineering to cut infrastructure waste—often saving clients thousands per month while delivering enterprise-grade quality."
+  },
+  {
+    question: "What industries do you work with?",
+    answer: "We've partnered with SaaS, fintech, e-commerce, and service-based companies—building apps and platforms that scale."
+  }
+];
+---
+
+<section class="section">
+  <div class="container-custom">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="inline-block px-4 py-1 rounded-full bg-warning-100 dark:bg-warning-900 text-warning-600 dark:text-warning-300 font-medium text-sm mb-4">
+        FAQ
+      </span>
+      <h2 class="mb-6 text-gray-900 dark:text-white">Frequently Asked Questions</h2>
+      <p class="text-gray-600 dark:text-gray-300">
+        Get answers to the most common questions about our services and process.
+      </p>
+    </div>
+    
+    <div class="max-w-3xl mx-auto">
+      <div class="space-y-4">
+        {faqs.map((faq, index) => (
+          <div 
+            class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden slide-up"
+            style={`animation-delay: ${index * 100}ms`}
+          >
+            <button 
+              class="w-full px-8 py-6 text-left focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-inset"
+              onclick={`this.parentElement.classList.toggle('active')`}
+              x-data={`{ open: false }`}
+              @click="open = !open"
+            >
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                  {faq.question}
+                </h3>
+                <svg 
+                  class="w-5 h-5 text-gray-500 dark:text-gray-400 transform transition-transform duration-200"
+                  :class="{ 'rotate-180': open }"
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </div>
+            </button>
+            
+            <div 
+              class="px-8 pb-6 text-gray-600 dark:text-gray-300 hidden"
+              x-show="open"
+              x-transition:enter="transition ease-out duration-200"
+              x-transition:enter-start="opacity-0 transform -translate-y-2"
+              x-transition:enter-end="opacity-100 transform translate-y-0"
+            >
+              {faq.answer}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+    
+    <div class="mt-12 text-center">
+      <div class="text-gray-900 dark:text-white mb-6">
+        <div class="text-2xl font-bold mb-2">Still have questions?</div>
+        <p class="text-gray-600 dark:text-gray-300">Get in touch with our team</p>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a 
+          href="tel:+8254369647" 
+          class="inline-flex items-center px-6 py-3 rounded-lg font-medium bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+        >
+          📞 +1 (825) 436-9647
+        </a>
+        <a 
+          href="mailto:contact@aandhsolutions.co" 
+          class="inline-flex items-center px-6 py-3 rounded-lg font-medium bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+        >
+          📧 contact@aandhsolutions.co
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .slide-up.active .hidden {
+    display: block;
+  }
+  
+  .slide-up.active svg {
+    transform: rotate(180deg);
+  }
+</style>
