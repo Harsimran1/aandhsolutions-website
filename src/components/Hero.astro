@@ -1,24 +1,46 @@
 ---
+export interface Props {
+  title?: string;
+  description?: string;
+  highlightText?: string;
+  primaryButton?: { text: string; url: string };
+  secondaryButton?: { text: string; url: string };
+  badge?: string;
+}
+
+const {
+  title = "Custom apps, AI integrations, and scalable software that defy the odds",
+  description = "At A & H Solutions, we turn ideas into high-performance products. From mobile apps to AI-powered platforms, we design, build, and optimize software that balances cost, speed, and security.",
+  highlightText = "scalable software that defy the odds",
+  primaryButton = { text: "Let's Build Together", url: "/contact" },
+  secondaryButton = { text: "View Our Work", url: "/case-studies" },
+  badge = "Built for startups, trusted by growing businesses"
+} = Astro.props;
+
+// Function to highlight specific text in the title
+function highlightTitle(title: string, highlightText: string) {
+  if (!highlightText) return title;
+  return title.replace(highlightText, `<span class="text-primary-600 dark:text-primary-400">${highlightText}</span>`);
+}
 ---
 <section class="relative pt-32 pb-20 md:pt-40 overflow-hidden hero-section">
   <div class="container-custom relative z-10">
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div class="slide-up" transition:animate="slide">
         <span class="inline-block px-3 py-1 rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-300 font-medium text-sm mb-4">
-          Built for startups, trusted by growing businesses
+          {badge}
         </span>
-        <h1 class="mb-6 text-secondary-900 dark:text-white leading-tight">
-          Custom apps, AI integrations, and <span class="text-primary-600 dark:text-primary-400">scalable software that defy the odds</span>
+        <h1 class="mb-6 text-secondary-900 dark:text-white leading-tight" set:html={highlightTitle(title, highlightText)}>
         </h1>
         <p class="text-xl text-secondary-600 dark:text-secondary-300 mb-8 max-w-lg">
-          At A & H Solutions, we turn ideas into high-performance products. From mobile apps to AI-powered platforms, we design, build, and optimize software that balances cost, speed, and security.
+          {description}
         </p>
         <div class="flex flex-wrap gap-4">
-          <a href="/contact" class="btn-primary">
-            Let's Build Together
+          <a href={primaryButton.url} class="btn-primary">
+            {primaryButton.text}
           </a>
-          <a href="/case-study" class="btn-outline flex items-center">
-            View Our Work
+          <a href={secondaryButton.url} class="btn-outline flex items-center">
+            {secondaryButton.text}
           </a>
         </div>
       </div>

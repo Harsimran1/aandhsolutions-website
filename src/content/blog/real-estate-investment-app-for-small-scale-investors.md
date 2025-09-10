@@ -7,7 +7,7 @@ author:
   name: "A&H Solutions Team"
   email: "contact@aandhsolutions.com"
 tags:
-  - "case-study"
+  - "case-studies"
   - "real-estate"
   - "react-native"
   - "golang"
