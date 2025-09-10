@@ -65,7 +65,7 @@ const allPages = [
           @click.away="open = false"
           class="flex items-center text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors"
         >
-          All Pages
+          Resources
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
@@ -107,7 +107,7 @@ const allPages = [
         </svg>
       </button>
       
-      <a href="#signup" class="hidden sm:inline-flex btn-primary">Get Started</a>
+      <a href="/contact" class="hidden sm:inline-flex btn-primary">Get Started</a>
       
       <!-- Mobile Menu Button and Dropdown -->
       <div x-data="{ open: false, showAllPages: false }">
@@ -145,7 +145,7 @@ const allPages = [
             @click="showAllPages = !showAllPages" 
             class="w-full text-left px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800 font-semibold border-t border-gray-200 dark:border-gray-700 mt-1 pt-1 flex items-center justify-between"
           >
-            All Pages
+            Resources
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" :class="{ 'transform rotate-180': showAllPages }">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
