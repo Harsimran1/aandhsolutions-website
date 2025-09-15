@@ -25,7 +25,6 @@ technologies:
   - "Apache Spark"
   - "Elasticsearch"
 pricing:
-  startingPrice: "$8,000"
   model: "Project-based pricing with ongoing dashboard maintenance options"
   features:
     - "Custom dashboard development"

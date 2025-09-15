@@ -25,7 +25,6 @@ technologies:
   - "AWS"
   - "Docker"
 pricing:
-  startingPrice: "$20,000"
   model: "Custom pricing based on complexity and features"
   features:
     - "Responsive design across all devices"

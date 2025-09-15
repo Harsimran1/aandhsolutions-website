@@ -25,7 +25,6 @@ technologies:
   - "Performance Monitoring"
   - "Project Management"
 pricing:
-  startingPrice: "$150/hour"
   model: "Hourly consulting or fixed-price project engagements"
   features:
     - "Technology strategy development"

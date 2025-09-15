@@ -25,7 +25,6 @@ technologies:
   - "Microsoft Cognitive Services"
   - "AWS AI Services"
 pricing:
-  startingPrice: "$10,000"
   model: "Flexible pricing based on AI complexity and integration scope"
   features:
     - "Custom AI model development"

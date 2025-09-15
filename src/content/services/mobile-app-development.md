@@ -24,7 +24,6 @@ technologies:
   - "App Store Connect"
   - "Google Play Console"
 pricing:
-  startingPrice: "$15,000"
   model: "Fixed project pricing with milestone payments"
   features:
     - "Cross-platform compatibility"
