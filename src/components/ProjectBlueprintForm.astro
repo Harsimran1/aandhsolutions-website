@@ -1,0 +1,404 @@
+---
+---
+
+<div class="card p-8 bg-white dark:bg-gray-800 text-gray-900 dark:text-white max-w-2xl mx-auto">
+  <h3 class="text-2xl font-semibold mb-6 text-center">Request Your Free Project Blueprint</h3>
+  
+  <form 
+    action="https://formspree.io/f/mgebepdz" 
+    method="POST"
+    data-astro-reload
+    @submit="handleSubmit($event)"
+    x-data="{
+      // Basic Info
+      name: '',
+      email: '',
+      company: '',
+      phone: '',
+      
+      // Project Details
+      projectTitle: '',
+      projectType: '',
+      projectDescription: '',
+      targetUsers: '',
+      keyFeatures: '',
+      
+      // Qualification
+      timeline: '',
+      budgetRange: '',
+      teamSize: '',
+      previousExperience: '',
+      biggestChallenge: '',
+      
+      // State
+      submitted: false,
+      errors: {},
+      isSubmitting: false,
+      
+      init() {
+        if (new URLSearchParams(window.location.search).get('success') === 'true') {
+          this.submitted = true;
+          window.history.replaceState({}, '', window.location.pathname);
+        }
+      },
+      
+      handleSubmit(event) {
+        this.errors = {};
+        let hasErrors = false;
+        
+        // Validate required fields
+        if (!this.name.trim()) {
+          this.errors.name = 'Name is required';
+          hasErrors = true;
+        }
+        
+        if (!this.email.trim()) {
+          this.errors.email = 'Email is required';
+          hasErrors = true;
+        } else if (!this.email.includes('@')) {
+          this.errors.email = 'Please enter a valid email';
+          hasErrors = true;
+        }
+        
+        if (!this.projectTitle.trim()) {
+          this.errors.projectTitle = 'Project title is required';
+          hasErrors = true;
+        }
+        
+        if (!this.projectDescription.trim()) {
+          this.errors.projectDescription = 'Project description is required';
+          hasErrors = true;
+        }
+        
+        if (!this.timeline) {
+          this.errors.timeline = 'Timeline is required';
+          hasErrors = true;
+        }
+        
+        if (!this.budgetRange) {
+          this.errors.budgetRange = 'Budget range is required';
+          hasErrors = true;
+        }
+        
+        if (hasErrors) {
+          event.preventDefault();
+          return false;
+        }
+        
+        this.isSubmitting = true;
+        return true;
+      }
+    }"
+  >
+    <div x-show="!submitted">
+      <!-- Basic Information -->
+      <div class="mb-8">
+        <h4 class="text-lg font-semibold mb-4 text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2">
+          Contact Information
+        </h4>
+        
+        <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <div>
+            <label for="bp-name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              Full Name *
+            </label>
+            <input 
+              type="text" 
+              id="bp-name" 
+              name="name"
+              x-model="name"
+              class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-hidden focus:ring-2 focus:ring-primary-500"
+              placeholder="Your full name"
+              required
+            />
+            <p class="text-red-500 text-sm mt-1" x-show="errors.name" x-text="errors.name"></p>
+          </div>
+          
+          <div>
+            <label for="bp-email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              Email Address *
+            </label>
+            <input 
+              type="email" 
+              id="bp-email" 
+              name="email"
+              x-model="email"
+              class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-hidden focus:ring-2 focus:ring-primary-500"
+              placeholder="your@email.com"
+              required
+            />
+            <p class="text-red-500 text-sm mt-1" x-show="errors.email" x-text="errors.email"></p>
+          </div>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label for="bp-company" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              Company/Organization
+            </label>
+            <input 
+              type="text" 
+              id="bp-company" 
+              name="company"
+              x-model="company"
+              class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-hidden focus:ring-2 focus:ring-primary-500"
+              placeholder="Your company name"
+            />
+          </div>
+          
+          <div>
+            <label for="bp-phone" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              Phone Number
+            </label>
+            <input 
+              type="tel" 
+              id="bp-phone" 
+              name="phone"
+              x-model="phone"
+              class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-hidden focus:ring-2 focus:ring-primary-500"
+              placeholder="+1 (555) 123-4567"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Details -->
+      <div class="mb-8">
+        <h4 class="text-lg font-semibold mb-4 text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2">
+          Project Information
+        </h4>
+        
+        <div class="mb-4">
+          <label for="bp-project-title" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+            Project Title/Name *
+          </label>
+          <input 
+            type="text" 
+            id="bp-project-title" 
+            name="project-title"
+            x-model="projectTitle"
+            class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-hidden focus:ring-2 focus:ring-primary-500"
+            placeholder="e.g., Customer Portal App, E-commerce Platform"
+            required
+          />
+          <p class="text-red-500 text-sm mt-1" x-show="errors.projectTitle" x-text="errors.projectTitle"></p>
+        </div>
+        
+        <div class="mb-4">
+          <label for="bp-project-type" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+            Project Type
+          </label>
+          <select 
+            id="bp-project-type" 
+            name="project-type"
+            x-model="projectType"
+            class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-hidden focus:ring-2 focus:ring-primary-500"
+          >
+            <option value="">Select project type</option>
+            <option value="web-app">Web Application</option>
+            <option value="mobile-app">Mobile App (iOS/Android)</option>
+            <option value="ai-integration">AI Integration/Automation</option>
+            <option value="ecommerce">E-commerce Platform</option>
+            <option value="saas">SaaS Product</option>
+            <option value="enterprise">Enterprise Software</option>
+            <option value="api">API/Backend System</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        
+        <div class="mb-4">
+          <label for="bp-project-description" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+            Project Description *
+          </label>
+          <textarea 
+            id="bp-project-description" 
+            name="project-description"
+            x-model="projectDescription"
+            rows="4"
+            class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-hidden focus:ring-2 focus:ring-primary-500"
+            placeholder="Describe your project idea, goals, and what problem it solves..."
+            required
+          ></textarea>
+          <p class="text-red-500 text-sm mt-1" x-show="errors.projectDescription" x-text="errors.projectDescription"></p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label for="bp-target-users" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              Target Users
+            </label>
+            <input 
+              type="text" 
+              id="bp-target-users" 
+              name="target-users"
+              x-model="targetUsers"
+              class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-hidden focus:ring-2 focus:ring-primary-500"
+              placeholder="e.g., Small business owners, Students"
+            />
+          </div>
+          
+          <div>
+            <label for="bp-key-features" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              Key Features (top 3)
+            </label>
+            <input 
+              type="text" 
+              id="bp-key-features" 
+              name="key-features"
+              x-model="keyFeatures"
+              class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-hidden focus:ring-2 focus:ring-primary-500"
+              placeholder="e.g., User login, Payment processing, Reporting"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Qualification Questions -->
+      <div class="mb-8">
+        <h4 class="text-lg font-semibold mb-4 text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2">
+          Project Planning
+        </h4>
+        
+        <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <div>
+            <label for="bp-timeline" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              Desired Timeline *
+            </label>
+            <select 
+              id="bp-timeline" 
+              name="timeline"
+              x-model="timeline"
+              class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-hidden focus:ring-2 focus:ring-primary-500"
+              required
+            >
+              <option value="">Select timeline</option>
+              <option value="asap">ASAP (Rush project)</option>
+              <option value="1-3-months">1-3 months</option>
+              <option value="3-6-months">3-6 months</option>
+              <option value="6-12-months">6-12 months</option>
+              <option value="flexible">Flexible/Planning phase</option>
+            </select>
+            <p class="text-red-500 text-sm mt-1" x-show="errors.timeline" x-text="errors.timeline"></p>
+          </div>
+          
+          <div>
+            <label for="bp-budget" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              Budget Range *
+            </label>
+            <select 
+              id="bp-budget" 
+              name="budget-range"
+              x-model="budgetRange"
+              class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-hidden focus:ring-2 focus:ring-primary-500"
+              required
+            >
+              <option value="">Select budget range</option>
+              <option value="under-25k">Under $25k</option>
+              <option value="25k-50k">$25k - $50k</option>
+              <option value="50k-100k">$50k - $100k</option>
+              <option value="100k-250k">$100k - $250k</option>
+              <option value="250k-plus">$250k+</option>
+              <option value="not-sure">Not sure yet</option>
+            </select>
+            <p class="text-red-500 text-sm mt-1" x-show="errors.budgetRange" x-text="errors.budgetRange"></p>
+          </div>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <div>
+            <label for="bp-team-size" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              Current Team Size
+            </label>
+            <select 
+              id="bp-team-size" 
+              name="team-size"
+              x-model="teamSize"
+              class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-hidden focus:ring-2 focus:ring-primary-500"
+            >
+              <option value="">Select team size</option>
+              <option value="solo">Just me</option>
+              <option value="2-5">2-5 people</option>
+              <option value="6-15">6-15 people</option>
+              <option value="16-50">16-50 people</option>
+              <option value="50-plus">50+ people</option>
+            </select>
+          </div>
+          
+          <div>
+            <label for="bp-experience" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              Previous Development Experience
+            </label>
+            <select 
+              id="bp-experience" 
+              name="previous-experience"
+              x-model="previousExperience"
+              class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-hidden focus:ring-2 focus:ring-primary-500"
+            >
+              <option value="">Select experience level</option>
+              <option value="none">No previous projects</option>
+              <option value="one-project">One previous project</option>
+              <option value="few-projects">A few projects</option>
+              <option value="experienced">Very experienced</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="mb-4">
+          <label for="bp-challenge" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+            Biggest Challenge or Concern
+          </label>
+          <textarea 
+            id="bp-challenge" 
+            name="biggest-challenge"
+            x-model="biggestChallenge"
+            rows="3"
+            class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-hidden focus:ring-2 focus:ring-primary-500"
+            placeholder="What's your biggest concern about this project? Technical complexity, budget, timeline, finding the right team, etc."
+          ></textarea>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="text-center">
+        <button 
+          type="submit" 
+          class="w-full btn-primary py-4 text-lg"
+          :disabled="isSubmitting"
+          :class="{ 'opacity-50 cursor-not-allowed': isSubmitting }"
+        >
+          <span x-show="!isSubmitting">Get My FREE Project Blueprint</span>
+          <span x-show="isSubmitting">Processing Request...</span>
+        </button>
+        
+        <p class="text-sm text-gray-500 dark:text-gray-400 mt-4">
+          We'll contact you within 24 hours to schedule your consultation call.
+        </p>
+      </div>
+    </div>
+    
+    <!-- Success Message -->
+    <div class="text-center p-8 bg-primary-50 dark:bg-primary-900/30 rounded-lg" x-show="submitted" x-cloak>
+      <svg class="w-16 h-16 text-primary-500 mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Request Submitted Successfully!</h3>
+      <p class="text-gray-600 dark:text-gray-300 mb-6">
+        Thank you for your interest! We've received your project blueprint request and will contact you within 24 hours to schedule your consultation call.
+      </p>
+      <div class="bg-white dark:bg-gray-800 rounded-lg p-4 max-w-md mx-auto">
+        <h4 class="font-semibold mb-2 text-gray-900 dark:text-white">What happens next?</h4>
+        <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+          <li>✓ Initial consultation call (30-60 minutes)</li>
+          <li>✓ Blueprint creation and analysis</li>
+          <li>✓ Professional document delivery (3-5 days)</li>
+          <li>✓ Follow-up call to review findings</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Hidden Fields -->
+    <input type="text" name="_gotcha" style="display:none" />
+    <input type="hidden" name="_subject" value="New Project Blueprint Request" />
+    <input type="hidden" name="_next" x-bind:value="window.location.href + '?success=true'" />
+  </form>
+</div>

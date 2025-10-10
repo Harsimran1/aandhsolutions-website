@@ -1,0 +1,336 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ProjectBlueprintForm from '../components/ProjectBlueprintForm.astro';
+---
+
+<Layout 
+  title="FREE Project Blueprint & Technical Roadmap | A&H Solutions" 
+  description="Get a comprehensive 25-30 page project blueprint absolutely free. Includes technical architecture, wireframes, risk analysis, and implementation roadmap. Transform your idea into a actionable development plan."
+  keywords="free project scoping, technical documentation, project blueprint, software requirements, technology roadmap, app development planning"
+>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-950/50 dark:to-secondary-950">
+      <div class="container-custom">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="slide-up">
+            <div class="inline-flex items-center px-4 py-2 rounded-full bg-accent-100 dark:bg-accent-900/30 text-accent-600 dark:text-accent-400 font-medium text-sm mb-6">
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              100% Free • No Obligations • Professional Quality
+            </div>
+            
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 dark:text-white">
+              Get Your <span class="text-primary-600">FREE Project Blueprint</span> & Technical Roadmap
+            </h1>
+            
+            <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+              Transform your idea into a comprehensive <strong>professional development plan</strong> including technical architecture, wireframes, risk analysis, and implementation roadmap. Absolutely free.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 mb-8">
+              <a href="#get-blueprint" class="btn-primary">
+                Get My Free Blueprint
+              </a>
+              <a href="#what-included" class="btn-outline">
+                See What's Included
+              </a>
+            </div>
+            
+            <div class="flex items-center text-sm text-gray-600 dark:text-gray-400">
+              <svg class="w-5 h-5 mr-2 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              Delivered in 3-5 business days
+            </div>
+          </div>
+          
+          <div class="slide-up" style="animation-delay: 150ms">
+            <div class="relative">
+              <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-8 transform rotate-3">
+                <div class="h-64 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 rounded-lg mb-6 flex items-center justify-center">
+                  <div class="text-center">
+                    <svg class="w-16 h-16 mx-auto text-primary-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                    <p class="text-gray-600 dark:text-gray-400 font-medium">Professional Project Blueprint</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-500">25-30 Pages</p>
+                  </div>
+                </div>
+                <h3 class="font-semibold text-lg mb-2 text-gray-900 dark:text-white">Sample Deliverable Preview</h3>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">Professional technical documentation with wireframes, architecture diagrams, and implementation roadmap.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="py-12 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+      <div class="container-custom">
+        <div class="text-center mb-8">
+          <p class="text-gray-600 dark:text-gray-400">Trusted by startups and enterprises across multiple industries</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-60">
+          <div class="text-center">
+            <div class="text-2xl font-bold text-primary-600">50+</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400">Projects Scoped</div>
+          </div>
+          <div class="text-center">
+            <div class="text-2xl font-bold text-primary-600">$2M+</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400">Project Value Planned</div>
+          </div>
+          <div class="text-center">
+            <div class="text-2xl font-bold text-primary-600">95%</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400">Success Rate</div>
+          </div>
+          <div class="text-center">
+            <div class="text-2xl font-bold text-primary-600">3-5</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400">Day Delivery</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What's Included Section -->
+    <section id="what-included" class="section bg-gray-50 dark:bg-gray-800/50">
+      <div class="container-custom">
+        <div class="text-center mb-16">
+          <span class="inline-block px-4 py-1 rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-300 font-medium text-sm mb-4">
+            What You Get
+          </span>
+          <h2 class="mb-6 text-gray-900 dark:text-white">Complete Project Blueprint Includes</h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            A comprehensive professional document that gives you everything needed to make informed development decisions.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="card p-6 hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Executive Summary</h3>
+            <p class="text-gray-600 dark:text-gray-400">Project vision, success metrics, timeline estimates, and risk overview.</p>
+          </div>
+
+          <div class="card p-6 hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Requirements Analysis</h3>
+            <p class="text-gray-600 dark:text-gray-400">Detailed functional and non-functional requirements with user personas.</p>
+          </div>
+
+          <div class="card p-6 hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Technical Architecture</h3>
+            <p class="text-gray-600 dark:text-gray-400">Technology stack recommendations, database design, and security framework.</p>
+          </div>
+
+          <div class="card p-6 hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Visual Wireframes</h3>
+            <p class="text-gray-600 dark:text-gray-400">Key screen wireframes, user flows, and UI/UX considerations.</p>
+          </div>
+
+          <div class="card p-6 hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Implementation Roadmap</h3>
+            <p class="text-gray-600 dark:text-gray-400">Phase-by-phase development plan with milestones and resource requirements.</p>
+          </div>
+
+          <div class="card p-6 hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.464 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Risk Analysis</h3>
+            <p class="text-gray-600 dark:text-gray-400">Technical and business risks identified with mitigation strategies.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section class="section">
+      <div class="container-custom">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="slide-up">
+            <h2 class="mb-6 text-gray-900 dark:text-white">Why Most Development Projects Fail</h2>
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div class="w-8 h-8 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mr-4 mt-1">
+                  <svg class="w-4 h-4 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-lg text-gray-900 dark:text-white mb-2">Poor Planning</h3>
+                  <p class="text-gray-600 dark:text-gray-400">68% of projects fail due to inadequate requirements gathering and unclear scope definition.</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="w-8 h-8 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mr-4 mt-1">
+                  <svg class="w-4 h-4 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-lg text-gray-900 dark:text-white mb-2">Wrong Technology Choices</h3>
+                  <p class="text-gray-600 dark:text-gray-400">Choosing the wrong tech stack leads to scalability issues and technical debt.</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="w-8 h-8 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mr-4 mt-1">
+                  <svg class="w-4 h-4 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-lg text-gray-900 dark:text-white mb-2">Budget Overruns</h3>
+                  <p class="text-gray-600 dark:text-gray-400">Projects exceed budget by 27% on average due to poor initial estimation.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="slide-up" style="animation-delay: 150ms">
+            <div class="card p-8 bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-950/50 dark:to-secondary-950 border-2 border-primary-200 dark:border-primary-800">
+              <h3 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Our Blueprint Prevents This</h3>
+              
+              <div class="space-y-4">
+                <div class="flex items-center">
+                  <svg class="w-5 h-5 text-primary-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-700 dark:text-gray-300">Comprehensive requirements analysis</span>
+                </div>
+                
+                <div class="flex items-center">
+                  <svg class="w-5 h-5 text-primary-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-700 dark:text-gray-300">Technology stack optimization</span>
+                </div>
+                
+                <div class="flex items-center">
+                  <svg class="w-5 h-5 text-primary-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-700 dark:text-gray-300">Accurate budget and timeline estimates</span>
+                </div>
+                
+                <div class="flex items-center">
+                  <svg class="w-5 h-5 text-primary-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-700 dark:text-gray-300">Risk identification and mitigation</span>
+                </div>
+                
+                <div class="flex items-center">
+                  <svg class="w-5 h-5 text-primary-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-700 dark:text-gray-300">Clear implementation roadmap</span>
+                </div>
+              </div>
+              
+              <div class="mt-6 p-4 bg-white dark:bg-gray-800 rounded-lg">
+                <div class="text-center">
+                  <div class="text-3xl font-bold text-primary-600 mb-1">$0</div>
+                  <div class="text-sm text-gray-600 dark:text-gray-400">Investment Required</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Form Section -->
+    <section id="get-blueprint" class="section bg-primary-600 dark:bg-primary-900 text-white">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Get Your FREE Project Blueprint?</h2>
+          <p class="text-xl text-primary-100 mb-12">
+            Transform your idea into a comprehensive development plan. No cost, no obligation, professional quality.
+          </p>
+          
+          <ProjectBlueprintForm />
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section bg-gray-50 dark:bg-gray-800/50">
+      <div class="container-custom">
+        <div class="text-center mb-16">
+          <h2 class="mb-6 text-gray-900 dark:text-white">Frequently Asked Questions</h2>
+        </div>
+        
+        <div class="max-w-3xl mx-auto space-y-6">
+          <div class="card p-6">
+            <h3 class="font-semibold text-lg mb-3 text-gray-900 dark:text-white">What's the catch? Why is this free?</h3>
+            <p class="text-gray-600 dark:text-gray-400">
+              No catch! We provide this service to demonstrate our expertise and planning capabilities. While there's no obligation, many clients choose to work with us for implementation after seeing the quality of our blueprints.
+            </p>
+          </div>
+          
+          <div class="card p-6">
+            <h3 class="font-semibold text-lg mb-3 text-gray-900 dark:text-white">How long does it take to receive my blueprint?</h3>
+            <p class="text-gray-600 dark:text-gray-400">
+              We deliver your comprehensive project blueprint within 3-5 business days after our initial consultation call.
+            </p>
+          </div>
+          
+          <div class="card p-6">
+            <h3 class="font-semibold text-lg mb-3 text-gray-900 dark:text-white">What information do you need from me?</h3>
+            <p class="text-gray-600 dark:text-gray-400">
+              We'll need details about your project goals, target users, key features, and any specific requirements or constraints. We'll gather this information during our consultation call.
+            </p>
+          </div>
+          
+          <div class="card p-6">
+            <h3 class="font-semibold text-lg mb-3 text-gray-900 dark:text-white">Can I use this blueprint with another development team?</h3>
+            <p class="text-gray-600 dark:text-gray-400">
+              Absolutely! The blueprint is yours to use however you choose. Many clients use it to get better proposals from multiple development teams or to guide their internal development efforts.
+            </p>
+          </div>
+          
+          <div class="card p-6">
+            <h3 class="font-semibold text-lg mb-3 text-gray-900 dark:text-white">What types of projects do you create blueprints for?</h3>
+            <p class="text-gray-600 dark:text-gray-400">
+              We create blueprints for web applications, mobile apps, AI integrations, e-commerce platforms, SaaS products, and enterprise software solutions across all industries.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
