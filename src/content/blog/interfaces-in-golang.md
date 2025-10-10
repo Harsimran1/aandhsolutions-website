@@ -1,6 +1,6 @@
 ---
 title: "Interfaces in Golang"
-description: ""
+description: "Master Go interfaces with practical examples. Learn when to export interfaces, best practices for interface design, and how Go's implicit interface satisfaction enables cleaner code."
 publishedAt: "2022-10-03"
 updatedAt: "2022-10-26"
 author:
@@ -14,11 +14,21 @@ tags:
 draft: false
 ---
 
-### In my few years of using Golang, I’ve come across several discussions involving the use of interfaces. The arguments range from:
+## Introduction
 
-> Why are we not defining interfaces with the type definition like in typical static languages like C++, Java etc ?> Should this package export interface in combination with the exposed type implementing the interface?> Should this function return an interface rather than the concrete type?Let’s try to address these questions one by one.
+In my few years of using Golang, I've come across several discussions involving the use of interfaces. The arguments range from:
 
-#### Why are we not defining interfaces with the type definition like in typical static languages like C++, Java etc ?In languages like C++, Java, one needs to specify that a type implements an interface like in the code given below:
+> Why are we not defining interfaces with the type definition like in typical static languages like C++, Java etc ?
+
+> Should this package export interface in combination with the exposed type implementing the interface?
+
+> Should this function return an interface rather than the concrete type?
+
+Let's try to address these questions one by one.
+
+## Why are we not defining interfaces with the type definition like in typical static languages like C++, Java etc ?
+
+In languages like C++, Java, one needs to specify that a type implements an interface like in the code given below:
 
 In such languages, defining the interface for the Object enables the compiler to form a dispatch tables for the objects pointing to the functions.
 
@@ -33,9 +43,13 @@ Thus any struct can satisfy an interface simply by implementing its method signa
 - Makes it easier to use mocks instead of real objects in unit tests.
 - Helps enforce decoupling between parts of your codebase.
 
-#### Should this package export interface in combination with the exposed type implementing the interface?The short answer is:
+## Should this package export interface in combination with the exposed type implementing the interface?
 
-> Don’t export any interfaces unless you have to.If the consumer of your package requires some level of “inversion of control”, they can define the interface in their own scope.
+The short answer is:
+
+> Don't export any interfaces unless you have to.
+
+If the consumer of your package requires some level of "inversion of control", they can define the interface in their own scope.
 
 However, there might be scenarios where one might want to standardise how a functionality is used. Take a case of golang error interface.
 
@@ -43,7 +57,9 @@ type error interface {
     Error() string
 }It is a builtin interface in the standard library that standardises the error behaviour. There have been other discussions in the community about standardising some behaviours, e.g. having a common [logging](https://groups.google.com/g/golang-dev/c/F3l9Iz1JX4g/discussion) interface. Similarly, it might be useful to have a company wide representation of some common behaviour to provide uniformity and code reusability. However, in this scenario, make sure that the interfaces are small, meaning 1–2 methods.
 
-#### Should this package return an interface rather than the concrete type?According to CodeReviewComments, [Go interfaces generally belong in the package that uses values of the interface type, not the package that implements those values.](https://github.com/golang/go/wiki/CodeReviewComments#interfaces)
+## Should this package return an interface rather than the concrete type?
+
+According to CodeReviewComments, [Go interfaces generally belong in the package that uses values of the interface type, not the package that implements those values.](https://github.com/golang/go/wiki/CodeReviewComments#interfaces)
 
 However [Effective go](https://golang.org/doc/effective_go#generality) docs also complements it by saying that
 

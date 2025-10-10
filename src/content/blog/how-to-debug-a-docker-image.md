@@ -1,6 +1,6 @@
 ---
 title: "How to debug a docker image."
-description: ""
+description: "Master Docker debugging techniques by inspecting failed builds, accessing container shells, and testing commands manually. Troubleshoot Golang build issues effectively."
 publishedAt: "2021-12-29"
 updatedAt: "2022-07-04"
 author:

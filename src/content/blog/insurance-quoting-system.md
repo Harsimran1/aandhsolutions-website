@@ -1,6 +1,6 @@
 ---
 title: "Revolutionizing Insurance Quoting with an Intuitive App"
-description: ""
+description: "Insurance quoting system built with React.js and Compulife APIs. Case study on automated quote generation, enhanced efficiency, and customer satisfaction."
 publishedAt: "2023-07-08"
 updatedAt: "2023-08-08"
 author:

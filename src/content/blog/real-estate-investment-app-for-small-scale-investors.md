@@ -1,6 +1,6 @@
 ---
 title: "Real Estate Investment App for Small-Scale Investors"
-description: ""
+description: "Real estate investment app case study using React Native and Golang. Portfolio management, real-time tracking, and scalable backend development success story."
 publishedAt: "2023-06-06"
 updatedAt: "2024-10-06"
 author:

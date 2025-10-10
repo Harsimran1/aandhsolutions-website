@@ -1,6 +1,6 @@
 ---
 title: "Load Testing with Apache JMeter."
-description: ""
+description: "Complete guide to load testing HTTP APIs with Apache JMeter. Learn to configure thread groups, set up test plans, and simulate realistic user loads for performance testing."
 publishedAt: "2020-10-18"
 updatedAt: "2022-02-04"
 author:
@@ -22,15 +22,21 @@ One can download and install apache JMeter from [here](http://jmeter.apache.org/
 
 Open it and let’s get started. You’ll see an empty Test Plan as below.
 
-![](https://cdn-images-1.medium.com/max/800/1*mpcQxJWwaewkC5k7EFgZXA.png)Creating apache jmeter test plan**Test Plan** is where you can describe the name of your tests and add comments about it. We’ll keep the name Test Plan for the sake of reference.
+![](https://cdn-images-1.medium.com/max/800/1*mpcQxJWwaewkC5k7EFgZXA.png)
+
+Creating apache jmeter test plan
+
+**Test Plan** is where you can describe the name of your tests and add comments about it. We'll keep the name Test Plan for the sake of reference.
 
 Right click on the **Test Plan** and add **Thread Groups** as shown below:
 
-![Instructions for apache jmeter test plan.](https://cdn-images-1.medium.com/max/800/1*4C6xUVNxFauxKRCnDyuaqw.png)A Thread Group is where you specify the number of users that you want to simulate. One thread = one user.
+![Instructions for apache jmeter test plan.](https://cdn-images-1.medium.com/max/800/1*4C6xUVNxFauxKRCnDyuaqw.png)
+
+A Thread Group is where you specify the number of users that you want to simulate. One thread = one user.
 
 **Number of threads**: It is where you specify the number of users that you want to simulate. One thread = one user.
 
-**Ramp Up Period**: By setting the ramp-up period, you can also tell JMeter how long it should take to reach all of the threads that you’ve chosen.
+**Ramp Up Period**: By setting the ramp-up period, you can also tell JMeter how long it should take to reach all of the threads that you've chosen.
 
 **Loop Count**: You can set the number of iterations for each user in the group using Loop Count.
 

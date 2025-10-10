@@ -1,6 +1,6 @@
 ---
 title: "My takeaways from Kent Beck's Test-Driven Development - Part I"
-description: ""
+description: "Discover key insights from Kent Beck's TDD book. Learn why test-driven development improves code confidence, modularity, and problem-solving approach."
 publishedAt: "2021-06-13"
 updatedAt: "2022-03-29"
 author:
@@ -20,15 +20,22 @@ Before saying anything, I would like to answer the question Why?  Why TDD at fi
 
 So why? 
 
-- **It makes your code predictable**. Mr. Beck starts with an example where an external client comes to the engineering team who have been handling money in Dollars, if their code could handle multi-currency. And no one could confidently tell the client YES Or NO. Had they had tests for the code, they would know the answer. **
-- It makes extending the code easier**. When you're extending or refactoring a code, if you don't have tests, the confidence level that you've not broken something is quite low. The idea is that even if you don't have tests when you try to extend the code, you write the tests first. This will also improve your test coverage and increase your confidence level. Without tests you have to reason and decide whether you should refactor code in a certain way, with tests you can simply ask the computer.
-- **It breaks down the problem into small manageable chunks**. While the above two points are valid for any kind of test strategy, the main advantage of test driven development is that it helps break down your problem into small manageable chunks. *Start small or not at all*. It enables you to solve complicated problems even if you're an average programmer like me. It gives you control over the size of the steps.
-- **It helps build confidence towards your code and tests.**  Every testing strategy comes with a baggage about how reliable is the test. Is the test passing even though the code is incorrect because there is a bug in the test? Well it's not very practical to write test for the test. Having a failing test first and passing it after writing the code gives you confidence that your code is the reason the test has passed. It is not full proof but it is better than writing tests after the code. 
-- **It helps in modularization of code.**  When you're doing TDD, you are looking at how an external package/ party is going to use your code as a first step. You're also thinking of making your code testable early on. This results in better abstraction layers and module formations. 
+### It makes your code predictable
+Mr. Beck starts with an example where an external client comes to the engineering team who have been handling money in Dollars, if their code could handle multi-currency. And no one could confidently tell the client YES Or NO. Had they had tests for the code, they would know the answer.
+### It makes extending the code easier
+When you're extending or refactoring a code, if you don't have tests, the confidence level that you've not broken something is quite low. The idea is that even if you don't have tests when you try to extend the code, you write the tests first. This will also improve your test coverage and increase your confidence level. Without tests you have to reason and decide whether you should refactor code in a certain way, with tests you can simply ask the computer.
+### It breaks down the problem into small manageable chunks
+While the above two points are valid for any kind of test strategy, the main advantage of test driven development is that it helps break down your problem into small manageable chunks. *Start small or not at all*. It enables you to solve complicated problems even if you're an average programmer like me. It gives you control over the size of the steps.
+### It helps build confidence towards your code and tests
+Every testing strategy comes with a baggage about how reliable is the test. Is the test passing even though the code is incorrect because there is a bug in the test? Well it's not very practical to write test for the test. Having a failing test first and passing it after writing the code gives you confidence that your code is the reason the test has passed. It is not full proof but it is better than writing tests after the code. 
+### It helps in modularization of code.
+When you're doing TDD, you are looking at how an external package/ party is going to use your code as a first step. You're also thinking of making your code testable early on. This results in better abstraction layers and module formations. 
 
 Now that we're clear with the big WHY, Mr. Kent goes on to explain HOW in most part of the book with examples. Below are the key steps of TDD:
 
-Test Driven Development CycleBelow are some things to keep in mind while doing TDD.
+##Test Driven Development Cycle
+
+Below are some things to keep in mind while doing TDD.
 
 1. Formulate a TODO list of some basic requirements that your code should fulfill. Pick an item in the list and translate the requirement in the form of a failing test. Remember, don't write the code first, write the test first.
 
@@ -38,7 +45,7 @@ Test Driven Development CycleBelow are some things to keep in mind while doing T
 
 4. It can feel a bit restrictive to have only small incremental steps. Hence, to be practical during TDD, if you want to make minor code change that you know you'll eventually need to do anyways, and it will only cause a brief interruption to your flow, it makes sense to do the change. If a teeny tiny step feels restrictive, take bigger steps. If you feel unsure in big steps, take smaller steps.
 
-5. There can also be exceptions where you write the code first before writing test when the risk of adding code is low and there is already a failing test that needs to be passed first. For example, one can argue to skip writing test for a log statement, because the 
+5. There can also be exceptions where you write the code first before writing test when the risk of adding code is low and there is already a failing test that needs to be passed first. For example, one can argue to skip writing test for a log statement, because:
 
 - The risk of breaking something is low.
 - The log actually shows what's happening in the code.

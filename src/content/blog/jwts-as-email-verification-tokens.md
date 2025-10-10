@@ -1,6 +1,6 @@
 ---
 title: "JWTs as Email Verification Tokens"
-description: ""
+description: "Implement secure email verification using JWT tokens. Learn stateless authentication with cryptographic signing and Go code examples for web applications."
 publishedAt: "2018-09-13"
 updatedAt: "2021-06-14"
 author:

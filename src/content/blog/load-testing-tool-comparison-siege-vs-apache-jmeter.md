@@ -1,6 +1,6 @@
 ---
 title: "Load testing tool comparison: Siege vs Apache JMeter."
-description: ""
+description: "Compare Siege vs Apache JMeter for load testing APIs. Discover which tool suits your performance testing needs with practical examples and feature analysis."
 publishedAt: "2021-03-24"
 updatedAt: "2021-06-03"
 author:

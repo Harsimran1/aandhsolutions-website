@@ -1,6 +1,6 @@
 ---
 title: "Step by Step Guide: Host your own website."
-description: ""
+description: "Complete website hosting guide from domain purchase to deployment. Learn AWS setup, nginx configuration, TLS certificates, and DNS management step-by-step."
 publishedAt: "2021-01-20"
 updatedAt: "2021-06-03"
 author:

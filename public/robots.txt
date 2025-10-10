@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.aandhsolutions.com/sitemap-index.xml
+Sitemap: https://www.aandhsolutions.com/sitemap-0.xml
+
+# Crawl-delay for better server performance
+Crawl-delay: 1
+
+# Block access to admin or private areas if any exist
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow all public content
+Allow: /blog/
+Allow: /services/
+Allow: /case-studies/
+Allow: /domains/

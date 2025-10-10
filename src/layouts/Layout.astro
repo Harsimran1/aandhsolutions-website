@@ -6,11 +6,15 @@ import { ClientRouter } from 'astro:transitions';
 export interface Props {
   title: string;
   description?: string;
+  keywords?: string;
+  ogImage?: string;
 }
 
 const { 
   title, 
-  description = "Modern SaaS landing page template with responsive design and modular sections."
+  description = "Modern SaaS landing page template with responsive design and modular sections.",
+  keywords = "aandhsolutions, A&H Solutions, custom app development, AI integrations, web development, mobile apps",
+  ogImage = "/og-image.jpg"
 } = Astro.props;
 ---
 
@@ -22,10 +26,38 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="A&H Solutions" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={`https://www.aandhsolutions.com${Astro.url.pathname}`} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={`https://www.aandhsolutions.com${Astro.url.pathname}`} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`https://www.aandhsolutions.com${ogImage}`} />
+    <meta property="og:site_name" content="A&H Solutions" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@aandhsolutions" />
+    <meta name="twitter:creator" content="@aandhsolutions" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`https://www.aandhsolutions.com${ogImage}`} />
+    <meta name="twitter:url" content={`https://www.aandhsolutions.com${Astro.url.pathname}`} />
+    
     <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Performance optimizations -->
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#8b5cf6">
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0PMZ38H9GR"></script>
@@ -36,7 +68,51 @@ const {
       gtag('config', 'G-0PMZ38H9GR');
     </script>
     
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "A&H Solutions",
+      "alternateName": "aandhsolutions",
+      "url": "https://www.aandhsolutions.com",
+      "logo": "https://www.aandhsolutions.com/logo.png",
+      "sameAs": [
+        "https://www.linkedin.com/company/aandhsolutions",
+        "https://github.com/aandhsolutions"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "url": "https://www.aandhsolutions.com/contact"
+      },
+      "description": "A&H Solutions builds custom apps, web platforms, and AI integrations for startups and enterprises.",
+      "foundingDate": "2020",
+      "industry": "Software Development",
+      "knowsAbout": [
+        "Custom App Development",
+        "AI Integrations", 
+        "Web Development",
+        "Mobile App Development",
+        "Cloud Solutions",
+        "Data Analytics"
+      ],
+      "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "43.6532",
+          "longitude": "-79.3832"
+        },
+        "geoRadius": "10000000"
+      }
+    }
+    </script>
+    
     <ClientRouter />
+    
+    <!-- Allow additional head content from pages -->
+    <slot name="head" />
   </head>
   <body class="antialiased bg-white dark:bg-secondary-950 text-secondary-900 dark:text-secondary-100 transition-colors duration-300">
     <div id="page-wrapper" class="page-transition-wrapper">
