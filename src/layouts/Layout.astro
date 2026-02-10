@@ -52,20 +52,36 @@ const {
     <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lexend:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
     
     <!-- Performance optimizations -->
     <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <link rel="dns-prefetch" href="//www.google.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="preload" href="../scripts/transitions.js" as="script">
     <meta name="format-detection" content="telephone=no">
     <meta name="theme-color" content="#8b5cf6">
     
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0PMZ38H9GR"></script>
+    <!-- Google Analytics (Deferred) -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-0PMZ38H9GR');
+      
+      // Defer GA loading until after page load
+      window.addEventListener('load', function() {
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-0PMZ38H9GR';
+        document.head.appendChild(script);
+        
+        script.onload = function() {
+          gtag('js', new Date());
+          gtag('config', 'G-0PMZ38H9GR');
+        };
+      });
     </script>
     
     <!-- Structured Data -->
@@ -147,6 +163,6 @@ const {
         }
       });
     </script>
-    <script src="../scripts/transitions.js"></script>
+    <script src="../scripts/transitions.js" defer></script>
   </body>
 </html>

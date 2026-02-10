@@ -1,4 +1,6 @@
 ---
+import Accreditations from './Accreditations.astro';
+
 export interface Props {
   title?: string;
   description?: string;
@@ -59,81 +61,7 @@ function highlightTitle(title: string, highlightText: string) {
       </div>
       
       <div class="relative fade-in" transition:animate="fade">
-        <!-- Tech/Software Development Hero Visual -->
-        <div class="w-full max-w-lg mx-auto">
-          <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto drop-shadow-xl">
-            <!-- Background -->
-            <rect width="600" height="400" fill="#f8fafc" class="dark:fill-slate-900" rx="20"/>
-            
-            <!-- Code Editor Window -->
-            <rect x="50" y="80" width="500" height="280" fill="#1e293b" class="dark:fill-slate-800" rx="8"/>
-            
-            <!-- Window Header -->
-            <rect x="50" y="80" width="500" height="40" fill="#334155" class="dark:fill-slate-700" rx="8 8 0 0"/>
-            <circle cx="75" cy="100" r="6" fill="#ef4444"/>
-            <circle cx="95" cy="100" r="6" fill="#f59e0b"/>
-            <circle cx="115" cy="100" r="6" fill="#10b981"/>
-            
-            <!-- Code Lines with animation -->
-            <g class="code-lines">
-              <rect x="70" y="140" width="120" height="4" fill="#8b5cf6" opacity="0.8">
-                <animate attributeName="width" values="120;140;120" dur="3s" repeatCount="indefinite"/>
-              </rect>
-              <rect x="70" y="155" width="200" height="4" fill="#06b6d4" opacity="0.8">
-                <animate attributeName="width" values="200;220;200" dur="3.5s" repeatCount="indefinite"/>
-              </rect>
-              <rect x="90" y="170" width="150" height="4" fill="#10b981" opacity="0.8">
-                <animate attributeName="width" values="150;170;150" dur="2.8s" repeatCount="indefinite"/>
-              </rect>
-              <rect x="90" y="185" width="180" height="4" fill="#f59e0b" opacity="0.8">
-                <animate attributeName="width" values="180;200;180" dur="4s" repeatCount="indefinite"/>
-              </rect>
-              <rect x="110" y="200" width="100" height="4" fill="#ef4444" opacity="0.8">
-                <animate attributeName="width" values="100;120;100" dur="3.2s" repeatCount="indefinite"/>
-              </rect>
-              <rect x="90" y="215" width="160" height="4" fill="#8b5cf6" opacity="0.8">
-                <animate attributeName="width" values="160;180;160" dur="2.5s" repeatCount="indefinite"/>
-              </rect>
-              <rect x="70" y="230" width="140" height="4" fill="#06b6d4" opacity="0.8">
-                <animate attributeName="width" values="140;160;140" dur="3.8s" repeatCount="indefinite"/>
-              </rect>
-            </g>
-            
-            <!-- Mobile Phone -->
-            <rect x="380" y="200" width="80" height="140" fill="#374151" rx="12"/>
-            <rect x="390" y="215" width="60" height="100" fill="#1f2937" rx="4"/>
-            <circle cx="420" cy="205" r="3" fill="#6b7280"/>
-            <rect x="400" y="225" width="40" height="20" fill="#3b82f6" rx="2"/>
-            <rect x="400" y="250" width="30" height="8" fill="#10b981" rx="2"/>
-            <rect x="400" y="265" width="35" height="8" fill="#f59e0b" rx="2"/>
-            <rect x="400" y="280" width="25" height="8" fill="#ef4444" rx="2"/>
-            
-            <!-- Laptop -->
-            <rect x="300" y="300" width="120" height="8" fill="#6b7280" rx="4"/>
-            <rect x="310" y="270" width="100" height="30" fill="#1f2937" rx="2"/>
-            <rect x="315" y="275" width="90" height="20" fill="#111827" rx="1"/>
-            <rect x="320" y="280" width="20" height="3" fill="#3b82f6" rx="1"/>
-            <rect x="345" y="280" width="15" height="3" fill="#10b981" rx="1"/>
-            <rect x="365" y="280" width="25" height="3" fill="#f59e0b" rx="1"/>
-            
-            <!-- Floating Elements -->
-            <circle cx="150" cy="60" r="8" fill="#3b82f6" opacity="0.7">
-              <animate attributeName="cy" values="60;50;60" dur="4s" repeatCount="indefinite"/>
-            </circle>
-            <circle cx="450" cy="50" r="6" fill="#10b981" opacity="0.7">
-              <animate attributeName="cy" values="50;40;50" dur="5s" repeatCount="indefinite"/>
-            </circle>
-            <circle cx="500" cy="350" r="10" fill="#f59e0b" opacity="0.7">
-              <animate attributeName="cy" values="350;340;350" dur="3.5s" repeatCount="indefinite"/>
-            </circle>
-            
-            <!-- A&H Solutions Text -->
-            <text x="300" y="40" font-family="Inter, sans-serif" font-size="24" fill="#0ea5e9" class="dark:fill-teal-400" font-weight="bold" text-anchor="middle">
-              A&H Solutions
-              <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/>
-            </text>
-          </svg>
-        </div>
+        <Accreditations />
       </div>
     </div>
   </div>
@@ -185,8 +113,5 @@ function highlightTitle(title: string, highlightText: string) {
     100% { transform: translateY(0px); }
   }
   
-  /* Apply floating animation to the entire SVG container */
-  .fade-in svg {
-    animation: float 6s ease-in-out infinite;
-  }
+  /* Keep fade-in container ready for future visuals */
 </style>

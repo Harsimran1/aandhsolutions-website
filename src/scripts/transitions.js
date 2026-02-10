@@ -21,15 +21,24 @@ document.addEventListener('astro:page-load', () => {
   const parallaxElements = document.querySelectorAll('[data-parallax]');
   
   if (parallaxElements.length > 0) {
+    let ticking = false;
+    
     const handleParallax = () => {
-      parallaxElements.forEach(element => {
-        const speed = element.getAttribute('data-parallax') || 0.1;
-        const yPos = -(window.scrollY * speed);
-        element.style.transform = `translateY(${yPos}px)`;
-      });
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          parallaxElements.forEach(element => {
+            const speed = element.getAttribute('data-parallax') || 0.1;
+            const yPos = -(scrollY * speed);
+            element.style.transform = `translateY(${yPos}px)`;
+          });
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
     
-    window.addEventListener('scroll', handleParallax);
+    window.addEventListener('scroll', handleParallax, { passive: true });
   }
   
   // Smooth scroll for anchor links
@@ -43,11 +52,13 @@ document.addEventListener('astro:page-load', () => {
       const targetElement = document.querySelector(targetId);
       
       if (targetElement) {
-        const offsetTop = targetElement.getBoundingClientRect().top + window.pageYOffset;
-        
-        window.scrollTo({
-          top: offsetTop,
-          behavior: 'smooth'
+        requestAnimationFrame(() => {
+          const offsetTop = targetElement.getBoundingClientRect().top + window.pageYOffset;
+          
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
         });
       }
     });
