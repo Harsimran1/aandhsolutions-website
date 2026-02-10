@@ -1,9 +1,8 @@
 ---
-title: "Real Estate Investment App for Small-Scale Investors"
-description: "Mobile application enabling small-scale investors to manage real estate portfolios with real-time tracking, performance analytics, and intuitive portfolio management."
-excerpt: "Cross-platform mobile app built with React Native and Golang that simplified real estate portfolio management for small-scale investors."
-publishedAt: "2023-06-06"
-updatedAt: "2024-10-06"
+title: "Property Pros: Real Estate Investment App"
+description: "Mobile-first platform that lets investors track real estate portfolios, performance metrics, and agreements in one place."
+excerpt: "Developed a real estate investment app that centralizes portfolio tracking, performance insights, and secure document access."
+publishedAt: "2024-01-07"
 author:
   name: "A&H Solutions Team"
   email: "contact@aandhsolutions.com"
@@ -25,8 +24,19 @@ technologies:
   - "WebSocket"
   - "JWT Authentication"
   - "RESTful APIs"
-image: "/case-studies/real-estate-app-portfolio.jpg"
+image: "/case-studies/real-estate-1.png"
 imageAlt: "Real estate investment app showing portfolio dashboard with performance metrics"
+gallery:
+  - "/case-studies/real-estate-1.png"
+  - "/case-studies/real-estate-2.png"
+  - "/case-studies/real-estate-3.png"
+  - "/case-studies/real-estate-4.png"
+  - "/case-studies/real-estate-5.png"
+  - "/case-studies/real-estate-6.png"
+  - "/case-studies/real-estate-7.png"
+  - "/case-studies/real-estate-8.png"
+  - "/case-studies/real-estate-9.png"
+  - "/case-studies/real-estate-10.png"
 results:
   timeline: "12 weeks"
   metrics:
@@ -53,7 +63,7 @@ relatedDomains:
 
 ## Project Overview
 
-Our client, a real estate investment company, needed a comprehensive mobile application to serve small-scale investors who required better tools for managing their real estate portfolios. The app needed to provide real-time portfolio tracking, performance analytics, and fund management capabilities, all wrapped in an intuitive interface designed for non-technical users.
+Property Pros needed a mobile-first platform that would help investors manage their real estate portfolios in one place. The goal was to deliver real-time performance insights, easy access to documents, and a clear, investor-friendly experience.
 
 ## The Challenge
 
@@ -72,7 +82,7 @@ Our client, a real estate investment company, needed a comprehensive mobile appl
 
 ## Our Solution
 
-We developed a comprehensive mobile application using React Native for the frontend and Golang for the backend, creating a scalable, secure, and user-friendly platform for real estate portfolio management.
+We built a mobile-first investment app that centralizes holdings, performance metrics, and secure document access, helping investors track portfolios with clarity and confidence.
 
 ### Core Features Delivered
 

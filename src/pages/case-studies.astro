@@ -3,14 +3,59 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import HeroSection from '../components/HeroSection.astro';
+import CaseStudySlider from '../components/CaseStudySlider.astro';
 import { getCollection } from 'astro:content';
+
+function getYouTubeEmbed(url: string | undefined) {
+  if (!url) return null;
+  try {
+    const parsed = new URL(url);
+    if (parsed.hostname.includes('youtu.be')) {
+      const id = parsed.pathname.slice(1);
+      if (!id) return null;
+      return `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&controls=1&rel=0&playsinline=1`;
+    }
+    if (parsed.hostname.includes('youtube.com')) {
+      if (parsed.pathname.startsWith('/embed/')) {
+        return `${parsed.origin}${parsed.pathname}?autoplay=1&mute=1&controls=1&rel=0&playsinline=1`;
+      }
+      const id = parsed.searchParams.get('v');
+      if (!id) return null;
+      return `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&controls=1&rel=0&playsinline=1`;
+    }
+  } catch (_) {
+    return null;
+  }
+  return null;
+}
 
 const caseStudies = await getCollection('case-studies', ({ data }) => {
   return !data.draft;
 });
 
-// Sort case studies by published date (newest first)
-caseStudies.sort((a, b) => new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime());
+const featuredOrder = [
+  'propcan-real-estate-platform',
+  'sigxa-medical-scribe',
+  'coursera-degree-progress',
+  'mycloudsync-patient-flow',
+  'juree-legal-translations',
+  'smartvet-medical-translation',
+  'data4life-patient-platform',
+  'aquanomix-water-monitoring',
+  'greenswapp-apis',
+  'levven-smart-home',
+  'cannabis-ecommerce-platform',
+  'babajob-job-marketplace',
+];
+
+const orderIndex = new Map(featuredOrder.map((slug, index) => [slug, index]));
+
+caseStudies.sort((a, b) => {
+  const aIdx = orderIndex.has(a.slug) ? orderIndex.get(a.slug) : Infinity;
+  const bIdx = orderIndex.has(b.slug) ? orderIndex.get(b.slug) : Infinity;
+  if (aIdx !== bIdx) return aIdx - bIdx;
+  return new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime();
+});
 ---
 
 <Layout title="Case Studies - A&H Solutions">
@@ -53,8 +98,22 @@ caseStudies.sort((a, b) => new Date(b.data.publishedAt).getTime() - new Date(a.d
                   <a href={`/case-studies/${caseStudy.slug}`} class="btn-primary">Read Full Case Study</a>
                 </div>
                 <div class={`rounded-lg overflow-hidden shadow-xl ${index % 2 === 1 ? 'order-1 md:order-2' : ''}`}>
-                  {caseStudy.data.image ? (
-                    <img src={caseStudy.data.image} alt={caseStudy.data.imageAlt || caseStudy.data.title} class="w-full h-auto" />
+                  {caseStudy.data.videoUrl ? (
+                    <div class="relative w-full aspect-video bg-black">
+                      <iframe
+                        class="absolute inset-0 w-full h-full"
+                        src={getYouTubeEmbed(caseStudy.data.videoUrl)}
+                        title={`${caseStudy.data.title} video`}
+                        frameborder="0"
+                        allow="autoplay; encrypted-media; picture-in-picture"
+                        allowfullscreen
+                      ></iframe>
+                    </div>
+                  ) : caseStudy.data.image ? (
+                    <CaseStudySlider
+                      images={caseStudy.data.gallery && caseStudy.data.gallery.length > 0 ? caseStudy.data.gallery : [caseStudy.data.image]}
+                      altBase={caseStudy.data.imageAlt || caseStudy.data.title}
+                    />
                   ) : (
                     <div class="w-full h-64 bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center">
                       <span class="text-white text-xl font-semibold">{caseStudy.data.client?.name || 'Case Study'}</span>

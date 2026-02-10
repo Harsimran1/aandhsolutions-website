@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import CaseStudySlider from '../../components/CaseStudySlider.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -25,6 +26,29 @@ const services = await getCollection('services', ({ data }) => {
 const relatedCaseStudies = await getCollection('case-studies', ({ data }) => {
   return !data.draft && data.client?.industry === caseStudy.data.client?.industry && data.title !== caseStudy.data.title;
 });
+
+function getYouTubeEmbed(url) {
+  if (!url) return null;
+  try {
+    const parsed = new URL(url);
+    if (parsed.hostname.includes('youtu.be')) {
+      const id = parsed.pathname.slice(1);
+      if (!id) return null;
+      return `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&controls=1&rel=0&playsinline=1`;
+    }
+    if (parsed.hostname.includes('youtube.com')) {
+      if (parsed.pathname.startsWith('/embed/')) {
+        return `${parsed.origin}${parsed.pathname}?autoplay=1&mute=1&controls=1&rel=0&playsinline=1`;
+      }
+      const id = parsed.searchParams.get('v');
+      if (!id) return null;
+      return `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&controls=1&rel=0&playsinline=1`;
+    }
+  } catch (_) {
+    return null;
+  }
+  return null;
+}
 ---
 
 <Layout title={`${caseStudy.data.title} - A&H Solutions Case Studies`} description={caseStudy.data.description || caseStudy.data.excerpt || caseStudy.data.title}>
@@ -73,13 +97,27 @@ const relatedCaseStudies = await getCollection('case-studies', ({ data }) => {
           </div>
         </div>
         
-        {caseStudy.data.image && (
-          <img 
-            src={caseStudy.data.image} 
-            alt={caseStudy.data.imageAlt || caseStudy.data.title}
-            class="w-full h-auto rounded-xl mb-10 object-cover"
-            style="max-height: 500px;"
-          />
+        {caseStudy.data.videoUrl ? (
+          <div class="rounded-xl mb-10 overflow-hidden bg-black">
+            <div class="relative w-full" style="padding-top: 56.25%;">
+              <iframe
+                class="absolute inset-0 w-full h-full"
+                src={getYouTubeEmbed(caseStudy.data.videoUrl)}
+                title={`${caseStudy.data.title} video`}
+                frameborder="0"
+                allow="autoplay; encrypted-media; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        ) : caseStudy.data.image && (
+          <div class="rounded-xl mb-10 overflow-hidden">
+            <CaseStudySlider
+              images={caseStudy.data.gallery && caseStudy.data.gallery.length > 0 ? caseStudy.data.gallery : [caseStudy.data.image]}
+              altBase={caseStudy.data.imageAlt || caseStudy.data.title}
+              maxHeight="500px"
+            />
+          </div>
         )}
 
         <!-- Client & Project Overview -->

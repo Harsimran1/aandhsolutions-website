@@ -46,6 +46,8 @@ const caseStudies = defineCollection({
     technologies: z.array(z.string()).default([]),
     image: z.string().optional(),
     imageAlt: z.string().optional(),
+    gallery: z.array(z.string()).default([]),
+    videoUrl: z.string().url().optional(),
     results: z.object({
       timeline: z.string().optional(),
       impact: z.array(z.string()).default([]),

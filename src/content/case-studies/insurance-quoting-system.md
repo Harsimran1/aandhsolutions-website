@@ -1,9 +1,8 @@
 ---
-title: "Revolutionizing Insurance Quoting with an Intuitive App"
-description: "How we developed a React-based insurance quoting system that reduced quote generation time by 85% while improving accuracy and customer satisfaction."
-excerpt: "A comprehensive insurance quoting solution that streamlined the quote generation process through Compulife API integration and intuitive user interface design."
-publishedAt: "2023-07-08"
-updatedAt: "2023-08-08"
+title: "SGS Coverage: Insurance Quoting Engine"
+description: "Automated insurance quoting engine built on Compulife APIs to reduce manual effort, improve accuracy, and deliver faster quotes."
+excerpt: "Developed an automated insurance quoting engine for SGS Coverage that streamlined quote generation and improved customer response times."
+publishedAt: "2024-01-06"
 author:
   name: "A&H Solutions Team"
   email: "contact@aandhsolutions.com"
@@ -24,8 +23,19 @@ technologies:
   - "Compulife API"
   - "HTML5"
   - "CSS3"
-image: "/case-studies/insurance-app-dashboard.jpg"
+image: "/case-studies/insurance-1.png"
 imageAlt: "Insurance quoting system dashboard showing quote comparison"
+gallery:
+  - "/case-studies/insurance-1.png"
+  - "/case-studies/insurance-2.png"
+  - "/case-studies/insurance-3.png"
+  - "/case-studies/insurance-4.png"
+  - "/case-studies/insurance-5.png"
+  - "/case-studies/insurance-6.png"
+  - "/case-studies/insurance-7.png"
+  - "/case-studies/insurance-8.png"
+  - "/case-studies/insurance-9.png"
+  - "/case-studies/insurance-10.png"
 results:
   timeline: "6 weeks"
   metrics:
@@ -52,7 +62,7 @@ relatedDomains:
 
 ## Project Overview
 
-Our client, an insurance provider, faced significant challenges in providing accurate and timely insurance quotes to their customers. The existing manual process was time-consuming, error-prone, and lacked the ability to quickly retrieve quotes from multiple insurance providers. This hindered the company's ability to offer competitive rates and meet customer expectations.
+SGS Coverage needed a faster, more reliable way to generate insurance quotes. Their manual workflow was slow, error-prone, and made it difficult to compare rates across providers, which impacted customer response times and competitiveness.
 
 ## The Challenge
 
@@ -72,7 +82,7 @@ Our client, an insurance provider, faced significant challenges in providing acc
 
 ## Our Solution
 
-We developed a cutting-edge Insurance Quoting System using React, creating a single-page application that streamlined the entire quoting process through automation, API integration, and intuitive design.
+We built an automated quoting engine backed by Compulife APIs, streamlining quote generation and reducing manual entry while improving speed and accuracy.
 
 ### Core Features Delivered
 
