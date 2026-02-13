@@ -1,0 +1,35 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Hero from '../../components/Hero.astro';
+import Features from '../../components/Features.astro';
+import Domains from '../../components/Domains.astro';
+import HowItWorks from '../../components/HowItWorks.astro';
+import ClientImpact from '../../components/ClientImpact.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import PricingTeaser from '../../components/PricingTeaser.astro';
+import FAQ from '../../components/FAQ.astro';
+import Contact from '../../components/Contact.astro';
+import Footer from '../../components/Footer.astro';
+import { resolveLocale } from '../../lib/i18n';
+import { getPageCopy } from '../../i18n/page-copy';
+
+const locale = resolveLocale(Astro.currentLocale, Astro.url.pathname);
+const copy = getPageCopy(locale);
+---
+
+<Layout title={copy.home.title} description={copy.home.description}>
+  <Header />
+  <main>
+    <Hero />
+    <Features />
+    <Domains />
+    <HowItWorks />
+    <ClientImpact />
+    <Testimonials />
+    <PricingTeaser />
+    <FAQ />
+    <Contact />
+  </main>
+  <Footer />
+</Layout>

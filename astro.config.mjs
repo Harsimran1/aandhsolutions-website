@@ -8,6 +8,10 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.aandhsolutions.com',
+  redirects: {
+    '/case-studies': '/en/case-studies',
+    '/case-studies/': '/en/case-studies',
+  },
   i18n: {
     locales: ['en', 'fr', 'de', 'es'],
     defaultLocale: 'en',

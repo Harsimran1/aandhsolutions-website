@@ -1,13 +1,8 @@
-import en from './locales/en.json';
-import de from './locales/de.json';
-import fr from './locales/fr.json';
-import es from './locales/es.json';
 import type { Locale } from '../lib/i18n';
-
-const copy = { en, de, fr, es } as const;
-
+import { getLocaleCopy } from './locale-copy';
+import en from './locales/en.json';
 type PageCopy = (typeof en)['pages'];
 
 export function getPageCopy(locale: Locale): PageCopy {
-  return copy[locale]?.pages ?? copy.en.pages;
+  return getLocaleCopy(locale).pages ?? getLocaleCopy('en').pages;
 }

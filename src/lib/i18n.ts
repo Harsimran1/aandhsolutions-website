@@ -35,6 +35,11 @@ export function getLocaleFromPathname(pathname: string): Locale {
 }
 
 export function resolveLocale(currentLocale: string | undefined, pathname: string): Locale {
+  const localeFromPath = getLocaleFromPathname(pathname);
+  if (localeFromPath !== DEFAULT_LOCALE || pathname === `/${DEFAULT_LOCALE}` || pathname.startsWith(`/${DEFAULT_LOCALE}/`)) {
+    return localeFromPath;
+  }
+
   if (currentLocale) {
     const normalized = currentLocale.toLowerCase();
     if (isLocale(normalized)) {
@@ -47,7 +52,7 @@ export function resolveLocale(currentLocale: string | undefined, pathname: strin
     }
   }
 
-  return getLocaleFromPathname(pathname);
+  return localeFromPath;
 }
 
 export function stripLocaleFromPathname(pathname: string): string {

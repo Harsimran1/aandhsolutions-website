@@ -15,6 +15,63 @@
     "freeProjectBlueprint": {
       "title": "FREE Project Blueprint & Technical Roadmap | A&H Solutions",
       "description": "Get a comprehensive 25-30 page project blueprint absolutely free. Includes technical architecture, wireframes, risk analysis, and implementation roadmap. Transform your idea into a actionable development plan."
+    },
+    "blog": {
+      "title": "Blog - A&H Solutions",
+      "description": "Latest insights, tutorials, and updates from A&H Solutions development team.",
+      "heroTitle": "Latest Updates & News",
+      "heroHighlight": "Updates",
+      "heroDescription": "Stay up to date with our latest product updates, feature releases, and company news.",
+      "browseByTopicTitle": "Browse by Topic",
+      "browseByTopicDescription": "Filter articles by technology, tools, or topic",
+      "allPostsLabel": "All Posts",
+      "loadMoreLabel": "Load More Articles",
+      "backToBlog": "Back to Blog",
+      "relatedArticles": "Related Articles",
+      "shareThisArticle": "Share this article",
+      "breadcrumbHome": "Home",
+      "breadcrumbBlog": "Blog",
+      "articleSection": "Technology",
+      "moreLabel": "more"
+    },
+    "caseStudies": {
+      "title": "Case Studies - A&H Solutions",
+      "heroTitle": "Case Studies",
+      "heroHighlight": "Studies",
+      "heroDescription": "See how our clients are achieving success with A&H Solutions.",
+      "readFullCaseStudy": "Read Full Case Study",
+      "defaultCardLabel": "Case Study",
+      "comingSoonTitle": "Case Studies Coming Soon",
+      "comingSoonDescription": "We're currently working on documenting our successful client projects. Check back soon to see how we've helped businesses achieve their goals.",
+      "discussProject": "Discuss Your Project",
+      "blueprintTitle": "Start With Your FREE Project Blueprint",
+      "blueprintDescription": "Before diving into development, get a comprehensive project roadmap that sets you up for success like our case study clients.",
+      "blueprintMeta": "Technical architecture • Wireframes • Risk analysis • Implementation plan • 100% Free",
+      "getBlueprint": "Get My Free Blueprint",
+      "blueprintFootnote": "Delivered in 3-5 business days • No obligation",
+      "readyTitle": "Ready to achieve similar results?",
+      "readyDescription": "Let A&H Solutions help transform your business with our proven expertise. Our team is ready to help you succeed.",
+      "learnAboutUs": "Learn About Us",
+      "backToCaseStudies": "Back to Case Studies",
+      "teamLabel": "A&H Solutions Team",
+      "projectDetails": "Project Details",
+      "clientLabel": "Client",
+      "visitWebsite": "Visit Website",
+      "technologiesUsed": "Technologies Used",
+      "projectTimeline": "Project Timeline",
+      "startYourProject": "Start Your Project",
+      "viewOurServices": "View Our Services",
+      "projectResults": "Project Results",
+      "relatedServices": "Related Services",
+      "learnMore": "Learn More",
+      "moreCaseStudiesPrefix": "More",
+      "moreCaseStudiesSuffix": "Case Studies",
+      "readCaseStudy": "Read Case Study",
+      "tagsLabel": "Tags"
     }
+  },
+  "content": {
+    "blog": {},
+    "caseStudies": {}
   }
 }
