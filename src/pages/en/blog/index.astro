@@ -1,0 +1,227 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import HeroSection from '../../../components/HeroSection.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog', ({ data }) => {
+  return !data.draft;
+});
+
+// Sort posts by published date (newest first)  
+posts.sort((a, b) => new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime());
+
+const oldPosts = [
+  {
+    id: 'new-dashboard-features',
+    title: 'New Dashboard Features Released',
+    excerpt: "We've added powerful new analytics tools to help you gain deeper insights into your business performance.",
+    date: 'May 15, 2025',
+    author: 'Sarah Johnson',
+    authorRole: 'Product Manager',
+    authorAvatar: 'https://randomuser.me/api/portraits/women/32.jpg',
+    category: 'Product Updates',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'
+  },
+  {
+    id: 'mobile-app-launch',
+    title: 'Introducing Our Mobile App',
+    excerpt: 'Access your workspace from anywhere with our new mobile app, now available for iOS and Android devices.',
+    date: 'April 28, 2025',
+    author: 'Michael Chen',
+    authorRole: 'CTO',
+    authorAvatar: 'https://randomuser.me/api/portraits/men/46.jpg',
+    category: 'New Features',
+    image: 'https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'
+  },
+  {
+    id: 'api-improvements',
+    title: 'API Improvements and New Endpoints',
+    excerpt: `We've expanded our API capabilities with new endpoints and improved documentation for developers.`,
+    date: 'April 10, 2025',
+    author: 'Emily Rodriguez',
+    authorRole: 'Lead Developer',
+    authorAvatar: 'https://randomuser.me/api/portraits/women/65.jpg',
+    category: 'Developer Updates',
+    image: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'
+  },
+  {
+    id: 'team-collaboration-tools',
+    title: 'Enhanced Team Collaboration Tools',
+    excerpt: 'Collaborate more effectively with your team using our new real-time editing and commenting features.',
+    date: 'March 22, 2025',
+    author: 'David Wilson',
+    authorRole: 'Product Designer',
+    authorAvatar: 'https://randomuser.me/api/portraits/men/22.jpg',
+    category: 'Product Updates',
+    image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'
+  },
+  {
+    id: 'security-enhancements',
+    title: 'Security Enhancements and Compliance Updates',
+    excerpt: `We've strengthened our security measures and added new compliance certifications to keep your data safe.`,
+    date: 'March 5, 2025',
+    author: 'Jessica Lee',
+    authorRole: 'Security Officer',
+    authorAvatar: 'https://randomuser.me/api/portraits/women/45.jpg',
+    category: 'Security',
+    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'
+  },
+  {
+    id: 'integration-marketplace',
+    title: 'Introducing Our Integration Marketplace',
+    excerpt: 'Connect your favorite tools and services with our new integration marketplace featuring over 50 partners.',
+    date: 'February 18, 2025',
+    author: 'Robert Kim',
+    authorRole: 'Partnership Manager',
+    authorAvatar: 'https://randomuser.me/api/portraits/men/67.jpg',
+    category: 'Integrations',
+    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'
+  }
+];
+
+// Get all unique tags from all posts
+const allTags = posts.flatMap(post => post.data.tags || []);
+const uniqueTags = [...new Set(allTags)].sort();
+---
+
+<Layout title="Blog - A&H Solutions" description="Latest insights, tutorials, and updates from A&H Solutions development team.">
+  <Header />
+  <main>
+    <HeroSection 
+      title="Latest Updates & News" 
+      highlightText="Updates"
+      description="Stay up to date with our latest product updates, feature releases, and company news."
+    />
+    
+    <!-- Tag Filter -->
+    <div class="container-custom py-8">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Browse by Topic</h2>
+        <p class="text-gray-600 dark:text-gray-300">Filter articles by technology, tools, or topic</p>
+      </div>
+      <div class="flex flex-wrap gap-3 justify-center mb-12">
+        <button class="px-4 py-2 rounded-full bg-primary-600 text-white font-medium text-sm hover:bg-primary-700 transition-colors tag-filter active" data-tag="all">
+          All Posts ({posts.length})
+        </button>
+        {uniqueTags.map((tag) => {
+          const tagCount = posts.filter(post => post.data.tags?.includes(tag)).length;
+          return (
+            <button class="px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-medium text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors tag-filter" data-tag={tag}>
+              {tag} ({tagCount})
+            </button>
+          );
+        })}
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="posts-grid">
+        {posts.map((post, index) => (
+          <div class="card border border-gray-200 dark:border-gray-700 overflow-hidden slide-up blog-post" style={'animation-delay: ' + (index * 100) + 'ms'} data-tags={JSON.stringify(post.data.tags || [])}>
+            <a href={'/blog/' + post.slug} class="block">
+              {post.data.image && (
+                <img 
+                  src={post.data.image} 
+                  alt={post.data.imageAlt || post.data.title}
+                  class="w-full h-48 object-cover"
+                  loading="lazy"
+                />
+              )}
+            </a>
+            <div class="p-6">
+              <div class="flex items-center mb-4 flex-wrap gap-2">
+                {post.data.tags && post.data.tags.length > 0 && (
+                  <>
+                    <div class="flex flex-wrap gap-2">
+                      {post.data.tags.slice(0, 3).map((tag) => (
+                        <span class="px-2 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 text-xs rounded-full font-medium">{tag}</span>
+                      ))}
+                      {post.data.tags.length > 3 && (
+                        <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 text-xs rounded-full">+{post.data.tags.length - 3} more</span>
+                      )}
+                    </div>
+                    <span class="mx-2 text-gray-300 dark:text-gray-600">•</span>
+                  </>
+                )}
+                <span class="text-sm text-gray-500 dark:text-gray-400">{post.data.publishedAt.toLocaleDateString()}</span>
+              </div>
+              <a href={'/blog/' + post.slug} class="block mb-3">
+                <h2 class="text-xl font-semibold text-gray-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-colors">{post.data.title}</h2>
+              </a>
+              <p class="text-gray-600 dark:text-gray-300 mb-6">{post.data.excerpt || post.data.description || ''}</p>
+              <div class="flex items-center">
+                {post.data.author.avatar && (
+                  <img 
+                    src={post.data.author.avatar} 
+                    alt={post.data.author.name} 
+                    class="w-10 h-10 rounded-full mr-3 object-cover"
+                    loading="lazy"
+                  />
+                )}
+                <div>
+                  <p class="font-medium text-gray-900 dark:text-white">{post.data.author.name}</p>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">{post.data.author.email}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 flex justify-center">
+        <a href="#" class="btn-outline">
+          Load More Articles
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v10.586l3.293-3.293a1 1 0 011.414 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L9 14.586V4a1 1 0 011-1z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </main>
+  <Footer />
+  
+  <script>
+    // Tag filtering functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const tagFilters = document.querySelectorAll('.tag-filter');
+      const blogPosts = document.querySelectorAll('.blog-post');
+      
+      tagFilters.forEach(filter => {
+        filter.addEventListener('click', function() {
+          const selectedTag = this.getAttribute('data-tag');
+          
+          // Update active state
+          tagFilters.forEach(f => {
+            f.classList.remove('active', 'bg-primary-600', 'text-white');
+            f.classList.add('bg-gray-100', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-300');
+          });
+          
+          this.classList.add('active', 'bg-primary-600', 'text-white');
+          this.classList.remove('bg-gray-100', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-300');
+          
+          // Filter posts
+          blogPosts.forEach(post => {
+            const postTags = JSON.parse(post.getAttribute('data-tags'));
+            
+            if (selectedTag === 'all' || postTags.includes(selectedTag)) {
+              post.style.display = 'block';
+              post.classList.add('slide-up');
+            } else {
+              post.style.display = 'none';
+              post.classList.remove('slide-up');
+            }
+          });
+          
+          // Update animation delays for visible posts
+          let visibleIndex = 0;
+          blogPosts.forEach(post => {
+            if (post.style.display !== 'none') {
+              post.style.animationDelay = `${visibleIndex * 100}ms`;
+              visibleIndex++;
+            }
+          });
+        });
+      });
+    });
+  </script>
+</Layout>

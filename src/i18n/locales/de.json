@@ -1,0 +1,20 @@
+{
+  "pages": {
+    "home": {
+      "title": "A&H Solutions | Individuelle App-Entwicklung und KI-Integrationen",
+      "description": "A&H Solutions entwickelt individuelle Apps, Webplattformen und KI-Integrationen fur Startups und Unternehmen."
+    },
+    "pricing": {
+      "title": "Preise - A&H Solutions"
+    },
+    "contact": {
+      "title": "Kontakt - A & H Solutions",
+      "heroTitle": "Kontakt",
+      "heroDescription": "Wir helfen Ihnen gern bei allen Fragen zu unseren Leistungen."
+    },
+    "freeProjectBlueprint": {
+      "title": "KOSTENLOSER Projektplan und technische Roadmap | A&H Solutions",
+      "description": "Erhalten Sie kostenlos einen umfassenden Projektplan mit technischer Architektur, Wireframes, Risikoanalyse und Umsetzungsfahrplan."
+    }
+  }
+}

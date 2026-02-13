@@ -1,67 +1,153 @@
 ---
-// Use public logo to avoid SSR serialization issues
+import { SUPPORTED_LOCALES, resolveLocale, localizePath, switchLocalePath } from '../lib/i18n';
+import { getDictionary } from '../i18n/dictionaries';
+
+const locale = resolveLocale(Astro.currentLocale, Astro.url.pathname);
+const t = getDictionary(locale);
+const cityLabelMap = {
+  en: {
+    '/toronto': 'Toronto',
+    '/vancouver': 'Vancouver',
+    '/calgary': 'Calgary',
+    '/montreal': 'Montreal',
+    '/edmonton': 'Edmonton',
+    '/ottawa': 'Ottawa',
+    '/new-york': 'New York',
+    '/los-angeles': 'Los Angeles',
+    '/chicago': 'Chicago',
+    '/seattle': 'Seattle',
+    '/san-francisco': 'San Francisco',
+    '/london': 'London',
+    '/paris': 'Paris',
+    '/berlin': 'Berlin',
+    '/amsterdam': 'Amsterdam',
+    '/zurich': 'Zurich',
+    '/stockholm': 'Stockholm',
+  },
+  de: {
+    '/toronto': 'Toronto',
+    '/vancouver': 'Vancouver',
+    '/calgary': 'Calgary',
+    '/montreal': 'Montreal',
+    '/edmonton': 'Edmonton',
+    '/ottawa': 'Ottawa',
+    '/new-york': 'Neu York',
+    '/los-angeles': 'Los Angeles',
+    '/chicago': 'Chicago',
+    '/seattle': 'Seattle',
+    '/san-francisco': 'San Francisco',
+    '/london': 'London',
+    '/paris': 'Paris',
+    '/berlin': 'Berlin',
+    '/amsterdam': 'Amsterdam',
+    '/zurich': 'Zurich',
+    '/stockholm': 'Stockholm',
+  },
+  fr: {
+    '/toronto': 'Toronto',
+    '/vancouver': 'Vancouver',
+    '/calgary': 'Calgary',
+    '/montreal': 'Montreal',
+    '/edmonton': 'Edmonton',
+    '/ottawa': 'Ottawa',
+    '/new-york': 'New York',
+    '/los-angeles': 'Los Angeles',
+    '/chicago': 'Chicago',
+    '/seattle': 'Seattle',
+    '/san-francisco': 'San Francisco',
+    '/london': 'Londres',
+    '/paris': 'Paris',
+    '/berlin': 'Berlin',
+    '/amsterdam': 'Amsterdam',
+    '/zurich': 'Zurich',
+    '/stockholm': 'Stockholm',
+  },
+  es: {
+    '/toronto': 'Toronto',
+    '/vancouver': 'Vancouver',
+    '/calgary': 'Calgary',
+    '/montreal': 'Montreal',
+    '/edmonton': 'Edmonton',
+    '/ottawa': 'Ottawa',
+    '/new-york': 'Nueva York',
+    '/los-angeles': 'Los Angeles',
+    '/chicago': 'Chicago',
+    '/seattle': 'Seattle',
+    '/san-francisco': 'San Francisco',
+    '/london': 'Londres',
+    '/paris': 'Paris',
+    '/berlin': 'Berlin',
+    '/amsterdam': 'Amsterdam',
+    '/zurich': 'Zurich',
+    '/stockholm': 'Estocolmo',
+  },
+} as const;
+const cityText = (url: string, fallback: string) =>
+  cityLabelMap[locale]?.[url as keyof (typeof cityLabelMap)[typeof locale]] ?? fallback;
 
 const allPages = [
-  { text: "Home", url: "/" },
-  { text: "Case Studies", url: "/case-studies" },
-  { text: "Pricing", url: "/pricing" },
-  { text: "FAQ", url: "/faqs" },
-  { text: "Blog", url: "/blog" },
-  { text: "About Us", url: "/company" },
-  { text: "Careers", url: "/career" },
-  { text: "Contact", url: "/contact" },
-  { text: "Reviews", url: "/reviews" },
-  { text: "Privacy Policy", url: "/privacy-policy" },
-  { text: "Terms of Service", url: "/terms-conditions" },
-  { text: "404 Page", url: "/404" },
-  // Canadian Cities
-  { text: "Toronto", url: "/toronto" },
-  { text: "Vancouver", url: "/vancouver" },
-  { text: "Calgary", url: "/calgary" },
-  { text: "Montreal", url: "/montreal" },
-  { text: "Edmonton", url: "/edmonton" },
-  { text: "Ottawa", url: "/ottawa" },
-  // US Cities
-  { text: "New York", url: "/new-york" },
-  { text: "Los Angeles", url: "/los-angeles" },
-  { text: "Chicago", url: "/chicago" },
-  { text: "Seattle", url: "/seattle" },
-  { text: "San Francisco", url: "/san-francisco" },
-  // European Cities
-  { text: "London", url: "/london" },
-  { text: "Paris", url: "/paris" },
-  { text: "Berlin", url: "/berlin" },
-  { text: "Amsterdam", url: "/amsterdam" },
-  { text: "Zurich", url: "/zurich" },
-  { text: "Stockholm", url: "/stockholm" }
+  { text: t.nav.home, url: '/' },
+  { text: t.common.caseStudies, url: '/case-studies' },
+  { text: t.common.pricing, url: '/pricing' },
+  { text: t.footer.faq, url: '/faqs' },
+  { text: t.common.blog, url: '/blog' },
+  { text: t.common.aboutUs, url: '/company' },
+  { text: t.common.careers, url: '/career' },
+  { text: t.common.contact, url: '/contact' },
+  { text: t.common.reviews, url: '/reviews' },
+  { text: t.common.privacyPolicy, url: '/privacy-policy' },
+  { text: t.common.termsOfService, url: '/terms-conditions' },
+  { text: t.common.page404, url: '/404' },
+  { text: cityText('/toronto', 'Toronto'), url: '/toronto' },
+  { text: cityText('/vancouver', 'Vancouver'), url: '/vancouver' },
+  { text: cityText('/calgary', 'Calgary'), url: '/calgary' },
+  { text: cityText('/montreal', 'Montreal'), url: '/montreal' },
+  { text: cityText('/edmonton', 'Edmonton'), url: '/edmonton' },
+  { text: cityText('/ottawa', 'Ottawa'), url: '/ottawa' },
+  { text: cityText('/new-york', 'New York'), url: '/new-york' },
+  { text: cityText('/los-angeles', 'Los Angeles'), url: '/los-angeles' },
+  { text: cityText('/chicago', 'Chicago'), url: '/chicago' },
+  { text: cityText('/seattle', 'Seattle'), url: '/seattle' },
+  { text: cityText('/san-francisco', 'San Francisco'), url: '/san-francisco' },
+  { text: cityText('/london', 'London'), url: '/london' },
+  { text: cityText('/paris', 'Paris'), url: '/paris' },
+  { text: cityText('/berlin', 'Berlin'), url: '/berlin' },
+  { text: cityText('/amsterdam', 'Amsterdam'), url: '/amsterdam' },
+  { text: cityText('/zurich', 'Zurich'), url: '/zurich' },
+  { text: cityText('/stockholm', 'Stockholm'), url: '/stockholm' },
 ];
 
 const cityPages = [
-  // Canadian Cities
-  { text: "Toronto", url: "/toronto" },
-  { text: "Vancouver", url: "/vancouver" },
-  { text: "Calgary", url: "/calgary" },
-  { text: "Montreal", url: "/montreal" },
-  { text: "Edmonton", url: "/edmonton" },
-  { text: "Ottawa", url: "/ottawa" },
-  // US Cities
-  { text: "New York", url: "/new-york" },
-  { text: "Los Angeles", url: "/los-angeles" },
-  { text: "Chicago", url: "/chicago" },
-  { text: "Seattle", url: "/seattle" },
-  { text: "San Francisco", url: "/san-francisco" },
-  // European Cities
-  { text: "London", url: "/london" },
-  { text: "Paris", url: "/paris" },
-  { text: "Berlin", url: "/berlin" },
-  { text: "Amsterdam", url: "/amsterdam" },
-  { text: "Zurich", url: "/zurich" },
-  { text: "Stockholm", url: "/stockholm" }
+  { text: 'Toronto', url: '/toronto' },
+  { text: 'Vancouver', url: '/vancouver' },
+  { text: 'Calgary', url: '/calgary' },
+  { text: 'Montreal', url: '/montreal' },
+  { text: 'Edmonton', url: '/edmonton' },
+  { text: 'Ottawa', url: '/ottawa' },
+  { text: 'New York', url: '/new-york' },
+  { text: 'Los Angeles', url: '/los-angeles' },
+  { text: 'Chicago', url: '/chicago' },
+  { text: 'Seattle', url: '/seattle' },
+  { text: 'San Francisco', url: '/san-francisco' },
+  { text: 'London', url: '/london' },
+  { text: 'Paris', url: '/paris' },
+  { text: 'Berlin', url: '/berlin' },
+  { text: 'Amsterdam', url: '/amsterdam' },
+  { text: 'Zurich', url: '/zurich' },
+  { text: 'Stockholm', url: '/stockholm' },
 ];
+
+const languageOptions = SUPPORTED_LOCALES.map((code) => ({
+  code,
+  label: t.languageNames[code],
+  url: switchLocalePath(Astro.url.pathname, code),
+}));
+
+const localized = (path: string) => localizePath(path, locale);
 ---
 <header class="fixed w-full bg-white/90 dark:bg-secondary-950/90 backdrop-blur-xs z-50 py-4 transition-colors duration-300">
   <div class="container-custom flex items-center justify-between">
-    <a href="/" class="flex items-center" aria-label="Go to homepage">
+    <a href={localized('/')} class="flex items-center" aria-label="Go to homepage">
       <img
         src="/logo.svg"
         width="40"
@@ -74,30 +160,29 @@ const cityPages = [
       />
       <span class="ml-2 text-xl font-display font-semibold text-secondary-900 dark:text-white">A & H Solutions</span>
     </a>
-    
+
     <nav class="hidden md:flex items-center space-x-8">
-      <a href="/" class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">Home</a>
-      <a href="/#features" class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">Services</a>
-      <a href="/case-studies" class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">Case Studies</a>
-      <a href="/pricing" class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">Pricing</a>
-      <a href="/blog" class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">Blog</a>
-      <a href="/contact" class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">Contact</a>
-      
-      <!-- All Pages Dropdown -->
+      <a href={localized('/')} class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">{t.nav.home}</a>
+      <a href={localized('/#features')} class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">{t.nav.services}</a>
+      <a href={localized('/case-studies')} class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">{t.nav.caseStudies}</a>
+      <a href={localized('/pricing')} class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">{t.nav.pricing}</a>
+      <a href={localized('/blog')} class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">{t.nav.blog}</a>
+      <a href={localized('/contact')} class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">{t.nav.contact}</a>
+
       <div x-data="{ open: false }" class="relative">
-        <button 
-          @click="open = !open" 
+        <button
+          @click="open = !open"
           @click.away="open = false"
           class="flex items-center text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors"
         >
-          Resources
+          {t.nav.resources}
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
-        
-        <div 
-          x-show="open" 
+
+        <div
+          x-show="open"
           x-transition:enter="transition ease-out duration-200"
           x-transition:enter-start="opacity-0 scale-95"
           x-transition:enter-end="opacity-100 scale-100"
@@ -108,32 +193,30 @@ const cityPages = [
           x-cloak
         >
           <div class="py-2">
-            <!-- General Pages -->
-            <div class="px-4 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide">Pages</div>
-            {allPages.filter(page => !cityPages.some(city => city.url === page.url)).map(page => (
-              <a href={page.url} class="block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">
+            <div class="px-4 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide">{t.nav.pages}</div>
+            {allPages.filter((page) => !cityPages.some((city) => city.url === page.url)).map((page) => (
+              <a href={localized(page.url)} class="block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">
                 {page.text}
               </a>
             ))}
-            
-            <!-- Cities Section -->
+
             <div class="border-t border-gray-200 dark:border-gray-700 my-2"></div>
-            <div class="px-4 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide">Service Areas</div>
-            <div class="px-4 py-1 text-xs font-medium text-gray-600 dark:text-gray-400">Canada</div>
-            {cityPages.slice(0, 6).map(city => (
-              <a href={city.url} class="block px-6 py-1 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">
+            <div class="px-4 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide">{t.nav.serviceAreas}</div>
+            <div class="px-4 py-1 text-xs font-medium text-gray-600 dark:text-gray-400">{t.nav.canada}</div>
+            {cityPages.slice(0, 6).map((city) => (
+              <a href={localized(city.url)} class="block px-6 py-1 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">
                 {city.text}
               </a>
             ))}
-            <div class="px-4 py-1 text-xs font-medium text-gray-600 dark:text-gray-400">United States</div>
-            {cityPages.slice(6, 11).map(city => (
-              <a href={city.url} class="block px-6 py-1 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">
+            <div class="px-4 py-1 text-xs font-medium text-gray-600 dark:text-gray-400">{t.nav.unitedStates}</div>
+            {cityPages.slice(6, 11).map((city) => (
+              <a href={localized(city.url)} class="block px-6 py-1 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">
                 {city.text}
               </a>
             ))}
-            <div class="px-4 py-1 text-xs font-medium text-gray-600 dark:text-gray-400">Europe</div>
-            {cityPages.slice(11).map(city => (
-              <a href={city.url} class="block px-6 py-1 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">
+            <div class="px-4 py-1 text-xs font-medium text-gray-600 dark:text-gray-400">{t.nav.europe}</div>
+            {cityPages.slice(11).map((city) => (
+              <a href={localized(city.url)} class="block px-6 py-1 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">
                 {city.text}
               </a>
             ))}
@@ -141,10 +224,32 @@ const cityPages = [
         </div>
       </div>
     </nav>
-    
+
     <div class="flex items-center space-x-4">
-      <button 
-        x-on:click="darkMode = !darkMode" 
+      <div x-data="{ openLocale: false }" class="relative hidden sm:block">
+        <button
+          @click="openLocale = !openLocale"
+          @click.away="openLocale = false"
+          class="px-3 py-2 rounded-md text-sm border border-secondary-200 dark:border-secondary-700 text-secondary-700 dark:text-secondary-200"
+          aria-label="Select language"
+        >
+          {locale.toUpperCase()}
+        </button>
+        <div
+          x-show="openLocale"
+          x-cloak
+          class="absolute right-0 mt-2 w-32 bg-white dark:bg-secondary-900 rounded-md shadow-lg ring-1 ring-black/5"
+        >
+          {languageOptions.map((option) => (
+            <a href={option.url} class={`block px-3 py-2 text-sm hover:bg-secondary-100 dark:hover:bg-secondary-800 ${option.code === locale ? 'font-semibold' : ''}`}>
+              {option.label}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <button
+        x-on:click="darkMode = !darkMode"
         class="p-2 rounded-full text-secondary-500 hover:text-secondary-700 dark:text-secondary-400 dark:hover:text-secondary-200 focus:outline-hidden focus:ring-2 focus:ring-primary-500"
         aria-label="Toggle dark mode"
       >
@@ -155,12 +260,11 @@ const cityPages = [
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
         </svg>
       </button>
-      
-      <a href="/free-project-blueprint" class="hidden sm:inline-flex btn-primary">FREE Project Blueprint</a>
-      
-      <!-- Mobile Menu Button and Dropdown -->
+
+      <a href={localized('/free-project-blueprint')} class="hidden sm:inline-flex btn-primary">{t.nav.freeBlueprint}</a>
+
       <div x-data="{ open: false, showAllPages: false }">
-        <button 
+        <button
           @click="open = !open"
           class="md:hidden p-2 rounded-md text-secondary-600 hover:text-secondary-900 dark:text-secondary-300 dark:hover:text-white focus:outline-hidden focus:ring-2 focus:ring-primary-500"
           aria-label="Toggle menu"
@@ -172,64 +276,66 @@ const cityPages = [
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
-        
-        <div 
-          x-show="open" 
+
+        <div
+          x-show="open"
           x-transition:enter="transition ease-out duration-200"
           x-transition:enter-start="opacity-0 scale-95"
           x-transition:enter-end="opacity-100 scale-100"
           x-transition:leave="transition ease-in duration-150"
           x-transition:leave-start="opacity-100 scale-100"
           x-transition:leave-end="opacity-0 scale-95"
-          class="absolute top-16 right-4 w-48 py-2 bg-white dark:bg-secondary-900 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-hidden"
+          class="absolute top-16 right-4 w-52 py-2 bg-white dark:bg-secondary-900 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-hidden"
           x-cloak
         >
-          <a href="/#features" class="block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">Services</a>
-          <a href="/case-studies" class="block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">Case Studies</a>
-          <a href="/pricing" class="block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">Pricing</a>
-          <a href="/blog" class="block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">Blog</a>
-          <a href="/contact" class="block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">Contact</a>
-          
-          <!-- Mobile All Pages Dropdown -->
-          <button 
-            @click="showAllPages = !showAllPages" 
+          <a href={localized('/#features')} class="block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">{t.nav.services}</a>
+          <a href={localized('/case-studies')} class="block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">{t.nav.caseStudies}</a>
+          <a href={localized('/pricing')} class="block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">{t.nav.pricing}</a>
+          <a href={localized('/blog')} class="block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">{t.nav.blog}</a>
+          <a href={localized('/contact')} class="block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">{t.nav.contact}</a>
+
+          <div class="border-t border-gray-200 dark:border-gray-700 mt-2 pt-2">
+            {languageOptions.map((option) => (
+              <a href={option.url} class={`block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800 ${option.code === locale ? 'font-semibold' : ''}`}>
+                {option.label}
+              </a>
+            ))}
+          </div>
+
+          <button
+            @click="showAllPages = !showAllPages"
             class="w-full text-left px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800 font-semibold border-t border-gray-200 dark:border-gray-700 mt-1 pt-1 flex items-center justify-between"
           >
-            Resources
+            {t.nav.resources}
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" :class="{ 'transform rotate-180': showAllPages }">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
-          
-          <div 
-            x-show="showAllPages" 
-            class="py-1 bg-gray-50 dark:bg-secondary-800"
-          >
-            <!-- General Pages -->
-            <div class="px-6 py-1 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide">Pages</div>
-            {allPages.filter(page => !cityPages.some(city => city.url === page.url)).map(page => (
-              <a href={page.url} class="block px-6 py-1 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-700">
+
+          <div x-show="showAllPages" class="py-1 bg-gray-50 dark:bg-secondary-800">
+            <div class="px-6 py-1 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide">{t.nav.pages}</div>
+            {allPages.filter((page) => !cityPages.some((city) => city.url === page.url)).map((page) => (
+              <a href={localized(page.url)} class="block px-6 py-1 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-700">
                 {page.text}
               </a>
             ))}
-            
-            <!-- Cities Section -->
-            <div class="px-6 py-1 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide border-t border-gray-300 dark:border-gray-600 mt-2 pt-2">Service Areas</div>
-            <div class="px-6 py-1 text-xs font-medium text-gray-600 dark:text-gray-400">Canada</div>
-            {cityPages.slice(0, 6).map(city => (
-              <a href={city.url} class="block px-8 py-1 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-700">
+
+            <div class="px-6 py-1 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide border-t border-gray-300 dark:border-gray-600 mt-2 pt-2">{t.nav.serviceAreas}</div>
+            <div class="px-6 py-1 text-xs font-medium text-gray-600 dark:text-gray-400">{t.nav.canada}</div>
+            {cityPages.slice(0, 6).map((city) => (
+              <a href={localized(city.url)} class="block px-8 py-1 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-700">
                 {city.text}
               </a>
             ))}
-            <div class="px-6 py-1 text-xs font-medium text-gray-600 dark:text-gray-400">United States</div>
-            {cityPages.slice(6, 11).map(city => (
-              <a href={city.url} class="block px-8 py-1 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-700">
+            <div class="px-6 py-1 text-xs font-medium text-gray-600 dark:text-gray-400">{t.nav.unitedStates}</div>
+            {cityPages.slice(6, 11).map((city) => (
+              <a href={localized(city.url)} class="block px-8 py-1 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-700">
                 {city.text}
               </a>
             ))}
-            <div class="px-6 py-1 text-xs font-medium text-gray-600 dark:text-gray-400">Europe</div>
-            {cityPages.slice(11).map(city => (
-              <a href={city.url} class="block px-8 py-1 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-700">
+            <div class="px-6 py-1 text-xs font-medium text-gray-600 dark:text-gray-400">{t.nav.europe}</div>
+            {cityPages.slice(11).map((city) => (
+              <a href={localized(city.url)} class="block px-8 py-1 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-700">
                 {city.text}
               </a>
             ))}
@@ -241,12 +347,12 @@ const cityPages = [
 </header>
 
 <style>
-  /* Add hover animation to the logo */
   header a:hover img {
     transform: scale(1.05);
     transition: transform 0.3s ease;
   }
 
-  /* Hide Alpine.js elements before Alpine loads */
-  [x-cloak] { display: none !important; }
+  [x-cloak] {
+    display: none !important;
+  }
 </style>

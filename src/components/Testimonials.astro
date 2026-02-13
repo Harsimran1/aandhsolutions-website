@@ -1,5 +1,15 @@
 ---
-const testimonials = [
+import { resolveLocale, localizePath } from '../lib/i18n';
+
+const locale = resolveLocale(Astro.currentLocale, Astro.url.pathname);
+const localized = (path: string) => localizePath(path, locale);
+
+const contentByLocale = {
+  en: {
+    badge: 'Customer Stories',
+    title: 'What Our Clients Say',
+    desc: "Don't just take our word for it. Here's what our customers have to say about their experience with our platform.",
+    testimonials: [
   {
     content: "A & H Solutions built our app in record time and helped us save thousands every month. They don't just code—they think like product people.",
     author: "Sarah Johnson",
@@ -21,18 +31,65 @@ const testimonials = [
     company: "Fintech Startup",
     avatar: "https://randomuser.me/api/portraits/women/65.jpg"
   }
-];
+    ],
+    ctaTitle: 'Ready to transform your business?',
+    ctaDesc: 'Join thousands of satisfied customers who have improved their workflow with our platform.',
+    ctaBtn: 'Get Started Today',
+  },
+  de: {
+    badge: 'Kundenstimmen',
+    title: 'Was unsere Kunden sagen',
+    desc: 'Das sagen unsere Kunden uber die Zusammenarbeit mit A & H Solutions.',
+    testimonials: [
+      { content: 'A & H Solutions hat unsere App in Rekordzeit gebaut und unsere monatlichen Kosten deutlich reduziert.', author: 'Sarah Johnson', position: 'Grunderin', company: 'SaaS Startup', avatar: 'https://randomuser.me/api/portraits/women/32.jpg' },
+      { content: 'Die KI-Integration hat unser Kundenerlebnis transformiert. Mehr Engagement bei geringeren Betriebskosten.', author: 'Michael Chen', position: 'CTO', company: 'E-Commerce Plattform', avatar: 'https://randomuser.me/api/portraits/men/46.jpg' },
+      { content: 'Durch smartes Engineering sparen wir jeden Monat Infrastrukturkosten und haben zugleich bessere Performance.', author: 'Emily Rodriguez', position: 'Tech Lead', company: 'Fintech Startup', avatar: 'https://randomuser.me/api/portraits/women/65.jpg' }
+    ],
+    ctaTitle: 'Bereit fur den nachsten Schritt?',
+    ctaDesc: 'Arbeiten Sie mit einem Team, das Technik mit Business-Zielen verbindet.',
+    ctaBtn: 'Jetzt starten',
+  },
+  fr: {
+    badge: 'Temoignages clients',
+    title: 'Ce que disent nos clients',
+    desc: 'Retour d experience de clients qui ont accelere leur croissance avec nous.',
+    testimonials: [
+      { content: 'A & H Solutions a livre notre application tres vite et a reduit fortement nos couts mensuels.', author: 'Sarah Johnson', position: 'Fondatrice', company: 'Startup SaaS', avatar: 'https://randomuser.me/api/portraits/women/32.jpg' },
+      { content: 'L integration IA a nettement ameliore notre experience client et notre efficacite operationnelle.', author: 'Michael Chen', position: 'CTO', company: 'Plateforme e-commerce', avatar: 'https://randomuser.me/api/portraits/men/46.jpg' },
+      { content: 'Leur ingenierie intelligente nous a permis d economiser chaque mois tout en augmentant les performances.', author: 'Emily Rodriguez', position: 'Lead technique', company: 'Startup fintech', avatar: 'https://randomuser.me/api/portraits/women/65.jpg' }
+    ],
+    ctaTitle: 'Pret a transformer votre business ?',
+    ctaDesc: 'Rejoignez les entreprises qui accelerent avec des produits fiables et evolutifs.',
+    ctaBtn: 'Demarrer',
+  },
+  es: {
+    badge: 'Historias de clientes',
+    title: 'Lo que dicen nuestros clientes',
+    desc: 'Conoce como nuestros clientes mejoraron resultados con nuestras soluciones.',
+    testimonials: [
+      { content: 'A & H Solutions construyo nuestra app en tiempo record y redujo costos mensuales de forma notable.', author: 'Sarah Johnson', position: 'Fundadora', company: 'Startup SaaS', avatar: 'https://randomuser.me/api/portraits/women/32.jpg' },
+      { content: 'La integracion de IA mejoro nuestra experiencia de cliente y la eficiencia operativa.', author: 'Michael Chen', position: 'CTO', company: 'Plataforma e-commerce', avatar: 'https://randomuser.me/api/portraits/men/46.jpg' },
+      { content: 'Su enfoque de ingenieria inteligente redujo costos de infraestructura y mejoro rendimiento.', author: 'Emily Rodriguez', position: 'Lider tecnico', company: 'Startup fintech', avatar: 'https://randomuser.me/api/portraits/women/65.jpg' }
+    ],
+    ctaTitle: 'Listo para transformar tu negocio?',
+    ctaDesc: 'Unete a empresas que ya mejoraron su operacion con nuestras soluciones.',
+    ctaBtn: 'Comenzar hoy',
+  },
+} as const;
+
+const text = contentByLocale[locale] ?? contentByLocale.en;
+const testimonials = text.testimonials;
 ---
 
 <section id="testimonials" class="section">
   <div class="container-custom">
     <div class="text-center max-w-3xl mx-auto mb-16">
       <span class="inline-block px-4 py-1 rounded-full bg-secondary-100 dark:bg-secondary-900 text-secondary-600 dark:text-secondary-300 font-medium text-sm mb-4">
-        Customer Stories
+        {text.badge}
       </span>
-      <h2 class="mb-6 text-gray-900 dark:text-white">What Our Clients Say</h2>
+      <h2 class="mb-6 text-gray-900 dark:text-white">{text.title}</h2>
       <p class="text-gray-600 dark:text-gray-300">
-        Don't just take our word for it. Here's what our customers have to say about their experience with our platform.
+        {text.desc}
       </p>
     </div>
     
@@ -72,11 +129,11 @@ const testimonials = [
       <div class="absolute inset-0 bg-linear-to-r from-primary-600/30 to-secondary-600/30 backdrop-blur-xs"></div>
       <div class="relative z-10 text-center md:text-left md:flex items-center justify-between">
         <div class="mb-6 md:mb-0 md:mr-8">
-          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Ready to transform your business?</h3>
-          <p class="text-white/80 max-w-2xl">Join thousands of satisfied customers who have improved their workflow with our platform.</p>
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">{text.ctaTitle}</h3>
+          <p class="text-white/80 max-w-2xl">{text.ctaDesc}</p>
         </div>
-        <a href="/contact" class="inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300 focus:outline-hidden focus:ring-2 focus:ring-offset-2 bg-white text-primary-600 hover:bg-gray-100 focus:ring-white">
-          Get Started Today
+        <a href={localized('/contact')} class="inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300 focus:outline-hidden focus:ring-2 focus:ring-offset-2 bg-white text-primary-600 hover:bg-gray-100 focus:ring-white">
+          {text.ctaBtn}
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
           </svg>

@@ -1,0 +1,20 @@
+{
+  "pages": {
+    "home": {
+      "title": "A&H Solutions | aandhsolutions.com - Custom App Development & AI Integrations",
+      "description": "A&H Solutions (aandhsolutions.com) builds custom apps, web platforms, and AI integrations for startups and enterprises. 90% of startups fail - we refuse to accept it. Smarter engineering and AI-driven workflows save costs without losing speed or security."
+    },
+    "pricing": {
+      "title": "Pricing - A&H Solutions"
+    },
+    "contact": {
+      "title": "Contact Us - A & H Solutions",
+      "heroTitle": "Contact Us",
+      "heroDescription": "We're here to help with any questions you might have about our services."
+    },
+    "freeProjectBlueprint": {
+      "title": "FREE Project Blueprint & Technical Roadmap | A&H Solutions",
+      "description": "Get a comprehensive 25-30 page project blueprint absolutely free. Includes technical architecture, wireframes, risk analysis, and implementation roadmap. Transform your idea into a actionable development plan."
+    }
+  }
+}

@@ -1,5 +1,8 @@
 ---
-const features = [
+import { resolveLocale, localizePath } from '../lib/i18n';
+
+const featuresByLocale = {
+  en: [
   {
     title: "Mobile App Development",
     description: "iOS, Android, and cross-platform apps designed for seamless user experiences and future growth.",
@@ -42,25 +45,62 @@ const features = [
     color: "accent",
     slug: "it-consulting-advisory"
   }
-];
+  ],
+  de: [
+    { title: "Mobile App Entwicklung", description: "iOS-, Android- und Cross-Platform-Apps fur starke Nutzererlebnisse und Wachstum.", icon: "M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z", color: "primary", slug: "mobile-app-development" },
+    { title: "Web App Entwicklung", description: "Skalierbare, sichere und performante Webanwendungen fur Ihr Geschaft.", icon: "M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9", color: "secondary", slug: "web-app-development" },
+    { title: "KI Integrationen & Automatisierung", description: "Workflows automatisieren, Kundenerlebnisse verbessern und Produkte zukunftssicher machen.", icon: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z", color: "accent", slug: "ai-integrations-automation" },
+    { title: "Datenanalyse & Visualisierung", description: "Aus Rohdaten werden umsetzbare Erkenntnisse mit klaren Dashboards.", icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z", color: "warning", slug: "data-analytics-visualization" },
+    { title: "Cloud Losungen & Integration", description: "Flexible, sichere und kosteneffiziente Cloud-Architektur fur Skalierung.", icon: "M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12", color: "secondary", slug: "cloud-solutions-integration" },
+    { title: "IT Beratung", description: "Strategische Technologieberatung zur Ausrichtung von Zielen und Umsetzung.", icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0z", color: "accent", slug: "it-consulting-advisory" }
+  ],
+  fr: [
+    { title: "Developpement d applications mobiles", description: "Applications iOS, Android et multiplateforme concues pour evoluer.", icon: "M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z", color: "primary", slug: "mobile-app-development" },
+    { title: "Developpement d applications web", description: "Applications web evolutives, securisees et performantes.", icon: "M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9", color: "secondary", slug: "web-app-development" },
+    { title: "Integrations IA & automatisation", description: "Automatisez vos flux, personnalisez l experience client et accelerez.", icon: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z", color: "accent", slug: "ai-integrations-automation" },
+    { title: "Analyse et visualisation de donnees", description: "Transformez vos donnees en decisions avec des tableaux de bord clairs.", icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z", color: "warning", slug: "data-analytics-visualization" },
+    { title: "Solutions cloud & integration", description: "Infrastructure cloud flexible, securisee et optimisee pour la croissance.", icon: "M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12", color: "secondary", slug: "cloud-solutions-integration" },
+    { title: "Conseil IT", description: "Conseil technologique strategique aligne sur vos objectifs business.", icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0z", color: "accent", slug: "it-consulting-advisory" }
+  ],
+  es: [
+    { title: "Desarrollo de apps moviles", description: "Apps iOS, Android y multiplataforma para crecer con mejor experiencia.", icon: "M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z", color: "primary", slug: "mobile-app-development" },
+    { title: "Desarrollo de apps web", description: "Aplicaciones web escalables, seguras y de alto rendimiento.", icon: "M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9", color: "secondary", slug: "web-app-development" },
+    { title: "Integraciones de IA y automatizacion", description: "Automatiza procesos, mejora experiencia y prepara tu producto para el futuro.", icon: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z", color: "accent", slug: "ai-integrations-automation" },
+    { title: "Analitica y visualizacion de datos", description: "Convierte datos en decisiones con dashboards interactivos y claros.", icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z", color: "warning", slug: "data-analytics-visualization" },
+    { title: "Soluciones cloud e integracion", description: "Infraestructura cloud flexible, segura y eficiente en costos.", icon: "M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12", color: "secondary", slug: "cloud-solutions-integration" },
+    { title: "Consultoria IT", description: "Alinea objetivos de negocio con decisiones tecnicas acertadas.", icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0z", color: "accent", slug: "it-consulting-advisory" }
+  ]
+} as const;
+
+const locale = resolveLocale(Astro.currentLocale, Astro.url.pathname);
+const localized = (path: string) => localizePath(path, locale);
+const features = featuresByLocale[locale] ?? featuresByLocale.en;
+
+const sectionCopy = {
+  en: { badge: 'Our Services', title: 'Complete Software Solutions', desc: 'From mobile apps to AI integrations, we provide end-to-end development services that help startups and growing businesses succeed.', learn: 'Learn More', cta1: 'View All Services', cta2: 'Start Your Project' },
+  de: { badge: 'Unsere Leistungen', title: 'Komplette Softwarelosungen', desc: 'Von Mobile Apps bis KI-Integrationen liefern wir End-to-End-Entwicklung fur Startups und wachsende Unternehmen.', learn: 'Mehr erfahren', cta1: 'Alle Services ansehen', cta2: 'Projekt starten' },
+  fr: { badge: 'Nos services', title: 'Solutions logicielles completes', desc: 'Des applications mobiles aux integrations IA, nous livrons des services de developpement de bout en bout.', learn: 'En savoir plus', cta1: 'Voir tous les services', cta2: 'Demarrer votre projet' },
+  es: { badge: 'Nuestros servicios', title: 'Soluciones de software completas', desc: 'Desde apps moviles hasta integraciones IA, ofrecemos desarrollo end-to-end para crecer con confianza.', learn: 'Mas informacion', cta1: 'Ver todos los servicios', cta2: 'Inicia tu proyecto' }
+} as const;
+const text = sectionCopy[locale] ?? sectionCopy.en;
 ---
 
 <section id="features" class="section bg-gray-50 dark:bg-gray-800/50">
   <div class="container-custom">
     <div class="text-center max-w-3xl mx-auto mb-16">
       <span class="inline-block px-4 py-1 rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-300 font-medium text-sm mb-4">
-        Our Services
+        {text.badge}
       </span>
-      <h2 class="mb-6 text-gray-900 dark:text-white">Complete Software Solutions</h2>
+      <h2 class="mb-6 text-gray-900 dark:text-white">{text.title}</h2>
       <p class="text-gray-600 dark:text-gray-300">
-        From mobile apps to AI integrations, we provide end-to-end development services that help startups and growing businesses succeed.
+        {text.desc}
       </p>
     </div>
     
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {features.map((feature, index) => (
         <a 
-          href={`/services/${feature.slug}`}
+          href={localized(`/services/${feature.slug}`)}
           class="card p-6 border border-gray-200 dark:border-gray-700 slide-up hover:shadow-lg hover:border-primary-200 dark:hover:border-primary-700 transition-all duration-300 group block" 
           style={`animation-delay: ${index * 100}ms`}
         >
@@ -78,7 +118,7 @@ const features = [
           <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">{feature.title}</h3>
           <p class="text-gray-600 dark:text-gray-300">{feature.description}</p>
           <div class="mt-4 flex items-center text-primary-600 dark:text-primary-400 opacity-0 group-hover:opacity-100 transition-opacity">
-            <span class="text-sm font-medium">Learn More</span>
+            <span class="text-sm font-medium">{text.learn}</span>
             <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
             </svg>
@@ -89,14 +129,14 @@ const features = [
     
     <div class="mt-16 text-center">
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="/services" class="btn-primary">
-          View All Services
+        <a href={localized('/services')} class="btn-primary">
+          {text.cta1}
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
           </svg>
         </a>
-        <a href="/contact" class="btn-secondary">
-          Start Your Project
+        <a href={localized('/contact')} class="btn-secondary">
+          {text.cta2}
         </a>
       </div>
     </div>

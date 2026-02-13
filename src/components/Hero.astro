@@ -1,5 +1,6 @@
 ---
 import Accreditations from './Accreditations.astro';
+import { resolveLocale, localizePath } from '../lib/i18n';
 
 export interface Props {
   title?: string;
@@ -11,12 +12,12 @@ export interface Props {
 }
 
 const {
-  title = "Custom apps, AI integrations, and scalable software that defy the odds",
-  description = "At A & H Solutions, we turn ideas into high-performance products. From mobile apps to AI-powered platforms, we design, build, and optimize software that balances cost, speed, and security.",
-  highlightText = "scalable software that defy the odds",
-  primaryButton = { text: "Let's Build Together", url: "/contact" },
-  secondaryButton = { text: "View Our Work", url: "/case-studies" },
-  badge = "Built for startups, trusted by growing businesses"
+  title,
+  description,
+  highlightText,
+  primaryButton,
+  secondaryButton,
+  badge
 } = Astro.props;
 
 // Function to highlight specific text in the title
@@ -24,25 +25,112 @@ function highlightTitle(title: string, highlightText: string) {
   if (!highlightText) return title;
   return title.replace(highlightText, `<span class="text-primary-600 dark:text-primary-400">${highlightText}</span>`);
 }
+
+const locale = resolveLocale(Astro.currentLocale, Astro.url.pathname);
+const localized = (path: string) => localizePath(path, locale);
+
+const heroCopy = {
+  en: {
+    title: "Custom apps, AI integrations, and scalable software that defy the odds",
+    description:
+      "At A & H Solutions, we turn ideas into high-performance products. From mobile apps to AI-powered platforms, we design, build, and optimize software that balances cost, speed, and security.",
+    highlightText: "scalable software that defy the odds",
+    primaryButton: { text: "Let's Build Together", url: "/contact" },
+    secondaryButton: { text: "View Our Work", url: "/case-studies" },
+    badge: "Built for startups, trusted by growing businesses",
+    blueprintLead: "Get your",
+    blueprintLink: "FREE Project Blueprint",
+    blueprintSub: "Professional roadmap & technical plan - No obligation",
+    didYouKnow: "Did you know?",
+    didYouKnowBody:
+      "90% of startups fail within the first 5 years. At A & H Solutions, we leverage smart engineering and AI-powered optimization to help our clients beat those odds.",
+    point1: "AI-driven workflows reduce development overhead and improve efficiency",
+    point2: "Web, mobile, and AI solutions built for growth",
+    point3: "Cost, speed & security in every product",
+  },
+  de: {
+    title: "Individuelle Apps, KI-Integrationen und skalierbare Software fur nachhaltiges Wachstum",
+    description:
+      "Bei A & H Solutions verwandeln wir Ideen in leistungsstarke Produkte. Von mobilen Apps bis zu KI-Plattformen entwickeln und optimieren wir Software mit Fokus auf Kosten, Geschwindigkeit und Sicherheit.",
+    highlightText: "skalierbare Software fur nachhaltiges Wachstum",
+    primaryButton: { text: "Jetzt starten", url: "/contact" },
+    secondaryButton: { text: "Unsere Referenzen", url: "/case-studies" },
+    badge: "Fur Startups gebaut, von wachsenden Unternehmen geschatzt",
+    blueprintLead: "Holen Sie sich Ihren",
+    blueprintLink: "KOSTENLOSEN Projektplan",
+    blueprintSub: "Professionelle Roadmap & Technikplan - Unverbindlich",
+    didYouKnow: "Schon gewusst?",
+    didYouKnowBody:
+      "90% der Startups scheitern in den ersten 5 Jahren. Mit smarter Technik und KI-Optimierung helfen wir unseren Kunden, diese Quote zu schlagen.",
+    point1: "KI-gestutzte Workflows senken Entwicklungsaufwand und steigern Effizienz",
+    point2: "Web-, Mobile- und KI-Losungen fur Wachstum",
+    point3: "Kosten, Geschwindigkeit und Sicherheit in jedem Produkt",
+  },
+  fr: {
+    title: "Applications sur mesure, integrations IA et logiciels evolutifs pour grandir durablement",
+    description:
+      "Chez A & H Solutions, nous transformons les idees en produits performants. Des applications mobiles aux plateformes IA, nous concevons et optimisons des logiciels axes sur cout, vitesse et securite.",
+    highlightText: "logiciels evolutifs pour grandir durablement",
+    primaryButton: { text: "Demarrer ensemble", url: "/contact" },
+    secondaryButton: { text: "Voir nos realisations", url: "/case-studies" },
+    badge: "Concu pour les startups, adopte par les entreprises en croissance",
+    blueprintLead: "Obtenez votre",
+    blueprintLink: "Plan de projet GRATUIT",
+    blueprintSub: "Feuille de route professionnelle - Sans engagement",
+    didYouKnow: "Le saviez-vous ?",
+    didYouKnowBody:
+      "90% des startups echouent dans les 5 premieres annees. Avec une ingenierie intelligente et l IA, nous aidons nos clients a inverser cette tendance.",
+    point1: "Les workflows IA reduisent la charge de developpement et augmentent l efficacite",
+    point2: "Solutions web, mobile et IA concues pour la croissance",
+    point3: "Cout, vitesse et securite dans chaque produit",
+  },
+  es: {
+    title: "Apps a medida, integraciones de IA y software escalable para crecer con confianza",
+    description:
+      "En A & H Solutions convertimos ideas en productos de alto rendimiento. Desde apps moviles hasta plataformas con IA, disenamos y optimizamos software equilibrando costo, velocidad y seguridad.",
+    highlightText: "software escalable para crecer con confianza",
+    primaryButton: { text: "Construyamos juntos", url: "/contact" },
+    secondaryButton: { text: "Ver nuestro trabajo", url: "/case-studies" },
+    badge: "Creado para startups, confiado por empresas en crecimiento",
+    blueprintLead: "Consigue tu",
+    blueprintLink: "Plan de proyecto GRATIS",
+    blueprintSub: "Hoja de ruta profesional - Sin compromiso",
+    didYouKnow: "Sabias que?",
+    didYouKnowBody:
+      "El 90% de las startups fracasa en los primeros 5 anos. Con ingenieria inteligente y optimizacion con IA ayudamos a nuestros clientes a evitarlo.",
+    point1: "Los flujos con IA reducen esfuerzo y mejoran la eficiencia",
+    point2: "Soluciones web, moviles e IA listas para escalar",
+    point3: "Costo, velocidad y seguridad en cada producto",
+  },
+} as const;
+
+const localeCopy = heroCopy[locale] ?? heroCopy.en;
+
+const finalTitle = title ?? localeCopy.title;
+const finalDescription = description ?? localeCopy.description;
+const finalHighlightText = highlightText ?? localeCopy.highlightText;
+const finalPrimaryButton = primaryButton ?? localeCopy.primaryButton;
+const finalSecondaryButton = secondaryButton ?? localeCopy.secondaryButton;
+const finalBadge = badge ?? localeCopy.badge;
 ---
 <section class="relative pt-32 pb-20 md:pt-40 overflow-hidden hero-section">
   <div class="container-custom relative z-10">
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div class="slide-up" transition:animate="slide">
         <span class="inline-block px-3 py-1 rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-300 font-medium text-sm mb-4">
-          {badge}
+          {finalBadge}
         </span>
-        <h1 class="mb-6 text-secondary-900 dark:text-white leading-tight" set:html={highlightTitle(title, highlightText)}>
+        <h1 class="mb-6 text-secondary-900 dark:text-white leading-tight" set:html={highlightTitle(finalTitle, finalHighlightText)}>
         </h1>
         <p class="text-xl text-secondary-600 dark:text-secondary-300 mb-8 max-w-lg">
-          {description}
+          {finalDescription}
         </p>
         <div class="flex flex-wrap gap-4 mb-6">
-          <a href={primaryButton.url} class="btn-primary">
-            {primaryButton.text}
+          <a href={localized(finalPrimaryButton.url)} class="btn-primary">
+            {finalPrimaryButton.text}
           </a>
-          <a href={secondaryButton.url} class="btn-outline flex items-center">
-            {secondaryButton.text}
+          <a href={localized(finalSecondaryButton.url)} class="btn-outline flex items-center">
+            {finalSecondaryButton.text}
           </a>
         </div>
         
@@ -53,9 +141,9 @@ function highlightTitle(title: string, highlightText: string) {
           </svg>
           <div>
             <p class="text-sm font-medium text-gray-900 dark:text-white">
-              Get your <a href="/free-project-blueprint" class="text-accent-600 dark:text-accent-400 hover:underline font-semibold">FREE Project Blueprint</a>
+              {localeCopy.blueprintLead} <a href={localized('/free-project-blueprint')} class="text-accent-600 dark:text-accent-400 hover:underline font-semibold">{localeCopy.blueprintLink}</a>
             </p>
-            <p class="text-xs text-gray-600 dark:text-gray-400">Professional roadmap & technical plan • No obligation</p>
+            <p class="text-xs text-gray-600 dark:text-gray-400">{localeCopy.blueprintSub}</p>
           </div>
         </div>
       </div>
@@ -74,8 +162,8 @@ function highlightTitle(title: string, highlightText: string) {
           <!-- Fun Fact Block -->
           <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
             <div class="text-4xl mb-2">📊</div>
-            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Did you know?</h3>
-            <p class="text-gray-700 dark:text-gray-300">90% of startups fail within the first 5 years. At A & H Solutions, we leverage smart engineering and AI-powered optimization to help our clients beat those odds.</p>
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">{localeCopy.didYouKnow}</h3>
+            <p class="text-gray-700 dark:text-gray-300">{localeCopy.didYouKnowBody}</p>
           </div>
           
           <!-- Highlights -->
@@ -84,19 +172,19 @@ function highlightTitle(title: string, highlightText: string) {
               <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span class="font-medium">AI-driven workflows reduce development overhead and improve efficiency</span>
+              <span class="font-medium">{localeCopy.point1}</span>
             </div>
             <div class="flex items-center text-black dark:text-white">
               <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span class="font-medium">Web, mobile, and AI solutions built for growth</span>
+              <span class="font-medium">{localeCopy.point2}</span>
             </div>
             <div class="flex items-center text-black dark:text-white">
               <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span class="font-medium">Cost, speed & security in every product</span>
+              <span class="font-medium">{localeCopy.point3}</span>
             </div>
           </div>
         </div>

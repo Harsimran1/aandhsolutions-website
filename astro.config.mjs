@@ -8,6 +8,20 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.aandhsolutions.com',
+  i18n: {
+    locales: ['en', 'fr', 'de', 'es'],
+    defaultLocale: 'en',
+    fallback: {
+      fr: 'en',
+      de: 'en',
+      es: 'en',
+    },
+    routing: {
+      prefixDefaultLocale: true,
+      redirectToDefaultLocale: true,
+      fallbackType: 'rewrite',
+    },
+  },
   integrations: [
     alpinejs(),
     sitemap({

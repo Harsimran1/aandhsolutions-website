@@ -1,4 +1,6 @@
 ---
+import { resolveLocale, localizePath } from '../lib/i18n';
+
 const plans = [
   {
     name: "Starter",
@@ -52,6 +54,9 @@ const plans = [
     color: "accent"
   }
 ];
+
+const locale = resolveLocale(Astro.currentLocale, Astro.url.pathname);
+const localized = (path: string) => localizePath(path, locale);
 ---
 
 <section id="pricing" class="section bg-gray-50 dark:bg-gray-800/50">
@@ -108,7 +113,7 @@ const plans = [
     
     <div class="mt-12 text-center">
       <p class="text-gray-600 dark:text-gray-300 mb-2">Need a custom plan for your specific needs?</p>
-      <a href="/contact" class="text-primary-600 dark:text-primary-400 font-medium hover:underline">Contact our sales team</a>
+      <a href={localized('/contact')} class="text-primary-600 dark:text-primary-400 font-medium hover:underline">Contact our sales team</a>
     </div>
   </div>
 </section>

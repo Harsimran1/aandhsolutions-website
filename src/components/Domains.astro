@@ -1,42 +1,106 @@
 ---
 import { getCollection } from 'astro:content';
+import { resolveLocale, localizePath } from '../lib/i18n';
 
 const domains = await getCollection('domains');
 const featuredDomains = domains.filter(domain => domain.data.featured).slice(0, 8);
 const allDomains = domains.sort((a, b) => a.data.title.localeCompare(b.data.title));
+const locale = resolveLocale(Astro.currentLocale, Astro.url.pathname);
+const localized = (path: string) => localizePath(path, locale);
+const copy = {
+  en: { title: 'Industry', accent: 'Expertise', desc: 'We specialize in delivering tailored technology solutions across diverse industries, understanding the unique challenges and regulatory requirements of each sector.', all: 'View All Industries', ctaTitle: "Don't See Your Industry?", ctaDesc: "We work across many more industries and adapt our solutions to meet unique sector requirements. Let's discuss how we can help your specific industry challenges.", cta: 'Get Industry-Specific Consultation' },
+  de: { title: 'Branchen', accent: 'Expertise', desc: 'Wir liefern passgenaue Technologielosungen fur verschiedene Branchen und regulatorische Anforderungen.', all: 'Alle Branchen anzeigen', ctaTitle: 'Ihre Branche nicht dabei?', ctaDesc: 'Wir arbeiten mit vielen weiteren Branchen und passen unsere Losungen individuell an.', cta: 'Branchenspezifische Beratung anfragen' },
+  fr: { title: 'Expertise', accent: 'sectorielle', desc: 'Nous livrons des solutions technologiques adaptees aux exigences de chaque secteur.', all: 'Voir tous les secteurs', ctaTitle: 'Votre secteur nest pas liste ?', ctaDesc: 'Nous adaptons nos solutions a de nombreux secteurs avec des besoins specifiques.', cta: 'Demander une consultation sectorielle' },
+  es: { title: 'Experiencia', accent: 'por industria', desc: 'Ofrecemos soluciones tecnologicas adaptadas a distintos sectores y requisitos regulatorios.', all: 'Ver todas las industrias', ctaTitle: 'No ves tu industria?', ctaDesc: 'Trabajamos con muchas mas industrias y ajustamos nuestras soluciones a cada caso.', cta: 'Solicitar consultoria por industria' },
+} as const;
+const text = copy[locale] ?? copy.en;
+const domainTranslations = {
+  de: {
+    ecommerce: { industry: 'E-Commerce', excerpt: 'Moderne E-Commerce-Losungen fur bessere Conversion und effiziente Ablaufe.' },
+    finance: { industry: 'Finanzwesen', excerpt: 'Fintech-Losungen mit Fokus auf Sicherheit, Compliance und Kundenerlebnis.' },
+    healthcare: { industry: 'Gesundheitswesen', excerpt: 'Sichere Health-Tech-Losungen fur Versorgung, Daten und regulatorische Anforderungen.' },
+    education: { industry: 'Bildung', excerpt: 'EdTech-Losungen fur bessere Lernergebnisse und skalierbare Lernplattformen.' },
+    hospitality: { industry: 'Gastgewerbe', excerpt: 'Digitale Losungen fur Hotels, Tourismus und effiziente Betriebsprozesse.' },
+    insurance: { industry: 'Versicherung', excerpt: 'Insurtech-Losungen fur Underwriting, Policenverwaltung und Kundenservice.' },
+    manufacturing: { industry: 'Fertigung', excerpt: 'Industrie-Losungen fur Automatisierung, Transparenz und Prozessoptimierung.' },
+    'real-estate': { industry: 'Immobilien', excerpt: 'PropTech-Losungen fur Makler, Verwaltung und digitale Kundenprozesse.' },
+    legal: { industry: 'Recht', excerpt: 'Legal-Tech-Losungen fur Dokumente, Compliance und sichere Workflows.' },
+    cannabis: { industry: 'Cannabis', excerpt: 'Branchenspezifische Plattformen fur Cannabis mit Compliance und E-Commerce-Fokus.' },
+    'non-profit': { industry: 'Non-Profit', excerpt: 'Digitale Werkzeuge fur Spenden, Community-Management und Wirkungsmessung.' },
+    wellness: { industry: 'Wellness', excerpt: 'Wellness-Plattformen fur Terminplanung, Engagement und Mitgliederwachstum.' },
+  },
+  fr: {
+    ecommerce: { industry: 'E-commerce', excerpt: 'Solutions e-commerce modernes pour accelerer ventes et operations.' },
+    finance: { industry: 'Finance', excerpt: 'Solutions fintech securisees avec conformite et excellente experience client.' },
+    healthcare: { industry: 'Sante', excerpt: 'Solutions health-tech conformes pour soins, donnees et interoperabilite.' },
+    education: { industry: 'Education', excerpt: 'Solutions edtech pour ameliorer apprentissage et gestion academique.' },
+    hospitality: { industry: 'Hotellerie', excerpt: 'Solutions numeriques pour hotellerie, tourisme et experience client.' },
+    insurance: { industry: 'Assurance', excerpt: 'Solutions insurtech pour souscription, gestion de polices et parcours client.' },
+    manufacturing: { industry: 'Industrie', excerpt: 'Solutions industrielles pour automatisation et optimisation des processus.' },
+    'real-estate': { industry: 'Immobilier', excerpt: 'Solutions proptech pour ventes, gestion et relation client.' },
+    legal: { industry: 'Juridique', excerpt: 'Solutions legal-tech pour conformite, documents et collaboration securisee.' },
+    cannabis: { industry: 'Cannabis', excerpt: 'Plateformes cannabis conformes avec e-commerce et operations integrees.' },
+    'non-profit': { industry: 'Associatif', excerpt: 'Outils numeriques pour dons, engagement communautaire et impact.' },
+    wellness: { industry: 'Bien-etre', excerpt: 'Plateformes bien-etre pour services, membres et croissance durable.' },
+  },
+  es: {
+    ecommerce: { industry: 'Comercio electronico', excerpt: 'Soluciones e-commerce modernas para aumentar ventas y optimizar operaciones.' },
+    finance: { industry: 'Finanzas', excerpt: 'Soluciones fintech seguras con cumplimiento y mejor experiencia del cliente.' },
+    healthcare: { industry: 'Salud', excerpt: 'Soluciones health-tech seguras y compatibles con requisitos regulatorios.' },
+    education: { industry: 'Educacion', excerpt: 'Soluciones edtech para mejorar aprendizaje y administracion educativa.' },
+    hospitality: { industry: 'Hosteleria', excerpt: 'Soluciones digitales para hoteles, turismo y operaciones eficientes.' },
+    insurance: { industry: 'Seguros', excerpt: 'Soluciones insurtech para suscripcion, polizas y atencion al cliente.' },
+    manufacturing: { industry: 'Manufactura', excerpt: 'Soluciones industriales para automatizacion y mejora continua.' },
+    'real-estate': { industry: 'Bienes raices', excerpt: 'Soluciones proptech para ventas, gestion y experiencia de clientes.' },
+    legal: { industry: 'Legal', excerpt: 'Soluciones legal-tech para cumplimiento, documentos y flujos seguros.' },
+    cannabis: { industry: 'Cannabis', excerpt: 'Plataformas para cannabis con cumplimiento normativo y e-commerce.' },
+    'non-profit': { industry: 'Sin fines de lucro', excerpt: 'Herramientas digitales para donaciones, comunidad e impacto.' },
+    wellness: { industry: 'Bienestar', excerpt: 'Plataformas de bienestar para servicios, membresias y crecimiento.' },
+  },
+} as const;
+
+function translatedDomain(domain: (typeof featuredDomains)[number]) {
+  const localeTranslations = domainTranslations[locale as keyof typeof domainTranslations];
+  const translation = localeTranslations?.[domain.slug as keyof typeof localeTranslations];
+  return {
+    industry: translation?.industry ?? domain.data.industry,
+    excerpt: translation?.excerpt ?? domain.data.excerpt,
+  };
+}
 ---
 
 <section class="py-20 bg-gradient-to-b from-slate-50 to-white">
   <div class="container mx-auto px-6">
     <div class="text-center mb-16">
       <h2 class="text-4xl font-bold text-slate-900 mb-6">
-        Industry <span class="text-orange-500">Expertise</span>
+        {text.title} <span class="text-orange-500">{text.accent}</span>
       </h2>
       <p class="text-xl text-slate-600 max-w-3xl mx-auto">
-        We specialize in delivering tailored technology solutions across diverse industries, 
-        understanding the unique challenges and regulatory requirements of each sector.
+        {text.desc}
       </p>
     </div>
 
     <!-- Featured Domains Grid -->
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-      {featuredDomains.map((domain) => (
+      {featuredDomains.map((domain) => {
+        const translated = translatedDomain(domain);
+        return (
         <a 
-          href={`/domains/${domain.slug}`}
+          href={localized(`/domains/${domain.slug}`)}
           class="group bg-white rounded-xl border border-slate-200 hover:border-orange-500 p-6 transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/10 hover:-translate-y-1"
         >
           <div class="flex items-center mb-4">
             <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white font-bold text-lg mr-4">
-              {domain.data.industry.charAt(0)}
+              {translated.industry.charAt(0)}
             </div>
             <div>
               <h3 class="font-semibold text-slate-900 group-hover:text-orange-500 transition-colors">
-                {domain.data.industry}
+                {translated.industry}
               </h3>
             </div>
           </div>
           <p class="text-slate-600 text-sm leading-relaxed mb-4">
-            {domain.data.excerpt}
+            {translated.excerpt}
           </p>
           <div class="flex flex-wrap gap-1">
             {domain.data.tags.slice(0, 3).map((tag) => (
@@ -46,41 +110,45 @@ const allDomains = domains.sort((a, b) => a.data.title.localeCompare(b.data.titl
             ))}
           </div>
         </a>
-      ))}
+        );
+      })}
     </div>
 
     <!-- All Domains List -->
     <div class="text-center">
       <details class="group">
         <summary class="inline-flex items-center justify-center px-6 py-3 bg-white border border-slate-300 rounded-lg text-slate-700 hover:border-orange-500 hover:text-orange-500 transition-colors cursor-pointer">
-          <span class="mr-2">View All Industries</span>
+          <span class="mr-2">{text.all}</span>
           <svg class="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
           </svg>
         </summary>
         
         <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-          {allDomains.map((domain) => (
+          {allDomains.map((domain) => {
+            const translated = translatedDomain(domain);
+            return (
             <a 
-              href={`/domains/${domain.slug}`}
+              href={localized(`/domains/${domain.slug}`)}
               class="group flex items-center p-4 bg-white rounded-lg border border-slate-200 hover:border-orange-500 hover:bg-orange-50 transition-all duration-200"
             >
               <div class="w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white font-bold text-sm mr-3">
-                {domain.data.industry.charAt(0)}
+                {translated.industry.charAt(0)}
               </div>
               <div class="flex-1 min-w-0">
                 <h4 class="font-medium text-slate-900 group-hover:text-orange-500 transition-colors truncate">
-                  {domain.data.industry}
+                  {translated.industry}
                 </h4>
                 <p class="text-slate-500 text-sm truncate">
-                  {domain.data.title.replace(/Technology Solutions?$/, '').replace(/& .* Technology Solutions?$/, '')}
+                  {translated.industry}
                 </p>
               </div>
               <svg class="w-4 h-4 text-slate-400 group-hover:text-orange-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
               </svg>
             </a>
-          ))}
+            );
+          })}
         </div>
       </details>
     </div>
@@ -88,17 +156,16 @@ const allDomains = domains.sort((a, b) => a.data.title.localeCompare(b.data.titl
     <!-- Call to Action -->
     <div class="text-center mt-16 p-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl text-white">
       <h3 class="text-2xl font-bold mb-4">
-        Don't See Your Industry?
+        {text.ctaTitle}
       </h3>
       <p class="text-orange-100 mb-6 max-w-2xl mx-auto">
-        We work across many more industries and adapt our solutions to meet unique sector requirements. 
-        Let's discuss how we can help your specific industry challenges.
+        {text.ctaDesc}
       </p>
       <a 
-        href="/contact" 
+        href={localized('/contact')} 
         class="inline-flex items-center px-6 py-3 bg-white text-orange-600 font-semibold rounded-lg hover:bg-orange-50 transition-colors"
       >
-        Get Industry-Specific Consultation
+        {text.cta}
         <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
         </svg>

@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import '../styles/transitions.css';
 import { ClientRouter } from 'astro:transitions';
+import { DEFAULT_LOCALE, getAbsoluteLocaleUrl, resolveLocale, getOgLocale, SUPPORTED_LOCALES } from '../lib/i18n';
 
 export interface Props {
   title: string;
@@ -16,10 +17,19 @@ const {
   keywords = "aandhsolutions, A&H Solutions, custom app development, AI integrations, web development, mobile apps",
   ogImage = "/og-image.jpg"
 } = Astro.props;
+
+const currentLocale = resolveLocale(Astro.currentLocale, Astro.url.pathname);
+const canonicalUrl = getAbsoluteLocaleUrl(Astro.site?.toString() ?? 'https://www.aandhsolutions.com', currentLocale, Astro.url.pathname);
+const hrefLangLinks = SUPPORTED_LOCALES.map((locale) => ({
+  locale,
+  href: getAbsoluteLocaleUrl(Astro.site?.toString() ?? 'https://www.aandhsolutions.com', locale, Astro.url.pathname),
+}));
+const xDefaultHref = getAbsoluteLocaleUrl(Astro.site?.toString() ?? 'https://www.aandhsolutions.com', DEFAULT_LOCALE, Astro.url.pathname);
+const ogLocale = getOgLocale(currentLocale);
 ---
 
 <!doctype html>
-<html lang="en" x-data="{ darkMode: localStorage.getItem('darkMode') === 'true' }" x-init="$watch('darkMode', val => localStorage.setItem('darkMode', val))" :class="{ 'dark': darkMode }">
+<html lang={currentLocale} x-data="{ darkMode: localStorage.getItem('darkMode') === 'true' }" x-init="$watch('darkMode', val => localStorage.setItem('darkMode', val))" :class="{ 'dark': darkMode }">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,16 +39,20 @@ const {
     <meta name="keywords" content={keywords} />
     <meta name="author" content="A&H Solutions" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href={`https://www.aandhsolutions.com${Astro.url.pathname}`} />
+    <link rel="canonical" href={canonicalUrl} />
+    {hrefLangLinks.map((item) => (
+      <link rel="alternate" hreflang={item.locale} href={item.href} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={xDefaultHref} />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={`https://www.aandhsolutions.com${Astro.url.pathname}`} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={`https://www.aandhsolutions.com${ogImage}`} />
     <meta property="og:site_name" content="A&H Solutions" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content={ogLocale} />
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -47,7 +61,7 @@ const {
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={`https://www.aandhsolutions.com${ogImage}`} />
-    <meta name="twitter:url" content={`https://www.aandhsolutions.com${Astro.url.pathname}`} />
+    <meta name="twitter:url" content={canonicalUrl} />
     
     <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -135,6 +149,30 @@ const {
       <slot />
     </div>
     <script>
+      const supportedLocales = ['en', 'fr', 'de', 'es'];
+
+      function localizeInternalLinks() {
+        const segments = window.location.pathname.split('/').filter(Boolean);
+        const activeLocale = segments[0];
+
+        if (!supportedLocales.includes(activeLocale)) {
+          return;
+        }
+
+        const skipPrefixes = ['/favicon', '/scripts', '/logo', '/og-image', '/assets'];
+        const localePrefixPattern = /^\/(en|fr|de|es)(\/|$)/;
+
+        document.querySelectorAll('a[href^="/"]').forEach((link) => {
+          const href = link.getAttribute('href');
+          if (!href) return;
+          if (href.startsWith('//')) return;
+          if (localePrefixPattern.test(href)) return;
+          if (skipPrefixes.some((prefix) => href.startsWith(prefix))) return;
+
+          link.setAttribute('href', `/${activeLocale}${href}`);
+        });
+      }
+
       // Check for user preference
       if (localStorage.getItem('darkMode') === null) {
         // Check system preference
@@ -148,6 +186,7 @@ const {
 
       // Handle page transitions
       document.addEventListener('astro:page-load', () => {
+        localizeInternalLinks();
         // This runs on initial page load and after each navigation
         const pageWrapper = document.getElementById('page-wrapper');
         if (pageWrapper) {
@@ -162,6 +201,8 @@ const {
           pageWrapper.classList.remove('page-loaded');
         }
       });
+
+      localizeInternalLinks();
     </script>
     <script src="/scripts/transitions.js" defer></script>
   </body>

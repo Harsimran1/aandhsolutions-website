@@ -1,15 +1,77 @@
 ---
+import { resolveLocale } from '../lib/i18n';
+
+const locale = resolveLocale(Astro.currentLocale, Astro.url.pathname);
+const copy = {
+  en: {
+    badge: 'Client Success Stories',
+    title: 'Real Results for Real Businesses',
+    desc: "See how we've helped our clients overcome challenges and achieve their goals.",
+    caseLabel: 'Case Study',
+    caseTitle: 'Smart Engineering Saves $8K Monthly',
+    caseBody:
+      "Smarter engineering cut one startup's database bill by $8,000/month-without losing speed or reliability. Through intelligent architecture optimization and AI-driven resource management, we reduced their infrastructure costs while actually improving performance.",
+    savings: 'Monthly Savings',
+    savingsSub: 'With improved performance',
+    quote:
+      "\"A & H Solutions built our app in record time and helped us save thousands every month. They don't just code-they think like product people.\"",
+    founder: 'Founder',
+  },
+  de: {
+    badge: 'Kundenerfolge',
+    title: 'Messbare Ergebnisse fur echte Unternehmen',
+    desc: 'So helfen wir Kunden, Herausforderungen zu meistern und Ziele zu erreichen.',
+    caseLabel: 'Fallstudie',
+    caseTitle: 'Smarte Entwicklung spart $8K pro Monat',
+    caseBody:
+      'Smarte Technik reduzierte bei einem Startup die Datenbankkosten um $8.000 pro Monat-ohne Verlust bei Geschwindigkeit oder Stabilitat.',
+    savings: 'Monatliche Einsparung',
+    savingsSub: 'Bei besserer Performance',
+    quote:
+      '"A & H Solutions hat unsere App in Rekordzeit geliefert und spart uns jeden Monat viel Geld. Das Team denkt wie Produktpartner."',
+    founder: 'Grunder',
+  },
+  fr: {
+    badge: 'Succes clients',
+    title: 'Des resultats concrets pour de vraies entreprises',
+    desc: 'Decouvrez comment nous aidons nos clients a depasser leurs obstacles.',
+    caseLabel: 'Etude de cas',
+    caseTitle: "L ingenierie intelligente economise 8K$ par mois",
+    caseBody:
+      'Une architecture optimisee et la gestion IA des ressources ont reduit les couts infrastructure sans perdre en fiabilite.',
+    savings: 'Economies mensuelles',
+    savingsSub: 'Avec de meilleures performances',
+    quote:
+      '"A & H Solutions a livre notre application tres rapidement et nous fait economiser chaque mois. Ils pensent produit."',
+    founder: 'Fondatrice',
+  },
+  es: {
+    badge: 'Historias de exito',
+    title: 'Resultados reales para negocios reales',
+    desc: 'Asi ayudamos a nuestros clientes a superar retos y crecer.',
+    caseLabel: 'Caso de estudio',
+    caseTitle: 'Ingenieria inteligente ahorra $8K al mes',
+    caseBody:
+      'La optimizacion de arquitectura y la gestion de recursos con IA redujeron costos de infraestructura sin sacrificar rendimiento.',
+    savings: 'Ahorro mensual',
+    savingsSub: 'Con mejor rendimiento',
+    quote:
+      '"A & H Solutions construyo nuestra app en tiempo record y nos ahorro miles cada mes. Piensan como equipo de producto."',
+    founder: 'Fundadora',
+  },
+} as const;
+const text = copy[locale] ?? copy.en;
 ---
 
 <section class="section">
   <div class="container-custom">
     <div class="text-center max-w-3xl mx-auto mb-16">
       <span class="inline-block px-4 py-1 rounded-full bg-accent-100 dark:bg-accent-900 text-accent-600 dark:text-accent-300 font-medium text-sm mb-4">
-        Client Success Stories
+        {text.badge}
       </span>
-      <h2 class="mb-6 text-gray-900 dark:text-white">Real Results for Real Businesses</h2>
+      <h2 class="mb-6 text-gray-900 dark:text-white">{text.title}</h2>
       <p class="text-gray-600 dark:text-gray-300">
-        See how we've helped our clients overcome challenges and achieve their goals.
+        {text.desc}
       </p>
     </div>
     
@@ -17,20 +79,20 @@
       <!-- Case Study -->
       <div class="bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 p-8 rounded-2xl">
         <div class="text-4xl mb-4">💡</div>
-        <div class="text-sm font-medium text-primary-600 dark:text-primary-400 uppercase tracking-wider mb-3">Case Study</div>
+        <div class="text-sm font-medium text-primary-600 dark:text-primary-400 uppercase tracking-wider mb-3">{text.caseLabel}</div>
         <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-          Smart Engineering Saves $8K Monthly
+          {text.caseTitle}
         </h3>
         <p class="text-gray-700 dark:text-gray-300 mb-6">
-          Smarter engineering cut one startup's database bill by $8,000/month—without losing speed or reliability. Through intelligent architecture optimization and AI-driven resource management, we reduced their infrastructure costs while actually improving performance.
+          {text.caseBody}
         </p>
         <div class="flex items-center">
           <div class="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center text-white font-bold mr-4">
             $8K
           </div>
           <div>
-            <div class="font-semibold text-gray-900 dark:text-white">Monthly Savings</div>
-            <div class="text-sm text-gray-500 dark:text-gray-400">With improved performance</div>
+            <div class="font-semibold text-gray-900 dark:text-white">{text.savings}</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">{text.savingsSub}</div>
           </div>
         </div>
       </div>
@@ -46,7 +108,7 @@
         </div>
         
         <blockquote class="text-xl text-gray-700 dark:text-gray-300 mb-8 italic">
-          "A & H Solutions built our app in record time and helped us save thousands every month. They don't just code—they think like product people."
+          {text.quote}
         </blockquote>
         
         <div class="flex items-center">
@@ -54,7 +116,7 @@
             JS
           </div>
           <div>
-            <p class="font-semibold text-gray-900 dark:text-white">Founder</p>
+            <p class="font-semibold text-gray-900 dark:text-white">{text.founder}</p>
             <p class="text-sm text-gray-500 dark:text-gray-400">SaaS Startup</p>
           </div>
         </div>

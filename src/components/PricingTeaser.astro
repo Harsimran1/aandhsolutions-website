@@ -1,4 +1,72 @@
 ---
+import { resolveLocale, localizePath } from '../lib/i18n';
+
+const locale = resolveLocale(Astro.currentLocale, Astro.url.pathname);
+const localized = (path: string) => localizePath(path, locale);
+
+const copy = {
+  en: {
+    title: 'Custom Solutions, Transparent Pricing',
+    desc: 'Every project is unique. We provide detailed, custom quotes based on your specific requirements, ensuring you get exactly what you need at a fair price.',
+    ctaTitle: 'Start With a FREE Project Blueprint',
+    ctaDesc: 'Get accurate pricing with a comprehensive project roadmap that includes detailed requirements, technical architecture, and cost estimates.',
+    btn1: 'Get Free Blueprint',
+    btn2: 'Get Custom Quote',
+    foot: 'Free consultation & detailed quote',
+    metric1Label: 'Custom',
+    metric1Sub: 'Tailored Quotes',
+    metric2Label: 'No',
+    metric2Sub: 'Hidden Costs',
+    metric3Label: '24hr',
+    metric3Sub: 'Quote Response',
+  },
+  de: {
+    title: 'Individuelle Losungen, transparente Preise',
+    desc: 'Jedes Projekt ist einzigartig. Wir erstellen passgenaue Angebote auf Basis Ihrer Anforderungen.',
+    ctaTitle: 'Starten Sie mit einem KOSTENLOSEN Projektplan',
+    ctaDesc: 'Erhalten Sie eine klare Planung mit Anforderungen, Architektur und Kostenschatzung.',
+    btn1: 'Kostenlosen Plan sichern',
+    btn2: 'Angebot anfragen',
+    foot: 'Kostenlose Erstberatung & detailliertes Angebot',
+    metric1Label: 'Individuell',
+    metric1Sub: 'Passgenaues Angebot',
+    metric2Label: 'Keine',
+    metric2Sub: 'Versteckten Kosten',
+    metric3Label: '24h',
+    metric3Sub: 'Angebotsantwort',
+  },
+  fr: {
+    title: 'Solutions sur mesure, tarifs transparents',
+    desc: 'Chaque projet est unique. Nous proposons un chiffrage detaille selon vos besoins.',
+    ctaTitle: 'Commencez avec un plan de projet GRATUIT',
+    ctaDesc: 'Obtenez une estimation fiable grace a une feuille de route complete.',
+    btn1: 'Obtenir le plan gratuit',
+    btn2: 'Demander un devis',
+    foot: 'Consultation gratuite et devis detaille',
+    metric1Label: 'Sur mesure',
+    metric1Sub: 'Devis adaptes',
+    metric2Label: 'Aucun',
+    metric2Sub: 'Cout cache',
+    metric3Label: '24h',
+    metric3Sub: 'Reponse devis',
+  },
+  es: {
+    title: 'Soluciones a medida, precios transparentes',
+    desc: 'Cada proyecto es unico. Entregamos cotizaciones detalladas segun tus necesidades.',
+    ctaTitle: 'Empieza con un plan de proyecto GRATIS',
+    ctaDesc: 'Consigue precios mas precisos con una hoja de ruta tecnica completa.',
+    btn1: 'Obtener plan gratis',
+    btn2: 'Solicitar cotizacion',
+    foot: 'Consulta gratuita y propuesta detallada',
+    metric1Label: 'A medida',
+    metric1Sub: 'Cotizaciones adaptadas',
+    metric2Label: 'Sin',
+    metric2Sub: 'Costos ocultos',
+    metric3Label: '24h',
+    metric3Sub: 'Respuesta de cotizacion',
+  },
+} as const;
+const text = copy[locale] ?? copy.en;
 ---
 
 <section class="section bg-gradient-to-br from-primary-50 via-white to-secondary-50 dark:from-primary-950/50 dark:via-gray-900 dark:to-secondary-950/50">
@@ -8,39 +76,39 @@
         <div class="text-6xl mb-6">💰</div>
         
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-          Custom Solutions, Transparent Pricing
+          {text.title}
         </h2>
         
         <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-          Every project is unique. We provide detailed, custom quotes based on your specific requirements, ensuring you get exactly what you need at a fair price.
+          {text.desc}
         </p>
         
         <div class="grid md:grid-cols-3 gap-6 mb-10">
           <div class="text-center">
-            <div class="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">Custom</div>
-            <div class="text-sm text-gray-500 dark:text-gray-400">Tailored Quotes</div>
+            <div class="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">{text.metric1Label}</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">{text.metric1Sub}</div>
           </div>
           <div class="text-center">
-            <div class="text-3xl font-bold text-secondary-600 dark:text-secondary-400 mb-2">No</div>
-            <div class="text-sm text-gray-500 dark:text-gray-400">Hidden Costs</div>
+            <div class="text-3xl font-bold text-secondary-600 dark:text-secondary-400 mb-2">{text.metric2Label}</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">{text.metric2Sub}</div>
           </div>
           <div class="text-center">
-            <div class="text-3xl font-bold text-accent-600 dark:text-accent-400 mb-2">24hr</div>
-            <div class="text-sm text-gray-500 dark:text-gray-400">Quote Response</div>
+            <div class="text-3xl font-bold text-accent-600 dark:text-accent-400 mb-2">{text.metric3Label}</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">{text.metric3Sub}</div>
           </div>
         </div>
         
         <!-- FREE Project Blueprint CTA -->
         <div class="bg-gradient-to-r from-accent-50 to-primary-50 dark:from-accent-950/50 dark:to-primary-950/50 border border-accent-200 dark:border-accent-700 rounded-xl p-6 mb-8">
           <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-            🎁 Start With a FREE Project Blueprint
+            🎁 {text.ctaTitle}
           </h3>
           <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
-            Get accurate pricing with a comprehensive project roadmap that includes detailed requirements, technical architecture, and cost estimates.
+            {text.ctaDesc}
           </p>
           <div class="flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="/free-project-blueprint" class="btn-primary">Get Free Blueprint</a>
-            <a href="/contact" class="btn-outline">Get Custom Quote</a>
+            <a href={localized('/free-project-blueprint')} class="btn-primary">{text.btn1}</a>
+            <a href={localized('/contact')} class="btn-outline">{text.btn2}</a>
           </div>
         </div>
         
@@ -48,7 +116,7 @@
           <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
           </svg>
-          Free consultation & detailed quote
+          {text.foot}
         </div>
       </div>
     </div>

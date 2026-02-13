@@ -1,126 +1,224 @@
 ---
+import { SUPPORTED_LOCALES, resolveLocale, localizePath, switchLocalePath } from '../lib/i18n';
+import { getDictionary } from '../i18n/dictionaries';
+
 const currentYear = new Date().getFullYear();
+const locale = resolveLocale(Astro.currentLocale, Astro.url.pathname);
+const t = getDictionary(locale);
+const cityLabelMap = {
+  en: {
+    '/toronto': 'Toronto',
+    '/vancouver': 'Vancouver',
+    '/calgary': 'Calgary',
+    '/montreal': 'Montreal',
+    '/edmonton': 'Edmonton',
+    '/ottawa': 'Ottawa',
+    '/new-york': 'New York',
+    '/los-angeles': 'Los Angeles',
+    '/chicago': 'Chicago',
+    '/seattle': 'Seattle',
+    '/san-francisco': 'San Francisco',
+    '/london': 'London',
+    '/paris': 'Paris',
+    '/berlin': 'Berlin',
+    '/amsterdam': 'Amsterdam',
+    '/zurich': 'Zurich',
+    '/stockholm': 'Stockholm'
+  },
+  de: {
+    '/toronto': 'Toronto',
+    '/vancouver': 'Vancouver',
+    '/calgary': 'Calgary',
+    '/montreal': 'Montreal',
+    '/edmonton': 'Edmonton',
+    '/ottawa': 'Ottawa',
+    '/new-york': 'Neu York',
+    '/los-angeles': 'Los Angeles',
+    '/chicago': 'Chicago',
+    '/seattle': 'Seattle',
+    '/san-francisco': 'San Francisco',
+    '/london': 'London',
+    '/paris': 'Paris',
+    '/berlin': 'Berlin',
+    '/amsterdam': 'Amsterdam',
+    '/zurich': 'Zurich',
+    '/stockholm': 'Stockholm'
+  },
+  fr: {
+    '/toronto': 'Toronto',
+    '/vancouver': 'Vancouver',
+    '/calgary': 'Calgary',
+    '/montreal': 'Montreal',
+    '/edmonton': 'Edmonton',
+    '/ottawa': 'Ottawa',
+    '/new-york': 'New York',
+    '/los-angeles': 'Los Angeles',
+    '/chicago': 'Chicago',
+    '/seattle': 'Seattle',
+    '/san-francisco': 'San Francisco',
+    '/london': 'Londres',
+    '/paris': 'Paris',
+    '/berlin': 'Berlin',
+    '/amsterdam': 'Amsterdam',
+    '/zurich': 'Zurich',
+    '/stockholm': 'Stockholm'
+  },
+  es: {
+    '/toronto': 'Toronto',
+    '/vancouver': 'Vancouver',
+    '/calgary': 'Calgary',
+    '/montreal': 'Montreal',
+    '/edmonton': 'Edmonton',
+    '/ottawa': 'Ottawa',
+    '/new-york': 'Nueva York',
+    '/los-angeles': 'Los Angeles',
+    '/chicago': 'Chicago',
+    '/seattle': 'Seattle',
+    '/san-francisco': 'San Francisco',
+    '/london': 'Londres',
+    '/paris': 'Paris',
+    '/berlin': 'Berlin',
+    '/amsterdam': 'Amsterdam',
+    '/zurich': 'Zurich',
+    '/stockholm': 'Estocolmo'
+  },
+} as const;
+const cityText = (url: string, fallback: string) =>
+  cityLabelMap[locale]?.[url as keyof (typeof cityLabelMap)[typeof locale]] ?? fallback;
 
 const footerLinks = [
   {
-    title: "Home",
+    title: t.footer.home,
     links: [
-      { text: "Home", url: "/" },
-      { text: "Features", url: "/features" },
-      { text: "Pricing", url: "/pricing" },
-      { text: "Contact", url: "/contact" }
-    ]
+      { text: t.footer.home, url: '/' },
+      { text: t.footer.features, url: '/features' },
+      { text: t.common.pricing, url: '/pricing' },
+      { text: t.common.contact, url: '/contact' },
+    ],
   },
   {
-    title: "Product",
+    title: t.footer.product,
     links: [
-      { text: "Features", url: "/features" },
-      { text: "Pricing", url: "/pricing" },
-      { text: "FAQ", url: "/faqs" },
-      { text: "Integrations", url: "/integrations" }
-    ]
+      { text: t.footer.features, url: '/features' },
+      { text: t.common.pricing, url: '/pricing' },
+      { text: t.footer.faq, url: '/faqs' },
+      { text: t.footer.integrations, url: '/integrations' },
+    ],
   },
   {
-    title: "Resources",
+    title: t.footer.resources,
     links: [
-      { text: "Blog", url: "/blog" },
-      { text: "Case Studies", url: "/case-studies" },
-      { text: "404 Page", url: "/404" }
-    ]
+      { text: t.common.blog, url: '/blog' },
+      { text: t.common.caseStudies, url: '/case-studies' },
+      { text: t.common.page404, url: '/404' },
+    ],
   },
   {
-    title: "Company",
+    title: t.footer.company,
     links: [
-      { text: "About Us", url: "/company" },
-      { text: "Careers", url: "/career" },
-      { text: "Contact", url: "/contact" },
-      { text: "Reviews", url: "/reviews" },
-      { text: "Privacy Policy", url: "/privacy-policy" },
-      { text: "Terms of Service", url: "/terms-conditions" }
-    ]
+      { text: t.common.aboutUs, url: '/company' },
+      { text: t.footer.careers, url: '/career' },
+      { text: t.common.contact, url: '/contact' },
+      { text: t.footer.reviews, url: '/reviews' },
+      { text: t.footer.privacyPolicy, url: '/privacy-policy' },
+      { text: t.footer.termsOfService, url: '/terms-conditions' },
+    ],
   },
   {
-    title: "Service Areas",
+    title: t.footer.serviceAreas,
     links: [
-      { text: "Toronto", url: "/toronto" },
-      { text: "Vancouver", url: "/vancouver" },
-      { text: "Calgary", url: "/calgary" },
-      { text: "Montreal", url: "/montreal" },
-      { text: "Edmonton", url: "/edmonton" },
-      { text: "Ottawa", url: "/ottawa" }
-    ]
+      { text: cityText('/toronto', 'Toronto'), url: '/toronto' },
+      { text: cityText('/vancouver', 'Vancouver'), url: '/vancouver' },
+      { text: cityText('/calgary', 'Calgary'), url: '/calgary' },
+      { text: cityText('/montreal', 'Montreal'), url: '/montreal' },
+      { text: cityText('/edmonton', 'Edmonton'), url: '/edmonton' },
+      { text: cityText('/ottawa', 'Ottawa'), url: '/ottawa' },
+    ],
   },
   {
-    title: "US Markets",
+    title: t.footer.usMarkets,
     links: [
-      { text: "New York", url: "/new-york" },
-      { text: "Los Angeles", url: "/los-angeles" },
-      { text: "Chicago", url: "/chicago" },
-      { text: "Seattle", url: "/seattle" },
-      { text: "San Francisco", url: "/san-francisco" }
-    ]
+      { text: cityText('/new-york', 'New York'), url: '/new-york' },
+      { text: cityText('/los-angeles', 'Los Angeles'), url: '/los-angeles' },
+      { text: cityText('/chicago', 'Chicago'), url: '/chicago' },
+      { text: cityText('/seattle', 'Seattle'), url: '/seattle' },
+      { text: cityText('/san-francisco', 'San Francisco'), url: '/san-francisco' },
+    ],
   },
   {
-    title: "Europe",
+    title: t.footer.europe,
     links: [
-      { text: "London", url: "/london" },
-      { text: "Paris", url: "/paris" },
-      { text: "Berlin", url: "/berlin" },
-      { text: "Amsterdam", url: "/amsterdam" },
-      { text: "Zurich", url: "/zurich" },
-      { text: "Stockholm", url: "/stockholm" }
-    ]
-  }
+      { text: cityText('/london', 'London'), url: '/london' },
+      { text: cityText('/paris', 'Paris'), url: '/paris' },
+      { text: cityText('/berlin', 'Berlin'), url: '/berlin' },
+      { text: cityText('/amsterdam', 'Amsterdam'), url: '/amsterdam' },
+      { text: cityText('/zurich', 'Zurich'), url: '/zurich' },
+      { text: cityText('/stockholm', 'Stockholm'), url: '/stockholm' },
+    ],
+  },
 ];
+
+const languageOptions = SUPPORTED_LOCALES.map((code) => ({
+  code,
+  label: t.languageNames[code],
+  url: switchLocalePath(Astro.url.pathname, code),
+}));
+
+const localized = (path: string) => localizePath(path, locale);
 ---
 
 <footer class="bg-gray-900 text-white pt-16 pb-8">
   <div class="container-custom">
     <div class="grid md:grid-cols-2 lg:grid-cols-8 gap-6 mb-12">
       <div class="md:col-span-2 lg:col-span-2">
-        <a href="/" class="flex items-center mb-6" aria-label="Go to homepage">
+        <a href={localized('/')} class="flex items-center mb-6" aria-label="Go to homepage">
           <svg class="h-8 w-auto text-primary-400" viewBox="0 0 40 40" fill="currentColor">
             <path d="M20 5C11.716 5 5 11.716 5 20C5 28.284 11.716 35 20 35C28.284 35 35 28.284 35 20C35 11.716 28.284 5 20 5ZM20 10C22.761 10 25 12.239 25 15C25 17.761 22.761 20 20 20C17.239 20 15 17.761 15 15C15 12.239 17.239 10 20 10ZM20 32C16.218 32 12.848 30.154 10.859 27.307C12.839 24.663 16.159 23 20 23C23.841 23 27.161 24.663 29.141 27.307C27.152 30.154 23.782 32 20 32Z" />
           </svg>
           <span class="ml-2 text-xl font-display font-semibold text-white">A & H Solutions</span>
         </a>
-        <p class="text-gray-400 mb-6 max-w-md">
-          Custom software development firm specializing in web applications, mobile app development, and AI integrations that transform businesses and drive digital success.
-        </p>
-        
-        <!-- FREE Project Blueprint CTA in Footer -->
+        <p class="text-gray-400 mb-6 max-w-md">{t.footer.description}</p>
+
         <div class="bg-primary-900/50 border border-primary-800 rounded-lg p-4 mb-6">
-          <h4 class="text-white font-semibold mb-2">🎁 FREE Project Blueprint</h4>
-          <p class="text-gray-300 text-sm mb-3">Get a comprehensive project roadmap absolutely free.</p>
-          <a href="/free-project-blueprint" class="inline-flex items-center text-primary-400 hover:text-primary-300 font-medium text-sm">
-            Get Started →
+          <h4 class="text-white font-semibold mb-2">{t.footer.ctaTitle}</h4>
+          <p class="text-gray-300 text-sm mb-3">{t.footer.ctaDescription}</p>
+          <a href={localized('/free-project-blueprint')} class="inline-flex items-center text-primary-400 hover:text-primary-300 font-medium text-sm">
+            {t.footer.ctaLink} ->
           </a>
         </div>
+
+        <div class="flex flex-wrap gap-3">
+          {languageOptions.map((option) => (
+            <a href={option.url} class={`text-xs px-2 py-1 rounded border border-gray-700 hover:border-primary-400 ${option.code === locale ? 'text-primary-300 border-primary-500' : 'text-gray-400'}`}>
+              {option.label}
+            </a>
+          ))}
+        </div>
       </div>
-      
-      {footerLinks.map(column => (
+
+      {footerLinks.map((column) => (
         <div>
           <h3 class="text-lg font-semibold mb-4">{column.title}</h3>
           <ul class="space-y-2">
-            {column.links.map(link => (
+            {column.links.map((link) => (
               <li>
-                <a href={link.url} class="text-gray-400 hover:text-primary-400 transition-colors">{link.text}</a>
+                <a href={localized(link.url)} class="text-gray-400 hover:text-primary-400 transition-colors">{link.text}</a>
               </li>
             ))}
           </ul>
         </div>
       ))}
     </div>
-    
+
     <div class="border-t border-gray-800 pt-8 mt-8">
       <div class="flex flex-col md:flex-row justify-between items-center">
         <p class="text-gray-400 text-sm mb-4 md:mb-0">
-          &copy; {currentYear} A & H Solutions. All rights reserved.
+          &copy; {currentYear} A & H Solutions. {t.footer.copyright}
         </p>
         <div class="flex space-x-6">
-          <a href="/privacy-policy" class="text-gray-400 hover:text-primary-400 text-sm transition-colors">Privacy Policy</a>
-          <a href="/terms-conditions" class="text-gray-400 hover:text-primary-400 text-sm transition-colors">Terms of Service</a>
-          <a href="#" class="text-gray-400 hover:text-primary-400 text-sm transition-colors">Cookie Policy</a>
+          <a href={localized('/privacy-policy')} class="text-gray-400 hover:text-primary-400 text-sm transition-colors">{t.footer.privacyPolicy}</a>
+          <a href={localized('/terms-conditions')} class="text-gray-400 hover:text-primary-400 text-sm transition-colors">{t.footer.termsOfService}</a>
+          <a href="#" class="text-gray-400 hover:text-primary-400 text-sm transition-colors">{t.footer.cookiePolicy}</a>
         </div>
       </div>
     </div>

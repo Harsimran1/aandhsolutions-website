@@ -1,0 +1,20 @@
+{
+  "pages": {
+    "home": {
+      "title": "A&H Solutions | Desarrollo de apps a medida e integraciones de IA",
+      "description": "A&H Solutions crea aplicaciones personalizadas, plataformas web e integraciones de IA para startups y empresas."
+    },
+    "pricing": {
+      "title": "Precios - A&H Solutions"
+    },
+    "contact": {
+      "title": "Contacto - A & H Solutions",
+      "heroTitle": "Contacto",
+      "heroDescription": "Estamos aqui para ayudarte con cualquier pregunta sobre nuestros servicios."
+    },
+    "freeProjectBlueprint": {
+      "title": "Plan de proyecto GRATIS y hoja de ruta tecnica | A&H Solutions",
+      "description": "Obtenga gratis un plan de proyecto completo con arquitectura tecnica, wireframes, analisis de riesgos y hoja de ruta de implementacion."
+    }
+  }
+}

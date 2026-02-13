@@ -5,6 +5,7 @@ import Hero from '../components/Hero.astro';
 import Features from '../components/Features.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
+import { resolveLocale } from '../lib/i18n';
 
 export interface Props {
   city: string;
@@ -24,13 +25,202 @@ const {
   keyIndustries = ["Technology", "Healthcare", "Finance", "Manufacturing"]
 } = Astro.props;
 
-const pageTitle = `Software Development & IT Consulting in ${city}, ${state} | A & H Solutions`;
-const heroTitle = `${city} Software Development & Technology Solutions`;
-const heroDescription = `Leading provider of custom software development, mobile apps, web applications, and IT consulting services in ${city}, ${state}. Transform your business with cutting-edge technology solutions.`;
-const heroBadge = `Serving businesses in ${city}, ${state}`;
+const locale = resolveLocale(Astro.currentLocale, Astro.url.pathname);
+const cityCopy = {
+  en: {
+    pageTitle: `Software Development & IT Consulting in ${city}, ${state} | A & H Solutions`,
+    heroTitle: `${city} Software Development & Technology Solutions`,
+    heroDescription: `Leading provider of custom software development, mobile apps, web applications, and IT consulting services in ${city}, ${state}. Transform your business with cutting-edge technology solutions.`,
+    heroBadge: `Serving businesses in ${city}, ${state}`,
+    consultation: 'Get Free Consultation',
+    work: 'View Our Work',
+    localExpertise: 'Local Expertise',
+    whyChoose: `Why Choose A & H Solutions in ${city}?`,
+    whyDesc: `As a trusted technology partner in ${city}, ${state}, we understand the unique challenges and opportunities that local businesses face. Our team combines global expertise with local market knowledge to deliver solutions that drive real results.`,
+    localPresence: 'Local Presence',
+    localPresenceDesc: `Based in ${country}, we provide on-site support and face-to-face consultations for ${city} area businesses.`,
+    proven: 'Proven Results',
+    provenDesc: `Successfully delivered 100+ projects for businesses across ${state}, helping them achieve digital transformation.`,
+    fast: 'Fast Response',
+    fastDesc: `Same-day response times and flexible meeting schedules to accommodate your business needs in ${city}.`,
+    industries: `Industries We Serve in ${city}`,
+    servicesTitle: `Our ${city} Services`,
+    servicesDesc: `Comprehensive technology solutions tailored for ${city} businesses, from startups to enterprises.`,
+    customDev: 'Custom Software Development',
+    customDevDesc: `Tailored software solutions built specifically for your ${city} business requirements and industry needs.`,
+    mobile: 'Mobile App Development',
+    mobileDesc: `Native and cross-platform mobile applications to reach your ${city} customers on any device.`,
+    cloud: 'Cloud Solutions',
+    cloudDesc: `Scalable cloud infrastructure and migration services for ${city} businesses looking to modernize.`,
+    ai: 'AI & Automation',
+    aiDesc: `Intelligent automation and AI integration to streamline your ${city} business operations.`,
+    it: 'IT Consulting',
+    itDesc: `Strategic technology consulting to help ${city} businesses make informed IT decisions.`,
+    support: 'Support & Maintenance',
+    supportDesc: `Ongoing support and maintenance services for ${city} businesses to keep systems running smoothly.`,
+  },
+  de: {
+    pageTitle: `Softwareentwicklung & IT-Beratung in ${city}, ${state} | A & H Solutions`,
+    heroTitle: `Softwareentwicklung & Technologielosungen in ${city}`,
+    heroDescription: `Fur Unternehmen in ${city}, ${state}: Individuelle Softwareentwicklung, Mobile Apps, Webanwendungen und IT-Beratung.`,
+    heroBadge: `Fur Unternehmen in ${city}, ${state}`,
+    consultation: 'Kostenlose Beratung',
+    work: 'Unsere Referenzen',
+    localExpertise: 'Lokale Expertise',
+    whyChoose: `Warum A & H Solutions in ${city}?`,
+    whyDesc: `Als Technologiepartner in ${city} kennen wir die lokalen Anforderungen und Chancen. Wir verbinden globale Erfahrung mit lokalem Marktverstandnis.`,
+    localPresence: 'Lokale Prasenz',
+    localPresenceDesc: `Mit Standort in ${country} bieten wir Vor-Ort-Support und direkte Beratung fur Unternehmen in ${city}.`,
+    proven: 'Nachweisbare Ergebnisse',
+    provenDesc: `Uber 100 erfolgreich gelieferte Projekte in ${state} mit messbarer Wirkung.`,
+    fast: 'Schnelle Reaktion',
+    fastDesc: `Schnelle Antwortzeiten und flexible Termine fur Ihr Unternehmen in ${city}.`,
+    industries: `Branchen in ${city}, die wir betreuen`,
+    servicesTitle: `Unsere Leistungen in ${city}`,
+    servicesDesc: `Umfassende Technologielosungen fur Unternehmen in ${city} - vom Startup bis zum Enterprise.`,
+    customDev: 'Individuelle Softwareentwicklung',
+    customDevDesc: `Massgeschneiderte Software fur Ihre Anforderungen in ${city}.`,
+    mobile: 'Mobile App Entwicklung',
+    mobileDesc: `Native und Cross-Platform Apps fur Ihre Zielgruppen in ${city}.`,
+    cloud: 'Cloud Losungen',
+    cloudDesc: `Skalierbare Cloud-Infrastruktur und Migration fur moderne Unternehmen in ${city}.`,
+    ai: 'KI & Automatisierung',
+    aiDesc: `Intelligente Automatisierung und KI-Integration fur effizientere Ablaufe.`,
+    it: 'IT-Beratung',
+    itDesc: `Strategische Technologieberatung fur bessere Entscheidungen und nachhaltiges Wachstum.`,
+    support: 'Support & Wartung',
+    supportDesc: `Laufender Support und Wartung fur stabile Systeme in ${city}.`,
+  },
+  fr: {
+    pageTitle: `Developpement logiciel & conseil IT a ${city}, ${state} | A & H Solutions`,
+    heroTitle: `Solutions logicielles et technologiques a ${city}`,
+    heroDescription: `A ${city}, ${state}, nous concevons des applications web et mobiles, des integrations IA et du conseil IT pour accelerer votre croissance.`,
+    heroBadge: `Au service des entreprises de ${city}, ${state}`,
+    consultation: 'Consultation gratuite',
+    work: 'Voir nos realisations',
+    localExpertise: 'Expertise locale',
+    whyChoose: `Pourquoi choisir A & H Solutions a ${city} ?`,
+    whyDesc: `Partenaire technologique de confiance a ${city}, nous combinons expertise globale et connaissance du marche local.`,
+    localPresence: 'Presence locale',
+    localPresenceDesc: `Base au ${country}, nous proposons un accompagnement de proximite pour les entreprises de ${city}.`,
+    proven: 'Resultats prouves',
+    provenDesc: `Plus de 100 projets livres avec succes pour des entreprises de ${state}.`,
+    fast: 'Reactivite',
+    fastDesc: `Reponse rapide et disponibilite flexible pour vos besoins a ${city}.`,
+    industries: `Secteurs accompagnes a ${city}`,
+    servicesTitle: `Nos services a ${city}`,
+    servicesDesc: `Des solutions technologiques completes pour les entreprises de ${city}, de la startup au grand groupe.`,
+    customDev: 'Developpement logiciel sur mesure',
+    customDevDesc: `Logiciels adaptes a vos besoins metier et a votre secteur.`,
+    mobile: 'Developpement mobile',
+    mobileDesc: `Applications natives et multiplateformes pour toucher vos clients sur tous les appareils.`,
+    cloud: 'Solutions cloud',
+    cloudDesc: `Infrastructure cloud evolutive et migration pour moderniser votre SI.`,
+    ai: 'IA & automatisation',
+    aiDesc: `Automatisation intelligente et IA pour optimiser vos operations.`,
+    it: 'Conseil IT',
+    itDesc: `Conseil strategique pour prendre les bonnes decisions technologiques.`,
+    support: 'Support & maintenance',
+    supportDesc: `Support continu et maintenance proactive pour des systemes fiables.`,
+  },
+  es: {
+    pageTitle: `Desarrollo de software y consultoria IT en ${city}, ${state} | A & H Solutions`,
+    heroTitle: `Soluciones de software y tecnologia en ${city}`,
+    heroDescription: `En ${city}, ${state}, ayudamos a empresas con desarrollo a medida, apps moviles, web e integraciones de IA.`,
+    heroBadge: `Ayudando a empresas en ${city}, ${state}`,
+    consultation: 'Consulta gratuita',
+    work: 'Ver nuestro trabajo',
+    localExpertise: 'Experiencia local',
+    whyChoose: `Por que elegir A & H Solutions en ${city}?`,
+    whyDesc: `Como socio tecnologico en ${city}, entendemos retos locales y entregamos resultados medibles.`,
+    localPresence: 'Presencia local',
+    localPresenceDesc: `Con base en ${country}, ofrecemos soporte cercano para empresas de ${city}.`,
+    proven: 'Resultados comprobados',
+    provenDesc: `Mas de 100 proyectos entregados con exito para empresas en ${state}.`,
+    fast: 'Respuesta rapida',
+    fastDesc: `Tiempos de respuesta rapidos y horarios flexibles para tu negocio en ${city}.`,
+    industries: `Industrias que atendemos en ${city}`,
+    servicesTitle: `Nuestros servicios en ${city}`,
+    servicesDesc: `Soluciones tecnologicas completas para empresas de ${city}, desde startups hasta corporativos.`,
+    customDev: 'Desarrollo de software a medida',
+    customDevDesc: `Software adaptado a las necesidades de tu empresa en ${city}.`,
+    mobile: 'Desarrollo de apps moviles',
+    mobileDesc: `Aplicaciones nativas y multiplataforma para llegar a tus clientes en cualquier dispositivo.`,
+    cloud: 'Soluciones cloud',
+    cloudDesc: `Infraestructura cloud escalable y migracion para modernizar tu operacion.`,
+    ai: 'IA y automatizacion',
+    aiDesc: `Automatizacion inteligente e integracion de IA para optimizar procesos.`,
+    it: 'Consultoria IT',
+    itDesc: `Consultoria estrategica para tomar mejores decisiones tecnologicas.`,
+    support: 'Soporte y mantenimiento',
+    supportDesc: `Soporte continuo y mantenimiento para que tus sistemas funcionen sin interrupciones.`,
+  },
+} as const;
+
+const t = cityCopy[locale] ?? cityCopy.en;
+const pageDescriptionByLocale = {
+  en: `Professional software development and technology consulting services in ${city}, ${state}. We help businesses transform with custom solutions.`,
+  de: `Professionelle Softwareentwicklung und IT-Beratung in ${city}, ${state}. Wir helfen Unternehmen mit individuellen Losungen.`,
+  fr: `Services de developpement logiciel et de conseil IT a ${city}, ${state}. Nous aidons les entreprises avec des solutions sur mesure.`,
+  es: `Servicios de desarrollo de software y consultoria IT en ${city}, ${state}. Ayudamos a empresas con soluciones a medida.`,
+} as const;
+const pageDescription = pageDescriptionByLocale[locale] ?? description;
+const industryTranslations = {
+  de: {
+    Technology: 'Technologie',
+    Healthcare: 'Gesundheitswesen',
+    Finance: 'Finanzwesen',
+    Manufacturing: 'Fertigung',
+    Fashion: 'Mode',
+    Startups: 'Startups',
+    Media: 'Medien',
+    Automotive: 'Automobil',
+    Government: 'Offentlicher Sektor',
+    'Luxury Goods': 'Luxusguter',
+    Tourism: 'Tourismus',
+    Aerospace: 'Luft- und Raumfahrt',
+  },
+  fr: {
+    Technology: 'Technologie',
+    Healthcare: 'Sante',
+    Finance: 'Finance',
+    Manufacturing: 'Industrie',
+    Fashion: 'Mode',
+    Startups: 'Startups',
+    Media: 'Medias',
+    Automotive: 'Automobile',
+    Government: 'Secteur public',
+    'Luxury Goods': 'Produits de luxe',
+    Tourism: 'Tourisme',
+    Aerospace: 'Aerospatial',
+  },
+  es: {
+    Technology: 'Tecnologia',
+    Healthcare: 'Salud',
+    Finance: 'Finanzas',
+    Manufacturing: 'Manufactura',
+    Fashion: 'Moda',
+    Startups: 'Startups',
+    Media: 'Medios',
+    Automotive: 'Automotriz',
+    Government: 'Sector publico',
+    'Luxury Goods': 'Lujo',
+    Tourism: 'Turismo',
+    Aerospace: 'Aeroespacial',
+  },
+} as const;
+const translatedIndustries = keyIndustries.map((industry) => {
+  const byLocale = industryTranslations[locale as keyof typeof industryTranslations];
+  return byLocale?.[industry as keyof typeof byLocale] ?? industry;
+});
+
+const pageTitle = t.pageTitle;
+const heroTitle = t.heroTitle;
+const heroDescription = t.heroDescription;
+const heroBadge = t.heroBadge;
 ---
 
-<Layout title={pageTitle} description={description}>
+<Layout title={pageTitle} description={pageDescription}>
   <Header />
   <main>
     <Hero 
@@ -38,19 +228,19 @@ const heroBadge = `Serving businesses in ${city}, ${state}`;
       description={heroDescription}
       highlightText={city}
       badge={heroBadge}
-      primaryButton={{ text: "Get Free Consultation", url: "/contact" }}
-      secondaryButton={{ text: "View Our Work", url: "/case-studies" }}
+      primaryButton={{ text: t.consultation, url: "/contact" }}
+      secondaryButton={{ text: t.work, url: "/case-studies" }}
     />
 
   <section class="section bg-white dark:bg-secondary-950">
     <div class="container-custom">
       <div class="text-center mb-16">
         <span class="inline-block px-4 py-1 rounded-full bg-secondary-100 dark:bg-secondary-900 text-secondary-600 dark:text-secondary-300 font-medium text-sm mb-4">
-          Local Expertise
+          {t.localExpertise}
         </span>
-        <h2 class="mb-6 text-gray-900 dark:text-white">Why Choose A & H Solutions in {city}?</h2>
+        <h2 class="mb-6 text-gray-900 dark:text-white">{t.whyChoose}</h2>
         <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-          As a trusted technology partner in {city}, {state}, we understand the unique challenges and opportunities that local businesses face. Our team combines global expertise with local market knowledge to deliver solutions that drive real results.
+          {t.whyDesc}
         </p>
       </div>
 
@@ -62,8 +252,8 @@ const heroBadge = `Serving businesses in ${city}, ${state}`;
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Local Presence</h3>
-          <p class="text-gray-600 dark:text-gray-300">Based in {country}, we provide on-site support and face-to-face consultations for {city} area businesses.</p>
+          <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{t.localPresence}</h3>
+          <p class="text-gray-600 dark:text-gray-300">{t.localPresenceDesc}</p>
         </div>
 
         <div class="text-center">
@@ -72,8 +262,8 @@ const heroBadge = `Serving businesses in ${city}, ${state}`;
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Proven Results</h3>
-          <p class="text-gray-600 dark:text-gray-300">Successfully delivered 100+ projects for businesses across {state}, helping them achieve digital transformation.</p>
+          <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{t.proven}</h3>
+          <p class="text-gray-600 dark:text-gray-300">{t.provenDesc}</p>
         </div>
 
         <div class="text-center">
@@ -82,16 +272,16 @@ const heroBadge = `Serving businesses in ${city}, ${state}`;
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Fast Response</h3>
-          <p class="text-gray-600 dark:text-gray-300">Same-day response times and flexible meeting schedules to accommodate your business needs in {city}.</p>
+          <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{t.fast}</h3>
+          <p class="text-gray-600 dark:text-gray-300">{t.fastDesc}</p>
         </div>
       </div>
 
       {keyIndustries && keyIndustries.length > 0 && (
         <div class="bg-gray-50 dark:bg-gray-800/50 rounded-2xl p-8">
-          <h3 class="text-2xl font-semibold mb-6 text-center text-gray-900 dark:text-white">Industries We Serve in {city}</h3>
+          <h3 class="text-2xl font-semibold mb-6 text-center text-gray-900 dark:text-white">{t.industries}</h3>
           <div class="flex flex-wrap justify-center gap-4">
-            {keyIndustries.map(industry => (
+            {translatedIndustries.map(industry => (
               <span class="px-4 py-2 bg-white dark:bg-gray-700 rounded-full text-gray-700 dark:text-gray-300 font-medium shadow-sm">
                 {industry}
               </span>
@@ -107,16 +297,16 @@ const heroBadge = `Serving businesses in ${city}, ${state}`;
   <section class="section bg-gray-50 dark:bg-gray-800/50">
     <div class="container-custom">
       <div class="text-center mb-16">
-        <h2 class="mb-6 text-gray-900 dark:text-white">Our {city} Services</h2>
+        <h2 class="mb-6 text-gray-900 dark:text-white">{t.servicesTitle}</h2>
         <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-          Comprehensive technology solutions tailored for {city} businesses, from startups to enterprises.
+          {t.servicesDesc}
         </p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="card p-6">
-          <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Custom Software Development</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">Tailored software solutions built specifically for your {city} business requirements and industry needs.</p>
+          <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">{t.customDev}</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">{t.customDevDesc}</p>
           <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-1">
             <li>• Web Applications</li>
             <li>• Desktop Software</li>
@@ -126,8 +316,8 @@ const heroBadge = `Serving businesses in ${city}, ${state}`;
         </div>
 
         <div class="card p-6">
-          <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Mobile App Development</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">Native and cross-platform mobile applications to reach your {city} customers on any device.</p>
+          <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">{t.mobile}</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">{t.mobileDesc}</p>
           <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-1">
             <li>• iOS Development</li>
             <li>• Android Development</li>
@@ -137,8 +327,8 @@ const heroBadge = `Serving businesses in ${city}, ${state}`;
         </div>
 
         <div class="card p-6">
-          <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Cloud Solutions</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">Scalable cloud infrastructure and migration services for {city} businesses looking to modernize.</p>
+          <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">{t.cloud}</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">{t.cloudDesc}</p>
           <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-1">
             <li>• AWS & Azure</li>
             <li>• Cloud Migration</li>
@@ -148,8 +338,8 @@ const heroBadge = `Serving businesses in ${city}, ${state}`;
         </div>
 
         <div class="card p-6">
-          <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">AI & Automation</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">Intelligent automation and AI integration to streamline your {city} business operations.</p>
+          <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">{t.ai}</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">{t.aiDesc}</p>
           <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-1">
             <li>• Process Automation</li>
             <li>• Machine Learning</li>
@@ -159,8 +349,8 @@ const heroBadge = `Serving businesses in ${city}, ${state}`;
         </div>
 
         <div class="card p-6">
-          <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">IT Consulting</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">Strategic technology consulting to help {city} businesses make informed IT decisions.</p>
+          <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">{t.it}</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">{t.itDesc}</p>
           <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-1">
             <li>• Technology Strategy</li>
             <li>• Digital Transformation</li>
@@ -170,8 +360,8 @@ const heroBadge = `Serving businesses in ${city}, ${state}`;
         </div>
 
         <div class="card p-6">
-          <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Support & Maintenance</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">Ongoing support and maintenance services for {city} businesses to keep systems running smoothly.</p>
+          <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">{t.support}</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">{t.supportDesc}</p>
           <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-1">
             <li>• 24/7 Support</li>
             <li>• System Updates</li>
