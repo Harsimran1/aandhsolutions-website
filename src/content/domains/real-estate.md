@@ -15,7 +15,7 @@ tags:
   - "crm"
   - "investment-platform"
   - "proptech"
-image: "/domains/real-estate-dashboard.jpg"
+image: "/case-studies/propcan-1.png"
 imageAlt: "Real estate management platform showing property listings and analytics"
 challenges:
   - "Complex property data management and organization"
