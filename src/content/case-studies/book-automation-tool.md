@@ -26,7 +26,7 @@ technologies:
 image: "/case-studies/no-image-available.png"
 imageAlt: "Book automation tool interface showing generated marketing copy and cover designs"
 gallery:
-  - "/case-studies/no-image-available.png""
+  - "/case-studies/no-image-available.png"
 results:
   timeline: "8 weeks"
   metrics:
