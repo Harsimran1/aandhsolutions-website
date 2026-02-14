@@ -173,6 +173,17 @@ const ogLocale = getOgLocale(currentLocale);
         });
       }
 
+      function hydrateLazyImages() {
+        document.querySelectorAll('img[loading="lazy"]').forEach((img) => {
+          if (img.complete) {
+            img.classList.add('loaded');
+            return;
+          }
+
+          img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+        });
+      }
+
       // Check for user preference
       if (localStorage.getItem('darkMode') === null) {
         // Check system preference
@@ -187,6 +198,7 @@ const ogLocale = getOgLocale(currentLocale);
       // Handle page transitions
       document.addEventListener('astro:page-load', () => {
         localizeInternalLinks();
+        hydrateLazyImages();
         // This runs on initial page load and after each navigation
         const pageWrapper = document.getElementById('page-wrapper');
         if (pageWrapper) {
@@ -203,6 +215,7 @@ const ogLocale = getOgLocale(currentLocale);
       });
 
       localizeInternalLinks();
+      hydrateLazyImages();
     </script>
     <script src="/scripts/transitions.js" defer></script>
   </body>
