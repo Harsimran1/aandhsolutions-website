@@ -24,19 +24,10 @@ technologies:
   - "WebSocket"
   - "JWT Authentication"
   - "RESTful APIs"
-image: "/case-studies/real-estate-1.png"
+image: "/case-studies/no-image-available.png"
 imageAlt: "Real estate investment app showing portfolio dashboard with performance metrics"
 gallery:
-  - "/case-studies/real-estate-1.png"
-  - "/case-studies/real-estate-2.png"
-  - "/case-studies/real-estate-3.png"
-  - "/case-studies/real-estate-4.png"
-  - "/case-studies/real-estate-5.png"
-  - "/case-studies/real-estate-6.png"
-  - "/case-studies/real-estate-7.png"
-  - "/case-studies/real-estate-8.png"
-  - "/case-studies/real-estate-9.png"
-  - "/case-studies/real-estate-10.png"
+  - "/case-studies/no-image-available.png"
 results:
   timeline: "12 weeks"
   metrics:

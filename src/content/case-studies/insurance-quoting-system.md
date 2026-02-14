@@ -23,19 +23,10 @@ technologies:
   - "Compulife API"
   - "HTML5"
   - "CSS3"
-image: "/case-studies/insurance-1.png"
+image: "/case-studies/no-image-available.png"
 imageAlt: "Insurance quoting system dashboard showing quote comparison"
 gallery:
-  - "/case-studies/insurance-1.png"
-  - "/case-studies/insurance-2.png"
-  - "/case-studies/insurance-3.png"
-  - "/case-studies/insurance-4.png"
-  - "/case-studies/insurance-5.png"
-  - "/case-studies/insurance-6.png"
-  - "/case-studies/insurance-7.png"
-  - "/case-studies/insurance-8.png"
-  - "/case-studies/insurance-9.png"
-  - "/case-studies/insurance-10.png"
+  - "/case-studies/no-image-available.png"
 results:
   timeline: "6 weeks"
   metrics:

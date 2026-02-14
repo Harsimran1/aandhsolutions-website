@@ -23,19 +23,10 @@ technologies:
   - "Flask"
   - "React"
   - "AWS S3"
-image: "/case-studies/book-automation-1.png"
+image: "/case-studies/no-image-available.png"
 imageAlt: "Book automation tool interface showing generated marketing copy and cover designs"
 gallery:
-  - "/case-studies/book-automation-1.png"
-  - "/case-studies/book-automation-2.png"
-  - "/case-studies/book-automation-3.png"
-  - "/case-studies/book-automation-4.png"
-  - "/case-studies/book-automation-5.png"
-  - "/case-studies/book-automation-6.png"
-  - "/case-studies/book-automation-7.png"
-  - "/case-studies/book-automation-8.png"
-  - "/case-studies/book-automation-9.png"
-  - "/case-studies/book-automation-10.png"
+  - "/case-studies/no-image-available.png""
 results:
   timeline: "8 weeks"
   metrics:
