@@ -7,15 +7,24 @@ const {
   maxHeight,
 } = Astro.props;
 
+const normalizedImages = Array.from(
+  new Set(
+    images
+      .filter((src) => typeof src === 'string')
+      .map((src) => src.trim())
+      .filter((src) => src.length > 0)
+  )
+);
+
 const sliderStyle = maxHeight ? `--cs-max-h: ${maxHeight};` : undefined;
 ---
 
 <div class="cs-slider" data-slider data-autoplay={autoplay} data-interval={intervalMs} style={sliderStyle}>
   <div class="cs-slider__viewport">
     <div class="cs-slider__track">
-      {images.map((src, index) => (
+      {normalizedImages.map((src, index) => (
         <div class="cs-slide" data-slide-index={index}>
-          <img src={src} alt={`${altBase} ${index + 1}`} />
+          <img src={src} alt={`${altBase} ${index + 1}`} loading="eager" decoding="async" />
         </div>
       ))}
     </div>
@@ -23,7 +32,7 @@ const sliderStyle = maxHeight ? `--cs-max-h: ${maxHeight};` : undefined;
   <button class="cs-nav cs-prev" type="button" aria-label="Previous slide">‹</button>
   <button class="cs-nav cs-next" type="button" aria-label="Next slide">›</button>
   <div class="cs-dots" role="tablist" aria-label="Slide navigation">
-    {images.map((_, index) => (
+    {normalizedImages.map((_, index) => (
       <button class="cs-dot" type="button" data-slide-index={index} aria-label={`Go to slide ${index + 1}`} aria-current={index === 0 ? 'true' : 'false'}></button>
     ))}
   </div>
@@ -34,6 +43,8 @@ const sliderStyle = maxHeight ? `--cs-max-h: ${maxHeight};` : undefined;
 
   function initSlider(slider) {
     if (!slider) return;
+    if (slider.dataset.sliderInitialized === 'true') return;
+    slider.dataset.sliderInitialized = 'true';
 
     const track = slider.querySelector('.cs-slider__track');
     const prevBtn = slider.querySelector('.cs-prev');
@@ -48,10 +59,16 @@ const sliderStyle = maxHeight ? `--cs-max-h: ${maxHeight};` : undefined;
     const autoplay = slider.dataset.autoplay === 'true';
     const interval = Number(slider.dataset.interval) || 5000;
 
+    // Preload all frames so navigation does not show transient blank slides.
+    slides.forEach((slide) => {
+      const img = slide.querySelector('img');
+      if (!img || !img.src) return;
+      const preloadImg = new Image();
+      preloadImg.src = img.src;
+    });
+
     function updateUI() {
-      slides.forEach((slide, i) => {
-        slide.style.transform = `translateX(${(i - index) * 100}%)`;
-      });
+      track.style.transform = `translateX(-${index * 100}%)`;
 
       dots.forEach((dot, i) => {
         if (i === index) {
@@ -96,6 +113,11 @@ const sliderStyle = maxHeight ? `--cs-max-h: ${maxHeight};` : undefined;
     function rebuild() {
       slides = Array.from(slider.querySelectorAll('.cs-slide'));
       dots = Array.from(slider.querySelectorAll('.cs-dot'));
+      slides.forEach((slide, i) => slide.setAttribute('data-slide-index', String(i)));
+      dots.forEach((dot, i) => {
+        dot.setAttribute('data-slide-index', String(i));
+        dot.onclick = () => goTo(i);
+      });
       clampIndex();
       updateUI();
       startAutoplay();
@@ -104,6 +126,9 @@ const sliderStyle = maxHeight ? `--cs-max-h: ${maxHeight};` : undefined;
     slides.forEach((slide) => {
       const img = slide.querySelector('img');
       if (!img) return;
+      if (img.complete && img.naturalWidth > 0) {
+        img.classList.add('loaded');
+      }
       img.addEventListener('load', () => {
         img.classList.add('loaded');
       });
@@ -161,11 +186,11 @@ const sliderStyle = maxHeight ? `--cs-max-h: ${maxHeight};` : undefined;
   .cs-slider__track {
     display: flex;
     width: 100%;
+    transition: transform 0.45s ease;
   }
 
   .cs-slide {
     min-width: 100%;
-    transition: transform 0.45s ease;
   }
 
   .cs-slide img {
