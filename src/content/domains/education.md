@@ -15,7 +15,7 @@ tags:
   - "learning-management"
   - "student-information"
   - "online-learning"
-image: "/domains/education-platform.jpg"
+image: "/domains/education-platform.png"
 imageAlt: "Educational management platform showing student progress and analytics"
 challenges:
   - "Adapting to diverse learning styles and educational needs"

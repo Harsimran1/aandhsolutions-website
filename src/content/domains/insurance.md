@@ -15,7 +15,7 @@ tags:
   - "policy-management"
   - "claims-processing"
   - "compliance"
-image: "/domains/insurance-platform.jpg"
+image: "/domains/insurance-platform.png"
 imageAlt: "Insurance management platform showing policy data and analytics"
 challenges:
   - "Manual quoting processes that are time-consuming and error-prone"

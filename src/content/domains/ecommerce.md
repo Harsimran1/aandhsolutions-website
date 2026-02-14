@@ -15,7 +15,7 @@ tags:
   - "online-store"
   - "inventory-management"
   - "customer-experience"
-image: "/domains/ecommerce-dashboard.jpg"
+image: "/domains/ecommerce-dashboard.png"
 imageAlt: "E-commerce management dashboard showing sales analytics and inventory data"
 challenges:
   - "Complex inventory management across multiple channels"

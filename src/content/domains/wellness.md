@@ -15,8 +15,8 @@ tags:
   - "fitness"
   - "mental-health"
   - "telemedicine"
-image: "/domains/wellness-platform.jpg"
-imageAlt: "Wellness management platform showing health metrics and progress tracking"
+image: "/domains/wellness-app.png"
+imageAlt: "Wellness management application showing health metrics and progress tracking"
 challenges:
   - "Patient engagement and adherence to wellness programs"
   - "Integration with wearable devices and health monitoring systems"

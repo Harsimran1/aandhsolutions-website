@@ -15,7 +15,7 @@ tags:
   - "donor-management"
   - "volunteer-management"
   - "grant-tracking"
-image: "/domains/nonprofit-platform.jpg"
+image: "/domains/nonprofit-platform.png"
 imageAlt: "Non-profit management platform showing donor analytics and impact metrics"
 challenges:
   - "Limited budgets requiring cost-effective technology solutions"

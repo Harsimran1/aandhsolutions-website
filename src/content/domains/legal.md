@@ -15,7 +15,7 @@ tags:
   - "document-automation"
   - "client-portal"
   - "compliance"
-image: "/domains/legal-platform.jpg"
+image: "/case-studies/juree-3.png"
 imageAlt: "Legal practice management platform showing case tracking and client communications"
 challenges:
   - "Complex case management and matter tracking across multiple clients"

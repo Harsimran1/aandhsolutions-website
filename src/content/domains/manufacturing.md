@@ -15,7 +15,7 @@ tags:
   - "erp"
   - "iot"
   - "automation"
-image: "/domains/manufacturing-platform.jpg"
+image: "/domains/manufacturing-platform.png"
 imageAlt: "Manufacturing management platform showing production metrics and quality data"
 challenges:
   - "Complex supply chain management and vendor coordination"

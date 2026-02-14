@@ -15,7 +15,7 @@ tags:
   - "compliance"
   - "inventory-tracking"
   - "seed-to-sale"
-image: "/domains/cannabis-platform.jpg"
+image: "/case-studies/moodiday-1.png"
 imageAlt: "Cannabis management platform showing compliance tracking and inventory data"
 challenges:
   - "Complex multi-jurisdictional regulatory compliance requirements"

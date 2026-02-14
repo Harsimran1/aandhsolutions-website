@@ -15,7 +15,7 @@ tags:
   - "hotel-management"
   - "booking-system"
   - "guest-experience"
-image: "/domains/hospitality-platform.jpg"
+image: "/domains/hospitality-platform.png"
 imageAlt: "Hospitality management platform showing guest services and analytics"
 challenges:
   - "Managing complex reservations and room inventory across channels"

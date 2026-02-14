@@ -17,19 +17,10 @@ tags:
   - "jobs"
   - "platform"
 technologies: []
-image: "/case-studies/babajob-1.png"
+image: "/case-studies/no-image-available.png"
 imageAlt: "Babajob job marketplace screens and employer workflows"
 gallery:
-  - "/case-studies/babajob-1.png"
-  - "/case-studies/babajob-2.png"
-  - "/case-studies/babajob-3.png"
-  - "/case-studies/babajob-4.png"
-  - "/case-studies/babajob-5.png"
-  - "/case-studies/babajob-6.png"
-  - "/case-studies/babajob-7.png"
-  - "/case-studies/babajob-8.png"
-  - "/case-studies/babajob-9.png"
-  - "/case-studies/babajob-10.png"
+  - "/case-studies/no-image-available.png"
 relatedServices: []
 relatedDomains: []
 ---

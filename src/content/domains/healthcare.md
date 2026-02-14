@@ -15,7 +15,7 @@ tags:
   - "ehr"
   - "telemedicine"
   - "medical-software"
-image: "/domains/healthcare-dashboard.jpg"
+image: "/domains/healthcare-dashboard.png"
 imageAlt: "Healthcare management dashboard showing patient data and analytics"
 challenges:
   - "HIPAA compliance and patient data security"

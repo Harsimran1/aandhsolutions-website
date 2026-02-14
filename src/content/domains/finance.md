@@ -15,7 +15,7 @@ tags:
   - "payments"
   - "compliance"
   - "financial-services"
-image: "/domains/fintech-platform.jpg"
+image: "/domains/fintech-platform.png"
 imageAlt: "Financial services platform showing investment portfolios and analytics"
 challenges:
   - "Stringent regulatory compliance across multiple jurisdictions"
