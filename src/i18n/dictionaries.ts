@@ -20,6 +20,7 @@ interface Dictionary {
     home: string;
     product: string;
     resources: string;
+    industries: string;
     company: string;
     serviceAreas: string;
     usMarkets: string;
@@ -74,6 +75,7 @@ const dictionaries: Record<Locale, Dictionary> = {
       home: 'Home',
       product: 'Product',
       resources: 'Resources',
+      industries: 'Industries',
       company: 'Company',
       serviceAreas: 'Service Areas',
       usMarkets: 'US Markets',
@@ -132,6 +134,7 @@ const dictionaries: Record<Locale, Dictionary> = {
       home: 'Accueil',
       product: 'Produit',
       resources: 'Ressources',
+      industries: 'Secteurs',
       company: 'Entreprise',
       serviceAreas: 'Zones de service',
       usMarkets: 'Marches americains',
@@ -190,6 +193,7 @@ const dictionaries: Record<Locale, Dictionary> = {
       home: 'Startseite',
       product: 'Produkt',
       resources: 'Ressourcen',
+      industries: 'Branchen',
       company: 'Unternehmen',
       serviceAreas: 'Regionen',
       usMarkets: 'US-Markte',
@@ -248,6 +252,7 @@ const dictionaries: Record<Locale, Dictionary> = {
       home: 'Inicio',
       product: 'Producto',
       resources: 'Recursos',
+      industries: 'Industrias',
       company: 'Empresa',
       serviceAreas: 'Areas de servicio',
       usMarkets: 'Mercados de EE. UU.',

@@ -85,6 +85,66 @@ const cityLabelMap = {
 } as const;
 const cityText = (url: string, fallback: string) =>
   cityLabelMap[locale]?.[url as keyof (typeof cityLabelMap)[typeof locale]] ?? fallback;
+const domainLabelMap = {
+  en: {
+    '/domains/cannabis': 'Cannabis',
+    '/domains/ecommerce': 'E-commerce',
+    '/domains/education': 'Education',
+    '/domains/finance': 'Finance',
+    '/domains/healthcare': 'Healthcare',
+    '/domains/hospitality': 'Hospitality',
+    '/domains/insurance': 'Insurance',
+    '/domains/legal': 'Legal',
+    '/domains/manufacturing': 'Manufacturing',
+    '/domains/non-profit': 'Non-Profit',
+    '/domains/real-estate': 'Real Estate',
+    '/domains/wellness': 'Wellness',
+  },
+  de: {
+    '/domains/cannabis': 'Cannabis',
+    '/domains/ecommerce': 'E-Commerce',
+    '/domains/education': 'Bildung',
+    '/domains/finance': 'Finanzwesen',
+    '/domains/healthcare': 'Gesundheitswesen',
+    '/domains/hospitality': 'Gastgewerbe',
+    '/domains/insurance': 'Versicherung',
+    '/domains/legal': 'Recht',
+    '/domains/manufacturing': 'Fertigung',
+    '/domains/non-profit': 'Non-Profit',
+    '/domains/real-estate': 'Immobilien',
+    '/domains/wellness': 'Wellness',
+  },
+  fr: {
+    '/domains/cannabis': 'Cannabis',
+    '/domains/ecommerce': 'E-commerce',
+    '/domains/education': 'Education',
+    '/domains/finance': 'Finance',
+    '/domains/healthcare': 'Sante',
+    '/domains/hospitality': 'Hotellerie',
+    '/domains/insurance': 'Assurance',
+    '/domains/legal': 'Juridique',
+    '/domains/manufacturing': 'Industrie',
+    '/domains/non-profit': 'Associatif',
+    '/domains/real-estate': 'Immobilier',
+    '/domains/wellness': 'Bien-etre',
+  },
+  es: {
+    '/domains/cannabis': 'Cannabis',
+    '/domains/ecommerce': 'Comercio electronico',
+    '/domains/education': 'Educacion',
+    '/domains/finance': 'Finanzas',
+    '/domains/healthcare': 'Salud',
+    '/domains/hospitality': 'Hosteleria',
+    '/domains/insurance': 'Seguros',
+    '/domains/legal': 'Legal',
+    '/domains/manufacturing': 'Manufactura',
+    '/domains/non-profit': 'Sin fines de lucro',
+    '/domains/real-estate': 'Bienes raices',
+    '/domains/wellness': 'Bienestar',
+  },
+} as const;
+const domainText = (url: string, fallback: string) =>
+  domainLabelMap[locale]?.[url as keyof (typeof domainLabelMap)[typeof locale]] ?? fallback;
 
 const footerLinks = [
   {
@@ -111,6 +171,23 @@ const footerLinks = [
       { text: t.common.blog, url: '/blog' },
       { text: t.common.caseStudies, url: '/case-studies' },
       { text: t.common.page404, url: '/404' },
+    ],
+  },
+  {
+    title: t.footer.industries,
+    links: [
+      { text: domainText('/domains/cannabis', 'Cannabis'), url: '/domains/cannabis' },
+      { text: domainText('/domains/ecommerce', 'E-commerce'), url: '/domains/ecommerce' },
+      { text: domainText('/domains/education', 'Education'), url: '/domains/education' },
+      { text: domainText('/domains/finance', 'Finance'), url: '/domains/finance' },
+      { text: domainText('/domains/healthcare', 'Healthcare'), url: '/domains/healthcare' },
+      { text: domainText('/domains/hospitality', 'Hospitality'), url: '/domains/hospitality' },
+      { text: domainText('/domains/insurance', 'Insurance'), url: '/domains/insurance' },
+      { text: domainText('/domains/legal', 'Legal'), url: '/domains/legal' },
+      { text: domainText('/domains/manufacturing', 'Manufacturing'), url: '/domains/manufacturing' },
+      { text: domainText('/domains/non-profit', 'Non-Profit'), url: '/domains/non-profit' },
+      { text: domainText('/domains/real-estate', 'Real Estate'), url: '/domains/real-estate' },
+      { text: domainText('/domains/wellness', 'Wellness'), url: '/domains/wellness' },
     ],
   },
   {
@@ -169,7 +246,7 @@ const localized = (path: string) => localizePath(path, locale);
 
 <footer class="bg-gray-900 text-white pt-16 pb-8">
   <div class="container-custom">
-    <div class="grid md:grid-cols-2 lg:grid-cols-8 gap-6 mb-12">
+    <div class="grid md:grid-cols-2 lg:grid-cols-10 gap-6 mb-12">
       <div class="md:col-span-2 lg:col-span-2">
         <a href={localized('/')} class="flex items-center mb-6" aria-label="Go to homepage">
           <svg class="h-8 w-auto text-primary-400" viewBox="0 0 40 40" fill="currentColor">
