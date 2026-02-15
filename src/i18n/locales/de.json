@@ -247,62 +247,114 @@
       "cannabis": {
         "industry": "Cannabis",
         "title": "Technologielosungen fur Cannabis und Hanf",
-        "excerpt": "Branchenspezifische Plattformen fur Cannabis mit Compliance und E-Commerce-Fokus."
+        "excerpt": "Spezialisierte Cannabis-Plattformen fur Compliance, Betrieb und Wachstum in stark regulierten Markten.",
+        "description": "Technologielosungen fur Cannabis- und Hanfunternehmen mit Fokus auf Compliance, Nachverfolgbarkeit und operative Effizienz.",
+        "challenges": [
+          "Komplexe Compliance-Anforderungen uber mehrere Rechtsraume",
+          "Luckenlose Seed-to-Sale-Nachverfolgung",
+          "Einschrankungen bei Banking und Zahlungsabwicklung",
+          "Steuer- und Meldekomplexitat",
+          "Bestandsmanagement uber Anbau, Verarbeitung und Retail"
+        ],
+        "solutions": [
+          "Compliance-Management mit automatisierter Berichterstattung",
+          "End-to-End Seed-to-Sale Tracking",
+          "Zahlungs- und Cash-Management-Werkzeuge",
+          "Automatisierte Steuerberechnung und Reporting",
+          "Integriertes Bestandsmanagement"
+        ],
+        "benefits": [
+          "Weniger Compliance-Verstosse und Risiko",
+          "Effizientere Ablaufe",
+          "Hoere Bestandsgenauigkeit",
+          "Einfacheres Steuer- und Regulierungsreporting",
+          "Skalierbare Prozesse fur Wachstum"
+        ],
+        "regulations": [
+          "Bundesstaatliche Cannabis-Regularien",
+          "ATF-Anforderungen",
+          "FDA-Vorgaben fur Hanf- und CBD-Produkte",
+          "DEA-Compliance-Anforderungen",
+          "Steuer- und Verbrauchssteuerregeln"
+        ],
+        "bodyHtml": "<h2>Cannabis-Technologie in einem komplexen Regulierungsumfeld</h2><p>Der Cannabis-Markt wachst schnell, gleichzeitig steigen die regulatorischen Anforderungen. Wir entwickeln Systeme, die Compliance priorisieren und gleichzeitig Prozesse, Transparenz und Skalierbarkeit verbessern.</p><h3>Unsere Branchenerfahrung</h3><p>Wir unterstutzen Unternehmen aus Anbau, Verarbeitung, Labor, Distribution und Retail. Unsere Plattformen verbinden regulatorische Sicherheit mit operativer Effizienz.</p><h2>Herausforderungen, die wir losen</h2><h3>Multi-Jurisdiktionale Compliance</h3><p>Unterschiedliche Regeln je Region erschweren den Betrieb. Wir bauen flexible Compliance-Architekturen mit vollstandigen Audit-Trails.</p><h3>Seed-to-Sale Nachverfolgbarkeit</h3><p>Wir implementieren luckenlose Tracking-Workflows inklusive Integrationen in staatliche Systeme.</p><h3>Zahlungs- und Steuerkomplexitat</h3><p>Unsere Losungen unterstutzen Cash-Management, steuerliche Auswertungen und belastbares Reporting.</p><h2>So starten wir</h2><h3>Compliance-Assessment</h3><p>Wir analysieren regulatorische Pflichten, aktuellen Reifegrad und operative Engpasse.</p><h3>Solution Architecture</h3><p>Danach entwerfen wir eine skalierbare Zielarchitektur mit klarem Fokus auf Compliance und Wachstum.</p><h3>Implementierung & Training</h3><p>Wir liefern die Umsetzung inklusive Team-Schulung, damit Prozesse sicher und konsistent laufen.</p>"
       },
       "ecommerce": {
         "industry": "E-Commerce",
         "title": "E-Commerce- und Retail-Technologielosungen",
-        "excerpt": "Moderne E-Commerce-Losungen fur bessere Conversion und effiziente Ablaufe."
+        "excerpt": "Moderne E-Commerce-Losungen fur bessere Conversion und effiziente Ablaufe.",
+        "description": "Moderne E-Commerce-Losungen fur bessere Conversion und effiziente Ablaufe.",
+        "bodyHtml": "<h2>E-Commerce- und Retail-Technologielosungen</h2><p>Moderne E-Commerce-Losungen fur bessere Conversion und effiziente Ablaufe.</p><h3>Branchenfokus</h3><p>Wir entwickeln passgenaue Software fur E-Commerce und verbinden Compliance, Performance und Skalierbarkeit.</p><h3>Unser Ansatz</h3><p>Von Discovery uber Architektur bis Umsetzung liefern wir belastbare Plattformen, die Prozesse vereinfachen und messbare Geschaftsergebnisse erzeugen.</p>"
       },
       "education": {
         "industry": "Bildung",
         "title": "Technologielosungen fur den Bildungsbereich",
-        "excerpt": "EdTech-Losungen fur bessere Lernergebnisse und skalierbare Lernplattformen."
+        "excerpt": "EdTech-Losungen fur bessere Lernergebnisse und skalierbare Lernplattformen.",
+        "description": "EdTech-Losungen fur bessere Lernergebnisse und skalierbare Lernplattformen.",
+        "bodyHtml": "<h2>Technologielosungen fur den Bildungsbereich</h2><p>EdTech-Losungen fur bessere Lernergebnisse und skalierbare Lernplattformen.</p><h3>Branchenfokus</h3><p>Wir entwickeln passgenaue Software fur Bildung und verbinden Compliance, Performance und Skalierbarkeit.</p><h3>Unser Ansatz</h3><p>Von Discovery uber Architektur bis Umsetzung liefern wir belastbare Plattformen, die Prozesse vereinfachen und messbare Geschaftsergebnisse erzeugen.</p>"
       },
       "finance": {
         "industry": "Finanzwesen",
         "title": "Technologielosungen fur Finanzdienstleister",
-        "excerpt": "Fintech-Losungen mit Fokus auf Sicherheit, Compliance und Kundenerlebnis."
+        "excerpt": "Fintech-Losungen mit Fokus auf Sicherheit, Compliance und Kundenerlebnis.",
+        "description": "Fintech-Losungen mit Fokus auf Sicherheit, Compliance und Kundenerlebnis.",
+        "bodyHtml": "<h2>Technologielosungen fur Finanzdienstleister</h2><p>Fintech-Losungen mit Fokus auf Sicherheit, Compliance und Kundenerlebnis.</p><h3>Branchenfokus</h3><p>Wir entwickeln passgenaue Software fur Finanzwesen und verbinden Compliance, Performance und Skalierbarkeit.</p><h3>Unser Ansatz</h3><p>Von Discovery uber Architektur bis Umsetzung liefern wir belastbare Plattformen, die Prozesse vereinfachen und messbare Geschaftsergebnisse erzeugen.</p>"
       },
       "healthcare": {
         "industry": "Gesundheitswesen",
         "title": "Healthcare- und Medizin-Softwarelosungen",
-        "excerpt": "Sichere Health-Tech-Losungen fur Versorgung, Daten und regulatorische Anforderungen."
+        "excerpt": "Sichere Health-Tech-Losungen fur Versorgung, Daten und regulatorische Anforderungen.",
+        "description": "Sichere Health-Tech-Losungen fur Versorgung, Daten und regulatorische Anforderungen.",
+        "bodyHtml": "<h2>Healthcare- und Medizin-Softwarelosungen</h2><p>Sichere Health-Tech-Losungen fur Versorgung, Daten und regulatorische Anforderungen.</p><h3>Branchenfokus</h3><p>Wir entwickeln passgenaue Software fur Gesundheitswesen und verbinden Compliance, Performance und Skalierbarkeit.</p><h3>Unser Ansatz</h3><p>Von Discovery uber Architektur bis Umsetzung liefern wir belastbare Plattformen, die Prozesse vereinfachen und messbare Geschaftsergebnisse erzeugen.</p>"
       },
       "hospitality": {
         "industry": "Gastgewerbe",
         "title": "Technologielosungen fur Hotellerie und Tourismus",
-        "excerpt": "Digitale Losungen fur Hotels, Tourismus und effiziente Betriebsprozesse."
+        "excerpt": "Digitale Losungen fur Hotels, Tourismus und effiziente Betriebsprozesse.",
+        "description": "Digitale Losungen fur Hotels, Tourismus und effiziente Betriebsprozesse.",
+        "bodyHtml": "<h2>Technologielosungen fur Hotellerie und Tourismus</h2><p>Digitale Losungen fur Hotels, Tourismus und effiziente Betriebsprozesse.</p><h3>Branchenfokus</h3><p>Wir entwickeln passgenaue Software fur Gastgewerbe und verbinden Compliance, Performance und Skalierbarkeit.</p><h3>Unser Ansatz</h3><p>Von Discovery uber Architektur bis Umsetzung liefern wir belastbare Plattformen, die Prozesse vereinfachen und messbare Geschaftsergebnisse erzeugen.</p>"
       },
       "insurance": {
         "industry": "Versicherung",
         "title": "Technologielosungen fur Versicherung und Makler",
-        "excerpt": "Insurtech-Losungen fur Underwriting, Policenverwaltung und Kundenservice."
+        "excerpt": "Insurtech-Losungen fur Underwriting, Policenverwaltung und Kundenservice.",
+        "description": "Insurtech-Losungen fur Underwriting, Policenverwaltung und Kundenservice.",
+        "bodyHtml": "<h2>Technologielosungen fur Versicherung und Makler</h2><p>Insurtech-Losungen fur Underwriting, Policenverwaltung und Kundenservice.</p><h3>Branchenfokus</h3><p>Wir entwickeln passgenaue Software fur Versicherung und verbinden Compliance, Performance und Skalierbarkeit.</p><h3>Unser Ansatz</h3><p>Von Discovery uber Architektur bis Umsetzung liefern wir belastbare Plattformen, die Prozesse vereinfachen und messbare Geschaftsergebnisse erzeugen.</p>"
       },
       "legal": {
         "industry": "Recht",
         "title": "Technologielosungen fur Rechtsdienstleistungen",
-        "excerpt": "Legal-Tech-Losungen fur Dokumente, Compliance und sichere Workflows."
+        "excerpt": "Legal-Tech-Losungen fur Dokumente, Compliance und sichere Workflows.",
+        "description": "Legal-Tech-Losungen fur Dokumente, Compliance und sichere Workflows.",
+        "bodyHtml": "<h2>Technologielosungen fur Rechtsdienstleistungen</h2><p>Legal-Tech-Losungen fur Dokumente, Compliance und sichere Workflows.</p><h3>Branchenfokus</h3><p>Wir entwickeln passgenaue Software fur Recht und verbinden Compliance, Performance und Skalierbarkeit.</p><h3>Unser Ansatz</h3><p>Von Discovery uber Architektur bis Umsetzung liefern wir belastbare Plattformen, die Prozesse vereinfachen und messbare Geschaftsergebnisse erzeugen.</p>"
       },
       "manufacturing": {
         "industry": "Fertigung",
         "title": "Technologielosungen fur Fertigung und Industrie",
-        "excerpt": "Industrie-Losungen fur Automatisierung, Transparenz und Prozessoptimierung."
+        "excerpt": "Industrie-Losungen fur Automatisierung, Transparenz und Prozessoptimierung.",
+        "description": "Industrie-Losungen fur Automatisierung, Transparenz und Prozessoptimierung.",
+        "bodyHtml": "<h2>Technologielosungen fur Fertigung und Industrie</h2><p>Industrie-Losungen fur Automatisierung, Transparenz und Prozessoptimierung.</p><h3>Branchenfokus</h3><p>Wir entwickeln passgenaue Software fur Fertigung und verbinden Compliance, Performance und Skalierbarkeit.</p><h3>Unser Ansatz</h3><p>Von Discovery uber Architektur bis Umsetzung liefern wir belastbare Plattformen, die Prozesse vereinfachen und messbare Geschaftsergebnisse erzeugen.</p>"
       },
       "non-profit": {
         "industry": "Non-Profit",
         "title": "Technologielosungen fur Non-Profit und Social Impact",
-        "excerpt": "Digitale Werkzeuge fur Spenden, Community-Management und Wirkungsmessung."
+        "excerpt": "Digitale Werkzeuge fur Spenden, Community-Management und Wirkungsmessung.",
+        "description": "Digitale Werkzeuge fur Spenden, Community-Management und Wirkungsmessung.",
+        "bodyHtml": "<h2>Technologielosungen fur Non-Profit und Social Impact</h2><p>Digitale Werkzeuge fur Spenden, Community-Management und Wirkungsmessung.</p><h3>Branchenfokus</h3><p>Wir entwickeln passgenaue Software fur Non-Profit und verbinden Compliance, Performance und Skalierbarkeit.</p><h3>Unser Ansatz</h3><p>Von Discovery uber Architektur bis Umsetzung liefern wir belastbare Plattformen, die Prozesse vereinfachen und messbare Geschaftsergebnisse erzeugen.</p>"
       },
       "real-estate": {
         "industry": "Immobilien",
         "title": "Technologielosungen fur Immobilien",
-        "excerpt": "PropTech-Losungen fur Makler, Verwaltung und digitale Kundenprozesse."
+        "excerpt": "PropTech-Losungen fur Makler, Verwaltung und digitale Kundenprozesse.",
+        "description": "PropTech-Losungen fur Makler, Verwaltung und digitale Kundenprozesse.",
+        "bodyHtml": "<h2>Technologielosungen fur Immobilien</h2><p>PropTech-Losungen fur Makler, Verwaltung und digitale Kundenprozesse.</p><h3>Branchenfokus</h3><p>Wir entwickeln passgenaue Software fur Immobilien und verbinden Compliance, Performance und Skalierbarkeit.</p><h3>Unser Ansatz</h3><p>Von Discovery uber Architektur bis Umsetzung liefern wir belastbare Plattformen, die Prozesse vereinfachen und messbare Geschaftsergebnisse erzeugen.</p>"
       },
       "wellness": {
         "industry": "Wellness",
         "title": "Technologielosungen fur Wellness und Gesundheit",
-        "excerpt": "Wellness-Plattformen fur Terminplanung, Engagement und Mitgliederwachstum."
+        "excerpt": "Wellness-Plattformen fur Terminplanung, Engagement und Mitgliederwachstum.",
+        "description": "Wellness-Plattformen fur Terminplanung, Engagement und Mitgliederwachstum.",
+        "bodyHtml": "<h2>Technologielosungen fur Wellness und Gesundheit</h2><p>Wellness-Plattformen fur Terminplanung, Engagement und Mitgliederwachstum.</p><h3>Branchenfokus</h3><p>Wir entwickeln passgenaue Software fur Wellness und verbinden Compliance, Performance und Skalierbarkeit.</p><h3>Unser Ansatz</h3><p>Von Discovery uber Architektur bis Umsetzung liefern wir belastbare Plattformen, die Prozesse vereinfachen und messbare Geschaftsergebnisse erzeugen.</p>"
       }
     }
   }

@@ -13,10 +13,18 @@ const copy = getLocaleCopy(locale);
 const domainPageCopy = copy.pages.domains ?? {};
 const domainContent = copy.content?.domains ?? {};
 const translatedDomain = domainContent[domain.slug] ?? {};
+const isDefaultLocale = locale === 'en';
 const domainIndustry = translatedDomain.industry || domain.data.industry;
 const domainTitle = translatedDomain.title || domain.data.title;
 const domainExcerpt = translatedDomain.excerpt || domain.data.excerpt;
 const domainDescription = translatedDomain.description || domain.data.description || translatedDomain.excerpt || domain.data.excerpt || `${domainTitle} solutions from A&H Solutions`;
+const localizedBodyHtml = translatedDomain.bodyHtml || null;
+const domainKeyMetrics = translatedDomain.keyMetrics ?? (isDefaultLocale ? domain.data.keyMetrics : []);
+const domainRegulations = translatedDomain.regulations ?? (isDefaultLocale ? domain.data.regulations : []);
+const domainChallenges = translatedDomain.challenges ?? (isDefaultLocale ? domain.data.challenges : []);
+const domainSolutions = translatedDomain.solutions ?? (isDefaultLocale ? domain.data.solutions : []);
+const domainBenefits = translatedDomain.benefits ?? (isDefaultLocale ? domain.data.benefits : []);
+const domainRelatedServices = translatedDomain.relatedServices ?? (isDefaultLocale ? domain.data.relatedServices : []);
 const localized = (path: string) => localizePath(path, locale);
 
 // Get related services and case studies
@@ -82,7 +90,11 @@ const caseStudies = await getCollection('case-studies', ({ data }) => {
         <div class="grid lg:grid-cols-4 gap-8 mb-12">
           <div class="lg:col-span-3">
             <div class="prose prose-lg dark:prose-invert max-w-none">
-              <Content />
+              {localizedBodyHtml ? (
+                <Fragment set:html={localizedBodyHtml} />
+              ) : (
+                <Content />
+              )}
             </div>
           </div>
           
@@ -90,11 +102,11 @@ const caseStudies = await getCollection('case-studies', ({ data }) => {
           <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl">
             <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">{domainPageCopy.industryInsights || 'Industry Insights'}</h3>
             
-            {domain.data.keyMetrics && domain.data.keyMetrics.length > 0 && (
+            {domainKeyMetrics && domainKeyMetrics.length > 0 && (
               <div class="mb-6">
                 <h4 class="font-medium text-gray-900 dark:text-white mb-3">{domainPageCopy.keyMetrics || 'Key Metrics'}</h4>
                 <div class="space-y-3">
-                  {domain.data.keyMetrics.map((metric) => (
+                  {domainKeyMetrics.map((metric) => (
                     <div>
                       <div class="flex justify-between items-center mb-1">
                         <span class="text-sm text-gray-600 dark:text-gray-300">{metric.label}</span>
@@ -109,11 +121,11 @@ const caseStudies = await getCollection('case-studies', ({ data }) => {
               </div>
             )}
             
-            {domain.data.regulations && domain.data.regulations.length > 0 && (
+            {domainRegulations && domainRegulations.length > 0 && (
               <div class="mb-6">
                 <h4 class="font-medium text-gray-900 dark:text-white mb-3">{domainPageCopy.complianceRequirements || 'Compliance Requirements'}</h4>
                 <ul class="space-y-2">
-                  {domain.data.regulations.map((regulation) => (
+                  {domainRegulations.map((regulation) => (
                     <li class="flex items-center text-sm text-gray-600 dark:text-gray-300">
                       <svg class="w-4 h-4 text-yellow-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -134,7 +146,7 @@ const caseStudies = await getCollection('case-studies', ({ data }) => {
 
         <!-- Challenges, Solutions, Benefits -->
         <div class="grid md:grid-cols-3 gap-8 mb-12">
-          {domain.data.challenges && domain.data.challenges.length > 0 && (
+          {domainChallenges && domainChallenges.length > 0 && (
             <div class="bg-red-50 dark:bg-red-900/20 p-6 rounded-xl">
               <h3 class="text-xl font-semibold text-red-700 dark:text-red-300 mb-4 flex items-center">
                 <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -143,14 +155,14 @@ const caseStudies = await getCollection('case-studies', ({ data }) => {
                 {domainPageCopy.challenges || 'Challenges'}
               </h3>
               <ul class="space-y-2">
-                {domain.data.challenges.map((challenge) => (
+                {domainChallenges.map((challenge) => (
                   <li class="text-gray-700 dark:text-gray-300 text-sm">{challenge}</li>
                 ))}
               </ul>
             </div>
           )}
 
-          {domain.data.solutions && domain.data.solutions.length > 0 && (
+          {domainSolutions && domainSolutions.length > 0 && (
             <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-xl">
               <h3 class="text-xl font-semibold text-blue-700 dark:text-blue-300 mb-4 flex items-center">
                 <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -159,14 +171,14 @@ const caseStudies = await getCollection('case-studies', ({ data }) => {
                 {domainPageCopy.solutions || 'Solutions'}
               </h3>
               <ul class="space-y-2">
-                {domain.data.solutions.map((solution) => (
+                {domainSolutions.map((solution) => (
                   <li class="text-gray-700 dark:text-gray-300 text-sm">{solution}</li>
                 ))}
               </ul>
             </div>
           )}
 
-          {domain.data.benefits && domain.data.benefits.length > 0 && (
+          {domainBenefits && domainBenefits.length > 0 && (
             <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-xl">
               <h3 class="text-xl font-semibold text-green-700 dark:text-green-300 mb-4 flex items-center">
                 <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -175,7 +187,7 @@ const caseStudies = await getCollection('case-studies', ({ data }) => {
                 {domainPageCopy.benefits || 'Benefits'}
               </h3>
               <ul class="space-y-2">
-                {domain.data.benefits.map((benefit) => (
+                {domainBenefits.map((benefit) => (
                   <li class="text-gray-700 dark:text-gray-300 text-sm">{benefit}</li>
                 ))}
               </ul>
@@ -184,7 +196,7 @@ const caseStudies = await getCollection('case-studies', ({ data }) => {
         </div>
 
         <!-- Related Services -->
-        {services.length > 0 && (
+        {isDefaultLocale && services.length > 0 && (
           <div class="mb-12">
             <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">{domainPageCopy.ourServicesPrefix || 'Our'} {domainIndustry} {domainPageCopy.ourServicesSuffix || 'Services'}</h3>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -206,7 +218,7 @@ const caseStudies = await getCollection('case-studies', ({ data }) => {
         )}
 
         <!-- Related Case Studies -->
-        {caseStudies.length > 0 && (
+        {isDefaultLocale && caseStudies.length > 0 && (
           <div class="mb-12">
             <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">{domainIndustry} {domainPageCopy.successStories || 'Success Stories'}</h3>
             <div class="grid md:grid-cols-2 gap-6">
@@ -242,11 +254,11 @@ const caseStudies = await getCollection('case-studies', ({ data }) => {
         )}
 
         <!-- Related Services List -->
-        {domain.data.relatedServices && domain.data.relatedServices.length > 0 && (
+        {domainRelatedServices && domainRelatedServices.length > 0 && (
           <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
             <h3 class="text-xl font-semibold mb-6 text-gray-900 dark:text-white">{domainPageCopy.relatedServices || 'Related Services'}</h3>
             <div class="flex flex-wrap gap-2">
-              {domain.data.relatedServices.map((service) => (
+              {domainRelatedServices.map((service) => (
                 <a 
                   href={localized(`/services/${service.toLowerCase().replace(/\s+/g, '-')}`)}
                   class="px-4 py-2 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full hover:bg-primary-200 dark:hover:bg-primary-800 transition-colors"

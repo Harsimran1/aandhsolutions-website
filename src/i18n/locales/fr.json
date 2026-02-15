@@ -247,62 +247,114 @@
       "cannabis": {
         "industry": "Cannabis",
         "title": "Solutions technologiques pour le cannabis et le chanvre",
-        "excerpt": "Solutions avancees pour la conformite, les operations et la croissance dans l'industrie du cannabis."
+        "excerpt": "Plateformes cannabis specialisees pour la conformite, les operations et la croissance dans des environnements fortement reglementes.",
+        "description": "Solutions logicielles pour les entreprises cannabis et chanvre avec un focus conformite, tracabilite et efficacite operationnelle.",
+        "challenges": [
+          "Exigences de conformite multi-juridictionnelles",
+          "Traqabilite complete seed-to-sale",
+          "Limites de banque et de paiement",
+          "Complexite fiscale et declarative",
+          "Gestion des stocks entre culture, production et retail"
+        ],
+        "solutions": [
+          "Gestion de conformite avec reporting automatise",
+          "Suivi seed-to-sale de bout en bout",
+          "Outils de paiement et de gestion de tresorerie",
+          "Calcul fiscal et reporting automatises",
+          "Gestion des stocks integree"
+        ],
+        "benefits": [
+          "Moins de risques et d'ecarts de conformite",
+          "Operations plus fluides",
+          "Meilleure precision de stock",
+          "Reporting fiscal simplifie",
+          "Processus evolutifs pour la croissance"
+        ],
+        "regulations": [
+          "Reglementations cannabis par etat/province",
+          "Exigences ATF",
+          "Regles FDA pour les produits chanvre/CBD",
+          "Contraintes de conformite DEA",
+          "Regles fiscales et taxes d'accise"
+        ],
+        "bodyHtml": "<h2>Technologie cannabis dans un cadre reglementaire complexe</h2><p>Le marche du cannabis se developpe rapidement, mais les obligations de conformite se renforcent. Nous concevons des systemes qui securisent la conformite tout en ameliorant l'efficacite operationnelle.</p><h3>Notre expertise sectorielle</h3><p>Nous accompagnons des acteurs de la culture, de la transformation, du laboratoire, de la distribution et du retail. Nos plateformes relient exigences reglementaires et performance metier.</p><h2>Defis que nous adressons</h2><h3>Conformite multi-juridictionnelle</h3><p>Les regles varient selon les territoires. Nous construisons des architectures flexibles avec des pistes d'audit completes.</p><h3>Traqabilite seed-to-sale</h3><p>Nous mettons en place des workflows de suivi de bout en bout, avec integrations vers les systemes etatiques.</p><h3>Paiement et fiscalite</h3><p>Nos solutions couvrent la tresorerie, la fiscalite et le reporting fiable pour les equipes finance et conformite.</p><h2>Mise en route</h2><h3>Diagnostic conformite</h3><p>Nous evaluons vos obligations, votre niveau de maturite et vos points de friction operationnels.</p><h3>Architecture cible</h3><p>Nous definissons ensuite une architecture evolutive orientee conformite et croissance.</p><h3>Implementation et formation</h3><p>Nous deployons la solution et formons vos equipes pour des operations robustes et durables.</p>"
       },
       "ecommerce": {
         "industry": "E-commerce",
         "title": "Solutions technologiques e-commerce et retail",
-        "excerpt": "Solutions e-commerce modernes pour accelerer ventes et operations."
+        "excerpt": "Solutions e-commerce modernes pour accelerer ventes et operations.",
+        "description": "Solutions e-commerce modernes pour accelerer ventes et operations.",
+        "bodyHtml": "<h2>Solutions technologiques e-commerce et retail</h2><p>Solutions e-commerce modernes pour accelerer ventes et operations.</p><h3>Focus secteur</h3><p>Nous concevons des solutions logicielles sur mesure pour E-commerce avec un equilibre entre conformite, performance et evolutivite.</p><h3>Notre approche</h3><p>De la discovery a la mise en production, nous construisons des plateformes fiables qui simplifient les operations et soutiennent la croissance.</p>"
       },
       "education": {
         "industry": "Education",
         "title": "Solutions technologiques pour l'education",
-        "excerpt": "Solutions edtech pour ameliorer apprentissage et gestion academique."
+        "excerpt": "Solutions edtech pour ameliorer apprentissage et gestion academique.",
+        "description": "Solutions edtech pour ameliorer apprentissage et gestion academique.",
+        "bodyHtml": "<h2>Solutions technologiques pour l'education</h2><p>Solutions edtech pour ameliorer apprentissage et gestion academique.</p><h3>Focus secteur</h3><p>Nous concevons des solutions logicielles sur mesure pour Education avec un equilibre entre conformite, performance et evolutivite.</p><h3>Notre approche</h3><p>De la discovery a la mise en production, nous construisons des plateformes fiables qui simplifient les operations et soutiennent la croissance.</p>"
       },
       "finance": {
         "industry": "Finance",
         "title": "Solutions technologiques pour les services financiers",
-        "excerpt": "Solutions fintech securisees avec conformite et excellente experience client."
+        "excerpt": "Solutions fintech securisees avec conformite et excellente experience client.",
+        "description": "Solutions fintech securisees avec conformite et excellente experience client.",
+        "bodyHtml": "<h2>Solutions technologiques pour les services financiers</h2><p>Solutions fintech securisees avec conformite et excellente experience client.</p><h3>Focus secteur</h3><p>Nous concevons des solutions logicielles sur mesure pour Finance avec un equilibre entre conformite, performance et evolutivite.</p><h3>Notre approche</h3><p>De la discovery a la mise en production, nous construisons des plateformes fiables qui simplifient les operations et soutiennent la croissance.</p>"
       },
       "healthcare": {
         "industry": "Sante",
         "title": "Solutions logicielles sante et medical",
-        "excerpt": "Solutions health-tech conformes pour soins, donnees et interoperabilite."
+        "excerpt": "Solutions health-tech conformes pour soins, donnees et interoperabilite.",
+        "description": "Solutions health-tech conformes pour soins, donnees et interoperabilite.",
+        "bodyHtml": "<h2>Solutions logicielles sante et medical</h2><p>Solutions health-tech conformes pour soins, donnees et interoperabilite.</p><h3>Focus secteur</h3><p>Nous concevons des solutions logicielles sur mesure pour Sante avec un equilibre entre conformite, performance et evolutivite.</p><h3>Notre approche</h3><p>De la discovery a la mise en production, nous construisons des plateformes fiables qui simplifient les operations et soutiennent la croissance.</p>"
       },
       "hospitality": {
         "industry": "Hotellerie",
         "title": "Solutions technologiques pour l'hotellerie et le tourisme",
-        "excerpt": "Solutions numeriques pour hotellerie, tourisme et experience client."
+        "excerpt": "Solutions numeriques pour hotellerie, tourisme et experience client.",
+        "description": "Solutions numeriques pour hotellerie, tourisme et experience client.",
+        "bodyHtml": "<h2>Solutions technologiques pour l'hotellerie et le tourisme</h2><p>Solutions numeriques pour hotellerie, tourisme et experience client.</p><h3>Focus secteur</h3><p>Nous concevons des solutions logicielles sur mesure pour Hotellerie avec un equilibre entre conformite, performance et evolutivite.</p><h3>Notre approche</h3><p>De la discovery a la mise en production, nous construisons des plateformes fiables qui simplifient les operations et soutiennent la croissance.</p>"
       },
       "insurance": {
         "industry": "Assurance",
         "title": "Solutions technologiques pour l'assurance et le courtage",
-        "excerpt": "Solutions insurtech pour souscription, gestion de polices et parcours client."
+        "excerpt": "Solutions insurtech pour souscription, gestion de polices et parcours client.",
+        "description": "Solutions insurtech pour souscription, gestion de polices et parcours client.",
+        "bodyHtml": "<h2>Solutions technologiques pour l'assurance et le courtage</h2><p>Solutions insurtech pour souscription, gestion de polices et parcours client.</p><h3>Focus secteur</h3><p>Nous concevons des solutions logicielles sur mesure pour Assurance avec un equilibre entre conformite, performance et evolutivite.</p><h3>Notre approche</h3><p>De la discovery a la mise en production, nous construisons des plateformes fiables qui simplifient les operations et soutiennent la croissance.</p>"
       },
       "legal": {
         "industry": "Juridique",
         "title": "Solutions technologiques pour les services juridiques",
-        "excerpt": "Solutions legal-tech pour conformite, documents et collaboration securisee."
+        "excerpt": "Solutions legal-tech pour conformite, documents et collaboration securisee.",
+        "description": "Solutions legal-tech pour conformite, documents et collaboration securisee.",
+        "bodyHtml": "<h2>Solutions technologiques pour les services juridiques</h2><p>Solutions legal-tech pour conformite, documents et collaboration securisee.</p><h3>Focus secteur</h3><p>Nous concevons des solutions logicielles sur mesure pour Juridique avec un equilibre entre conformite, performance et evolutivite.</p><h3>Notre approche</h3><p>De la discovery a la mise en production, nous construisons des plateformes fiables qui simplifient les operations et soutiennent la croissance.</p>"
       },
       "manufacturing": {
         "industry": "Industrie",
         "title": "Solutions technologiques pour l'industrie et la fabrication",
-        "excerpt": "Solutions industrielles pour automatisation et optimisation des processus."
+        "excerpt": "Solutions industrielles pour automatisation et optimisation des processus.",
+        "description": "Solutions industrielles pour automatisation et optimisation des processus.",
+        "bodyHtml": "<h2>Solutions technologiques pour l'industrie et la fabrication</h2><p>Solutions industrielles pour automatisation et optimisation des processus.</p><h3>Focus secteur</h3><p>Nous concevons des solutions logicielles sur mesure pour Industrie avec un equilibre entre conformite, performance et evolutivite.</p><h3>Notre approche</h3><p>De la discovery a la mise en production, nous construisons des plateformes fiables qui simplifient les operations et soutiennent la croissance.</p>"
       },
       "non-profit": {
         "industry": "Associatif",
         "title": "Solutions technologiques pour les organisations a but non lucratif",
-        "excerpt": "Outils numeriques pour dons, engagement communautaire et impact."
+        "excerpt": "Outils numeriques pour dons, engagement communautaire et impact.",
+        "description": "Outils numeriques pour dons, engagement communautaire et impact.",
+        "bodyHtml": "<h2>Solutions technologiques pour les organisations a but non lucratif</h2><p>Outils numeriques pour dons, engagement communautaire et impact.</p><h3>Focus secteur</h3><p>Nous concevons des solutions logicielles sur mesure pour Associatif avec un equilibre entre conformite, performance et evolutivite.</p><h3>Notre approche</h3><p>De la discovery a la mise en production, nous construisons des plateformes fiables qui simplifient les operations et soutiennent la croissance.</p>"
       },
       "real-estate": {
         "industry": "Immobilier",
         "title": "Solutions technologiques pour l'immobilier",
-        "excerpt": "Solutions proptech pour ventes, gestion et relation client."
+        "excerpt": "Solutions proptech pour ventes, gestion et relation client.",
+        "description": "Solutions proptech pour ventes, gestion et relation client.",
+        "bodyHtml": "<h2>Solutions technologiques pour l'immobilier</h2><p>Solutions proptech pour ventes, gestion et relation client.</p><h3>Focus secteur</h3><p>Nous concevons des solutions logicielles sur mesure pour Immobilier avec un equilibre entre conformite, performance et evolutivite.</p><h3>Notre approche</h3><p>De la discovery a la mise en production, nous construisons des plateformes fiables qui simplifient les operations et soutiennent la croissance.</p>"
       },
       "wellness": {
         "industry": "Bien-etre",
         "title": "Solutions technologiques bien-etre et sante",
-        "excerpt": "Plateformes bien-etre pour services, membres et croissance durable."
+        "excerpt": "Plateformes bien-etre pour services, membres et croissance durable.",
+        "description": "Plateformes bien-etre pour services, membres et croissance durable.",
+        "bodyHtml": "<h2>Solutions technologiques bien-etre et sante</h2><p>Plateformes bien-etre pour services, membres et croissance durable.</p><h3>Focus secteur</h3><p>Nous concevons des solutions logicielles sur mesure pour Bien-etre avec un equilibre entre conformite, performance et evolutivite.</p><h3>Notre approche</h3><p>De la discovery a la mise en production, nous construisons des plateformes fiables qui simplifient les operations et soutiennent la croissance.</p>"
       }
     }
   }

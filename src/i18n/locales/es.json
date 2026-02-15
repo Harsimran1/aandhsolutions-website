@@ -247,62 +247,114 @@
       "cannabis": {
         "industry": "Cannabis",
         "title": "Soluciones tecnologicas para cannabis y canamo",
-        "excerpt": "Plataformas para cannabis con cumplimiento normativo y e-commerce."
+        "excerpt": "Plataformas especializadas para cumplimiento, operaciones y crecimiento en mercados altamente regulados.",
+        "description": "Soluciones de software para empresas de cannabis y canamo con foco en cumplimiento, trazabilidad y eficiencia operativa.",
+        "challenges": [
+          "Cumplimiento complejo en multiples jurisdicciones",
+          "Trazabilidad completa seed-to-sale",
+          "Limitaciones de banca y pagos",
+          "Complejidad fiscal y de reportes",
+          "Gestion de inventario entre cultivo, procesamiento y retail"
+        ],
+        "solutions": [
+          "Gestion de cumplimiento con reportes automatizados",
+          "Seguimiento seed-to-sale de extremo a extremo",
+          "Herramientas de pagos y gestion de efectivo",
+          "Calculo fiscal y reportes automatizados",
+          "Gestion de inventario integrada"
+        ],
+        "benefits": [
+          "Menos riesgos e incumplimientos",
+          "Operaciones mas eficientes",
+          "Mayor precision de inventario",
+          "Cumplimiento fiscal simplificado",
+          "Procesos escalables para crecer"
+        ],
+        "regulations": [
+          "Regulaciones estatales de cannabis",
+          "Requisitos ATF",
+          "Normativa FDA para productos de canamo y CBD",
+          "Requisitos de cumplimiento DEA",
+          "Normas de impuestos y tasas especiales"
+        ],
+        "bodyHtml": "<h2>Tecnologia cannabis en un entorno regulatorio complejo</h2><p>El mercado del cannabis crece rapidamente y las exigencias regulatorias tambien. Disenamos sistemas que priorizan el cumplimiento y mejoran la eficiencia operativa.</p><h3>Nuestra experiencia sectorial</h3><p>Trabajamos con empresas de cultivo, manufactura, laboratorios, distribucion y retail. Nuestras plataformas conectan cumplimiento normativo con rendimiento del negocio.</p><h2>Retos que resolvemos</h2><h3>Cumplimiento multi-jurisdiccion</h3><p>Las reglas cambian segun la region. Construimos arquitecturas flexibles con trazabilidad y auditoria completas.</p><h3>Trazabilidad seed-to-sale</h3><p>Implementamos flujos de seguimiento de punta a punta con integraciones a sistemas estatales.</p><h3>Pagos e impuestos</h3><p>Nuestras soluciones cubren gestion de efectivo, analitica fiscal y reporting confiable.</p><h2>Como empezamos</h2><h3>Evaluacion de cumplimiento</h3><p>Analizamos obligaciones regulatorias, madurez actual y cuellos de botella operativos.</p><h3>Arquitectura de solucion</h3><p>Luego definimos una arquitectura escalable enfocada en cumplimiento y crecimiento.</p><h3>Implementacion y capacitacion</h3><p>Implementamos la solucion y capacitamos a tu equipo para operar de forma estable y segura.</p>"
       },
       "ecommerce": {
         "industry": "Comercio electronico",
         "title": "Soluciones tecnologicas para e-commerce y retail",
-        "excerpt": "Soluciones e-commerce modernas para aumentar ventas y optimizar operaciones."
+        "excerpt": "Soluciones e-commerce modernas para aumentar ventas y optimizar operaciones.",
+        "description": "Soluciones e-commerce modernas para aumentar ventas y optimizar operaciones.",
+        "bodyHtml": "<h2>Soluciones tecnologicas para e-commerce y retail</h2><p>Soluciones e-commerce modernas para aumentar ventas y optimizar operaciones.</p><h3>Enfoque por industria</h3><p>Disenamos software a medida para Comercio electronico equilibrando cumplimiento, rendimiento y escalabilidad.</p><h3>Nuestro enfoque</h3><p>Desde discovery hasta implementacion, entregamos plataformas solidas que simplifican operaciones y generan resultados medibles.</p>"
       },
       "education": {
         "industry": "Educacion",
         "title": "Soluciones tecnologicas para educacion",
-        "excerpt": "Soluciones edtech para mejorar aprendizaje y administracion educativa."
+        "excerpt": "Soluciones edtech para mejorar aprendizaje y administracion educativa.",
+        "description": "Soluciones edtech para mejorar aprendizaje y administracion educativa.",
+        "bodyHtml": "<h2>Soluciones tecnologicas para educacion</h2><p>Soluciones edtech para mejorar aprendizaje y administracion educativa.</p><h3>Enfoque por industria</h3><p>Disenamos software a medida para Educacion equilibrando cumplimiento, rendimiento y escalabilidad.</p><h3>Nuestro enfoque</h3><p>Desde discovery hasta implementacion, entregamos plataformas solidas que simplifican operaciones y generan resultados medibles.</p>"
       },
       "finance": {
         "industry": "Finanzas",
         "title": "Soluciones tecnologicas para servicios financieros",
-        "excerpt": "Soluciones fintech seguras con cumplimiento y mejor experiencia del cliente."
+        "excerpt": "Soluciones fintech seguras con cumplimiento y mejor experiencia del cliente.",
+        "description": "Soluciones fintech seguras con cumplimiento y mejor experiencia del cliente.",
+        "bodyHtml": "<h2>Soluciones tecnologicas para servicios financieros</h2><p>Soluciones fintech seguras con cumplimiento y mejor experiencia del cliente.</p><h3>Enfoque por industria</h3><p>Disenamos software a medida para Finanzas equilibrando cumplimiento, rendimiento y escalabilidad.</p><h3>Nuestro enfoque</h3><p>Desde discovery hasta implementacion, entregamos plataformas solidas que simplifican operaciones y generan resultados medibles.</p>"
       },
       "healthcare": {
         "industry": "Salud",
         "title": "Soluciones de software para salud y medicina",
-        "excerpt": "Soluciones health-tech seguras y compatibles con requisitos regulatorios."
+        "excerpt": "Soluciones health-tech seguras y compatibles con requisitos regulatorios.",
+        "description": "Soluciones health-tech seguras y compatibles con requisitos regulatorios.",
+        "bodyHtml": "<h2>Soluciones de software para salud y medicina</h2><p>Soluciones health-tech seguras y compatibles con requisitos regulatorios.</p><h3>Enfoque por industria</h3><p>Disenamos software a medida para Salud equilibrando cumplimiento, rendimiento y escalabilidad.</p><h3>Nuestro enfoque</h3><p>Desde discovery hasta implementacion, entregamos plataformas solidas que simplifican operaciones y generan resultados medibles.</p>"
       },
       "hospitality": {
         "industry": "Hosteleria",
         "title": "Soluciones tecnologicas para hosteleria y turismo",
-        "excerpt": "Soluciones digitales para hoteles, turismo y operaciones eficientes."
+        "excerpt": "Soluciones digitales para hoteles, turismo y operaciones eficientes.",
+        "description": "Soluciones digitales para hoteles, turismo y operaciones eficientes.",
+        "bodyHtml": "<h2>Soluciones tecnologicas para hosteleria y turismo</h2><p>Soluciones digitales para hoteles, turismo y operaciones eficientes.</p><h3>Enfoque por industria</h3><p>Disenamos software a medida para Hosteleria equilibrando cumplimiento, rendimiento y escalabilidad.</p><h3>Nuestro enfoque</h3><p>Desde discovery hasta implementacion, entregamos plataformas solidas que simplifican operaciones y generan resultados medibles.</p>"
       },
       "insurance": {
         "industry": "Seguros",
         "title": "Soluciones tecnologicas para seguros y correduria",
-        "excerpt": "Soluciones insurtech para suscripcion, polizas y atencion al cliente."
+        "excerpt": "Soluciones insurtech para suscripcion, polizas y atencion al cliente.",
+        "description": "Soluciones insurtech para suscripcion, polizas y atencion al cliente.",
+        "bodyHtml": "<h2>Soluciones tecnologicas para seguros y correduria</h2><p>Soluciones insurtech para suscripcion, polizas y atencion al cliente.</p><h3>Enfoque por industria</h3><p>Disenamos software a medida para Seguros equilibrando cumplimiento, rendimiento y escalabilidad.</p><h3>Nuestro enfoque</h3><p>Desde discovery hasta implementacion, entregamos plataformas solidas que simplifican operaciones y generan resultados medibles.</p>"
       },
       "legal": {
         "industry": "Legal",
         "title": "Soluciones tecnologicas para servicios legales",
-        "excerpt": "Soluciones legal-tech para cumplimiento, documentos y flujos seguros."
+        "excerpt": "Soluciones legal-tech para cumplimiento, documentos y flujos seguros.",
+        "description": "Soluciones legal-tech para cumplimiento, documentos y flujos seguros.",
+        "bodyHtml": "<h2>Soluciones tecnologicas para servicios legales</h2><p>Soluciones legal-tech para cumplimiento, documentos y flujos seguros.</p><h3>Enfoque por industria</h3><p>Disenamos software a medida para Legal equilibrando cumplimiento, rendimiento y escalabilidad.</p><h3>Nuestro enfoque</h3><p>Desde discovery hasta implementacion, entregamos plataformas solidas que simplifican operaciones y generan resultados medibles.</p>"
       },
       "manufacturing": {
         "industry": "Manufactura",
         "title": "Soluciones tecnologicas para manufactura e industria",
-        "excerpt": "Soluciones industriales para automatizacion y mejora continua."
+        "excerpt": "Soluciones industriales para automatizacion y mejora continua.",
+        "description": "Soluciones industriales para automatizacion y mejora continua.",
+        "bodyHtml": "<h2>Soluciones tecnologicas para manufactura e industria</h2><p>Soluciones industriales para automatizacion y mejora continua.</p><h3>Enfoque por industria</h3><p>Disenamos software a medida para Manufactura equilibrando cumplimiento, rendimiento y escalabilidad.</p><h3>Nuestro enfoque</h3><p>Desde discovery hasta implementacion, entregamos plataformas solidas que simplifican operaciones y generan resultados medibles.</p>"
       },
       "non-profit": {
         "industry": "Sin fines de lucro",
         "title": "Soluciones tecnologicas para organizaciones sin fines de lucro",
-        "excerpt": "Herramientas digitales para donaciones, comunidad e impacto."
+        "excerpt": "Herramientas digitales para donaciones, comunidad e impacto.",
+        "description": "Herramientas digitales para donaciones, comunidad e impacto.",
+        "bodyHtml": "<h2>Soluciones tecnologicas para organizaciones sin fines de lucro</h2><p>Herramientas digitales para donaciones, comunidad e impacto.</p><h3>Enfoque por industria</h3><p>Disenamos software a medida para Sin fines de lucro equilibrando cumplimiento, rendimiento y escalabilidad.</p><h3>Nuestro enfoque</h3><p>Desde discovery hasta implementacion, entregamos plataformas solidas que simplifican operaciones y generan resultados medibles.</p>"
       },
       "real-estate": {
         "industry": "Bienes raices",
         "title": "Soluciones tecnologicas para bienes raices",
-        "excerpt": "Soluciones proptech para ventas, gestion y experiencia de clientes."
+        "excerpt": "Soluciones proptech para ventas, gestion y experiencia de clientes.",
+        "description": "Soluciones proptech para ventas, gestion y experiencia de clientes.",
+        "bodyHtml": "<h2>Soluciones tecnologicas para bienes raices</h2><p>Soluciones proptech para ventas, gestion y experiencia de clientes.</p><h3>Enfoque por industria</h3><p>Disenamos software a medida para Bienes raices equilibrando cumplimiento, rendimiento y escalabilidad.</p><h3>Nuestro enfoque</h3><p>Desde discovery hasta implementacion, entregamos plataformas solidas que simplifican operaciones y generan resultados medibles.</p>"
       },
       "wellness": {
         "industry": "Bienestar",
         "title": "Soluciones tecnologicas para bienestar y salud",
-        "excerpt": "Plataformas de bienestar para servicios, membresias y crecimiento."
+        "excerpt": "Plataformas de bienestar para servicios, membresias y crecimiento.",
+        "description": "Plataformas de bienestar para servicios, membresias y crecimiento.",
+        "bodyHtml": "<h2>Soluciones tecnologicas para bienestar y salud</h2><p>Plataformas de bienestar para servicios, membresias y crecimiento.</p><h3>Enfoque por industria</h3><p>Disenamos software a medida para Bienestar equilibrando cumplimiento, rendimiento y escalabilidad.</p><h3>Nuestro enfoque</h3><p>Desde discovery hasta implementacion, entregamos plataformas solidas que simplifican operaciones y generan resultados medibles.</p>"
       }
     }
   }
