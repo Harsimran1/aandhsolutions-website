@@ -3,6 +3,7 @@ import '../styles/global.css';
 import '../styles/transitions.css';
 import { ClientRouter } from 'astro:transitions';
 import { DEFAULT_LOCALE, getAbsoluteLocaleUrl, resolveLocale, getOgLocale, SUPPORTED_LOCALES } from '../lib/i18n';
+import transitionsScriptUrl from '../scripts/transitions.ts?url';
 
 export interface Props {
   title: string;
@@ -75,7 +76,7 @@ const ogLocale = getOgLocale(currentLocale);
     <link rel="dns-prefetch" href="//www.google.com">
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preconnect" href="https://www.google-analytics.com">
-    <link rel="preload" href="/scripts/transitions.js" as="script">
+    <link rel="modulepreload" href={transitionsScriptUrl}>
     <meta name="format-detection" content="telephone=no">
     <meta name="theme-color" content="#8b5cf6">
     
@@ -231,6 +232,6 @@ const ogLocale = getOgLocale(currentLocale);
       localizeInternalLinks();
       hydrateLazyImages();
     </script>
-    <script src="/scripts/transitions.js" defer></script>
+    <script type="module" src={transitionsScriptUrl}></script>
   </body>
 </html>
