@@ -1,0 +1,264 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+import { resolveLocale, localizePath } from '../../lib/i18n';
+import { getLocaleCopy } from '../../i18n/locale-copy';
+
+const { domain } = Astro.props;
+const { Content } = await domain.render();
+const locale = resolveLocale(Astro.currentLocale, Astro.url.pathname);
+const copy = getLocaleCopy(locale);
+const domainPageCopy = copy.pages.domains ?? {};
+const domainContent = copy.content?.domains ?? {};
+const translatedDomain = domainContent[domain.slug] ?? {};
+const domainIndustry = translatedDomain.industry || domain.data.industry;
+const domainTitle = translatedDomain.title || domain.data.title;
+const domainExcerpt = translatedDomain.excerpt || domain.data.excerpt;
+const domainDescription = translatedDomain.description || domain.data.description || translatedDomain.excerpt || domain.data.excerpt || `${domainTitle} solutions from A&H Solutions`;
+const localized = (path: string) => localizePath(path, locale);
+
+// Get related services and case studies
+const services = await getCollection('services', ({ data }) => {
+  return !data.draft && data.relatedDomains?.includes(domain.data.industry);
+});
+
+const caseStudies = await getCollection('case-studies', ({ data }) => {
+  return !data.draft && data.relatedDomains?.includes(domain.data.industry);
+});
+---
+
+<Layout title={`${domainTitle} - A&H Solutions`} description={domainDescription}>
+  <Header />
+  <main>
+    <article class="pt-32 pb-16 md:pt-40 md:pb-24">
+      <div class="container-custom max-w-6xl">
+        <div class="mb-8">
+          <a href={localized('/domains')} class="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+            </svg>
+            {domainPageCopy.backToIndustries || 'Back to Industries'}
+          </a>
+        </div>
+        
+        <div class="flex items-center mb-6">
+          <span class="inline-block px-3 py-1 rounded-full bg-secondary-100 dark:bg-secondary-900 text-secondary-600 dark:text-secondary-300 font-medium text-sm">
+            {domainIndustry}
+          </span>
+        </div>
+        
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 dark:text-white">{domainTitle}</h1>
+        
+        {domainExcerpt && (
+          <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">{domainExcerpt}</p>
+        )}
+        
+        <div class="flex items-center mb-8">
+          {domain.data.author.avatar && (
+            <img 
+              src={domain.data.author.avatar} 
+              alt={domain.data.author.name} 
+              class="w-12 h-12 rounded-full mr-4 object-cover"
+            />
+          )}
+          <div>
+            <p class="font-semibold text-gray-900 dark:text-white">{domain.data.author.name}</p>
+            <p class="text-gray-600 dark:text-gray-400">{domainPageCopy.industryExpert || 'Industry Expert'}</p>
+          </div>
+        </div>
+        
+        {domain.data.image && (
+          <img 
+            src={domain.data.image} 
+            alt={domain.data.imageAlt || domainTitle}
+            class="w-full h-auto rounded-xl mb-10 object-cover"
+            style="max-height: 500px;"
+          />
+        )}
+
+        <!-- Industry Overview -->
+        <div class="grid lg:grid-cols-4 gap-8 mb-12">
+          <div class="lg:col-span-3">
+            <div class="prose prose-lg dark:prose-invert max-w-none">
+              <Content />
+            </div>
+          </div>
+          
+          <!-- Industry Stats Sidebar -->
+          <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">{domainPageCopy.industryInsights || 'Industry Insights'}</h3>
+            
+            {domain.data.keyMetrics && domain.data.keyMetrics.length > 0 && (
+              <div class="mb-6">
+                <h4 class="font-medium text-gray-900 dark:text-white mb-3">{domainPageCopy.keyMetrics || 'Key Metrics'}</h4>
+                <div class="space-y-3">
+                  {domain.data.keyMetrics.map((metric) => (
+                    <div>
+                      <div class="flex justify-between items-center mb-1">
+                        <span class="text-sm text-gray-600 dark:text-gray-300">{metric.label}</span>
+                        <span class="text-sm font-semibold text-primary-600 dark:text-primary-400">{metric.value}</span>
+                      </div>
+                      {metric.description && (
+                        <p class="text-xs text-gray-500 dark:text-gray-400">{metric.description}</p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            
+            {domain.data.regulations && domain.data.regulations.length > 0 && (
+              <div class="mb-6">
+                <h4 class="font-medium text-gray-900 dark:text-white mb-3">{domainPageCopy.complianceRequirements || 'Compliance Requirements'}</h4>
+                <ul class="space-y-2">
+                  {domain.data.regulations.map((regulation) => (
+                    <li class="flex items-center text-sm text-gray-600 dark:text-gray-300">
+                      <svg class="w-4 h-4 text-yellow-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                      </svg>
+                      {regulation}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            
+            <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
+              <a href={localized('/contact')} class="btn-primary w-full text-center">{domainPageCopy.discussYourNeeds || 'Discuss Your Needs'}</a>
+              <a href={localized('/case-studies')} class="btn-outline w-full text-center mt-3">{domainPageCopy.seeCaseStudies || 'See Case Studies'}</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Challenges, Solutions, Benefits -->
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+          {domain.data.challenges && domain.data.challenges.length > 0 && (
+            <div class="bg-red-50 dark:bg-red-900/20 p-6 rounded-xl">
+              <h3 class="text-xl font-semibold text-red-700 dark:text-red-300 mb-4 flex items-center">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                {domainPageCopy.challenges || 'Challenges'}
+              </h3>
+              <ul class="space-y-2">
+                {domain.data.challenges.map((challenge) => (
+                  <li class="text-gray-700 dark:text-gray-300 text-sm">{challenge}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {domain.data.solutions && domain.data.solutions.length > 0 && (
+            <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-xl">
+              <h3 class="text-xl font-semibold text-blue-700 dark:text-blue-300 mb-4 flex items-center">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                </svg>
+                {domainPageCopy.solutions || 'Solutions'}
+              </h3>
+              <ul class="space-y-2">
+                {domain.data.solutions.map((solution) => (
+                  <li class="text-gray-700 dark:text-gray-300 text-sm">{solution}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {domain.data.benefits && domain.data.benefits.length > 0 && (
+            <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-xl">
+              <h3 class="text-xl font-semibold text-green-700 dark:text-green-300 mb-4 flex items-center">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                {domainPageCopy.benefits || 'Benefits'}
+              </h3>
+              <ul class="space-y-2">
+                {domain.data.benefits.map((benefit) => (
+                  <li class="text-gray-700 dark:text-gray-300 text-sm">{benefit}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+
+        <!-- Related Services -->
+        {services.length > 0 && (
+          <div class="mb-12">
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">{domainPageCopy.ourServicesPrefix || 'Our'} {domainIndustry} {domainPageCopy.ourServicesSuffix || 'Services'}</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {services.map((service) => (
+                <div class="card border border-gray-200 dark:border-gray-700 p-6">
+                  <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                    <a href={localized(`/services/${service.slug}`)} class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                      {service.data.title}
+                    </a>
+                  </h4>
+                  <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                    {service.data.excerpt || service.data.description}
+                  </p>
+                  <a href={localized(`/services/${service.slug}`)} class="btn-outline btn-sm">{domainPageCopy.learnMore || 'Learn More'}</a>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- Related Case Studies -->
+        {caseStudies.length > 0 && (
+          <div class="mb-12">
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">{domainIndustry} {domainPageCopy.successStories || 'Success Stories'}</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+              {caseStudies.map((caseStudy) => (
+                <div class="card border border-gray-200 dark:border-gray-700 p-6">
+                  {caseStudy.data.client && (
+                    <span class="inline-block px-3 py-1 rounded-full bg-secondary-100 dark:bg-secondary-900 text-secondary-600 dark:text-secondary-300 font-medium text-xs mb-3">
+                      {caseStudy.data.client.name}
+                    </span>
+                  )}
+                  <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                    <a href={localized(`/case-studies/${caseStudy.slug}`)} class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                      {caseStudy.data.title}
+                    </a>
+                  </h4>
+                  <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                    {caseStudy.data.excerpt || caseStudy.data.description}
+                  </p>
+                  {caseStudy.data.results && caseStudy.data.results.metrics && caseStudy.data.results.metrics.length > 0 && (
+                    <div class="flex flex-wrap gap-2 mb-4">
+                      {caseStudy.data.results.metrics.slice(0, 2).map((metric) => (
+                        <span class="px-2 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 text-xs rounded-full">
+                          {metric.value}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  <a href={localized(`/case-studies/${caseStudy.slug}`)} class="btn-outline btn-sm">{domainPageCopy.viewCaseStudy || 'View Case Study'}</a>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- Related Services List -->
+        {domain.data.relatedServices && domain.data.relatedServices.length > 0 && (
+          <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+            <h3 class="text-xl font-semibold mb-6 text-gray-900 dark:text-white">{domainPageCopy.relatedServices || 'Related Services'}</h3>
+            <div class="flex flex-wrap gap-2">
+              {domain.data.relatedServices.map((service) => (
+                <a 
+                  href={localized(`/services/${service.toLowerCase().replace(/\s+/g, '-')}`)}
+                  class="px-4 py-2 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full hover:bg-primary-200 dark:hover:bg-primary-800 transition-colors"
+                >
+                  {service}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </article>
+  </main>
+  <Footer />
+</Layout>

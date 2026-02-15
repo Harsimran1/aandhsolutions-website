@@ -68,44 +68,205 @@
       "moreCaseStudiesSuffix": "etudes de cas",
       "readCaseStudy": "Lire l'etude de cas",
       "tagsLabel": "Etiquettes"
+    },
+    "domains": {
+      "title": "Secteurs - A&H Solutions",
+      "description": "Solutions logicielles specialisees par secteur avec A&H Solutions.",
+      "heroTitle": "Secteurs que nous accompagnons",
+      "heroHighlight": "Secteurs",
+      "heroDescription": "Des solutions technologiques adaptees aux defis et contraintes de votre secteur.",
+      "allIndustries": "Tous les secteurs",
+      "complianceReady": "Conforme",
+      "keyChallenges": "Defis cles",
+      "moreChallenges": "defis en plus",
+      "industryExpert": "Expert du secteur",
+      "explore": "Explorer",
+      "comingSoonTitle": "Expertise sectorielle bientot disponible",
+      "comingSoonDescription": "Nous documentons actuellement nos expertises sectorielles. Contactez-nous pour discuter de vos enjeux.",
+      "discussIndustry": "Parler de votre secteur",
+      "ctaTitle": "Votre secteur n'est pas liste ?",
+      "ctaDescription": "Nous accompagnons de nombreux secteurs et adaptons nos solutions a vos besoins specifiques.",
+      "tellUsAboutIndustry": "Parlez-nous de votre secteur",
+      "viewAllServices": "Voir tous les services",
+      "backToIndustries": "Retour aux secteurs",
+      "industryInsights": "Insights sectoriels",
+      "keyMetrics": "Indicateurs cles",
+      "complianceRequirements": "Exigences de conformite",
+      "discussYourNeeds": "Parler de vos besoins",
+      "seeCaseStudies": "Voir les etudes de cas",
+      "challenges": "Defis",
+      "solutions": "Solutions",
+      "benefits": "Benefices",
+      "ourServicesPrefix": "Nos services",
+      "ourServicesSuffix": "",
+      "learnMore": "En savoir plus",
+      "successStories": "Reussites clients",
+      "viewCaseStudy": "Voir l'etude de cas",
+      "relatedServices": "Services lies"
     }
   },
   "content": {
     "blog": {
-      "add-logrotate-to-a-machine-using-ansible": {"title": "Ajouter la rotation des logs sous Linux avec Ansible"},
-      "connect-to-raspberry-pi-3-in-headless-mode": {"title": "Connecter un Raspberry Pi 3 en mode headless"},
-      "copy-and-cover-creation-automation-tool": {"title": "Outil d'automatisation pour texte et couverture de livre"},
-      "gracefully-shutdown-go-api-server-connected-to-database": {"title": "Arret propre d'un serveur API Go connecte a une base"},
-      "how-i-brought-my-dead-computer-back-to-life": {"title": "Comment j'ai redonne vie a mon ordinateur"},
-      "how-to-debug-a-docker-image": {"title": "Comment debugger une image Docker"},
-      "insurance-quoting-system": {"title": "Moderniser les devis d'assurance avec une application intuitive"},
-      "interfaces-in-golang": {"title": "Interfaces en Golang"},
-      "jwts-as-email-verification-tokens": {"title": "JWT comme jetons de verification d'email"},
-      "load-testing-tool-comparison-siege-vs-apache-jmeter": {"title": "Comparatif d'outils de charge : Siege vs Apache JMeter"},
-      "load-testing-with-apache-jmeter": {"title": "Tests de charge avec Apache JMeter"},
-      "my-takeaways-from-kent-becks-test-driven-development": {"title": "Mes enseignements du Test-Driven Development de Kent Beck - Partie I"},
-      "optimise-docker-images-for-lesser-build-size-and-time": {"title": "Optimiser les images Docker pour reduire taille et temps de build"},
-      "optimizing-data-integrity-for-cannabis-ecommerce-platform": {"title": "Optimiser l'integrite des donnees pour Moodiday.com"},
-      "real-estate-investment-app-for-small-scale-investors": {"title": "Application d'investissement immobilier pour petits investisseurs"},
-      "run-nginx-as-unprivileged-user-in-docker-container-on-kubernetes": {"title": "Executer nginx en utilisateur non privilegie dans Docker sur Kubernetes"},
-      "step-by-step-guide-host-your-own-website": {"title": "Guide pas a pas : heberger votre propre site web"}
+      "add-logrotate-to-a-machine-using-ansible": {
+        "title": "Ajouter la rotation des logs sous Linux avec Ansible"
+      },
+      "connect-to-raspberry-pi-3-in-headless-mode": {
+        "title": "Connecter un Raspberry Pi 3 en mode headless"
+      },
+      "copy-and-cover-creation-automation-tool": {
+        "title": "Outil d'automatisation pour texte et couverture de livre"
+      },
+      "gracefully-shutdown-go-api-server-connected-to-database": {
+        "title": "Arret propre d'un serveur API Go connecte a une base"
+      },
+      "how-i-brought-my-dead-computer-back-to-life": {
+        "title": "Comment j'ai redonne vie a mon ordinateur"
+      },
+      "how-to-debug-a-docker-image": {
+        "title": "Comment debugger une image Docker"
+      },
+      "insurance-quoting-system": {
+        "title": "Moderniser les devis d'assurance avec une application intuitive"
+      },
+      "interfaces-in-golang": {
+        "title": "Interfaces en Golang"
+      },
+      "jwts-as-email-verification-tokens": {
+        "title": "JWT comme jetons de verification d'email"
+      },
+      "load-testing-tool-comparison-siege-vs-apache-jmeter": {
+        "title": "Comparatif d'outils de charge : Siege vs Apache JMeter"
+      },
+      "load-testing-with-apache-jmeter": {
+        "title": "Tests de charge avec Apache JMeter"
+      },
+      "my-takeaways-from-kent-becks-test-driven-development": {
+        "title": "Mes enseignements du Test-Driven Development de Kent Beck - Partie I"
+      },
+      "optimise-docker-images-for-lesser-build-size-and-time": {
+        "title": "Optimiser les images Docker pour reduire taille et temps de build"
+      },
+      "optimizing-data-integrity-for-cannabis-ecommerce-platform": {
+        "title": "Optimiser l'integrite des donnees pour Moodiday.com"
+      },
+      "real-estate-investment-app-for-small-scale-investors": {
+        "title": "Application d'investissement immobilier pour petits investisseurs"
+      },
+      "run-nginx-as-unprivileged-user-in-docker-container-on-kubernetes": {
+        "title": "Executer nginx en utilisateur non privilegie dans Docker sur Kubernetes"
+      },
+      "step-by-step-guide-host-your-own-website": {
+        "title": "Guide pas a pas : heberger votre propre site web"
+      }
     },
     "caseStudies": {
-      "aquanomix-water-monitoring": {"title": "Aquanomix : surveillance a distance du traitement de l'eau"},
-      "babajob-job-marketplace": {"title": "Babajob : place de marche pour emplois ouvriers"},
-      "book-automation-tool": {"title": "Outil d'automatisation pour texte et couverture de livre"},
-      "cannabis-ecommerce-platform": {"title": "Optimiser l'integrite des donnees pour Moodiday.com"},
-      "coursera-degree-progress": {"title": "Coursera : suivi et planification de progression de diplome"},
-      "data4life-patient-platform": {"title": "Data4Life : plateforme patient chiffree"},
-      "greenswapp-apis": {"title": "GreenSwapp : API d'empreinte carbone"},
-      "insurance-quoting-system": {"title": "SGS Coverage : moteur de devis d'assurance"},
-      "juree-legal-translations": {"title": "Juree : traductions juridiques IA"},
-      "levven-smart-home": {"title": "Levven Electronics : application maison connectee + cloud"},
-      "mycloudsync-patient-flow": {"title": "MyCloudSync : tableaux de bord de flux patient en temps reel"},
-      "propcan-real-estate-platform": {"title": "Propcan : plateforme d'insights immobiliers"},
-      "real-estate-investment-app": {"title": "Property Pros : application d'investissement immobilier"},
-      "sigxa-medical-scribe": {"title": "SigXA : plateforme IA de scribe medical"},
-      "smartvet-medical-translation": {"title": "SmartVet : moteur de traduction de rapports veterinaires"}
+      "aquanomix-water-monitoring": {
+        "title": "Aquanomix : surveillance a distance du traitement de l'eau"
+      },
+      "babajob-job-marketplace": {
+        "title": "Babajob : place de marche pour emplois ouvriers"
+      },
+      "book-automation-tool": {
+        "title": "Outil d'automatisation pour texte et couverture de livre"
+      },
+      "cannabis-ecommerce-platform": {
+        "title": "Optimiser l'integrite des donnees pour Moodiday.com"
+      },
+      "coursera-degree-progress": {
+        "title": "Coursera : suivi et planification de progression de diplome"
+      },
+      "data4life-patient-platform": {
+        "title": "Data4Life : plateforme patient chiffree"
+      },
+      "greenswapp-apis": {
+        "title": "GreenSwapp : API d'empreinte carbone"
+      },
+      "insurance-quoting-system": {
+        "title": "SGS Coverage : moteur de devis d'assurance"
+      },
+      "juree-legal-translations": {
+        "title": "Juree : traductions juridiques IA"
+      },
+      "levven-smart-home": {
+        "title": "Levven Electronics : application maison connectee + cloud"
+      },
+      "mycloudsync-patient-flow": {
+        "title": "MyCloudSync : tableaux de bord de flux patient en temps reel"
+      },
+      "propcan-real-estate-platform": {
+        "title": "Propcan : plateforme d'insights immobiliers"
+      },
+      "real-estate-investment-app": {
+        "title": "Property Pros : application d'investissement immobilier"
+      },
+      "sigxa-medical-scribe": {
+        "title": "SigXA : plateforme IA de scribe medical"
+      },
+      "smartvet-medical-translation": {
+        "title": "SmartVet : moteur de traduction de rapports veterinaires"
+      }
+    },
+    "domains": {
+      "cannabis": {
+        "industry": "Cannabis",
+        "title": "Solutions technologiques pour le cannabis et le chanvre",
+        "excerpt": "Solutions avancees pour la conformite, les operations et la croissance dans l'industrie du cannabis."
+      },
+      "ecommerce": {
+        "industry": "E-commerce",
+        "title": "Solutions technologiques e-commerce et retail",
+        "excerpt": "Solutions e-commerce modernes pour accelerer ventes et operations."
+      },
+      "education": {
+        "industry": "Education",
+        "title": "Solutions technologiques pour l'education",
+        "excerpt": "Solutions edtech pour ameliorer apprentissage et gestion academique."
+      },
+      "finance": {
+        "industry": "Finance",
+        "title": "Solutions technologiques pour les services financiers",
+        "excerpt": "Solutions fintech securisees avec conformite et excellente experience client."
+      },
+      "healthcare": {
+        "industry": "Sante",
+        "title": "Solutions logicielles sante et medical",
+        "excerpt": "Solutions health-tech conformes pour soins, donnees et interoperabilite."
+      },
+      "hospitality": {
+        "industry": "Hotellerie",
+        "title": "Solutions technologiques pour l'hotellerie et le tourisme",
+        "excerpt": "Solutions numeriques pour hotellerie, tourisme et experience client."
+      },
+      "insurance": {
+        "industry": "Assurance",
+        "title": "Solutions technologiques pour l'assurance et le courtage",
+        "excerpt": "Solutions insurtech pour souscription, gestion de polices et parcours client."
+      },
+      "legal": {
+        "industry": "Juridique",
+        "title": "Solutions technologiques pour les services juridiques",
+        "excerpt": "Solutions legal-tech pour conformite, documents et collaboration securisee."
+      },
+      "manufacturing": {
+        "industry": "Industrie",
+        "title": "Solutions technologiques pour l'industrie et la fabrication",
+        "excerpt": "Solutions industrielles pour automatisation et optimisation des processus."
+      },
+      "non-profit": {
+        "industry": "Associatif",
+        "title": "Solutions technologiques pour les organisations a but non lucratif",
+        "excerpt": "Outils numeriques pour dons, engagement communautaire et impact."
+      },
+      "real-estate": {
+        "industry": "Immobilier",
+        "title": "Solutions technologiques pour l'immobilier",
+        "excerpt": "Solutions proptech pour ventes, gestion et relation client."
+      },
+      "wellness": {
+        "industry": "Bien-etre",
+        "title": "Solutions technologiques bien-etre et sante",
+        "excerpt": "Plateformes bien-etre pour services, membres et croissance durable."
+      }
     }
   }
 }

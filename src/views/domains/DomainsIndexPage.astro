@@ -1,0 +1,177 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import HeroSection from '../../components/HeroSection.astro';
+import { getCollection } from 'astro:content';
+import { resolveLocale, localizePath } from '../../lib/i18n';
+import { getLocaleCopy } from '../../i18n/locale-copy';
+
+const locale = resolveLocale(Astro.currentLocale, Astro.url.pathname);
+const copy = getLocaleCopy(locale);
+const domainPageCopy = copy.pages.domains ?? {};
+const domainContent = copy.content?.domains ?? {};
+
+const domains = await getCollection('domains', ({ data }) => {
+  return !data.draft;
+});
+
+// Sort domains by published date (newest first)
+domains.sort((a, b) => new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime());
+
+const getDomainCopy = (slug: string) => domainContent[slug] ?? {};
+const getDomainIndustry = (domain: (typeof domains)[number]) => getDomainCopy(domain.slug).industry || domain.data.industry;
+const industries = [...new Set(domains.map((domain) => getDomainIndustry(domain)).filter(Boolean))];
+const localized = (path: string) => localizePath(path, locale);
+---
+
+<Layout title={domainPageCopy.title || 'Industries - A&H Solutions'} description={domainPageCopy.description || 'Industry-specific software solutions from A&H Solutions. Healthcare, finance, e-commerce, and more.'}>
+  <Header />
+  <main>
+    <HeroSection 
+      title={domainPageCopy.heroTitle || 'Industries We Serve'}
+      highlightText={domainPageCopy.heroHighlight || 'Industries'}
+      description={domainPageCopy.heroDescription || "Specialized software solutions tailored to your industry's unique challenges and requirements."}
+    />
+    
+    <section class="py-16 bg-white dark:bg-gray-800">
+      <div class="container-custom">
+        {domains.length > 0 ? (
+          <>
+            <!-- Industry Filter -->
+            {industries.length > 1 && (
+              <div class="flex flex-wrap gap-4 justify-center mb-16">
+                <button class="px-4 py-2 rounded-full bg-primary-600 text-white font-medium text-sm hover:bg-primary-700 transition-colors">
+                  {domainPageCopy.allIndustries || 'All Industries'}
+                </button>
+                {industries.map((industry) => (
+                  <button class="px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-medium text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    {industry}
+                  </button>
+                ))}
+              </div>
+            )}
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {domains.map((domain, index) => {
+                const translatedDomain = getDomainCopy(domain.slug);
+                const domainIndustry = translatedDomain.industry || domain.data.industry;
+                const domainTitle = translatedDomain.title || domain.data.title;
+                const domainExcerpt = translatedDomain.excerpt || domain.data.excerpt || translatedDomain.description || domain.data.description || '';
+
+                return (
+                <div class="card border border-gray-200 dark:border-gray-700 overflow-hidden slide-up" style={'animation-delay: ' + (index * 100) + 'ms'}>
+                  <a href={localized('/domains/' + domain.slug)} class="block">
+                    {domain.data.image ? (
+                      <img 
+                        src={domain.data.image} 
+                        alt={domain.data.imageAlt || domainTitle}
+                        class="w-full h-48 object-cover"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div class="w-full h-48 bg-gradient-to-br from-secondary-500 to-primary-500 flex items-center justify-center">
+                        <span class="text-white text-xl font-semibold">{domainIndustry}</span>
+                      </div>
+                    )}
+                  </a>
+                  <div class="p-6">
+                    <div class="flex items-center mb-4">
+                      <span class="text-sm font-medium text-secondary-600 dark:text-secondary-400">{domainIndustry}</span>
+                      {domain.data.regulations && domain.data.regulations.length > 0 && (
+                        <>
+                          <span class="mx-2 text-gray-300 dark:text-gray-600">•</span>
+                          <span class="text-sm text-gray-500 dark:text-gray-400">{domainPageCopy.complianceReady || 'Compliance Ready'}</span>
+                        </>
+                      )}
+                    </div>
+                    <a href={localized('/domains/' + domain.slug)} class="block mb-3">
+                      <h2 class="text-xl font-semibold text-gray-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-colors">{domainTitle}</h2>
+                    </a>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">{domainExcerpt}</p>
+                    
+                    <!-- Key Challenges/Solutions Preview -->
+                    {domain.data.challenges && domain.data.challenges.length > 0 && (
+                      <div class="mb-4">
+                        <h4 class="text-sm font-medium text-gray-900 dark:text-white mb-2">{domainPageCopy.keyChallenges || 'Key Challenges'}:</h4>
+                        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                          {domain.data.challenges.slice(0, 2).map((challenge) => (
+                            <li class="flex items-start">
+                              <svg class="w-4 h-4 text-red-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                              </svg>
+                              <span class="text-xs">{challenge}</span>
+                            </li>
+                          ))}
+                          {domain.data.challenges.length > 2 && (
+                            <li class="text-xs text-gray-500 dark:text-gray-400">
+                              +{domain.data.challenges.length - 2} {domainPageCopy.moreChallenges || 'more challenges'}
+                            </li>
+                          )}
+                        </ul>
+                      </div>
+                    )}
+
+                    <!-- Key Metrics -->
+                    {domain.data.keyMetrics && domain.data.keyMetrics.length > 0 && (
+                      <div class="mb-6">
+                        <div class="grid grid-cols-2 gap-4">
+                          {domain.data.keyMetrics.slice(0, 2).map((metric) => (
+                            <div class="text-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                              <div class="text-lg font-bold text-primary-600 dark:text-primary-400">{metric.value}</div>
+                              <div class="text-xs text-gray-600 dark:text-gray-300">{metric.label}</div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center">
+                        {domain.data.author.avatar && (
+                          <img 
+                            src={domain.data.author.avatar} 
+                            alt={domain.data.author.name} 
+                            class="w-8 h-8 rounded-full mr-2 object-cover"
+                            loading="lazy"
+                          />
+                        )}
+                        <div>
+                          <p class="text-sm font-medium text-gray-900 dark:text-white">{domain.data.author.name}</p>
+                          <p class="text-xs text-gray-500 dark:text-gray-400">{domainPageCopy.industryExpert || 'Industry Expert'}</p>
+                        </div>
+                      </div>
+                      <a href={localized('/domains/' + domain.slug)} class="btn-outline btn-sm">
+                        {domainPageCopy.explore || 'Explore'}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              )})}
+            </div>
+          </>
+        ) : (
+          <div class="text-center py-16">
+            <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">{domainPageCopy.comingSoonTitle || 'Industry Expertise Coming Soon'}</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+              {domainPageCopy.comingSoonDescription || "We're currently documenting our industry-specific expertise and solutions. Contact us to discuss how we can help with your industry's unique challenges."}
+            </p>
+            <a href={localized('/contact')} class="btn-primary">{domainPageCopy.discussIndustry || 'Discuss Your Industry'}</a>
+          </div>
+        )}
+        
+        <div class="mt-16 text-center">
+          <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">{domainPageCopy.ctaTitle || "Don't See Your Industry?"}</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+            {domainPageCopy.ctaDescription || "We work with businesses across many industries. Even if your sector isn't listed here, we have the expertise to understand your unique challenges and create tailored solutions."}
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href={localized('/contact')} class="btn-primary">{domainPageCopy.tellUsAboutIndustry || 'Tell Us About Your Industry'}</a>
+            <a href={localized('/services')} class="btn-secondary">{domainPageCopy.viewAllServices || 'View All Services'}</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

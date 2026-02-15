@@ -68,10 +68,46 @@
       "moreCaseStudiesSuffix": "Case Studies",
       "readCaseStudy": "Read Case Study",
       "tagsLabel": "Tags"
+    },
+    "domains": {
+      "title": "Industries - A&H Solutions",
+      "description": "Industry-specific software solutions from A&H Solutions. Healthcare, finance, e-commerce, and more.",
+      "heroTitle": "Industries We Serve",
+      "heroHighlight": "Industries",
+      "heroDescription": "Specialized software solutions tailored to your industry's unique challenges and requirements.",
+      "allIndustries": "All Industries",
+      "complianceReady": "Compliance Ready",
+      "keyChallenges": "Key Challenges",
+      "moreChallenges": "more challenges",
+      "industryExpert": "Industry Expert",
+      "explore": "Explore",
+      "comingSoonTitle": "Industry Expertise Coming Soon",
+      "comingSoonDescription": "We're currently documenting our industry-specific expertise and solutions. Contact us to discuss how we can help with your industry's unique challenges.",
+      "discussIndustry": "Discuss Your Industry",
+      "ctaTitle": "Don't See Your Industry?",
+      "ctaDescription": "We work with businesses across many industries. Even if your sector isn't listed here, we have the expertise to understand your unique challenges and create tailored solutions.",
+      "tellUsAboutIndustry": "Tell Us About Your Industry",
+      "viewAllServices": "View All Services",
+      "backToIndustries": "Back to Industries",
+      "industryInsights": "Industry Insights",
+      "keyMetrics": "Key Metrics",
+      "complianceRequirements": "Compliance Requirements",
+      "discussYourNeeds": "Discuss Your Needs",
+      "seeCaseStudies": "See Case Studies",
+      "challenges": "Challenges",
+      "solutions": "Solutions",
+      "benefits": "Benefits",
+      "ourServicesPrefix": "Our",
+      "ourServicesSuffix": "Services",
+      "learnMore": "Learn More",
+      "successStories": "Success Stories",
+      "viewCaseStudy": "View Case Study",
+      "relatedServices": "Related Services"
     }
   },
   "content": {
     "blog": {},
-    "caseStudies": {}
+    "caseStudies": {},
+    "domains": {}
   }
 }
