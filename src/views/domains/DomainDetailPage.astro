@@ -127,6 +127,9 @@ function resolveServiceSlug(serviceName: string): string {
             alt={domain.data.imageAlt || domainTitle}
             class="w-full h-auto rounded-xl mb-10 object-cover"
             style="max-height: 500px;"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
           />
         )}
 

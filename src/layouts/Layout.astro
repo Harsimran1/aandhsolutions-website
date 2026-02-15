@@ -1,9 +1,6 @@
 ---
 import '../styles/global.css';
-import '../styles/transitions.css';
-import { ClientRouter } from 'astro:transitions';
 import { DEFAULT_LOCALE, getAbsoluteLocaleUrl, resolveLocale, getOgLocale, SUPPORTED_LOCALES } from '../lib/i18n';
-import transitionsScriptUrl from '../scripts/transitions.ts?url';
 
 export interface Props {
   title: string;
@@ -65,10 +62,6 @@ const ogLocale = getOgLocale(currentLocale);
     <meta name="twitter:url" content={canonicalUrl} />
     
     <title>{title}</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lexend:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
     
     <!-- Performance optimizations -->
     <link rel="dns-prefetch" href="//www.googletagmanager.com">
@@ -76,7 +69,6 @@ const ogLocale = getOgLocale(currentLocale);
     <link rel="dns-prefetch" href="//www.google.com">
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preconnect" href="https://www.google-analytics.com">
-    <link rel="modulepreload" href={transitionsScriptUrl}>
     <meta name="format-detection" content="telephone=no">
     <meta name="theme-color" content="#8b5cf6">
     
@@ -144,13 +136,11 @@ const ogLocale = getOgLocale(currentLocale);
     }
     </script>
     
-    <ClientRouter />
-    
     <!-- Allow additional head content from pages -->
     <slot name="head" />
   </head>
   <body class="antialiased bg-white dark:bg-secondary-950 text-secondary-900 dark:text-secondary-100 transition-colors duration-300">
-    <div id="page-wrapper" class="page-transition-wrapper">
+    <div id="page-wrapper">
       <slot />
     </div>
     <script>
@@ -210,28 +200,16 @@ const ogLocale = getOgLocale(currentLocale);
         }
       }
 
-      // Handle page transitions
-      document.addEventListener('astro:page-load', () => {
+      function initPageBehaviors() {
         localizeInternalLinks();
         hydrateLazyImages();
-        // This runs on initial page load and after each navigation
-        const pageWrapper = document.getElementById('page-wrapper');
-        if (pageWrapper) {
-          pageWrapper.classList.add('page-loaded');
-        }
-      });
+      }
 
-      document.addEventListener('astro:before-swap', () => {
-        // This runs before the new page content is swapped in
-        const pageWrapper = document.getElementById('page-wrapper');
-        if (pageWrapper) {
-          pageWrapper.classList.remove('page-loaded');
-        }
-      });
-
-      localizeInternalLinks();
-      hydrateLazyImages();
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPageBehaviors, { once: true });
+      } else {
+        initPageBehaviors();
+      }
     </script>
-    <script type="module" src={transitionsScriptUrl}></script>
   </body>
 </html>
