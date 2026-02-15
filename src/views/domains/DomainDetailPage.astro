@@ -28,6 +28,8 @@ const domainRelatedServices = translatedDomain.relatedServices ?? (isDefaultLoca
 const localized = (path: string) => localizePath(path, locale);
 
 // Get related services and case studies
+const allServices = await getCollection('services', ({ data }) => !data.draft);
+
 const services = await getCollection('services', ({ data }) => {
   return !data.draft && data.relatedDomains?.includes(domain.data.industry);
 });
@@ -35,6 +37,22 @@ const services = await getCollection('services', ({ data }) => {
 const caseStudies = await getCollection('case-studies', ({ data }) => {
   return !data.draft && data.relatedDomains?.includes(domain.data.industry);
 });
+
+const serviceSlugByTitle = new Map(
+  allServices.map((service) => [service.data.title.trim().toLowerCase(), service.slug]),
+);
+
+function resolveServiceSlug(serviceName: string): string {
+  const normalized = serviceName.trim().toLowerCase();
+  const byTitle = serviceSlugByTitle.get(normalized);
+  if (byTitle) return byTitle;
+
+  // Fallback for unexpected labels: create a conservative slug-ish path.
+  return normalized
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
 ---
 
 <Layout title={`${domainTitle} - A&H Solutions`} description={domainDescription}>
@@ -260,7 +278,7 @@ const caseStudies = await getCollection('case-studies', ({ data }) => {
             <div class="flex flex-wrap gap-2">
               {domainRelatedServices.map((service) => (
                 <a 
-                  href={localized(`/services/${service.toLowerCase().replace(/\s+/g, '-')}`)}
+                  href={localized(`/services/${resolveServiceSlug(service)}`)}
                   class="px-4 py-2 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full hover:bg-primary-200 dark:hover:bg-primary-800 transition-colors"
                 >
                   {service}
