@@ -48,9 +48,9 @@
       "discussProject": "Parler de votre projet",
       "blueprintTitle": "Commencez avec votre plan de projet GRATUIT",
       "blueprintDescription": "Avant de lancer le developpement, obtenez une feuille de route complete comme nos clients d'etudes de cas.",
-      "blueprintMeta": "Architecture technique \u2022 Wireframes \u2022 Analyse des risques \u2022 Plan d'implementation \u2022 100% Gratuit",
+      "blueprintMeta": "Architecture technique • Wireframes • Analyse des risques • Plan d'implementation • 100% Gratuit",
       "getBlueprint": "Obtenir mon plan gratuit",
-      "blueprintFootnote": "Livre sous 3 a 5 jours ouvrables \u2022 Sans engagement",
+      "blueprintFootnote": "Livre sous 3 a 5 jours ouvrables • Sans engagement",
       "readyTitle": "Pret a obtenir des resultats similaires ?",
       "readyDescription": "A&H Solutions peut transformer votre entreprise avec une expertise prouvee.",
       "learnAboutUs": "A propos de nous",
@@ -751,42 +751,289 @@
         "title": "Developpement d'applications web",
         "description": "Applications web evolutives, securisees et performantes pour accelerer votre croissance.",
         "excerpt": "Applications web evolutives et securisees, concues pour soutenir votre croissance.",
-        "bodyHtml": "<h2>Applications web concues pour evoluer avec votre entreprise</h2><p>Nous construisons des applications web modernes, rapides et maintenables, alignees sur vos objectifs metier. De la conception a la mise en production, nous privilegions la qualite, la securite et la performance.</p><h3>Ce que nous livrons</h3><ul><li>Architecture web full-stack robuste</li><li>Interfaces utilisateur reactives et accessibles</li><li>APIs et integrations avec vos outils existants</li><li>Deploiement cloud et supervision continue</li></ul><h3>Approche projet</h3><p>Nous travaillons par iterations courtes, avec priorisation claire, validation fonctionnelle et mise en ligne progressive pour limiter le risque et accelerer la valeur.</p>"
+        "bodyHtml": "<h2>Applications web concues pour soutenir votre croissance</h2><p>Une application web performante doit aller au-dela d'une interface attractive. Elle doit accelerer les operations, fiabiliser les flux de donnees et permettre des evolutions rapides sans dettes techniques excessives. Nous construisons des plateformes web robustes, securisees et maintenables, alignees sur vos objectifs business.</p><h3>Point de depart</h3><p>Nous analysons vos parcours critiques, vos integrations existantes et les contraintes de performance. Cette phase permet de prioriser les fonctionnalites selon leur impact reel sur la conversion, la productivite et la satisfaction client.</p><h3>Ce que nous mettons en place</h3><ul><li>Architecture full-stack scalable avec separation claire des domaines</li><li>Frontends rapides, accessibles et optimises pour mobile</li><li>APIs fiables pour connecter vos outils internes et partenaires</li><li>Securite integree: roles, permissions, tracabilite et audit</li><li>Pipelines CI/CD pour des releases frequentes et maitrisees</li></ul><h3>Stack et exploitation</h3><p>Nous combinons des technologies modernes (React/Next.js, Node.js, PostgreSQL) avec observabilite, alerting et bonnes pratiques de run. Vous obtenez une base technique qui tient la charge tout en restant evolutive.</p><h3>Impact concret</h3><p>Les equipes gagnent en vitesse de livraison, les donnees deviennent exploitables plus rapidement et les incidents de production diminuent. Les metiers disposent d'une plateforme stable pour piloter l'activite, pendant que la roadmap produit avance de facon continue.</p><h3>Approche delivery</h3><p>Nous livrons par increments mesurables, avec validation fonctionnelle a chaque etape. Cette methode reduit le risque, accelere la mise en valeur et garantit une application web solide sur le long terme.</p>",
+        "pricingModel": "Tarification adaptee selon la complexite et le perimetre fonctionnel",
+        "deliverables": [
+          "Application web complete",
+          "Tableau de bord administrateur (si necessaire)",
+          "Documentation API",
+          "Mise en production et configuration hebergement",
+          "Formation utilisateurs et documentation",
+          "6 mois de support technique"
+        ],
+        "processSteps": [
+          {
+            "title": "Analyse des besoins",
+            "description": "Analyse detaillee des objectifs metier et des contraintes techniques"
+          },
+          {
+            "title": "Conception d'architecture",
+            "description": "Definition d'une architecture scalable et d'un schema de donnees robuste"
+          },
+          {
+            "title": "Developpement frontend",
+            "description": "Creation d'interfaces responsives, accessibles et performantes"
+          },
+          {
+            "title": "Developpement backend",
+            "description": "Implementation des APIs et de la logique serveur"
+          },
+          {
+            "title": "Integration et tests",
+            "description": "Assemblage des composants et validation fonctionnelle complete"
+          },
+          {
+            "title": "Deploiement et lancement",
+            "description": "Mise en production progressive et securisee"
+          }
+        ],
+        "relatedDomains": [
+          "Healthcare",
+          "E-commerce",
+          "Finance",
+          "Education"
+        ]
       },
       "mobile-app-development": {
         "category": "Developpement",
         "title": "Developpement d'applications mobiles",
         "description": "Applications iOS et Android performantes avec une experience utilisateur fluide.",
         "excerpt": "Applications iOS et Android concues pour la performance, l'adoption et la croissance.",
-        "bodyHtml": "<h2>Applications mobiles qui transforment l'experience utilisateur</h2><p>Nous developpons des applications mobiles natives et cross-platform avec une UX claire, des performances solides et une base technique evolutive.</p><h3>Perimetre de service</h3><ul><li>Strategie produit et cadrage fonctionnel</li><li>Design UX/UI mobile</li><li>Developpement iOS, Android ou cross-platform</li><li>Publication stores et support post-lancement</li></ul><h3>Objectif</h3><p>Delivrer une application fiable, engageante et alignee sur vos indicateurs business.</p>"
+        "bodyHtml": "<h2>Applications mobiles pensees pour l'adoption et la retention</h2><p>Une application mobile reussie repose sur un equilibre entre experience utilisateur, performance technique et capacite d'evolution. Nous concevons des apps iOS et Android qui s'integrent naturellement dans les usages quotidiens et soutiennent vos objectifs de croissance.</p><h3>Prioriser ce qui cree de la valeur</h3><p>Nous evitons les roadmaps surchargees en concentrant le produit sur les parcours a plus fort impact: onboarding, activation, engagement et monetisation. Cette priorisation permet d'obtenir des gains rapides sans compromettre la qualite.</p><h3>Perimetre de service</h3><ul><li>Developpement natif ou cross-platform selon vos contraintes</li><li>Design UX/UI mobile-first axe sur la simplicite d'usage</li><li>APIs et services backend robustes pour supporter la charge</li><li>Notifications, messaging et mecanismes de retention</li><li>Instrumentation analytique pour suivre adoption et churn</li></ul><h3>Qualite et lancement</h3><p>Nous mettons en place des cycles de tests complets sur devices, versions OS et conditions reseau critiques. Les processus de release, suivi de crash et observabilite sont prepares avant la mise en ligne pour un lancement maitrise.</p><h3>Resultats attendus</h3><p>Vous obtenez une application stable, evolutive et orientee impact business: meilleure retention, meilleure satisfaction utilisateur et capacite a deployer rapidement de nouvelles fonctionnalites.</p><h3>Accompagnement continu</h3><p>Apres le lancement, nous suivons les indicateurs de performance et d'usage pour prioriser les evolutions utiles. L'app devient une plateforme durable de croissance, pas un simple projet ponctuel.</p>",
+        "pricingModel": "Forfait projet avec paiements par jalons",
+        "deliverables": [
+          "Application mobile complete",
+          "Code source et documentation technique",
+          "Publication sur les stores",
+          "Guide utilisateur et formation",
+          "3 mois de support technique"
+        ],
+        "processSteps": [
+          {
+            "title": "Decouverte et cadrage",
+            "description": "Definition des besoins, des personas cibles et des priorites produit"
+          },
+          {
+            "title": "Design UI/UX",
+            "description": "Creation de wireframes, prototypes et ecrans finaux optimises mobile"
+          },
+          {
+            "title": "Developpement",
+            "description": "Implementation de l'application avec un haut niveau de qualite et de performance"
+          },
+          {
+            "title": "Tests et qualite",
+            "description": "Validation complete sur appareils et environnements cibles"
+          },
+          {
+            "title": "Mise en ligne",
+            "description": "Soumission stores et accompagnement au lancement"
+          },
+          {
+            "title": "Support evolutif",
+            "description": "Maintenance continue et optimisations post-lancement"
+          }
+        ],
+        "relatedDomains": [
+          "Healthcare",
+          "E-commerce",
+          "Finance"
+        ]
       },
       "ai-integrations-automation": {
         "category": "IA et automatisation",
         "title": "Integrations IA et automatisation",
         "description": "Automatisez vos processus et integrez l'IA pour gagner en vitesse, qualite et efficacite.",
         "excerpt": "Integrations IA et automatisation pour accelerer les operations et reduire les taches manuelles.",
-        "bodyHtml": "<h2>Integrez l'IA pour automatiser ce qui freine votre croissance</h2><p>Nous concevons des workflows intelligents qui reduisent les operations manuelles, ameliorent la coherence et augmentent la productivite de vos equipes.</p><h3>Cas d'usage frequents</h3><ul><li>Assistants IA pour support et operations</li><li>Automatisation documentaire et extraction de donnees</li><li>Moteurs de recommandations et previsions</li><li>Automatisation de processus metier</li></ul><h3>Resultat attendu</h3><p>Des gains mesurables sur les delais de traitement, les couts operationnels et la qualite des decisions.</p>"
+        "bodyHtml": "<h2>Integrer l'IA la ou elle produit un gain mesurable</h2><p>L'IA cree de la valeur lorsqu'elle reduit les taches repetitives, accelere les decisions et augmente la qualite operationnelle. Nous identifions avec vous les flux prioritaires puis construisons des integrations IA robustes, supervisees et industrialisables.</p><h3>De la strategie au run</h3><p>Nous ne livrons pas des prototypes isoles. Nous mettons en place une chaine complete: qualite des donnees, gouvernance, observabilite, gestion des exceptions et pilotage des couts. L'objectif est une automatisation fiable en production.</p><h3>Cas d'usage frequents</h3><ul><li>Assistants IA pour support client et operations internes</li><li>Traitement documentaire avec extraction et classification</li><li>Recommandations et priorisation basees sur le contexte</li><li>Automatisation de workflows metier multi-systemes</li><li>Mecanismes Human-in-the-Loop pour les cas sensibles</li></ul><h3>Architecture et securite</h3><p>Nous integrons les composants IA dans votre SI existant avec controle d'acces, versioning des prompts/modeles et journalisation exploitable. Vous gardez la maitrise des risques, de la conformite et de la qualite de service.</p><h3>Pilotage par la mesure</h3><p>Chaque fonctionnalite est suivie via des KPI clairs: taux d'automatisation, delais de traitement, taux d'erreur, satisfaction utilisateur et cout par operation. Les ajustements se font en continu pour maintenir la performance.</p><h3>Impact business</h3><p>Vous reduisez le travail manuel, augmentez la productivite des equipes et ouvrez de nouveaux leviers de croissance. L'IA devient un actif operationnel durable, pas une initiative experimentale.</p>",
+        "pricingModel": "Tarification flexible selon la complexite IA et le perimetre d'integration",
+        "deliverables": [
+          "Fonctionnalites IA integrees dans vos produits",
+          "Workflows metier automatises",
+          "Documentation d'integration et d'exploitation",
+          "Tableau de bord de suivi des performances",
+          "Supports de formation pour les equipes",
+          "3 mois d'optimisation continue"
+        ],
+        "processSteps": [
+          {
+            "title": "Strategie IA",
+            "description": "Identification des opportunites d'automatisation a plus fort impact"
+          },
+          {
+            "title": "Preparation des donnees",
+            "description": "Audit de qualite et structuration des donnees pour les cas d'usage IA"
+          },
+          {
+            "title": "Developpement des modeles",
+            "description": "Creation ou integration de modeles adaptes a vos flux operationnels"
+          },
+          {
+            "title": "Integration et validation",
+            "description": "Connexion aux systemes existants et tests de fiabilite en conditions reelles"
+          },
+          {
+            "title": "Optimisation et formation",
+            "description": "Amelioration continue des performances et formation des equipes metier"
+          },
+          {
+            "title": "Monitoring et support",
+            "description": "Suivi continu des resultats et iterations d'amelioration"
+          }
+        ],
+        "relatedDomains": [
+          "Healthcare",
+          "E-commerce",
+          "Finance",
+          "Customer Service"
+        ]
       },
       "cloud-solutions-integration": {
         "category": "Cloud et infrastructure",
         "title": "Solutions cloud et integration",
         "description": "Infrastructure cloud securisee, evolutive et optimisee pour vos applications critiques.",
         "excerpt": "Architecture cloud securisee et evolutive pour soutenir votre croissance en toute confiance.",
-        "bodyHtml": "<h2>Architecture cloud fiable pour les applications critiques</h2><p>Nous aidons les equipes a migrer, moderniser et exploiter leurs systemes dans le cloud avec un haut niveau de disponibilite et de securite.</p><h3>Nos interventions</h3><ul><li>Audit d'infrastructure et strategie de migration</li><li>Design d'architecture cloud scalable</li><li>Automatisation CI/CD et observabilite</li><li>Optimisation couts/performance</li></ul><h3>Impact</h3><p>Une plateforme plus robuste, plus agile et mieux preparee aux pics de charge.</p>"
+        "bodyHtml": "<h2>Des solutions cloud pour fiabiliser et accelerer votre SI</h2><p>Le cloud doit apporter plus de resilience, de flexibilite et de maitrise economique. Nous accompagnons migrations, modernisation et integrations pour construire une plateforme stable, securisee et prete a evoluer avec vos besoins.</p><h3>Diagnostic et cible technique</h3><p>Nous commencons par cartographier vos workloads, dependances et contraintes de conformite. A partir de cette analyse, nous definissons une architecture cible claire: securite, disponibilite, donnees, exploitation et gouvernance.</p><h3>Interventions principales</h3><ul><li>Migration progressive avec gestion du risque et des interruptions</li><li>Architectures containers/serverless selon les cas d'usage</li><li>CI/CD, Infrastructure as Code et automatisation d'exploitation</li><li>Integrations avec outils tiers, legacy et flux de donnees</li><li>Monitoring, alerting et procedures de reponse incident</li></ul><h3>Performance et optimisation des couts</h3><p>Nous calibrons les ressources pour absorber les pics de charge sans surprovisionnement. L'optimisation combine architecture applicative, gestion des donnees, cache et politiques de capacite pour un meilleur ratio cout/performance.</p><h3>Security & Compliance by design</h3><p>Chiffrement, IAM, segmentation reseau et tracabilite sont integres des la conception. Cette approche permet de satisfaire plus facilement les exigences reglementaires et de reduire les corrections tardives.</p><h3>Valeur obtenue</h3><p>Vous disposez d'une plateforme cloud exploitable sur le long terme: plus rapide a faire evoluer, plus solide en production et mieux gouvernee pour soutenir la croissance.</p>",
+        "pricingModel": "Tarification implementation + services manages en continu",
+        "deliverables": [
+          "Infrastructure cloud complete operationnelle",
+          "Configuration securite, sauvegarde et reprise",
+          "Systemes de monitoring et alerting",
+          "Runbooks et documentation d'exploitation",
+          "Formation des equipes techniques",
+          "Support et optimisation continue"
+        ],
+        "processSteps": [
+          {
+            "title": "Assessment cloud",
+            "description": "Evaluation de l'existant et definition des exigences cibles"
+          },
+          {
+            "title": "Design d'architecture",
+            "description": "Conception d'une architecture cloud scalable, securisee et maintainable"
+          },
+          {
+            "title": "Plan de migration",
+            "description": "Preparation des bascules avec minimisation des interruptions"
+          },
+          {
+            "title": "Implementation",
+            "description": "Deploiement des environnements et migration des applications"
+          },
+          {
+            "title": "Optimisation",
+            "description": "Ajustement des performances, des couts et de la resilence"
+          },
+          {
+            "title": "Exploitation continue",
+            "description": "Supervision proactive et accompagnement operationnel de long terme"
+          }
+        ],
+        "relatedDomains": [
+          "Healthcare",
+          "E-commerce",
+          "Finance",
+          "SaaS",
+          "Enterprise"
+        ]
       },
       "it-consulting-advisory": {
         "category": "Conseil",
         "title": "Conseil et accompagnement IT",
         "description": "Orientation technologique strategique pour aligner vos choix IT sur vos objectifs business.",
         "excerpt": "Conseil IT strategique pour prioriser les bons investissements technologiques.",
-        "bodyHtml": "<h2>Prenez de meilleures decisions technologiques</h2><p>Nous accompagnons vos equipes dans les choix d'architecture, de stack et de priorisation, avec une approche orientee valeur business et execution.</p><h3>Axes d'accompagnement</h3><ul><li>Diagnostic de maturite technologique</li><li>Roadmap de transformation digitale</li><li>Recommandations architecture et securite</li><li>Pilotage de mise en oeuvre</li></ul><h3>Benefice</h3><p>Des decisions plus rapides, moins de risque projet et une feuille de route techniquement solide.</p>"
+        "bodyHtml": "<h2>Conseil IT pour des decisions claires et executables</h2><p>Les projets ralentissent souvent faute d'alignement entre ambitions business, architecture cible et capacite des equipes. Notre accompagnement advisory relie ces dimensions pour transformer des intentions strategiques en plans d'execution realistes.</p><h3>Priorisation orientee impact</h3><p>Nous structurons vos initiatives par valeur, risque et dependances afin d'eviter la dispersion. Cette logique permet de lancer rapidement des chantiers utiles tout en securisant les fondations techniques.</p><h3>Domaines d'accompagnement</h3><ul><li>Diagnostic de maturite technologique et organisationnelle</li><li>Definition de cible architecture et integration</li><li>Aide aux choix outils, partenaires et trajectoires make-or-buy</li><li>Cadre de securite, conformite et gouvernance delivery</li><li>Pilotage KPI pour suivre execution et ROI</li></ul><h3>Du cadrage a l'implementation</h3><p>Nos recommandations sont directement actionnables: principes d'architecture, planification par phases, responsabilites, charge et points de controle. Nous pouvons egalement accompagner les premieres vagues de mise en oeuvre.</p><h3>Reduction des risques</h3><p>L'identification precoce des verrous techniques, organisationnels et contractuels permet d'eviter des retards couteux. Vous gagnez en predictibilite, en qualite de livraison et en capacite de decision.</p><h3>Resultat</h3><p>Votre organisation avance plus vite avec une feuille de route defendable, des arbitrages mieux documentes et une execution plus robuste. Le conseil IT devient un levier de performance durable.</p>",
+        "pricingModel": "Mission au forfait ou accompagnement au taux journalier",
+        "deliverables": [
+          "Diagnostic technologique complet",
+          "Feuille de route strategique et recommandations",
+          "Planning de mise en oeuvre avec budget cible",
+          "Analyse des risques et plan de mitigation",
+          "Evaluation et selection des fournisseurs",
+          "Accompagnement advisory continu"
+        ],
+        "processSteps": [
+          {
+            "title": "Assessment business",
+            "description": "Comprendre vos processus, contraintes et objectifs de transformation"
+          },
+          {
+            "title": "Analyse des ecarts",
+            "description": "Identifier les ecarts entre l'etat actuel et les resultats attendus"
+          },
+          {
+            "title": "Definition de strategie",
+            "description": "Construire une strategie technologique pragmatique et mesurable"
+          },
+          {
+            "title": "Conception des solutions",
+            "description": "Recommander les choix d'architecture, d'outillage et de gouvernance"
+          },
+          {
+            "title": "Planification d'execution",
+            "description": "Structurer les phases projet, ressources et dependances"
+          },
+          {
+            "title": "Advisory continu",
+            "description": "Accompagner les equipes pendant l'implementation et la montee en charge"
+          }
+        ],
+        "relatedDomains": [
+          "Healthcare",
+          "Finance",
+          "Manufacturing",
+          "Education",
+          "Government"
+        ]
       },
       "data-analytics-visualization": {
         "category": "Analytique et BI",
         "title": "Analyse de donnees et visualisation",
         "description": "Tableaux de bord et pipelines de donnees pour transformer vos donnees en decisions actionnables.",
         "excerpt": "Transformez vos donnees en insights clairs avec des dashboards operationnels.",
-        "bodyHtml": "<h2>Rendez vos donnees utiles pour la decision</h2><p>Nous construisons des solutions analytiques qui centralisent les donnees, automatisent le reporting et rendent les indicateurs facilement exploitables.</p><h3>Composants typiques</h3><ul><li>Pipeline de collecte et transformation de donnees</li><li>Dashboards metier interactifs</li><li>Suivi de KPI en temps reel</li><li>Formation des equipes a l'usage des outils</li></ul><h3>Valeur</h3><p>Une meilleure visibilite operationnelle et des decisions plus rapides, appuyees par les donnees.</p>"
+        "bodyHtml": "<h2>Transformer les donnees en decisions operationnelles</h2><p>Disposer de donnees ne suffit pas: il faut des indicateurs fiables, des definitions partagees et des vues actionnables. Nous concevons des solutions analytics qui connectent les sources, automatisent les traitements et rendent la lecture des KPI immediate pour les equipes metier.</p><h3>Construire une base de confiance</h3><p>Nous harmonisons les modeles de donnees, clarifions les regles de calcul et mettons en place une gouvernance simple. Cette base elimine les ecarts de chiffres entre equipes et accelere les arbitrages.</p><h3>Ce que nous mettons en place</h3><ul><li>Pipelines de donnees automatises et observables</li><li>Dashboards metier pour direction, operations et produit</li><li>Suivi quasi temps reel des indicateurs critiques</li><li>Controles de qualite, lineage et documentation des KPI</li><li>Enablement des equipes pour l'usage autonome des dashboards</li></ul><h3>Architecture et exploitation</h3><p>Nous combinons ETL/ELT, outils BI et strategie de stockage adaptee au volume et a la frequence des usages. Alerting et controles automatiques permettent d'identifier rapidement toute derive de qualite ou de performance.</p><h3>Impact business</h3><p>Les equipes passent moins de temps a consolider des fichiers et plus de temps a agir. Le pilotage devient plus precis: previsions plus fiables, operations mieux ajustees et decisions plus rapides.</p><h3>Effet long terme</h3><p>Vous installez une culture de decision basee sur la donnee, reproductible et scalable. L'analytics cesse d'etre un reporting tardif pour devenir un systeme de pilotage continu.</p>",
+        "pricingModel": "Tarification au projet avec option de maintenance evolutive",
+        "deliverables": [
+          "Dashboards analytiques interactifs",
+          "Systeme de reporting automatise",
+          "Pipeline de donnees operationnel",
+          "Formation utilisateurs et documentation",
+          "Configuration du suivi de performance",
+          "6 mois de support technique"
+        ],
+        "processSteps": [
+          {
+            "title": "Audit des donnees",
+            "description": "Analyse des sources existantes, de la qualite et des contraintes d'exploitation"
+          },
+          {
+            "title": "Strategie analytique",
+            "description": "Definition des KPI, des objectifs et des besoins de visualisation"
+          },
+          {
+            "title": "Developpement des pipelines",
+            "description": "Mise en place de la collecte, transformation et fiabilisation des donnees"
+          },
+          {
+            "title": "Creation des dashboards",
+            "description": "Conception de tableaux de bord actionnables pour les equipes metier"
+          },
+          {
+            "title": "Validation et optimisation",
+            "description": "Controle de la fiabilite des indicateurs et optimisation des performances"
+          },
+          {
+            "title": "Formation et deploiement",
+            "description": "Accompagnement des utilisateurs et lancement progressif en production"
+          }
+        ],
+        "relatedDomains": [
+          "Healthcare",
+          "E-commerce",
+          "Finance",
+          "Marketing",
+          "Operations"
+        ]
       }
     }
   }

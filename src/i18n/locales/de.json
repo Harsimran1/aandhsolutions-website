@@ -48,9 +48,9 @@
       "discussProject": "Projekt besprechen",
       "blueprintTitle": "Starten Sie mit Ihrem KOSTENLOSEN Projektplan",
       "blueprintDescription": "Bevor die Entwicklung startet, erhalten Sie eine komplette Roadmap wie unsere Fallstudienkunden.",
-      "blueprintMeta": "Technische Architektur \u2022 Wireframes \u2022 Risikoanalyse \u2022 Implementierungsplan \u2022 100% Kostenlos",
+      "blueprintMeta": "Technische Architektur • Wireframes • Risikoanalyse • Implementierungsplan • 100% Kostenlos",
       "getBlueprint": "Kostenlosen Plan erhalten",
-      "blueprintFootnote": "Lieferung in 3-5 Werktagen \u2022 Keine Verpflichtung",
+      "blueprintFootnote": "Lieferung in 3-5 Werktagen • Keine Verpflichtung",
       "readyTitle": "Bereit fur ahnliche Ergebnisse?",
       "readyDescription": "A&H Solutions transformiert Ihr Unternehmen mit erprobter Expertise.",
       "learnAboutUs": "Uber uns",
@@ -248,7 +248,7 @@
       "propcan-real-estate-platform": {
         "title": "Propcan: Plattform fur Immobilien-Insights",
         "excerpt": "Kostenlose Immobiliendatenplattform entwickelt, die Kaufern, Maklern und Eigenheimbesitzern hilft, Immobilien mit transparenten Markteinblicken zu vergleichen.",
-        "bodyHtml": "<h2>Projektuberblick</h2><p>Propcan ist eine kanadische Plattform fur Immobilien-Insights, die darauf ausgelegt ist, Immobiliendaten transparenter und zuganglicher zu machen. Die Plattform aggregiert Immobilienwerte, historische Verkaufsdaten und Trends auf Stadtteilebene und ermoglicht es Nutzern, Immobilien mit Vertrauen zu erkunden und zu vergleichen.</p><p>Als verbraucherorientiertes Produkt konzentriert sich Propcan auf Klarheit, Geschwindigkeit und Vertrauen \u2013 und beseitigt Reibungsverluste bei der Art und Weise, wie Kaufer, Eigenheimbesitzer und Immobilienprofis den Markt verstehen.</p><h2>Die Herausforderung</h2><p>Die kanadische Immobilienlandschaft ist fragmentiert, wobei kritische Daten oft hinter Paywalls oder schwer zu navigierenden Tools verborgen sind. Die Herausforderung bestand darin:</p><ul><li>Komplexe Immobiliendaten verstandlich zu prasentieren</li><li>Kartenbasierte Entdeckung ohne Leistungseinbussen zu unterstutzen</li><li>Ein skalierbares System zu entwerfen, das grosse Datenmengen und zukunftige Funktionserweiterungen bewaltigen kann</li><li>Vertrauen und Genauigkeit in einem datensensiblen Bereich zu gewahrleisten</li></ul><p>Gleichzeitig musste die Plattform fur Alltagsnutzer schnell, modern und zug\u00e4nglich wirken \u2013 nicht nur fur Branchenprofis.</p><h2>Unsere Losung</h2><p>Wir haben Propcan als moderne Full-Stack-Webanwendung konzipiert und entwickelt, mit starkem Fokus auf Benutzerfreundlichkeit und langfristige Wartbarkeit.</p><p>Wichtige Aspekte der Losung umfassten:</p><ul><li>Ubersichtliche, intuitive Benutzeroberflache mit Fokus auf Immobilienvergleich und -erkundung</li><li>Kartengesteuerte Sucherfahrung zur geografischen Darstellung von Insights</li><li>Normalisierte Datenmodelle zur Unterstutzung historischer Preise, Trends und zukunftiger Analysen</li><li>Hochleistungs-Backend-APIs, optimiert fur leseintensive Arbeitslasten</li><li>Skalierbare Architektur, die das inkrementelle Hinzufugen neuer Regionen, Datensatze und Funktionen ermoglicht</li></ul><p>Die Plattform wurde mit einem modernen JavaScript-Stack entwickelt, der schnelle Iteration bei gleichzeitiger produktionsreifer Zuverlassigkeit ermoglicht.</p><h2>Ergebnis</h2><p>Propcan wurde als kostenlose, datenreiche Immobilienplattform gestartet, die aussagekraftige Insights liefert, ohne die Nutzer zu uberfordern. Das endgultige System:</p><ul><li>Verbesserte den Zugang zu Immobilienmarktdaten</li><li>Ermoglichte schnellere und fundiertere Immobilienvergleiche</li><li>Schuf eine solide technische Grundlage fur zukunftige Monetarisierung und Funktionserweiterung</li><li>Positionierte das Produkt als glaubwurdige PropTech-Plattform im kanadischen Markt</li></ul><p>Die Architektur- und Designentscheidungen stellen sicher, dass sich Propcan zusammen mit sich andernden Marktanforderungen, regulatorischen Erwagungen und Datenverfugbarkeit weiterentwickeln kann.</p>"
+        "bodyHtml": "<h2>Projektuberblick</h2><p>Propcan ist eine kanadische Plattform fur Immobilien-Insights, die darauf ausgelegt ist, Immobiliendaten transparenter und zuganglicher zu machen. Die Plattform aggregiert Immobilienwerte, historische Verkaufsdaten und Trends auf Stadtteilebene und ermoglicht es Nutzern, Immobilien mit Vertrauen zu erkunden und zu vergleichen.</p><p>Als verbraucherorientiertes Produkt konzentriert sich Propcan auf Klarheit, Geschwindigkeit und Vertrauen – und beseitigt Reibungsverluste bei der Art und Weise, wie Kaufer, Eigenheimbesitzer und Immobilienprofis den Markt verstehen.</p><h2>Die Herausforderung</h2><p>Die kanadische Immobilienlandschaft ist fragmentiert, wobei kritische Daten oft hinter Paywalls oder schwer zu navigierenden Tools verborgen sind. Die Herausforderung bestand darin:</p><ul><li>Komplexe Immobiliendaten verstandlich zu prasentieren</li><li>Kartenbasierte Entdeckung ohne Leistungseinbussen zu unterstutzen</li><li>Ein skalierbares System zu entwerfen, das grosse Datenmengen und zukunftige Funktionserweiterungen bewaltigen kann</li><li>Vertrauen und Genauigkeit in einem datensensiblen Bereich zu gewahrleisten</li></ul><p>Gleichzeitig musste die Plattform fur Alltagsnutzer schnell, modern und zugänglich wirken – nicht nur fur Branchenprofis.</p><h2>Unsere Losung</h2><p>Wir haben Propcan als moderne Full-Stack-Webanwendung konzipiert und entwickelt, mit starkem Fokus auf Benutzerfreundlichkeit und langfristige Wartbarkeit.</p><p>Wichtige Aspekte der Losung umfassten:</p><ul><li>Ubersichtliche, intuitive Benutzeroberflache mit Fokus auf Immobilienvergleich und -erkundung</li><li>Kartengesteuerte Sucherfahrung zur geografischen Darstellung von Insights</li><li>Normalisierte Datenmodelle zur Unterstutzung historischer Preise, Trends und zukunftiger Analysen</li><li>Hochleistungs-Backend-APIs, optimiert fur leseintensive Arbeitslasten</li><li>Skalierbare Architektur, die das inkrementelle Hinzufugen neuer Regionen, Datensatze und Funktionen ermoglicht</li></ul><p>Die Plattform wurde mit einem modernen JavaScript-Stack entwickelt, der schnelle Iteration bei gleichzeitiger produktionsreifer Zuverlassigkeit ermoglicht.</p><h2>Ergebnis</h2><p>Propcan wurde als kostenlose, datenreiche Immobilienplattform gestartet, die aussagekraftige Insights liefert, ohne die Nutzer zu uberfordern. Das endgultige System:</p><ul><li>Verbesserte den Zugang zu Immobilienmarktdaten</li><li>Ermoglichte schnellere und fundiertere Immobilienvergleiche</li><li>Schuf eine solide technische Grundlage fur zukunftige Monetarisierung und Funktionserweiterung</li><li>Positionierte das Produkt als glaubwurdige PropTech-Plattform im kanadischen Markt</li></ul><p>Die Architektur- und Designentscheidungen stellen sicher, dass sich Propcan zusammen mit sich andernden Marktanforderungen, regulatorischen Erwagungen und Datenverfugbarkeit weiterentwickeln kann.</p>"
       },
       "real-estate-investment-app": {
         "title": "Property Pros: Immobilien-Investment-App",
@@ -751,42 +751,289 @@
         "title": "Web-App-Entwicklung",
         "description": "Skalierbare, sichere und performante Webanwendungen fur nachhaltiges Wachstum.",
         "excerpt": "Skalierbare und sichere Webanwendungen fur stabile digitale Prozesse.",
-        "bodyHtml": "<h2>Webanwendungen, die mit Ihrem Unternehmen wachsen</h2><p>Wir entwickeln moderne Webanwendungen mit klarer Architektur, hoher Performance und nachhaltiger Wartbarkeit. Fokus: Zuverlassigkeit, Sicherheit und schnelle Iteration.</p><h3>Leistungsumfang</h3><ul><li>Full-Stack Architektur und API-Design</li><li>Responsive und zugangliche Benutzeroberflachen</li><li>Integrationen in bestehende Systeme</li><li>Cloud-Deployment und Monitoring</li></ul><h3>Vorgehen</h3><p>Iterative Umsetzung in kurzen Zyklen mit klarer Priorisierung und fruher Produktvalidierung.</p>"
+        "bodyHtml": "<h2>Webanwendungen als skalierbare Umsatzplattform</h2><p>Moderne Webprodukte muessen heute mehr leisten als eine gute Oberflaeche. Sie sollen interne Prozesse beschleunigen, Daten verlaesslich bereitstellen und gleichzeitig flexibel auf neue Geschaeftsmodelle reagieren. Wir entwickeln Webanwendungen, die genau darauf ausgelegt sind: hohe Verfuegbarkeit, klare Wartbarkeit und schnelle Weiterentwicklung ohne technische Sackgassen.</p><h3>Wo wir typischerweise starten</h3><p>Zu Beginn schaffen wir Transparenz ueber die aktuelle Architektur, kritische User Journeys und bestehende Integrationen. So priorisieren wir Features nach Business-Impact statt nach Bauchgefuehl und reduzieren Risiko in den ersten Releases.</p><h3>Was wir konkret liefern</h3><ul><li>Skalierbare Full-Stack-Architektur mit klaren Domanengrenzen</li><li>Performante, barrierearme Frontends fuer Desktop und Mobile</li><li>Robuste API-Schicht fuer interne und externe Integrationen</li><li>Sichere Authentifizierung, Rollenmodelle und Audit-Trails</li><li>Deployment-Pipelines mit automatisierten Qualitaetschecks</li></ul><h3>Technologie und Betrieb</h3><p>Wir arbeiten mit modernen Stacks wie React/Next.js, Node.js und PostgreSQL und koppeln diese mit Observability, Alerting und sauberem Release-Management. Dadurch bleiben Time-to-Market und Betriebsstabilitaet im Gleichgewicht, auch wenn Last und Funktionsumfang wachsen.</p><h3>Ergebnisse im Alltag</h3><p>Teams gewinnen messbar an Geschwindigkeit: weniger manuelle Abstimmungen, klarere Datenbasis und schnellere Releases. Fachbereiche erhalten bessere Transparenz ueber Kernkennzahlen, waehrend Engineering-Teams eine verlaessliche Plattform fuer kontinuierliche Produktentwicklung nutzen.</p><h3>Unser Ansatz</h3><p>Wir liefern iterativ in klar abgegrenzten Inkrementen. Jede Phase endet mit produktiv nutzbarem Mehrwert, dokumentierten Entscheidungen und einem belastbaren Plan fuer den naechsten Ausbau. So entsteht eine Webplattform, die heute liefert und morgen nicht neu gebaut werden muss.</p>",
+        "pricingModel": "Individuelle Preisgestaltung je nach Komplexitat und Funktionsumfang",
+        "deliverables": [
+          "Vollstandige Webanwendung",
+          "Admin-Dashboard (falls erforderlich)",
+          "API-Dokumentation",
+          "Deployment- und Hosting-Setup",
+          "Nutzerschulung und Dokumentation",
+          "6 Monate technischer Support"
+        ],
+        "processSteps": [
+          {
+            "title": "Anforderungsanalyse",
+            "description": "Detaillierte Analyse von Geschaftsanforderungen und technischen Spezifikationen"
+          },
+          {
+            "title": "Architekturdesign",
+            "description": "Entwurf einer skalierbaren Systemarchitektur und Datenbankstruktur"
+          },
+          {
+            "title": "Frontend-Entwicklung",
+            "description": "Entwicklung responsiver und interaktiver Benutzeroberflachen"
+          },
+          {
+            "title": "Backend-Entwicklung",
+            "description": "Implementierung robuster APIs und serverseitiger Logik"
+          },
+          {
+            "title": "Integration und Tests",
+            "description": "Zusammenfuhrung aller Komponenten und umfassende Qualitatssicherung"
+          },
+          {
+            "title": "Deployment und Go-Live",
+            "description": "Produktivsetzung und abgesicherter Projektstart"
+          }
+        ],
+        "relatedDomains": [
+          "Healthcare",
+          "E-commerce",
+          "Finance",
+          "Education"
+        ]
       },
       "mobile-app-development": {
         "category": "Entwicklung",
         "title": "Mobile-App-Entwicklung",
         "description": "iOS- und Android-Apps mit starker UX und hoher technischer Qualitat.",
         "excerpt": "Mobile Apps fur iOS und Android mit Fokus auf Nutzererlebnis und Skalierbarkeit.",
-        "bodyHtml": "<h2>Mobile Apps mit messbarem Business-Impact</h2><p>Wir entwickeln native und plattformubergreifende Apps, die schnell, stabil und benutzerfreundlich sind. Von Produktidee bis Store-Release begleiten wir den gesamten Zyklus.</p><h3>Typische Leistungen</h3><ul><li>Produktstrategie und Funktionsschnitt</li><li>UX/UI fur mobile Nutzungsszenarien</li><li>iOS-, Android- und Cross-Platform-Entwicklung</li><li>Release, Monitoring und Weiterentwicklung</li></ul><h3>Ergebnis</h3><p>Eine App, die Adoption steigert und langfristig wartbar bleibt.</p>"
+        "bodyHtml": "<h2>Mobile Apps, die genutzt werden und bleiben</h2><p>Eine App ist nur dann erfolgreich, wenn sie im Alltag der Nutzer konstant Mehrwert liefert. Deshalb verbinden wir Produktstrategie, UX und Engineering von Anfang an. Das Ergebnis sind mobile Anwendungen, die schnell reagieren, stabil laufen und auf Wachstum vorbereitet sind.</p><h3>Produktfokus statt Feature-Overload</h3><p>Wir priorisieren gemeinsam die Funktionen mit dem groessten Nutzen fuer Aktivierung, Retention und Conversion. Dadurch vermeiden wir ueberladene Releases und schaffen einen klaren Produktkern, der sich ueber reale Nutzungsdaten kontinuierlich verbessern laesst.</p><h3>Leistungsumfang</h3><ul><li>Native und plattformuebergreifende App-Entwicklung</li><li>UX/UI fuer hohe Nutzungsfreundlichkeit und klare Flows</li><li>Sichere Anmeldung, Berechtigungen und Session-Management</li><li>Push-Strategien, In-App-Messaging und Lifecycle-Automation</li><li>Analytics-Setup fuer Adoption, Retention und Monetarisierung</li></ul><h3>Technische Basis</h3><p>Je nach Zielbild setzen wir auf React Native, Flutter oder native iOS/Android-Stacks. Backendseitig sorgen wir fuer stabile APIs, asynchrone Verarbeitung und nachvollziehbares Monitoring. So lassen sich neue Features kontrolliert ausrollen, ohne die Kernstabilitaet zu gefaehrden.</p><h3>Qualitaet und Releases</h3><p>Vor jedem Go-Live stehen strukturierte Testzyklen ueber zentrale Geraeteklassen, Stores und Netzwerkszenarien. Release-Prozesse, Crash-Reporting und Incident-Routinen sind von Beginn an integriert, damit Ihr Team nach dem Launch nicht im Blindflug arbeitet.</p><h3>Business-Mehrwert</h3><p>Sie erhalten eine App-Plattform, die Adoption erhoeht, Betriebskosten reduziert und als direkter Wachstumskanal ausgebaut werden kann. Mit jeder Iteration steigt nicht nur der Funktionsumfang, sondern auch die Verlaesslichkeit Ihrer mobilen Customer Experience.</p>",
+        "pricingModel": "Festpreis pro Projekt mit Meilensteinzahlungen",
+        "deliverables": [
+          "Vollstandige mobile Anwendung",
+          "Quellcode und technische Dokumentation",
+          "App-Store-Bereitstellung",
+          "Nutzerhandbuch und Schulung",
+          "3 Monate technischer Support"
+        ],
+        "processSteps": [
+          {
+            "title": "Discovery und Planung",
+            "description": "Definition von Anforderungen, Zielgruppe und technischen Leitplanken"
+          },
+          {
+            "title": "UI/UX-Design",
+            "description": "Wireframes, Prototypen und finale Designs fur optimale Nutzererlebnisse"
+          },
+          {
+            "title": "Entwicklung",
+            "description": "Umsetzung mit Fokus auf Performance, Stabilitat und Skalierbarkeit"
+          },
+          {
+            "title": "Testing und QA",
+            "description": "Umfassende Tests uber Gerate und Plattformen hinweg"
+          },
+          {
+            "title": "Deployment",
+            "description": "Store-Submission und begleiteter Launch"
+          },
+          {
+            "title": "Support",
+            "description": "Laufende Wartung und priorisierte Weiterentwicklungen"
+          }
+        ],
+        "relatedDomains": [
+          "Healthcare",
+          "E-commerce",
+          "Finance"
+        ]
       },
       "ai-integrations-automation": {
         "category": "KI und Automatisierung",
         "title": "KI-Integrationen und Automatisierung",
         "description": "Automatisieren Sie Ablaufe mit KI und steigern Sie Geschwindigkeit und Effizienz.",
         "excerpt": "KI-Integrationen fur effizientere Prozesse und weniger manuelle Arbeit.",
-        "bodyHtml": "<h2>KI sinnvoll in Ihre Prozesse integrieren</h2><p>Wir implementieren KI-Funktionen und Automatisierungen, die repetitive Aufgaben reduzieren und Teams entlasten, ohne die Prozesskontrolle zu verlieren.</p><h3>Einsatzfelder</h3><ul><li>KI-Assistenten fur Support und interne Ablaufe</li><li>Dokumentenverarbeitung und Datenerkennung</li><li>Prognose- und Empfehlungssysteme</li><li>End-to-End Prozessautomatisierung</li></ul><h3>Nutzen</h3><p>Weniger operative Kosten, schnellere Durchlaufzeiten und bessere Entscheidungsqualitat.</p>"
+        "bodyHtml": "<h2>KI und Automatisierung mit klarer Business-Wirkung</h2><p>KI lohnt sich dann, wenn sie Engpaesse im Tagesgeschaeft beseitigt und Entscheidungen beschleunigt. Wir identifizieren gemeinsam die Prozesse mit hohem Volumen, hoher Wiederholrate oder kritischer Fehlerkosten und setzen dort gezielt Automatisierung und KI-Funktionen ein.</p><h3>Von Use Case zu Produktion</h3><p>Statt isolierter Demos bauen wir belastbare Produktionsloesungen. Dazu gehoeren Datenqualitaet, Governance, Monitoring und Fallback-Prozesse, damit KI-Workflows unter realen Bedingungen stabil laufen und auditierbar bleiben.</p><h3>Typische Loesungen</h3><ul><li>Dokumentenverarbeitung mit Klassifikation und Extraktion</li><li>KI-Assistenten fuer Support-, Sales- und Backoffice-Prozesse</li><li>Empfehlungs- und Priorisierungsmodelle fuer Teams</li><li>Workflow-Automation ueber API- und Event-Orchestrierung</li><li>Qualitaetskontrollen mit Human-in-the-Loop Freigaben</li></ul><h3>Technische Umsetzung</h3><p>Wir integrieren LLM- und ML-Komponenten in Ihre bestehende Systemlandschaft, inklusive Rechtekonzept, Prompt- und Modellversionierung sowie Kostenkontrolle. Damit bleiben Performance, Sicherheit und Betriebstransparenz auch bei steigender Nutzung stabil.</p><h3>Messbarkeit und Steuerung</h3><p>Jede KI-Funktion bekommt klare Erfolgsmetriken: Durchlaufzeiten, Fehlerquoten, Automatisierungsgrad und Nutzerakzeptanz. Dashboards und Alerting zeigen fruehzeitig, wo Modelle nachjustiert werden muessen, bevor Qualitaet oder Service-Level leiden.</p><h3>Ergebnis</h3><p>Sie reduzieren manuelle Arbeit in kritischen Prozessen, verkuerzen Reaktionszeiten und schaffen eine skalierbare Grundlage fuer weitere KI-Initiativen. So wird KI vom Experiment zur verlaesslichen Produktivitaetsplattform.</p>",
+        "pricingModel": "Flexible Preisgestaltung nach KI-Komplexitat und Integrationsumfang",
+        "deliverables": [
+          "Implementierte KI-Funktionen im Produkt",
+          "Automatisierte Workflow-Systeme",
+          "Integrations- und Betriebsdokumentation",
+          "Dashboard fur Performance- und Nutzungskennzahlen",
+          "Schulungsunterlagen fur Teams",
+          "3 Monate Optimierungssupport"
+        ],
+        "processSteps": [
+          {
+            "title": "KI-Strategie und Planung",
+            "description": "Identifikation von Automatisierungspotenzialen und Definition der Umsetzungsstrategie"
+          },
+          {
+            "title": "Datenanalyse und Vorbereitung",
+            "description": "Prufung der Datenqualitat und Aufbereitung geeigneter Datensatze"
+          },
+          {
+            "title": "Modellentwicklung",
+            "description": "Entwicklung oder Integration passender KI-Modelle fur die Anwendungsfalle"
+          },
+          {
+            "title": "Integration und Tests",
+            "description": "Nahtlose Einbindung in bestehende Systeme inklusive Qualitatssicherung"
+          },
+          {
+            "title": "Optimierung und Team-Enablement",
+            "description": "Feinjustierung der Ergebnisse und Befahigung der internen Teams"
+          },
+          {
+            "title": "Monitoring und Support",
+            "description": "Kontinuierliche Uberwachung und iterative Verbesserung im Betrieb"
+          }
+        ],
+        "relatedDomains": [
+          "Healthcare",
+          "E-commerce",
+          "Finance",
+          "Customer Service"
+        ]
       },
       "cloud-solutions-integration": {
         "category": "Cloud und Infrastruktur",
         "title": "Cloud-Losungen und Integration",
         "description": "Sichere und skalierbare Cloud-Infrastruktur fur geschaftskritische Systeme.",
         "excerpt": "Cloud-Architekturen fur Performance, Sicherheit und zukunftige Skalierung.",
-        "bodyHtml": "<h2>Cloud-Infrastruktur fur Stabilitat und Wachstum</h2><p>Wir helfen bei Migration, Modernisierung und Betrieb von Cloud-Systemen mit starkem Fokus auf Sicherheit, Verfugbarkeit und Kostenkontrolle.</p><h3>Unsere Schwerpunkte</h3><ul><li>Cloud-Assessment und Migrationsplanung</li><li>Skalierbare Zielarchitektur</li><li>CI/CD, Observability und Betrieb</li><li>Laufende Kosten- und Performance-Optimierung</li></ul><h3>Ergebnis</h3><p>Eine belastbare Plattform, die Lastspitzen und neue Anforderungen sauber abdeckt.</p>"
+        "bodyHtml": "<h2>Cloud-Plattformen fuer Stabilitaet, Sicherheit und Wachstum</h2><p>Cloud ist kein Selbstzweck. Sie soll Kosten steuerbar machen, Systeme robuster betreiben und neue Produktinitiativen schneller ermoeglichen. Wir begleiten Migration, Neuaufbau und Integration so, dass Betriebssicherheit und Liefergeschwindigkeit gleichzeitig steigen.</p><h3>Analyse und Zielarchitektur</h3><p>Zu Beginn bewerten wir Workloads, Abhaengigkeiten und Risiken. Daraus entsteht eine Zielarchitektur mit klaren Leitplanken fuer Security, Verfuegbarkeit, Datenfluesse und Deployment-Standards.</p><h3>Kernleistungen</h3><ul><li>Cloud-Migration mit kontrollierten Cutover-Pfaden</li><li>Container- und Serverless-Architekturen je nach Use Case</li><li>CI/CD, Infrastructure as Code und Betriebsautomatisierung</li><li>Integration von Drittanbietern, Legacy-Systemen und Datenquellen</li><li>Monitoring, Alerting und Incident-Response-Routinen</li></ul><h3>Kosten und Performance</h3><p>Wir gestalten Ressourcen so, dass Lastspitzen abgefangen und Leerlaufkosten reduziert werden. Durch rightsizing, Caching, asynchrone Verarbeitung und gezielte Datenarchitektur verbessern wir Performance und Wirtschaftlichkeit parallel.</p><h3>Compliance und Security by Design</h3><p>Verschluesselung, IAM-Modelle, Netzsegmentierung und revisionssichere Logs sind von Anfang an Bestandteil der Plattform. Dadurch lassen sich regulatorische Anforderungen fruehzeitig abdecken, statt spaeter teuer nachzubauen.</p><h3>Business-Ergebnis</h3><p>Sie erhalten eine belastbare Cloud-Grundlage, mit der Teams schneller liefern, Risiken kontrollieren und neue Funktionen in kuerzeren Zyklen veroeffentlichen koennen. Die Plattform bleibt dabei nachvollziehbar, erweiterbar und langfristig wartbar.</p>",
+        "pricingModel": "Implementierung plus laufende Managed-Services-Modelle",
+        "deliverables": [
+          "Vollstandiges Cloud-Infrastruktur-Setup",
+          "Sicherheits- und Backup-Konfiguration",
+          "Monitoring- und Alerting-Systeme",
+          "Runbooks und Betriebsdokumentation",
+          "Team-Training und Wissenstransfer",
+          "Laufende Optimierung und Support"
+        ],
+        "processSteps": [
+          {
+            "title": "Cloud-Assessment",
+            "description": "Analyse der aktuellen Infrastruktur und Definition der Cloud-Zielanforderungen"
+          },
+          {
+            "title": "Architekturdesign",
+            "description": "Entwurf einer skalierbaren und sicheren Zielarchitektur"
+          },
+          {
+            "title": "Migrationsplanung",
+            "description": "Ausarbeitung einer Migrationsstrategie mit minimalen Unterbrechungen"
+          },
+          {
+            "title": "Implementierung",
+            "description": "Aufbau der Cloud-Umgebung und Uberfuhrung relevanter Workloads"
+          },
+          {
+            "title": "Optimierung",
+            "description": "Feinabstimmung von Kosten, Performance und Zuverlassigkeit"
+          },
+          {
+            "title": "Betrieb und Management",
+            "description": "Kontinuierliches Monitoring und proaktive Betriebsunterstutzung"
+          }
+        ],
+        "relatedDomains": [
+          "Healthcare",
+          "E-commerce",
+          "Finance",
+          "SaaS",
+          "Enterprise"
+        ]
       },
       "it-consulting-advisory": {
         "category": "Beratung",
         "title": "IT-Beratung und Advisory",
         "description": "Strategische Technologieberatung zur Ausrichtung von IT-Investitionen auf Business-Ziele.",
         "excerpt": "IT-Beratung fur fundierte Technologieentscheidungen und geringeres Projektrisiko.",
-        "bodyHtml": "<h2>Technologieentscheidungen mit klarer Richtung</h2><p>Wir unterstutzen bei Architektur, Priorisierung und Roadmap, damit technologische Entscheidungen messbaren Business-Wert liefern.</p><h3>Beratungsfelder</h3><ul><li>Technologie- und Reifegradanalyse</li><li>Transformationsroadmap</li><li>Architektur- und Sicherheitsberatung</li><li>Umsetzungsbegleitung und Governance</li></ul><h3>Mehrwert</h3><p>Weniger Fehlinvestitionen, bessere Planbarkeit und hohere Umsetzungssicherheit.</p>"
+        "bodyHtml": "<h2>Technologieentscheidungen mit hoher Umsetzungssicherheit</h2><p>Viele Organisationen investieren in Tools, bevor Zielbild, Datenlage und Teamfaehigkeiten sauber geklaert sind. Unsere IT-Beratung setzt frueh an: Wir verbinden Business-Ziele mit Architektur- und Delivery-Entscheidungen, damit Investitionen messbaren Nutzen liefern.</p><h3>Klare Priorisierung statt Parallelbaustellen</h3><p>Wir strukturieren Vorhaben in umsetzbare Phasen und priorisieren nach Impact, Risiko und Abhaengigkeiten. So entstehen realistische Roadmaps, die Teams nicht ueberlasten und trotzdem schnelle Fortschritte sichtbar machen.</p><h3>Beratungsfelder</h3><ul><li>Technologie-Assessment und Zielbild-Definition</li><li>Architektur- und Integrationsstrategie</li><li>Make-or-Buy-Entscheidungen und Toolauswahl</li><li>Sicherheits-, Compliance- und Governance-Rahmen</li><li>Delivery-Modell, Teamaufbau und Steuerungsmetriken</li></ul><h3>Von Strategie zu Umsetzung</h3><p>Unsere Empfehlungen bleiben nicht auf Folien. Wir liefern Entscheidungsgrundlagen, technische Leitlinien und operative Umsetzungsplaene, die direkt in Projekte ueberfuehrt werden koennen. Bei Bedarf begleiten wir die ersten Implementierungsphasen aktiv.</p><h3>Risikominimierung</h3><p>Fruehe Identifikation von Architekturengpaessen, Integrationsrisiken und organisatorischen Blockern reduziert spaetere Rework-Kosten deutlich. Gleichzeitig verbessern klare Verantwortlichkeiten und messbare KPI-Ziele die Steuerbarkeit ueber alle Projektphasen.</p><h3>Nutzen fuer Ihr Team</h3><p>Sie treffen schneller fundierte Entscheidungen, vermeiden technische Schulden und schaffen eine verlaessliche Grundlage fuer nachhaltige Digitalisierung. So steigt nicht nur Projektgeschwindigkeit, sondern auch die Qualitaet der Ergebnisse im Betrieb.</p>",
+        "pricingModel": "Stundensatz-basiert oder als Festpreisprojekt",
+        "deliverables": [
+          "Umfassende Technologiebestandsaufnahme",
+          "Strategische Roadmap und Handlungsempfehlungen",
+          "Implementierungszeitplan und Budgetrahmen",
+          "Risikoanalyse inklusive Gegenmassnahmen",
+          "Anbieterbewertung und Auswahlunterstutzung",
+          "Laufende Advisory-Begleitung"
+        ],
+        "processSteps": [
+          {
+            "title": "Business-Assessment",
+            "description": "Verstehen der aktuellen Prozesse, Zielbilder und technischen Ausgangslage"
+          },
+          {
+            "title": "Gap-Analyse",
+            "description": "Identifikation der Lucken zwischen Ist-Stand und angestrebten Ergebnissen"
+          },
+          {
+            "title": "Strategieentwicklung",
+            "description": "Ausarbeitung einer umsetzbaren Technologie- und Transformationsstrategie"
+          },
+          {
+            "title": "Losungsdesign",
+            "description": "Empfehlung konkreter Technologien und Umsetzungsansatze"
+          },
+          {
+            "title": "Implementierungsplanung",
+            "description": "Erstellung detaillierter Projektplane inklusive Ressourcenbedarf"
+          },
+          {
+            "title": "Laufende Advisory-Begleitung",
+            "description": "Kontinuierliche Unterstutzung wahrend der Umsetzung und Skalierung"
+          }
+        ],
+        "relatedDomains": [
+          "Healthcare",
+          "Finance",
+          "Manufacturing",
+          "Education",
+          "Government"
+        ]
       },
       "data-analytics-visualization": {
         "category": "Analytics und BI",
         "title": "Datenanalyse und Visualisierung",
         "description": "Dashboards und Datenpipelines, die aus Daten klare Entscheidungen machen.",
         "excerpt": "Interaktive Dashboards und Reporting fur transparente, datenbasierte Steuerung.",
-        "bodyHtml": "<h2>Daten in umsetzbare Entscheidungen verwandeln</h2><p>Wir entwickeln Analytics-Losungen, die Datenquellen verbinden, KPI-Reporting automatisieren und Informationen fur Fachbereiche leicht nutzbar machen.</p><h3>Typische Bausteine</h3><ul><li>Datenpipeline und Aufbereitung</li><li>Interaktive Business-Dashboards</li><li>Echtzeit-KPI Monitoring</li><li>Enablement fur interne Teams</li></ul><h3>Wirkung</h3><p>Mehr Transparenz, schnellere Entscheidungen und bessere operative Steuerung.</p>"
+        "bodyHtml": "<h2>Datenplattformen, die Entscheidungen beschleunigen</h2><p>Viele Teams verfuegen ueber Daten, aber nicht ueber verlaessliche Entscheidungsgrundlagen. Wir bauen Analytics-Loesungen, die Datenquellen zusammenfuehren, KPI-Definitionen vereinheitlichen und Erkenntnisse in den Arbeitsalltag von Management und Fachbereichen bringen.</p><h3>Von Rohdaten zu handlungsfaehigen KPI</h3><p>Der erste Schritt ist ein konsistentes Datenmodell mit klaren Kennzahlen und Verantwortlichkeiten. Dadurch werden Reports vergleichbar, Diskussionen faktenbasiert und operative Entscheidungen deutlich schneller.</p><h3>Was wir liefern</h3><ul><li>Automatisierte Datenpipelines fuer strukturierte und unstrukturierte Quellen</li><li>Dashboards fuer Management, Operations und Produktteams</li><li>Near-Real-Time Monitoring fuer kritische Geschaeftsprozesse</li><li>Qualitaetsregeln, Data-Lineage und Transparenz ueber Berechnungen</li><li>Enablement von Teams fuer selbststaendige Datennutzung</li></ul><h3>Architektur und Betrieb</h3><p>Wir kombinieren ETL/ELT, BI-Tools und performante Speicherstrategien so, dass auch wachsende Datenmengen kontrollierbar bleiben. Alerting und Datenqualitaetschecks sind integriert, damit Ausreisser und Pipeline-Probleme frueh erkannt werden.</p><h3>Business-Mehrwert</h3><p>Mit einer verlaesslichen Analytics-Basis verbessern sich Forecasting, Ressourcenplanung und operative Steuerung. Teams verbringen weniger Zeit mit manueller Report-Aufbereitung und mehr Zeit mit wirksamen Entscheidungen.</p><h3>Langfristige Wirkung</h3><p>Ihre Organisation etabliert einen datengetriebenen Arbeitsmodus: transparent, reproduzierbar und skalierbar ueber Bereiche hinweg. Damit wird Analytics vom Reporting-Tool zur aktiven Steuerungsplattform fuer Wachstum und Effizienz.</p>",
+        "pricingModel": "Projektbasiertes Modell mit optionaler laufender Dashboard-Betreuung",
+        "deliverables": [
+          "Interaktive Analytics-Dashboards",
+          "Automatisiertes Reporting-System",
+          "Implementierte Datenpipeline",
+          "Nutzerschulung und Dokumentation",
+          "Setup fur Performance-Monitoring",
+          "6 Monate technischer Support"
+        ],
+        "processSteps": [
+          {
+            "title": "Daten-Assessment",
+            "description": "Analyse vorhandener Datenquellen, Datenqualitat und Integrationsreife"
+          },
+          {
+            "title": "Strategie und Planung",
+            "description": "Definition von KPIs, Zielmetriken und Visualisierungsanforderungen"
+          },
+          {
+            "title": "Pipeline-Entwicklung",
+            "description": "Aufbau automatisierter Datenaufnahme- und Verarbeitungsprozesse"
+          },
+          {
+            "title": "Dashboard-Entwicklung",
+            "description": "Design und Umsetzung interaktiver Dashboards fur Fachbereiche und Management"
+          },
+          {
+            "title": "Tests und Optimierung",
+            "description": "Validierung der Datenqualitat und Performance-Optimierung"
+          },
+          {
+            "title": "Training und Go-Live",
+            "description": "Nutzerenablement, Rollout und begleitete Inbetriebnahme"
+          }
+        ],
+        "relatedDomains": [
+          "Healthcare",
+          "E-commerce",
+          "Finance",
+          "Marketing",
+          "Operations"
+        ]
       }
     }
   }
