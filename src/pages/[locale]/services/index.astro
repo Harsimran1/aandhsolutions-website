@@ -5,6 +5,7 @@ import Footer from '../../../components/Footer.astro';
 import HeroSection from '../../../components/HeroSection.astro';
 import { getCollection } from 'astro:content';
 import { SUPPORTED_LOCALES, resolveLocale, localizePath } from '../../../lib/i18n';
+import { getLocaleCopy } from '../../../i18n/locale-copy';
 
 export const prerender = true;
 
@@ -14,8 +15,10 @@ export function getStaticPaths() {
 
 const locale = resolveLocale(Astro.currentLocale, new URL(Astro.request.url).pathname);
 const localized = (path: string) => localizePath(path, locale);
+const copy = getLocaleCopy(locale);
+const localizedServicesContent = copy.content?.services ?? {};
 
-const copy = {
+const uiCopy = {
   en: {
     title: 'Services - A&H Solutions',
     description: 'Professional software development services from A&H Solutions. Custom web applications, mobile apps, cloud solutions, and more.',
@@ -90,11 +93,17 @@ const copy = {
   },
 } as const;
 
-const text = copy[locale] ?? copy.en;
+const text = uiCopy[locale] ?? uiCopy.en;
 
 const services = await getCollection('services', ({ data }) => !data.draft);
 services.sort((a, b) => new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime());
-const categories = [...new Set(services.map((service) => service.data.category).filter(Boolean))];
+const localizedCategory = (service: (typeof services)[number]) =>
+  localizedServicesContent[service.slug]?.category || service.data.category;
+const localizedTitle = (service: (typeof services)[number]) =>
+  localizedServicesContent[service.slug]?.title || service.data.title;
+const localizedExcerpt = (service: (typeof services)[number]) =>
+  localizedServicesContent[service.slug]?.excerpt || localizedServicesContent[service.slug]?.description || service.data.excerpt || service.data.description || '';
+const categories = [...new Set(services.map((service) => localizedCategory(service)).filter(Boolean))];
 ---
 
 <Layout title={text.title} description={text.description}>
@@ -127,15 +136,15 @@ const categories = [...new Set(services.map((service) => service.data.category).
                       <img src={service.data.image} alt={service.data.imageAlt || service.data.title} class="w-full h-48 object-cover" loading="lazy" />
                     ) : (
                       <div class="w-full h-48 bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center">
-                        <span class="text-white text-xl font-semibold">{service.data.title}</span>
+                        <span class="text-white text-xl font-semibold">{localizedTitle(service)}</span>
                       </div>
                     )}
                   </a>
                   <div class="p-6">
                     <div class="flex items-center mb-4">
-                      {service.data.category && (
+                      {localizedCategory(service) && (
                         <>
-                          <span class="text-sm font-medium text-primary-600 dark:text-primary-400">{service.data.category}</span>
+                          <span class="text-sm font-medium text-primary-600 dark:text-primary-400">{localizedCategory(service)}</span>
                           <span class="mx-2 text-gray-300 dark:text-gray-600">•</span>
                         </>
                       )}
@@ -144,9 +153,9 @@ const categories = [...new Set(services.map((service) => service.data.category).
                       )}
                     </div>
                     <a href={localized(`/services/${service.slug}`)} class="block mb-3">
-                      <h2 class="text-xl font-semibold text-gray-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-colors">{service.data.title}</h2>
+                      <h2 class="text-xl font-semibold text-gray-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-colors">{localizedTitle(service)}</h2>
                     </a>
-                    <p class="text-gray-600 dark:text-gray-300 mb-6">{service.data.excerpt || service.data.description || ''}</p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">{localizedExcerpt(service)}</p>
 
                     {service.data.technologies && service.data.technologies.length > 0 && (
                       <div class="flex flex-wrap gap-2 mb-4">

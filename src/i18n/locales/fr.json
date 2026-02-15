@@ -46,9 +46,9 @@
       "discussProject": "Parler de votre projet",
       "blueprintTitle": "Commencez avec votre plan de projet GRATUIT",
       "blueprintDescription": "Avant de lancer le developpement, obtenez une feuille de route complete comme nos clients d'etudes de cas.",
-      "blueprintMeta": "Architecture technique • Wireframes • Analyse des risques • Plan d'implementation • 100% Gratuit",
+      "blueprintMeta": "Architecture technique \u2022 Wireframes \u2022 Analyse des risques \u2022 Plan d'implementation \u2022 100% Gratuit",
       "getBlueprint": "Obtenir mon plan gratuit",
-      "blueprintFootnote": "Livre sous 3 a 5 jours ouvrables • Sans engagement",
+      "blueprintFootnote": "Livre sous 3 a 5 jours ouvrables \u2022 Sans engagement",
       "readyTitle": "Pret a obtenir des resultats similaires ?",
       "readyDescription": "A&H Solutions peut transformer votre entreprise avec une expertise prouvee.",
       "learnAboutUs": "A propos de nous",
@@ -372,6 +372,50 @@
         "excerpt": "Plateformes bien-etre pour services, membres et croissance durable.",
         "description": "Plateformes bien-etre pour services, membres et croissance durable.",
         "bodyHtml": "<h2>Solutions technologiques bien-etre et sante</h2><p>Plateformes bien-etre pour services, membres et croissance durable.</p><h3>Focus secteur</h3><p>Nous concevons des solutions logicielles sur mesure pour Bien-etre avec un equilibre entre conformite, performance et evolutivite.</p><h3>Notre approche</h3><p>De la discovery a la mise en production, nous construisons des plateformes fiables qui simplifient les operations et soutiennent la croissance.</p>"
+      }
+    },
+    "services": {
+      "web-app-development": {
+        "category": "Developpement",
+        "title": "Developpement d'applications web",
+        "description": "Applications web evolutives, securisees et performantes pour accelerer votre croissance.",
+        "excerpt": "Applications web evolutives et securisees, concues pour soutenir votre croissance.",
+        "bodyHtml": "<h2>Applications web concues pour evoluer avec votre entreprise</h2><p>Nous construisons des applications web modernes, rapides et maintenables, alignees sur vos objectifs metier. De la conception a la mise en production, nous privilegions la qualite, la securite et la performance.</p><h3>Ce que nous livrons</h3><ul><li>Architecture web full-stack robuste</li><li>Interfaces utilisateur reactives et accessibles</li><li>APIs et integrations avec vos outils existants</li><li>Deploiement cloud et supervision continue</li></ul><h3>Approche projet</h3><p>Nous travaillons par iterations courtes, avec priorisation claire, validation fonctionnelle et mise en ligne progressive pour limiter le risque et accelerer la valeur.</p>"
+      },
+      "mobile-app-development": {
+        "category": "Developpement",
+        "title": "Developpement d'applications mobiles",
+        "description": "Applications iOS et Android performantes avec une experience utilisateur fluide.",
+        "excerpt": "Applications iOS et Android concues pour la performance, l'adoption et la croissance.",
+        "bodyHtml": "<h2>Applications mobiles qui transforment l'experience utilisateur</h2><p>Nous developpons des applications mobiles natives et cross-platform avec une UX claire, des performances solides et une base technique evolutive.</p><h3>Perimetre de service</h3><ul><li>Strategie produit et cadrage fonctionnel</li><li>Design UX/UI mobile</li><li>Developpement iOS, Android ou cross-platform</li><li>Publication stores et support post-lancement</li></ul><h3>Objectif</h3><p>Delivrer une application fiable, engageante et alignee sur vos indicateurs business.</p>"
+      },
+      "ai-integrations-automation": {
+        "category": "IA et automatisation",
+        "title": "Integrations IA et automatisation",
+        "description": "Automatisez vos processus et integrez l'IA pour gagner en vitesse, qualite et efficacite.",
+        "excerpt": "Integrations IA et automatisation pour accelerer les operations et reduire les taches manuelles.",
+        "bodyHtml": "<h2>Integrez l'IA pour automatiser ce qui freine votre croissance</h2><p>Nous concevons des workflows intelligents qui reduisent les operations manuelles, ameliorent la coherence et augmentent la productivite de vos equipes.</p><h3>Cas d'usage frequents</h3><ul><li>Assistants IA pour support et operations</li><li>Automatisation documentaire et extraction de donnees</li><li>Moteurs de recommandations et previsions</li><li>Automatisation de processus metier</li></ul><h3>Resultat attendu</h3><p>Des gains mesurables sur les delais de traitement, les couts operationnels et la qualite des decisions.</p>"
+      },
+      "cloud-solutions-integration": {
+        "category": "Cloud et infrastructure",
+        "title": "Solutions cloud et integration",
+        "description": "Infrastructure cloud securisee, evolutive et optimisee pour vos applications critiques.",
+        "excerpt": "Architecture cloud securisee et evolutive pour soutenir votre croissance en toute confiance.",
+        "bodyHtml": "<h2>Architecture cloud fiable pour les applications critiques</h2><p>Nous aidons les equipes a migrer, moderniser et exploiter leurs systemes dans le cloud avec un haut niveau de disponibilite et de securite.</p><h3>Nos interventions</h3><ul><li>Audit d'infrastructure et strategie de migration</li><li>Design d'architecture cloud scalable</li><li>Automatisation CI/CD et observabilite</li><li>Optimisation couts/performance</li></ul><h3>Impact</h3><p>Une plateforme plus robuste, plus agile et mieux preparee aux pics de charge.</p>"
+      },
+      "it-consulting-advisory": {
+        "category": "Conseil",
+        "title": "Conseil et accompagnement IT",
+        "description": "Orientation technologique strategique pour aligner vos choix IT sur vos objectifs business.",
+        "excerpt": "Conseil IT strategique pour prioriser les bons investissements technologiques.",
+        "bodyHtml": "<h2>Prenez de meilleures decisions technologiques</h2><p>Nous accompagnons vos equipes dans les choix d'architecture, de stack et de priorisation, avec une approche orientee valeur business et execution.</p><h3>Axes d'accompagnement</h3><ul><li>Diagnostic de maturite technologique</li><li>Roadmap de transformation digitale</li><li>Recommandations architecture et securite</li><li>Pilotage de mise en oeuvre</li></ul><h3>Benefice</h3><p>Des decisions plus rapides, moins de risque projet et une feuille de route techniquement solide.</p>"
+      },
+      "data-analytics-visualization": {
+        "category": "Analytique et BI",
+        "title": "Analyse de donnees et visualisation",
+        "description": "Tableaux de bord et pipelines de donnees pour transformer vos donnees en decisions actionnables.",
+        "excerpt": "Transformez vos donnees en insights clairs avec des dashboards operationnels.",
+        "bodyHtml": "<h2>Rendez vos donnees utiles pour la decision</h2><p>Nous construisons des solutions analytiques qui centralisent les donnees, automatisent le reporting et rendent les indicateurs facilement exploitables.</p><h3>Composants typiques</h3><ul><li>Pipeline de collecte et transformation de donnees</li><li>Dashboards metier interactifs</li><li>Suivi de KPI en temps reel</li><li>Formation des equipes a l'usage des outils</li></ul><h3>Valeur</h3><p>Une meilleure visibilite operationnelle et des decisions plus rapides, appuyees par les donnees.</p>"
       }
     }
   }

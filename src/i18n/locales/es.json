@@ -46,9 +46,9 @@
       "discussProject": "Hablar de tu proyecto",
       "blueprintTitle": "Empieza con tu plan de proyecto GRATIS",
       "blueprintDescription": "Antes de desarrollar, obten una hoja de ruta completa como nuestros clientes de casos de exito.",
-      "blueprintMeta": "Arquitectura tecnica • Wireframes • Analisis de riesgos • Plan de implementacion • 100% Gratis",
+      "blueprintMeta": "Arquitectura tecnica \u2022 Wireframes \u2022 Analisis de riesgos \u2022 Plan de implementacion \u2022 100% Gratis",
       "getBlueprint": "Obtener mi plan gratis",
-      "blueprintFootnote": "Entrega en 3-5 dias habiles • Sin compromiso",
+      "blueprintFootnote": "Entrega en 3-5 dias habiles \u2022 Sin compromiso",
       "readyTitle": "Listo para lograr resultados similares?",
       "readyDescription": "A&H Solutions puede transformar tu negocio con experiencia comprobada.",
       "learnAboutUs": "Conocenos",
@@ -372,6 +372,50 @@
         "excerpt": "Plataformas de bienestar para servicios, membresias y crecimiento.",
         "description": "Plataformas de bienestar para servicios, membresias y crecimiento.",
         "bodyHtml": "<h2>Soluciones tecnologicas para bienestar y salud</h2><p>Plataformas de bienestar para servicios, membresias y crecimiento.</p><h3>Enfoque por industria</h3><p>Disenamos software a medida para Bienestar equilibrando cumplimiento, rendimiento y escalabilidad.</p><h3>Nuestro enfoque</h3><p>Desde discovery hasta implementacion, entregamos plataformas solidas que simplifican operaciones y generan resultados medibles.</p>"
+      }
+    },
+    "services": {
+      "web-app-development": {
+        "category": "Desarrollo",
+        "title": "Desarrollo de aplicaciones web",
+        "description": "Aplicaciones web escalables, seguras y de alto rendimiento para impulsar tu crecimiento.",
+        "excerpt": "Aplicaciones web escalables y seguras para optimizar operaciones y crecimiento.",
+        "bodyHtml": "<h2>Aplicaciones web pensadas para crecer contigo</h2><p>Desarrollamos aplicaciones web modernas con arquitectura solida, rendimiento alto y mantenimiento sostenible. Priorizamos seguridad, velocidad y calidad de entrega.</p><h3>Que incluye</h3><ul><li>Arquitectura full-stack y APIs robustas</li><li>Interfaces responsivas y accesibles</li><li>Integraciones con herramientas existentes</li><li>Despliegue cloud y monitoreo continuo</li></ul><h3>Metodo</h3><p>Trabajamos en iteraciones cortas para reducir riesgo y entregar valor de negocio desde fases tempranas.</p>"
+      },
+      "mobile-app-development": {
+        "category": "Desarrollo",
+        "title": "Desarrollo de aplicaciones moviles",
+        "description": "Apps iOS y Android con excelente UX y base tecnica preparada para escalar.",
+        "excerpt": "Apps moviles para iOS y Android orientadas a experiencia, estabilidad y crecimiento.",
+        "bodyHtml": "<h2>Apps moviles con impacto real en negocio</h2><p>Creamos apps nativas y multiplataforma con enfoque en usabilidad, rendimiento y evolucion continua del producto.</p><h3>Alcance habitual</h3><ul><li>Estrategia de producto y definicion funcional</li><li>Diseno UX/UI para contexto movil</li><li>Desarrollo iOS, Android o cross-platform</li><li>Publicacion en stores y soporte post-lanzamiento</li></ul><h3>Resultado</h3><p>Una app confiable que mejora adopcion y aporta valor medible.</p>"
+      },
+      "ai-integrations-automation": {
+        "category": "IA y automatizacion",
+        "title": "Integraciones de IA y automatizacion",
+        "description": "Automatiza procesos e integra IA para mejorar eficiencia y reducir trabajo manual.",
+        "excerpt": "Integraciones de IA para acelerar flujos, reducir costos y aumentar productividad.",
+        "bodyHtml": "<h2>Lleva la IA a los procesos que mas importan</h2><p>Implementamos soluciones de IA y automatizacion para reducir tareas repetitivas, mejorar consistencia operativa y liberar tiempo de equipos clave.</p><h3>Casos de uso frecuentes</h3><ul><li>Asistentes IA para soporte y operaciones</li><li>Procesamiento inteligente de documentos</li><li>Modelos de recomendacion y prediccion</li><li>Automatizacion de flujos de negocio</li></ul><h3>Impacto</h3><p>Menos friccion operativa y decisiones mas rapidas basadas en datos.</p>"
+      },
+      "cloud-solutions-integration": {
+        "category": "Cloud e infraestructura",
+        "title": "Soluciones cloud e integracion",
+        "description": "Infraestructura cloud segura, escalable y optimizada para sistemas criticos.",
+        "excerpt": "Arquitectura cloud segura y escalable para sostener crecimiento y disponibilidad.",
+        "bodyHtml": "<h2>Infraestructura cloud para operar con confianza</h2><p>Acompanamos migraciones y modernizacion cloud con foco en seguridad, rendimiento y continuidad operativa.</p><h3>Servicios clave</h3><ul><li>Assessment tecnico y plan de migracion</li><li>Diseno de arquitectura escalable</li><li>Automatizacion CI/CD y observabilidad</li><li>Optimizacion de costos y performance</li></ul><h3>Resultado</h3><p>Plataforma estable, flexible y preparada para picos de demanda.</p>"
+      },
+      "it-consulting-advisory": {
+        "category": "Consultoria",
+        "title": "Consultoria y asesoria TI",
+        "description": "Alinea decisiones tecnologicas con objetivos de negocio mediante asesoramiento experto.",
+        "excerpt": "Consultoria TI para priorizar inversiones y reducir riesgo en ejecucion.",
+        "bodyHtml": "<h2>Decisiones tecnicas con criterio de negocio</h2><p>Te ayudamos a definir arquitectura, roadmap y prioridades para que la tecnologia impulse resultados concretos y sostenibles.</p><h3>Lineas de trabajo</h3><ul><li>Diagnostico de madurez tecnologica</li><li>Roadmap de transformacion digital</li><li>Recomendaciones de arquitectura y seguridad</li><li>Acompanamiento en implementacion</li></ul><h3>Beneficio</h3><p>Menos errores estrategicos, mejor foco y mayor velocidad de ejecucion.</p>"
+      },
+      "data-analytics-visualization": {
+        "category": "Analitica y BI",
+        "title": "Analitica de datos y visualizacion",
+        "description": "Dashboards y pipelines de datos para convertir informacion en decisiones accionables.",
+        "excerpt": "Convierte datos en insights claros con paneles interactivos y reporting automatizado.",
+        "bodyHtml": "<h2>Convierte datos en decisiones operativas</h2><p>Construimos soluciones analiticas que unifican fuentes, automatizan reportes y facilitan la lectura de KPI para equipos de negocio.</p><h3>Componentes comunes</h3><ul><li>Pipeline de datos y transformacion</li><li>Dashboards interactivos por area</li><li>Seguimiento de KPI en tiempo real</li><li>Capacitacion para adopcion interna</li></ul><h3>Valor</h3><p>Mayor visibilidad, decisiones mas rapidas y mejor control de resultados.</p>"
       }
     }
   }

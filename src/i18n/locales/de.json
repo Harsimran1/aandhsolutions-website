@@ -46,9 +46,9 @@
       "discussProject": "Projekt besprechen",
       "blueprintTitle": "Starten Sie mit Ihrem KOSTENLOSEN Projektplan",
       "blueprintDescription": "Bevor die Entwicklung startet, erhalten Sie eine komplette Roadmap wie unsere Fallstudienkunden.",
-      "blueprintMeta": "Technische Architektur • Wireframes • Risikoanalyse • Implementierungsplan • 100% Kostenlos",
+      "blueprintMeta": "Technische Architektur \u2022 Wireframes \u2022 Risikoanalyse \u2022 Implementierungsplan \u2022 100% Kostenlos",
       "getBlueprint": "Kostenlosen Plan erhalten",
-      "blueprintFootnote": "Lieferung in 3-5 Werktagen • Keine Verpflichtung",
+      "blueprintFootnote": "Lieferung in 3-5 Werktagen \u2022 Keine Verpflichtung",
       "readyTitle": "Bereit fur ahnliche Ergebnisse?",
       "readyDescription": "A&H Solutions transformiert Ihr Unternehmen mit erprobter Expertise.",
       "learnAboutUs": "Uber uns",
@@ -245,7 +245,7 @@
       "propcan-real-estate-platform": {
         "title": "Propcan: Plattform fur Immobilien-Insights",
         "excerpt": "Kostenlose Immobiliendatenplattform entwickelt, die Kaufern, Maklern und Eigenheimbesitzern hilft, Immobilien mit transparenten Markteinblicken zu vergleichen.",
-        "bodyHtml": "<h2>Projektuberblick</h2><p>Propcan ist eine kanadische Plattform fur Immobilien-Insights, die darauf ausgelegt ist, Immobiliendaten transparenter und zuganglicher zu machen. Die Plattform aggregiert Immobilienwerte, historische Verkaufsdaten und Trends auf Stadtteilebene und ermoglicht es Nutzern, Immobilien mit Vertrauen zu erkunden und zu vergleichen.</p><p>Als verbraucherorientiertes Produkt konzentriert sich Propcan auf Klarheit, Geschwindigkeit und Vertrauen – und beseitigt Reibungsverluste bei der Art und Weise, wie Kaufer, Eigenheimbesitzer und Immobilienprofis den Markt verstehen.</p><h2>Die Herausforderung</h2><p>Die kanadische Immobilienlandschaft ist fragmentiert, wobei kritische Daten oft hinter Paywalls oder schwer zu navigierenden Tools verborgen sind. Die Herausforderung bestand darin:</p><ul><li>Komplexe Immobiliendaten verstandlich zu prasentieren</li><li>Kartenbasierte Entdeckung ohne Leistungseinbussen zu unterstutzen</li><li>Ein skalierbares System zu entwerfen, das grosse Datenmengen und zukunftige Funktionserweiterungen bewaltigen kann</li><li>Vertrauen und Genauigkeit in einem datensensiblen Bereich zu gewahrleisten</li></ul><p>Gleichzeitig musste die Plattform fur Alltagsnutzer schnell, modern und zugänglich wirken – nicht nur fur Branchenprofis.</p><h2>Unsere Losung</h2><p>Wir haben Propcan als moderne Full-Stack-Webanwendung konzipiert und entwickelt, mit starkem Fokus auf Benutzerfreundlichkeit und langfristige Wartbarkeit.</p><p>Wichtige Aspekte der Losung umfassten:</p><ul><li>Ubersichtliche, intuitive Benutzeroberflache mit Fokus auf Immobilienvergleich und -erkundung</li><li>Kartengesteuerte Sucherfahrung zur geografischen Darstellung von Insights</li><li>Normalisierte Datenmodelle zur Unterstutzung historischer Preise, Trends und zukunftiger Analysen</li><li>Hochleistungs-Backend-APIs, optimiert fur leseintensive Arbeitslasten</li><li>Skalierbare Architektur, die das inkrementelle Hinzufugen neuer Regionen, Datensatze und Funktionen ermoglicht</li></ul><p>Die Plattform wurde mit einem modernen JavaScript-Stack entwickelt, der schnelle Iteration bei gleichzeitiger produktionsreifer Zuverlassigkeit ermoglicht.</p><h2>Ergebnis</h2><p>Propcan wurde als kostenlose, datenreiche Immobilienplattform gestartet, die aussagekraftige Insights liefert, ohne die Nutzer zu uberfordern. Das endgultige System:</p><ul><li>Verbesserte den Zugang zu Immobilienmarktdaten</li><li>Ermoglichte schnellere und fundiertere Immobilienvergleiche</li><li>Schuf eine solide technische Grundlage fur zukunftige Monetarisierung und Funktionserweiterung</li><li>Positionierte das Produkt als glaubwurdige PropTech-Plattform im kanadischen Markt</li></ul><p>Die Architektur- und Designentscheidungen stellen sicher, dass sich Propcan zusammen mit sich andernden Marktanforderungen, regulatorischen Erwagungen und Datenverfugbarkeit weiterentwickeln kann.</p>"
+        "bodyHtml": "<h2>Projektuberblick</h2><p>Propcan ist eine kanadische Plattform fur Immobilien-Insights, die darauf ausgelegt ist, Immobiliendaten transparenter und zuganglicher zu machen. Die Plattform aggregiert Immobilienwerte, historische Verkaufsdaten und Trends auf Stadtteilebene und ermoglicht es Nutzern, Immobilien mit Vertrauen zu erkunden und zu vergleichen.</p><p>Als verbraucherorientiertes Produkt konzentriert sich Propcan auf Klarheit, Geschwindigkeit und Vertrauen \u2013 und beseitigt Reibungsverluste bei der Art und Weise, wie Kaufer, Eigenheimbesitzer und Immobilienprofis den Markt verstehen.</p><h2>Die Herausforderung</h2><p>Die kanadische Immobilienlandschaft ist fragmentiert, wobei kritische Daten oft hinter Paywalls oder schwer zu navigierenden Tools verborgen sind. Die Herausforderung bestand darin:</p><ul><li>Komplexe Immobiliendaten verstandlich zu prasentieren</li><li>Kartenbasierte Entdeckung ohne Leistungseinbussen zu unterstutzen</li><li>Ein skalierbares System zu entwerfen, das grosse Datenmengen und zukunftige Funktionserweiterungen bewaltigen kann</li><li>Vertrauen und Genauigkeit in einem datensensiblen Bereich zu gewahrleisten</li></ul><p>Gleichzeitig musste die Plattform fur Alltagsnutzer schnell, modern und zug\u00e4nglich wirken \u2013 nicht nur fur Branchenprofis.</p><h2>Unsere Losung</h2><p>Wir haben Propcan als moderne Full-Stack-Webanwendung konzipiert und entwickelt, mit starkem Fokus auf Benutzerfreundlichkeit und langfristige Wartbarkeit.</p><p>Wichtige Aspekte der Losung umfassten:</p><ul><li>Ubersichtliche, intuitive Benutzeroberflache mit Fokus auf Immobilienvergleich und -erkundung</li><li>Kartengesteuerte Sucherfahrung zur geografischen Darstellung von Insights</li><li>Normalisierte Datenmodelle zur Unterstutzung historischer Preise, Trends und zukunftiger Analysen</li><li>Hochleistungs-Backend-APIs, optimiert fur leseintensive Arbeitslasten</li><li>Skalierbare Architektur, die das inkrementelle Hinzufugen neuer Regionen, Datensatze und Funktionen ermoglicht</li></ul><p>Die Plattform wurde mit einem modernen JavaScript-Stack entwickelt, der schnelle Iteration bei gleichzeitiger produktionsreifer Zuverlassigkeit ermoglicht.</p><h2>Ergebnis</h2><p>Propcan wurde als kostenlose, datenreiche Immobilienplattform gestartet, die aussagekraftige Insights liefert, ohne die Nutzer zu uberfordern. Das endgultige System:</p><ul><li>Verbesserte den Zugang zu Immobilienmarktdaten</li><li>Ermoglichte schnellere und fundiertere Immobilienvergleiche</li><li>Schuf eine solide technische Grundlage fur zukunftige Monetarisierung und Funktionserweiterung</li><li>Positionierte das Produkt als glaubwurdige PropTech-Plattform im kanadischen Markt</li></ul><p>Die Architektur- und Designentscheidungen stellen sicher, dass sich Propcan zusammen mit sich andernden Marktanforderungen, regulatorischen Erwagungen und Datenverfugbarkeit weiterentwickeln kann.</p>"
       },
       "real-estate-investment-app": {
         "title": "Property Pros: Immobilien-Investment-App",
@@ -372,6 +372,50 @@
         "excerpt": "Wellness-Plattformen fur Terminplanung, Engagement und Mitgliederwachstum.",
         "description": "Wellness-Plattformen fur Terminplanung, Engagement und Mitgliederwachstum.",
         "bodyHtml": "<h2>Technologielosungen fur Wellness und Gesundheit</h2><p>Wellness-Plattformen fur Terminplanung, Engagement und Mitgliederwachstum.</p><h3>Branchenfokus</h3><p>Wir entwickeln passgenaue Software fur Wellness und verbinden Compliance, Performance und Skalierbarkeit.</p><h3>Unser Ansatz</h3><p>Von Discovery uber Architektur bis Umsetzung liefern wir belastbare Plattformen, die Prozesse vereinfachen und messbare Geschaftsergebnisse erzeugen.</p>"
+      }
+    },
+    "services": {
+      "web-app-development": {
+        "category": "Entwicklung",
+        "title": "Web-App-Entwicklung",
+        "description": "Skalierbare, sichere und performante Webanwendungen fur nachhaltiges Wachstum.",
+        "excerpt": "Skalierbare und sichere Webanwendungen fur stabile digitale Prozesse.",
+        "bodyHtml": "<h2>Webanwendungen, die mit Ihrem Unternehmen wachsen</h2><p>Wir entwickeln moderne Webanwendungen mit klarer Architektur, hoher Performance und nachhaltiger Wartbarkeit. Fokus: Zuverlassigkeit, Sicherheit und schnelle Iteration.</p><h3>Leistungsumfang</h3><ul><li>Full-Stack Architektur und API-Design</li><li>Responsive und zugangliche Benutzeroberflachen</li><li>Integrationen in bestehende Systeme</li><li>Cloud-Deployment und Monitoring</li></ul><h3>Vorgehen</h3><p>Iterative Umsetzung in kurzen Zyklen mit klarer Priorisierung und fruher Produktvalidierung.</p>"
+      },
+      "mobile-app-development": {
+        "category": "Entwicklung",
+        "title": "Mobile-App-Entwicklung",
+        "description": "iOS- und Android-Apps mit starker UX und hoher technischer Qualitat.",
+        "excerpt": "Mobile Apps fur iOS und Android mit Fokus auf Nutzererlebnis und Skalierbarkeit.",
+        "bodyHtml": "<h2>Mobile Apps mit messbarem Business-Impact</h2><p>Wir entwickeln native und plattformubergreifende Apps, die schnell, stabil und benutzerfreundlich sind. Von Produktidee bis Store-Release begleiten wir den gesamten Zyklus.</p><h3>Typische Leistungen</h3><ul><li>Produktstrategie und Funktionsschnitt</li><li>UX/UI fur mobile Nutzungsszenarien</li><li>iOS-, Android- und Cross-Platform-Entwicklung</li><li>Release, Monitoring und Weiterentwicklung</li></ul><h3>Ergebnis</h3><p>Eine App, die Adoption steigert und langfristig wartbar bleibt.</p>"
+      },
+      "ai-integrations-automation": {
+        "category": "KI und Automatisierung",
+        "title": "KI-Integrationen und Automatisierung",
+        "description": "Automatisieren Sie Ablaufe mit KI und steigern Sie Geschwindigkeit und Effizienz.",
+        "excerpt": "KI-Integrationen fur effizientere Prozesse und weniger manuelle Arbeit.",
+        "bodyHtml": "<h2>KI sinnvoll in Ihre Prozesse integrieren</h2><p>Wir implementieren KI-Funktionen und Automatisierungen, die repetitive Aufgaben reduzieren und Teams entlasten, ohne die Prozesskontrolle zu verlieren.</p><h3>Einsatzfelder</h3><ul><li>KI-Assistenten fur Support und interne Ablaufe</li><li>Dokumentenverarbeitung und Datenerkennung</li><li>Prognose- und Empfehlungssysteme</li><li>End-to-End Prozessautomatisierung</li></ul><h3>Nutzen</h3><p>Weniger operative Kosten, schnellere Durchlaufzeiten und bessere Entscheidungsqualitat.</p>"
+      },
+      "cloud-solutions-integration": {
+        "category": "Cloud und Infrastruktur",
+        "title": "Cloud-Losungen und Integration",
+        "description": "Sichere und skalierbare Cloud-Infrastruktur fur geschaftskritische Systeme.",
+        "excerpt": "Cloud-Architekturen fur Performance, Sicherheit und zukunftige Skalierung.",
+        "bodyHtml": "<h2>Cloud-Infrastruktur fur Stabilitat und Wachstum</h2><p>Wir helfen bei Migration, Modernisierung und Betrieb von Cloud-Systemen mit starkem Fokus auf Sicherheit, Verfugbarkeit und Kostenkontrolle.</p><h3>Unsere Schwerpunkte</h3><ul><li>Cloud-Assessment und Migrationsplanung</li><li>Skalierbare Zielarchitektur</li><li>CI/CD, Observability und Betrieb</li><li>Laufende Kosten- und Performance-Optimierung</li></ul><h3>Ergebnis</h3><p>Eine belastbare Plattform, die Lastspitzen und neue Anforderungen sauber abdeckt.</p>"
+      },
+      "it-consulting-advisory": {
+        "category": "Beratung",
+        "title": "IT-Beratung und Advisory",
+        "description": "Strategische Technologieberatung zur Ausrichtung von IT-Investitionen auf Business-Ziele.",
+        "excerpt": "IT-Beratung fur fundierte Technologieentscheidungen und geringeres Projektrisiko.",
+        "bodyHtml": "<h2>Technologieentscheidungen mit klarer Richtung</h2><p>Wir unterstutzen bei Architektur, Priorisierung und Roadmap, damit technologische Entscheidungen messbaren Business-Wert liefern.</p><h3>Beratungsfelder</h3><ul><li>Technologie- und Reifegradanalyse</li><li>Transformationsroadmap</li><li>Architektur- und Sicherheitsberatung</li><li>Umsetzungsbegleitung und Governance</li></ul><h3>Mehrwert</h3><p>Weniger Fehlinvestitionen, bessere Planbarkeit und hohere Umsetzungssicherheit.</p>"
+      },
+      "data-analytics-visualization": {
+        "category": "Analytics und BI",
+        "title": "Datenanalyse und Visualisierung",
+        "description": "Dashboards und Datenpipelines, die aus Daten klare Entscheidungen machen.",
+        "excerpt": "Interaktive Dashboards und Reporting fur transparente, datenbasierte Steuerung.",
+        "bodyHtml": "<h2>Daten in umsetzbare Entscheidungen verwandeln</h2><p>Wir entwickeln Analytics-Losungen, die Datenquellen verbinden, KPI-Reporting automatisieren und Informationen fur Fachbereiche leicht nutzbar machen.</p><h3>Typische Bausteine</h3><ul><li>Datenpipeline und Aufbereitung</li><li>Interaktive Business-Dashboards</li><li>Echtzeit-KPI Monitoring</li><li>Enablement fur interne Teams</li></ul><h3>Wirkung</h3><p>Mehr Transparenz, schnellere Entscheidungen und bessere operative Steuerung.</p>"
       }
     }
   }
