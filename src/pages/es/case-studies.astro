@@ -8,22 +8,23 @@ import { getCollection } from 'astro:content';
 import { resolveLocale, localizePath } from '../../lib/i18n';
 import { getLocaleCopy } from '../../i18n/locale-copy';
 
-function getYouTubeEmbed(url: string | undefined) {
+function getYouTubeEmbed(url: string | undefined, autoplay: boolean = false) {
   if (!url) return null;
   try {
     const parsed = new URL(url);
+    const autoplayParam = autoplay ? 'autoplay=1&mute=1&' : '';
     if (parsed.hostname.includes('youtu.be')) {
       const id = parsed.pathname.slice(1);
       if (!id) return null;
-      return `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&controls=1&rel=0&playsinline=1`;
+      return `https://www.youtube.com/embed/${id}?${autoplayParam}controls=1&rel=0&playsinline=1`;
     }
     if (parsed.hostname.includes('youtube.com')) {
       if (parsed.pathname.startsWith('/embed/')) {
-        return `${parsed.origin}${parsed.pathname}?autoplay=1&mute=1&controls=1&rel=0&playsinline=1`;
+        return `${parsed.origin}${parsed.pathname}?${autoplayParam}controls=1&rel=0&playsinline=1`;
       }
       const id = parsed.searchParams.get('v');
       if (!id) return null;
-      return `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&controls=1&rel=0&playsinline=1`;
+      return `https://www.youtube.com/embed/${id}?${autoplayParam}controls=1&rel=0&playsinline=1`;
     }
   } catch (_) {
     return null;
@@ -114,7 +115,7 @@ function getCaseCopy(slug: string) {
                       <div class="relative w-full aspect-video bg-black">
                         <iframe
                           class="absolute inset-0 w-full h-full"
-                          src={getYouTubeEmbed(caseStudy.data.videoUrl)}
+                          src={getYouTubeEmbed(caseStudy.data.videoUrl, index === 0)}
                           title={`${caseTitle} video`}
                           frameborder="0"
                           allow="autoplay; encrypted-media; picture-in-picture"
