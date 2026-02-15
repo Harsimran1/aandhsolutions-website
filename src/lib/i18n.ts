@@ -86,7 +86,7 @@ function isInternalPath(value: string): boolean {
 
 export function localizePath(path: string, locale: Locale): string {
   if (!path) {
-    return `/${locale}`;
+    return `/${locale}/`;
   }
 
   if (!isInternalPath(path)) {
@@ -100,11 +100,13 @@ export function localizePath(path: string, locale: Locale): string {
     if (hash) {
       return `/${locale}/${hash}`;
     }
-    return `/${locale}`;
+    return `/${locale}/`;
   }
 
   const cleaned = normalizedPath.startsWith('/') ? normalizedPath : `/${normalizedPath}`;
-  return `/${locale}${cleaned}${hash}`;
+  // Ensure trailing slash before hash (if any)
+  const pathWithSlash = cleaned.endsWith('/') ? cleaned : `${cleaned}/`;
+  return `/${locale}${pathWithSlash}${hash}`;
 }
 
 export function switchLocalePath(currentPathname: string, targetLocale: Locale): string {
@@ -114,7 +116,13 @@ export function switchLocalePath(currentPathname: string, targetLocale: Locale):
 
 export function getAbsoluteLocaleUrl(site: string, locale: Locale, currentPathname: string): string {
   const basePath = stripLocaleFromPathname(currentPathname);
-  return new URL(localizePath(basePath, locale), site).toString();
+  const localizedPath = localizePath(basePath, locale);
+  const url = new URL(localizedPath, site);
+  // Ensure trailing slash for consistency with Astro's trailingSlash: 'always' setting
+  if (!url.pathname.endsWith('/')) {
+    url.pathname += '/';
+  }
+  return url.toString();
 }
 
 export function getOgLocale(locale: Locale): string {
