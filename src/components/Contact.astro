@@ -2,7 +2,7 @@
 import { resolveLocale, localizePath } from '../lib/i18n';
 import { getLocaleCopy } from '../i18n/locale-copy';
 
-const locale = resolveLocale(Astro.currentLocale, Astro.url.pathname);
+const locale = resolveLocale(Astro.currentLocale, new URL(Astro.request.url).pathname);
 const localized = (path: string) => localizePath(path, locale);
 
 const copy = getLocaleCopy(locale);

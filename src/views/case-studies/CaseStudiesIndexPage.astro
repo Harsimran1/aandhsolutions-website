@@ -32,7 +32,7 @@ function getYouTubeEmbed(url: string | undefined, autoplay: boolean = false) {
   return null;
 }
 
-const locale = resolveLocale(Astro.currentLocale, Astro.url.pathname);
+const locale = resolveLocale(Astro.currentLocale, new URL(Astro.request.url).pathname);
 const copy = getLocaleCopy(locale);
 const casePageCopy = copy.pages.caseStudies ?? {};
 const caseContent = copy.content?.caseStudies ?? {};

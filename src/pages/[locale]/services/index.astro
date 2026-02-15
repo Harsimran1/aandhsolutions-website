@@ -1,0 +1,200 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import HeroSection from '../../../components/HeroSection.astro';
+import { getCollection } from 'astro:content';
+import { SUPPORTED_LOCALES, resolveLocale, localizePath } from '../../../lib/i18n';
+
+export const prerender = true;
+
+export function getStaticPaths() {
+  return SUPPORTED_LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+const locale = resolveLocale(Astro.currentLocale, new URL(Astro.request.url).pathname);
+const localized = (path: string) => localizePath(path, locale);
+
+const copy = {
+  en: {
+    title: 'Services - A&H Solutions',
+    description: 'Professional software development services from A&H Solutions. Custom web applications, mobile apps, cloud solutions, and more.',
+    heroTitle: 'Our Services',
+    heroHighlight: 'Services',
+    heroDescription: 'Comprehensive software development solutions to help your business thrive in the digital age.',
+    allServices: 'All Services',
+    startingAt: 'Starting at',
+    more: 'more',
+    learnMore: 'Learn More',
+    comingSoon: 'Services Coming Soon',
+    comingSoonDesc: "We're currently updating our services documentation. Contact us to discuss how we can help with your specific needs.",
+    getInTouch: 'Get in Touch',
+    customTitle: 'Need a Custom Solution?',
+    customDesc: "Don't see exactly what you're looking for? We specialize in creating custom software solutions tailored to your unique requirements.",
+    discuss: 'Discuss Your Project',
+    viewWork: 'View Our Work',
+  },
+  de: {
+    title: 'Leistungen - A&H Solutions',
+    description: 'Professionelle Softwareentwicklung von A&H Solutions: Webanwendungen, mobile Apps, Cloud-Losungen und mehr.',
+    heroTitle: 'Unsere Leistungen',
+    heroHighlight: 'Leistungen',
+    heroDescription: 'Umfassende Softwarelosungen, damit Ihr Unternehmen digital wachsen kann.',
+    allServices: 'Alle Leistungen',
+    startingAt: 'Ab',
+    more: 'mehr',
+    learnMore: 'Mehr erfahren',
+    comingSoon: 'Leistungen folgen in Kurze',
+    comingSoonDesc: 'Wir aktualisieren derzeit unsere Leistungsseiten. Kontaktieren Sie uns fur Ihr Vorhaben.',
+    getInTouch: 'Kontakt aufnehmen',
+    customTitle: 'Benotigen Sie eine individuelle Losung?',
+    customDesc: 'Wir entwickeln massgeschneiderte Softwarelosungen fur Ihre spezifischen Anforderungen.',
+    discuss: 'Projekt besprechen',
+    viewWork: 'Referenzen ansehen',
+  },
+  fr: {
+    title: 'Services - A&H Solutions',
+    description: 'Services de developpement logiciel: applications web, mobiles, cloud et plus encore.',
+    heroTitle: 'Nos services',
+    heroHighlight: 'Services',
+    heroDescription: 'Des solutions logicielles completes pour accelerer votre croissance numerique.',
+    allServices: 'Tous les services',
+    startingAt: 'A partir de',
+    more: 'de plus',
+    learnMore: 'En savoir plus',
+    comingSoon: 'Services bientot disponibles',
+    comingSoonDesc: 'Nous mettons a jour cette section. Contactez-nous pour discuter de vos besoins.',
+    getInTouch: 'Nous contacter',
+    customTitle: 'Besoin dune solution sur mesure ?',
+    customDesc: 'Nous creons des solutions logicielles adaptees a vos exigences metier.',
+    discuss: 'Parler de votre projet',
+    viewWork: 'Voir nos realisations',
+  },
+  es: {
+    title: 'Servicios - A&H Solutions',
+    description: 'Servicios profesionales de desarrollo: apps web, moviles, cloud y mas.',
+    heroTitle: 'Nuestros servicios',
+    heroHighlight: 'Servicios',
+    heroDescription: 'Soluciones completas de software para impulsar tu negocio en la era digital.',
+    allServices: 'Todos los servicios',
+    startingAt: 'Desde',
+    more: 'mas',
+    learnMore: 'Mas informacion',
+    comingSoon: 'Servicios proximamente',
+    comingSoonDesc: 'Estamos actualizando esta seccion. Contactanos para hablar de tu proyecto.',
+    getInTouch: 'Contactar',
+    customTitle: 'Necesitas una solucion a medida?',
+    customDesc: 'Creamos soluciones de software personalizadas segun tus requisitos.',
+    discuss: 'Hablar de tu proyecto',
+    viewWork: 'Ver nuestro trabajo',
+  },
+} as const;
+
+const text = copy[locale] ?? copy.en;
+
+const services = await getCollection('services', ({ data }) => !data.draft);
+services.sort((a, b) => new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime());
+const categories = [...new Set(services.map((service) => service.data.category).filter(Boolean))];
+---
+
+<Layout title={text.title} description={text.description}>
+  <Header />
+  <main>
+    <HeroSection title={text.heroTitle} highlightText={text.heroHighlight} description={text.heroDescription} />
+
+    <section class="py-16 bg-white dark:bg-gray-800">
+      <div class="container-custom">
+        {services.length > 0 ? (
+          <>
+            {categories.length > 0 && (
+              <div class="flex flex-wrap gap-4 justify-center mb-16">
+                <button class="px-4 py-2 rounded-full bg-primary-600 text-white font-medium text-sm hover:bg-primary-700 transition-colors">
+                  {text.allServices}
+                </button>
+                {categories.map((category) => (
+                  <button class="px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-medium text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    {category}
+                  </button>
+                ))}
+              </div>
+            )}
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {services.map((service, index) => (
+                <div class="card border border-gray-200 dark:border-gray-700 overflow-hidden slide-up" style={'animation-delay: ' + (index * 100) + 'ms'}>
+                  <a href={localized(`/services/${service.slug}`)} class="block">
+                    {service.data.image ? (
+                      <img src={service.data.image} alt={service.data.imageAlt || service.data.title} class="w-full h-48 object-cover" loading="lazy" />
+                    ) : (
+                      <div class="w-full h-48 bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center">
+                        <span class="text-white text-xl font-semibold">{service.data.title}</span>
+                      </div>
+                    )}
+                  </a>
+                  <div class="p-6">
+                    <div class="flex items-center mb-4">
+                      {service.data.category && (
+                        <>
+                          <span class="text-sm font-medium text-primary-600 dark:text-primary-400">{service.data.category}</span>
+                          <span class="mx-2 text-gray-300 dark:text-gray-600">•</span>
+                        </>
+                      )}
+                      {service.data.pricing && service.data.pricing.startingPrice && (
+                        <span class="text-sm text-gray-500 dark:text-gray-400">{text.startingAt} {service.data.pricing.startingPrice}</span>
+                      )}
+                    </div>
+                    <a href={localized(`/services/${service.slug}`)} class="block mb-3">
+                      <h2 class="text-xl font-semibold text-gray-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-colors">{service.data.title}</h2>
+                    </a>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">{service.data.excerpt || service.data.description || ''}</p>
+
+                    {service.data.technologies && service.data.technologies.length > 0 && (
+                      <div class="flex flex-wrap gap-2 mb-4">
+                        {service.data.technologies.slice(0, 3).map((tech) => (
+                          <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded-full">{tech}</span>
+                        ))}
+                        {service.data.technologies.length > 3 && (
+                          <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded-full">
+                            +{service.data.technologies.length - 3} {text.more}
+                          </span>
+                        )}
+                      </div>
+                    )}
+
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center">
+                        {service.data.author.avatar && (
+                          <img src={service.data.author.avatar} alt={service.data.author.name} class="w-8 h-8 rounded-full mr-2 object-cover" loading="lazy" />
+                        )}
+                        <div>
+                          <p class="text-sm font-medium text-gray-900 dark:text-white">{service.data.author.name}</p>
+                        </div>
+                      </div>
+                      <a href={localized(`/services/${service.slug}`)} class="btn-outline btn-sm">{text.learnMore}</a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
+        ) : (
+          <div class="text-center py-16">
+            <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">{text.comingSoon}</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">{text.comingSoonDesc}</p>
+            <a href={localized('/contact')} class="btn-primary">{text.getInTouch}</a>
+          </div>
+        )}
+
+        <div class="mt-16 text-center">
+          <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">{text.customTitle}</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">{text.customDesc}</p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href={localized('/contact')} class="btn-primary">{text.discuss}</a>
+            <a href={localized('/case-studies')} class="btn-secondary">{text.viewWork}</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

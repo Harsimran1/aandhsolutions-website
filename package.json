@@ -14,7 +14,9 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "build:check": "astro build && node scripts/verify-locale-artifacts.mjs",
     "preview": "astro build && astro preview",
+    "preview:check": "astro build && node scripts/verify-locale-artifacts.mjs && astro preview",
     "astro": "astro"
   },
   "dependencies": {

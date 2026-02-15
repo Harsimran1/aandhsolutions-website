@@ -3,7 +3,7 @@ import { SUPPORTED_LOCALES, resolveLocale, localizePath, switchLocalePath } from
 import { getDictionary } from '../i18n/dictionaries';
 
 const currentYear = new Date().getFullYear();
-const locale = resolveLocale(Astro.currentLocale, Astro.url.pathname);
+const locale = resolveLocale(Astro.currentLocale, new URL(Astro.request.url).pathname);
 const t = getDictionary(locale);
 const cityLabelMap = {
   en: {
@@ -257,7 +257,7 @@ const localized = (path: string) => localizePath(path, locale);
 
         <div class="flex flex-wrap gap-3">
           {languageOptions.map((option) => (
-            <a href={option.url} class={`text-xs px-2 py-1 rounded border border-gray-700 hover:border-primary-400 ${option.code === locale ? 'text-primary-300 border-primary-500' : 'text-gray-400'}`}>
+            <a href={option.url} data-preserve-locale-link class={`text-xs px-2 py-1 rounded border border-gray-700 hover:border-primary-400 ${option.code === locale ? 'text-primary-300 border-primary-500' : 'text-gray-400'}`}>
               {option.label}
             </a>
           ))}

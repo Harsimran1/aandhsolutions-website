@@ -1,7 +1,7 @@
 ---
 import { resolveLocale } from '../lib/i18n';
 
-const locale = resolveLocale(Astro.currentLocale, Astro.url.pathname);
+const locale = resolveLocale(Astro.currentLocale, new URL(Astro.request.url).pathname);
 const content = {
   en: {
     badge: 'How It Works',

@@ -14,7 +14,7 @@ import Footer from '../../components/Footer.astro';
 import { resolveLocale } from '../../lib/i18n';
 import { getPageCopy } from '../../i18n/page-copy';
 
-const locale = resolveLocale(Astro.currentLocale, Astro.url.pathname);
+const locale = resolveLocale(Astro.currentLocale, new URL(Astro.request.url).pathname);
 const copy = getPageCopy(locale);
 ---
 

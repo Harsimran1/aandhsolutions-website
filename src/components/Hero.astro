@@ -26,7 +26,7 @@ function highlightTitle(title: string, highlightText: string) {
   return title.replace(highlightText, `<span class="text-primary-600 dark:text-primary-400">${highlightText}</span>`);
 }
 
-const locale = resolveLocale(Astro.currentLocale, Astro.url.pathname);
+const locale = resolveLocale(Astro.currentLocale, new URL(Astro.request.url).pathname);
 const localized = (path: string) => localizePath(path, locale);
 
 const heroCopy = {

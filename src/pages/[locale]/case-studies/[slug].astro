@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import CaseStudyDetailPage from '../../../views/case-studies/CaseStudyDetailPage.astro';
+import { SUPPORTED_LOCALES } from '../../../lib/i18n';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const caseStudies = await getCollection('case-studies', ({ data }) => !data.draft);
+  return SUPPORTED_LOCALES.flatMap((locale) =>
+    caseStudies.map((caseStudy) => ({
+      params: { locale, slug: caseStudy.slug },
+      props: { caseStudy },
+    })),
+  );
+}
+
+const { caseStudy } = Astro.props;
+---
+
+<CaseStudyDetailPage caseStudy={caseStudy} />

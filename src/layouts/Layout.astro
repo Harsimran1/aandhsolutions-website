@@ -18,7 +18,7 @@ const {
   ogImage = "/og-image.jpg"
 } = Astro.props;
 
-const currentLocale = resolveLocale(Astro.currentLocale, Astro.url.pathname);
+const currentLocale = resolveLocale(Astro.currentLocale, new URL(Astro.request.url).pathname);
 const canonicalUrl = getAbsoluteLocaleUrl(Astro.site?.toString() ?? 'https://www.aandhsolutions.com', currentLocale, Astro.url.pathname);
 const hrefLangLinks = SUPPORTED_LOCALES.map((locale) => ({
   locale,
@@ -160,8 +160,18 @@ const ogLocale = getOgLocale(currentLocale);
           const href = link.getAttribute('href');
           if (!href) return;
           if (href.startsWith('//')) return;
-          if (localePrefixPattern.test(href)) return;
           if (skipPrefixes.some((prefix) => href.startsWith(prefix))) return;
+
+          // Keep language switcher targets untouched.
+          if (link.hasAttribute('data-preserve-locale-link')) return;
+
+          // If link is already locale-prefixed, normalize it to the active locale.
+          if (localePrefixPattern.test(href)) {
+            const url = new URL(href, window.location.origin);
+            url.pathname = url.pathname.replace(/^\/(en|fr|de|es)(?=\/|$)/, `/${activeLocale}`);
+            link.setAttribute('href', `${url.pathname}${url.search}${url.hash}`);
+            return;
+          }
 
           link.setAttribute('href', `/${activeLocale}${href}`);
         });

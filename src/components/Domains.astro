@@ -5,7 +5,7 @@ import { resolveLocale, localizePath } from '../lib/i18n';
 const domains = await getCollection('domains');
 const featuredDomains = domains.filter(domain => domain.data.featured).slice(0, 8);
 const allDomains = domains.sort((a, b) => a.data.title.localeCompare(b.data.title));
-const locale = resolveLocale(Astro.currentLocale, Astro.url.pathname);
+const locale = resolveLocale(Astro.currentLocale, new URL(Astro.request.url).pathname);
 const localized = (path: string) => localizePath(path, locale);
 const copy = {
   en: { title: 'Industry', accent: 'Expertise', desc: 'We specialize in delivering tailored technology solutions across diverse industries, understanding the unique challenges and regulatory requirements of each sector.', all: 'View All Industries', ctaTitle: "Don't See Your Industry?", ctaDesc: "We work across many more industries and adapt our solutions to meet unique sector requirements. Let's discuss how we can help your specific industry challenges.", cta: 'Get Industry-Specific Consultation' },

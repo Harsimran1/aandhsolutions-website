@@ -2,7 +2,7 @@
 import { SUPPORTED_LOCALES, resolveLocale, localizePath, switchLocalePath } from '../lib/i18n';
 import { getDictionary } from '../i18n/dictionaries';
 
-const locale = resolveLocale(Astro.currentLocale, Astro.url.pathname);
+const locale = resolveLocale(Astro.currentLocale, new URL(Astro.request.url).pathname);
 const t = getDictionary(locale);
 const cityLabelMap = {
   en: {
@@ -248,7 +248,7 @@ const localized = (path: string) => localizePath(path, locale);
           class="absolute right-0 mt-2 w-32 bg-white dark:bg-secondary-900 rounded-md shadow-lg ring-1 ring-black/5"
         >
           {languageOptions.map((option) => (
-            <a href={option.url} class={`block px-3 py-2 text-sm hover:bg-secondary-100 dark:hover:bg-secondary-800 ${option.code === locale ? 'font-semibold' : ''}`}>
+            <a href={option.url} data-preserve-locale-link class={`block px-3 py-2 text-sm hover:bg-secondary-100 dark:hover:bg-secondary-800 ${option.code === locale ? 'font-semibold' : ''}`}>
               {option.label}
             </a>
           ))}
@@ -303,7 +303,7 @@ const localized = (path: string) => localizePath(path, locale);
 
           <div class="border-t border-gray-200 dark:border-gray-700 mt-2 pt-2">
             {languageOptions.map((option) => (
-              <a href={option.url} class={`block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800 ${option.code === locale ? 'font-semibold' : ''}`}>
+              <a href={option.url} data-preserve-locale-link class={`block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800 ${option.code === locale ? 'font-semibold' : ''}`}>
                 {option.label}
               </a>
             ))}

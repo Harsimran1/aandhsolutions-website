@@ -1,13 +1,13 @@
 ---
-import Layout from '../../../layouts/Layout.astro';
-import Header from '../../../components/Header.astro';
-import Footer from '../../../components/Footer.astro';
-import HeroSection from '../../../components/HeroSection.astro';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import HeroSection from '../../components/HeroSection.astro';
 import { getCollection } from 'astro:content';
-import { resolveLocale, localizePath } from '../../../lib/i18n';
-import { getLocaleCopy } from '../../../i18n/locale-copy';
+import { resolveLocale, localizePath } from '../../lib/i18n';
+import { getLocaleCopy } from '../../i18n/locale-copy';
 
-const locale = resolveLocale(Astro.currentLocale, Astro.url.pathname);
+const locale = resolveLocale(Astro.currentLocale, new URL(Astro.request.url).pathname);
 const copy = getLocaleCopy(locale);
 const blogCopy = copy.pages.blog ?? {};
 const blogContent = copy.content?.blog ?? {};

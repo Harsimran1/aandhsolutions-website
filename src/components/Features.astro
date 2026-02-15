@@ -72,7 +72,7 @@ const featuresByLocale = {
   ]
 } as const;
 
-const locale = resolveLocale(Astro.currentLocale, Astro.url.pathname);
+const locale = resolveLocale(Astro.currentLocale, new URL(Astro.request.url).pathname);
 const localized = (path: string) => localizePath(path, locale);
 const features = featuresByLocale[locale] ?? featuresByLocale.en;
 

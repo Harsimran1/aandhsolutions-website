@@ -1,0 +1,155 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+import { SUPPORTED_LOCALES, resolveLocale, localizePath } from '../../../lib/i18n';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const services = await getCollection('services', ({ data }) => !data.draft);
+  return SUPPORTED_LOCALES.flatMap((locale) =>
+    services.map((service) => ({
+      params: { locale, slug: service.slug },
+      props: { service },
+    })),
+  );
+}
+
+const { service } = Astro.props;
+const { Content } = await service.render();
+const locale = resolveLocale(Astro.currentLocale, new URL(Astro.request.url).pathname);
+const localized = (path: string) => localizePath(path, locale);
+
+const ui = {
+  en: { back: 'Back to Services', expert: 'Service Expert', details: 'Service Details', technologies: 'Technologies', whatYouGet: 'What You Get', pricing: 'Pricing', getStarted: 'Get Started', viewExamples: 'View Examples', process: 'Our Process', related: 'Related Industries' },
+  de: { back: 'Zuruck zu Leistungen', expert: 'Service-Experte', details: 'Leistungsdetails', technologies: 'Technologien', whatYouGet: 'Leistungsumfang', pricing: 'Preise', getStarted: 'Jetzt starten', viewExamples: 'Beispiele ansehen', process: 'Unser Prozess', related: 'Verwandte Branchen' },
+  fr: { back: 'Retour aux services', expert: 'Expert service', details: 'Details du service', technologies: 'Technologies', whatYouGet: 'Ce que vous obtenez', pricing: 'Tarification', getStarted: 'Demarrer', viewExamples: 'Voir des exemples', process: 'Notre methode', related: 'Secteurs associes' },
+  es: { back: 'Volver a servicios', expert: 'Experto de servicio', details: 'Detalles del servicio', technologies: 'Tecnologias', whatYouGet: 'Que obtienes', pricing: 'Precios', getStarted: 'Comenzar', viewExamples: 'Ver ejemplos', process: 'Nuestro proceso', related: 'Industrias relacionadas' },
+} as const;
+const text = ui[locale] ?? ui.en;
+---
+
+<Layout title={`${service.data.title} - A&H Solutions Services`} description={service.data.description || service.data.excerpt || service.data.title}>
+  <Header />
+  <main>
+    <article class="pt-32 pb-16 md:pt-40 md:pb-24">
+      <div class="container-custom max-w-4xl">
+        <div class="mb-8">
+          <a href={localized('/services')} class="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+            </svg>
+            {text.back}
+          </a>
+        </div>
+
+        <div class="flex items-center mb-6">
+          {service.data.category && (
+            <>
+              <span class="inline-block px-3 py-1 rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-300 font-medium text-sm">{service.data.category}</span>
+              <span class="mx-2 text-gray-300 dark:text-gray-600">•</span>
+            </>
+          )}
+          {service.data.pricing && service.data.pricing.startingPrice && (
+            <span class="text-gray-600 dark:text-gray-400">{service.data.pricing.startingPrice}</span>
+          )}
+        </div>
+
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 dark:text-white">{service.data.title}</h1>
+
+        {service.data.excerpt && <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">{service.data.excerpt}</p>}
+
+        <div class="flex items-center mb-8">
+          {service.data.author.avatar && <img src={service.data.author.avatar} alt={service.data.author.name} class="w-12 h-12 rounded-full mr-4 object-cover" />}
+          <div>
+            <p class="font-semibold text-gray-900 dark:text-white">{service.data.author.name}</p>
+            <p class="text-gray-600 dark:text-gray-400">{text.expert}</p>
+          </div>
+        </div>
+
+        {service.data.image && <img src={service.data.image} alt={service.data.imageAlt || service.data.title} class="w-full h-auto rounded-xl mb-10 object-cover" style="max-height: 500px;" />}
+
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+          <div class="md:col-span-2">
+            <div class="prose prose-lg dark:prose-invert max-w-none"><Content /></div>
+          </div>
+
+          <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">{text.details}</h3>
+
+            {service.data.technologies && service.data.technologies.length > 0 && (
+              <div class="mb-6">
+                <h4 class="font-medium text-gray-900 dark:text-white mb-3">{text.technologies}</h4>
+                <div class="flex flex-wrap gap-2">
+                  {service.data.technologies.map((tech) => (
+                    <span class="px-3 py-1 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm rounded-full border border-gray-200 dark:border-gray-600">{tech}</span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {service.data.deliverables && service.data.deliverables.length > 0 && (
+              <div class="mb-6">
+                <h4 class="font-medium text-gray-900 dark:text-white mb-3">{text.whatYouGet}</h4>
+                <ul class="space-y-2">
+                  {service.data.deliverables.map((deliverable) => (
+                    <li class="flex items-center text-sm text-gray-600 dark:text-gray-300">
+                      <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      {deliverable}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {service.data.pricing && (
+              <div class="mb-6">
+                <h4 class="font-medium text-gray-900 dark:text-white mb-3">{text.pricing}</h4>
+                {service.data.pricing.startingPrice && <p class="text-2xl font-bold text-primary-600 dark:text-primary-400 mb-2">{service.data.pricing.startingPrice}</p>}
+                {service.data.pricing.model && <p class="text-sm text-gray-600 dark:text-gray-300 mb-3">{service.data.pricing.model}</p>}
+              </div>
+            )}
+
+            <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
+              <a href={localized('/contact')} class="btn-primary w-full text-center">{text.getStarted}</a>
+              <a href={localized('/case-studies')} class="btn-outline w-full text-center mt-3">{text.viewExamples}</a>
+            </div>
+          </div>
+        </div>
+
+        {service.data.processSteps && service.data.processSteps.length > 0 && (
+          <div class="mb-12">
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">{text.process}</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {service.data.processSteps.map((step, index) => (
+                <div class="text-center">
+                  <div class="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">{index + 1}</div>
+                  <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">{step.title}</h4>
+                  <p class="text-gray-600 dark:text-gray-300">{step.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {service.data.relatedDomains && service.data.relatedDomains.length > 0 && (
+          <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+            <h3 class="text-xl font-semibold mb-6 text-gray-900 dark:text-white">{text.related}</h3>
+            <div class="flex flex-wrap gap-2">
+              {service.data.relatedDomains.map((domain) => (
+                <a href={localized(`/domains/${domain.toLowerCase().replace(/\s+/g, '-')}`)} class="px-4 py-2 bg-secondary-100 dark:bg-secondary-900 text-secondary-700 dark:text-secondary-300 rounded-full hover:bg-secondary-200 dark:hover:bg-secondary-800 transition-colors">
+                  {domain}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </article>
+  </main>
+  <Footer />
+</Layout>

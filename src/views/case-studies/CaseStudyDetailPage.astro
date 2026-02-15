@@ -1,24 +1,16 @@
 ---
-import Layout from '../../../layouts/Layout.astro';
-import Header from '../../../components/Header.astro';
-import Footer from '../../../components/Footer.astro';
-import CaseStudySlider from '../../../components/CaseStudySlider.astro';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CaseStudySlider from '../../components/CaseStudySlider.astro';
 import { getCollection } from 'astro:content';
-import { resolveLocale, localizePath } from '../../../lib/i18n';
-import { getLocaleCopy } from '../../../i18n/locale-copy';
-
-export async function getStaticPaths() {
-  const caseStudies = await getCollection('case-studies');
-  return caseStudies.map((caseStudy) => ({
-    params: { slug: caseStudy.slug },
-    props: { caseStudy },
-  }));
-}
+import { resolveLocale, localizePath } from '../../lib/i18n';
+import { getLocaleCopy } from '../../i18n/locale-copy';
 
 const { caseStudy } = Astro.props;
 const { Content } = await caseStudy.render();
 
-const locale = resolveLocale(Astro.currentLocale, Astro.url.pathname);
+const locale = resolveLocale(Astro.currentLocale, new URL(Astro.request.url).pathname);
 const copy = getLocaleCopy(locale);
 const casePageCopy = copy.pages.caseStudies ?? {};
 const caseContent = copy.content?.caseStudies ?? {};
@@ -255,12 +247,12 @@ const DATE_LOCALE: Record<string, string> = {
               {domains.map((domain) => (
                 <div class="card border border-gray-200 dark:border-gray-700 p-6">
                   <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                    <a href={localizePath(`/industries/${domain.slug}`, locale)} class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                    <a href={localizePath(`/domains/${domain.slug}`, locale)} class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                       {domain.data.title}
                     </a>
                   </h4>
                   <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">{domain.data.excerpt || domain.data.description}</p>
-                  <a href={localizePath(`/industries/${domain.slug}`, locale)} class="btn-outline btn-sm">{casePageCopy.learnMore || 'Learn More'}</a>
+                  <a href={localizePath(`/domains/${domain.slug}`, locale)} class="btn-outline btn-sm">{casePageCopy.learnMore || 'Learn More'}</a>
                 </div>
               ))}
             </div>

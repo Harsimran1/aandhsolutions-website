@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import BlogDetailPage from '../../../views/blog/BlogDetailPage.astro';
+import { SUPPORTED_LOCALES } from '../../../lib/i18n';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const blogPosts = await getCollection('blog', ({ data }) => !data.draft);
+  return SUPPORTED_LOCALES.flatMap((locale) =>
+    blogPosts.map((post) => ({
+      params: { locale, slug: post.slug },
+      props: { post, allPosts: blogPosts },
+    })),
+  );
+}
+
+const { post, allPosts } = Astro.props;
+---
+
+<BlogDetailPage post={post} allPosts={allPosts} />

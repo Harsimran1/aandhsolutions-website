@@ -36,22 +36,36 @@ export function getLocaleFromPathname(pathname: string): Locale {
 
 export function resolveLocale(currentLocale: string | undefined, pathname: string): Locale {
   const localeFromPath = getLocaleFromPathname(pathname);
-  if (localeFromPath !== DEFAULT_LOCALE || pathname === `/${DEFAULT_LOCALE}` || pathname.startsWith(`/${DEFAULT_LOCALE}/`)) {
-    return localeFromPath;
-  }
-
+  let localeFromCurrent: Locale | null = null;
   if (currentLocale) {
     const normalized = currentLocale.toLowerCase();
     if (isLocale(normalized)) {
-      return normalized;
-    }
-
-    const language = normalized.split('-')[0];
-    if (isLocale(language)) {
-      return language;
+      localeFromCurrent = normalized;
+    } else {
+      const language = normalized.split('-')[0];
+      if (isLocale(language)) {
+        localeFromCurrent = language;
+      }
     }
   }
 
+  // Prefer non-default locale from either source.
+  if (localeFromCurrent && localeFromCurrent !== DEFAULT_LOCALE) {
+    return localeFromCurrent;
+  }
+  if (localeFromPath !== DEFAULT_LOCALE) {
+    return localeFromPath;
+  }
+
+  // Explicit /en URLs should stay English.
+  if (pathname === `/${DEFAULT_LOCALE}` || pathname.startsWith(`/${DEFAULT_LOCALE}/`)) {
+    return DEFAULT_LOCALE;
+  }
+
+  // Fall back to current locale if available, otherwise path-derived default.
+  if (localeFromCurrent) {
+    return localeFromCurrent;
+  }
   return localeFromPath;
 }
 

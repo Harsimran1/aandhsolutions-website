@@ -8,7 +8,7 @@ import { getLocaleCopy } from '../../i18n/locale-copy';
 
 const { domain } = Astro.props;
 const { Content } = await domain.render();
-const locale = resolveLocale(Astro.currentLocale, Astro.url.pathname);
+const locale = resolveLocale(Astro.currentLocale, new URL(Astro.request.url).pathname);
 const copy = getLocaleCopy(locale);
 const domainPageCopy = copy.pages.domains ?? {};
 const domainContent = copy.content?.domains ?? {};

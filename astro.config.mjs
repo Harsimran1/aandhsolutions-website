@@ -21,11 +21,7 @@ export default defineConfig({
       de: 'en',
       es: 'en',
     },
-    routing: {
-      prefixDefaultLocale: true,
-      redirectToDefaultLocale: true,
-      fallbackType: 'rewrite',
-    },
+    routing: 'manual',
   },
   integrations: [
     alpinejs(),

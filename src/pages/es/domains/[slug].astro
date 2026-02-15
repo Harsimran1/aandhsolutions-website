@@ -1,9 +1,0 @@
----
-import DomainDetailPage from '../../../views/domains/DomainDetailPage.astro';
-import { getDomainStaticPaths } from '../../../lib/domain-static-paths';
-
-export const getStaticPaths = getDomainStaticPaths;
-const { domain } = Astro.props;
----
-
-<DomainDetailPage domain={domain} />

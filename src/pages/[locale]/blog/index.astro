@@ -1,0 +1,14 @@
+---
+import BlogIndexPage from '../../../views/blog/BlogIndexPage.astro';
+import { SUPPORTED_LOCALES } from '../../../lib/i18n';
+
+export const prerender = true;
+
+export function getStaticPaths() {
+  return SUPPORTED_LOCALES.map((locale) => ({
+    params: { locale },
+  }));
+}
+---
+
+<BlogIndexPage />

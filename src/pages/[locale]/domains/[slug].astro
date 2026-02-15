@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import DomainDetailPage from '../../../views/domains/DomainDetailPage.astro';
+import { SUPPORTED_LOCALES } from '../../../lib/i18n';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const domains = await getCollection('domains', ({ data }) => !data.draft);
+  return SUPPORTED_LOCALES.flatMap((locale) =>
+    domains.map((domain) => ({
+      params: { locale, slug: domain.slug },
+      props: { domain },
+    })),
+  );
+}
+
+const { domain } = Astro.props;
+---
+
+<DomainDetailPage domain={domain} />

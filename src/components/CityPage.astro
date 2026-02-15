@@ -25,7 +25,7 @@ const {
   keyIndustries = ["Technology", "Healthcare", "Finance", "Manufacturing"]
 } = Astro.props;
 
-const locale = resolveLocale(Astro.currentLocale, Astro.url.pathname);
+const locale = resolveLocale(Astro.currentLocale, new URL(Astro.request.url).pathname);
 const cityCopy = {
   en: {
     pageTitle: `Software Development & IT Consulting in ${city}, ${state} | A & H Solutions`,
