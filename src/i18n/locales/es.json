@@ -5,12 +5,14 @@
       "description": "A&H Solutions crea aplicaciones personalizadas, plataformas web e integraciones de IA para startups y empresas."
     },
     "pricing": {
-      "title": "Precios - A&H Solutions"
+      "title": "Precios - A&H Solutions",
+      "description": "Precios flexibles para desarrollo de software a medida, integraciones de IA, soluciones cloud y consultoria."
     },
     "contact": {
       "title": "Contacto - A & H Solutions",
       "heroTitle": "Contacto",
-      "heroDescription": "Estamos aqui para ayudarte con cualquier pregunta sobre nuestros servicios."
+      "heroDescription": "Estamos aqui para ayudarte con cualquier pregunta sobre nuestros servicios.",
+      "description": "Contacta con A&H Solutions para hablar de tu proyecto de software a medida, IA, cloud o analitica."
     },
     "freeProjectBlueprint": {
       "title": "Plan de proyecto GRATIS y hoja de ruta tecnica | A&H Solutions",
@@ -68,7 +70,8 @@
       "moreCaseStudiesPrefix": "Mas",
       "moreCaseStudiesSuffix": "casos de exito",
       "readCaseStudy": "Leer caso de exito",
-      "tagsLabel": "Etiquetas"
+      "tagsLabel": "Etiquetas",
+      "description": "Explora casos de exito de A&H Solutions con resultados reales en multiples industrias."
     },
     "domains": {
       "title": "Industrias - A&H Solutions",

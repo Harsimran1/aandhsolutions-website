@@ -68,7 +68,10 @@ function getCaseCopy(slug: string) {
 }
 ---
 
-<Layout title={casePageCopy.title || 'Case Studies - A&H Solutions'}>
+<Layout
+  title={casePageCopy.title || 'Case Studies - A&H Solutions'}
+  description={casePageCopy.description || 'Browse A&H Solutions case studies across healthcare, finance, real estate, education, and AI-driven product development.'}
+>
   <Header />
   <main>
     <HeroSection

@@ -5,12 +5,14 @@
       "description": "A&H Solutions (aandhsolutions.com) builds custom apps, web platforms, and AI integrations for startups and enterprises. 90% of startups fail - we refuse to accept it. Smarter engineering and AI-driven workflows save costs without losing speed or security."
     },
     "pricing": {
-      "title": "Pricing - A&H Solutions"
+      "title": "Pricing - A&H Solutions",
+      "description": "Flexible pricing options for custom software development, AI integrations, cloud solutions, and consulting services from A&H Solutions."
     },
     "contact": {
       "title": "Contact Us - A & H Solutions",
       "heroTitle": "Contact Us",
-      "heroDescription": "We're here to help with any questions you might have about our services."
+      "heroDescription": "We're here to help with any questions you might have about our services.",
+      "description": "Contact A&H Solutions to discuss your custom software, AI integration, cloud, or data project requirements."
     },
     "freeProjectBlueprint": {
       "title": "FREE Project Blueprint & Technical Roadmap | A&H Solutions",
@@ -46,9 +48,9 @@
       "discussProject": "Discuss Your Project",
       "blueprintTitle": "Start With Your FREE Project Blueprint",
       "blueprintDescription": "Before diving into development, get a comprehensive project roadmap that sets you up for success like our case study clients.",
-      "blueprintMeta": "Technical architecture • Wireframes • Risk analysis • Implementation plan • 100% Free",
+      "blueprintMeta": "Technical architecture \u2022 Wireframes \u2022 Risk analysis \u2022 Implementation plan \u2022 100% Free",
       "getBlueprint": "Get My Free Blueprint",
-      "blueprintFootnote": "Delivered in 3-5 business days • No obligation",
+      "blueprintFootnote": "Delivered in 3-5 business days \u2022 No obligation",
       "readyTitle": "Ready to achieve similar results?",
       "readyDescription": "Let A&H Solutions help transform your business with our proven expertise. Our team is ready to help you succeed.",
       "learnAboutUs": "Learn About Us",
@@ -68,7 +70,8 @@
       "moreCaseStudiesPrefix": "More",
       "moreCaseStudiesSuffix": "Case Studies",
       "readCaseStudy": "Read Case Study",
-      "tagsLabel": "Tags"
+      "tagsLabel": "Tags",
+      "description": "Browse A&H Solutions case studies and real client outcomes across healthcare, real estate, finance, education, and SaaS."
     },
     "domains": {
       "title": "Industries - A&H Solutions",

@@ -5,12 +5,14 @@
       "description": "A&H Solutions entwickelt individuelle Apps, Webplattformen und KI-Integrationen fur Startups und Unternehmen."
     },
     "pricing": {
-      "title": "Preise - A&H Solutions"
+      "title": "Preise - A&H Solutions",
+      "description": "Flexible Preismodelle fur individuelle Softwareentwicklung, KI-Integrationen, Cloud-Losungen und IT-Beratung."
     },
     "contact": {
       "title": "Kontakt - A & H Solutions",
       "heroTitle": "Kontakt",
-      "heroDescription": "Wir helfen Ihnen gern bei allen Fragen zu unseren Leistungen."
+      "heroDescription": "Wir helfen Ihnen gern bei allen Fragen zu unseren Leistungen.",
+      "description": "Kontaktieren Sie A&H Solutions fur Ihr individuelles Softwareprojekt, KI-Integration, Cloud- oder Datenvorhaben."
     },
     "freeProjectBlueprint": {
       "title": "KOSTENLOSER Projektplan und technische Roadmap | A&H Solutions",
@@ -68,7 +70,8 @@
       "moreCaseStudiesPrefix": "Weitere",
       "moreCaseStudiesSuffix": "Fallstudien",
       "readCaseStudy": "Fallstudie lesen",
-      "tagsLabel": "Tags"
+      "tagsLabel": "Tags",
+      "description": "Entdecken Sie A&H Solutions Fallstudien mit messbaren Ergebnissen in mehreren Branchen."
     },
     "domains": {
       "title": "Branchen - A&H Solutions",

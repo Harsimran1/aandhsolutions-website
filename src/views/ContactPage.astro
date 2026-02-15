@@ -11,7 +11,7 @@ const locale = resolveLocale(Astro.currentLocale, new URL(Astro.request.url).pat
 const copy = getPageCopy(locale);
 ---
 
-<Layout title={copy.contact.title}>
+<Layout title={copy.contact.title} description={copy.contact.description || copy.contact.heroDescription}>
   <Header />
   <main>
     <HeroSection

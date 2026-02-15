@@ -11,7 +11,7 @@ const locale = resolveLocale(Astro.currentLocale, new URL(Astro.request.url).pat
 const copy = getPageCopy(locale);
 ---
 
-<Layout title={copy.pricing.title}>
+<Layout title={copy.pricing.title} description={copy.pricing.description || 'Flexible pricing for A&H Solutions services including custom web apps, mobile apps, AI integrations, and consulting.'}>
   <Header />
   <main>
     <PricingTeaser />
