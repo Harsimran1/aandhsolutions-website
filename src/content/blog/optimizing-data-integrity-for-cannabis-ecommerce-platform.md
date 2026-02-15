@@ -14,10 +14,10 @@ tags:
   - "azure"
   - "digital-ocean"
   - "consulting"
-image: "/case-studies/moodyday-1.png"
+image: "/case-studies/moodiday-1.png"
 imageAlt: "Moodiday data integrity dashboard and system controls"
 gallery:
-  - "/case-studies/moodyday-1.png"  
+  - "/case-studies/moodiday-1.png"  
 draft: false
 ---
 
