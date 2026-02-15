@@ -84,6 +84,13 @@ const cityLabelMap = {
 } as const;
 const cityText = (url: string, fallback: string) =>
   cityLabelMap[locale]?.[url as keyof (typeof cityLabelMap)[typeof locale]] ?? fallback;
+const industriesLabelMap = {
+  en: 'Industries',
+  de: 'Branchen',
+  fr: 'Secteurs',
+  es: 'Industrias',
+} as const;
+const industriesLabel = industriesLabelMap[locale] ?? industriesLabelMap.en;
 
 const allPages = [
   { text: t.nav.home, url: '/' },
@@ -162,18 +169,18 @@ const localized = (path: string) => localizePath(path, locale);
     </a>
 
     <nav class="hidden md:flex items-center space-x-8">
-      <a href={localized('/')} class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">{t.nav.home}</a>
-      <a href={localized('/#features')} class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">{t.nav.services}</a>
-      <a href={localized('/case-studies')} class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">{t.nav.caseStudies}</a>
-      <a href={localized('/pricing')} class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">{t.nav.pricing}</a>
-      <a href={localized('/blog')} class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">{t.nav.blog}</a>
-      <a href={localized('/contact')} class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">{t.nav.contact}</a>
+      <a href={localized('/')} class="text-[15px] text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">{t.nav.home}</a>
+      <a href={localized('/#features')} class="text-[15px] text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">{t.nav.services}</a>
+      <a href={localized('/domains')} class="text-[15px] text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">{industriesLabel}</a>
+      <a href={localized('/case-studies')} class="text-[15px] text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">{t.nav.caseStudies}</a>
+      <a href={localized('/blog')} class="text-[15px] text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">{t.nav.blog}</a>
+      <a href={localized('/contact')} class="text-[15px] text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">{t.nav.contact}</a>
 
       <div x-data="{ open: false }" class="relative">
         <button
           @click="open = !open"
           @click.away="open = false"
-          class="flex items-center text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors"
+          class="flex items-center text-[15px] text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors"
         >
           {t.nav.resources}
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -289,8 +296,8 @@ const localized = (path: string) => localizePath(path, locale);
           x-cloak
         >
           <a href={localized('/#features')} class="block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">{t.nav.services}</a>
+          <a href={localized('/domains')} class="block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">{industriesLabel}</a>
           <a href={localized('/case-studies')} class="block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">{t.nav.caseStudies}</a>
-          <a href={localized('/pricing')} class="block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">{t.nav.pricing}</a>
           <a href={localized('/blog')} class="block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">{t.nav.blog}</a>
           <a href={localized('/contact')} class="block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">{t.nav.contact}</a>
 
