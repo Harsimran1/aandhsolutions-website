@@ -30,8 +30,11 @@ gallery:
   - "/case-studies/propcan-4.png"
   - "/case-studies/propcan-5.png"
 
-relatedServices: []
-relatedDomains: []
+relatedServices:
+  - "web-app-development"
+  - "data-analytics-visualization"
+relatedDomains:
+  - "real-estate"
 ---
 
 ## Project Overview

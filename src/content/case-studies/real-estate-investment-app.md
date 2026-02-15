@@ -44,12 +44,12 @@ results:
     author: "Investment Platform Team"
     position: "Product Manager"
 relatedServices:
-  - "Mobile App Development"
-  - "Web App Development"
-  - "Cloud Solutions & Integration"
+  - "mobile-app-development"
+  - "web-app-development"
+  - "cloud-solutions-integration"
 relatedDomains:
-  - "Finance"
-  - "Real Estate"
+  - "real-estate"
+  - "finance"
 ---
 
 ## Project Overview

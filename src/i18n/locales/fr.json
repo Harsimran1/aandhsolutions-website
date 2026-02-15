@@ -198,50 +198,65 @@
     },
     "caseStudies": {
       "aquanomix-water-monitoring": {
-        "title": "Aquanomix : surveillance a distance du traitement de l'eau"
+        "title": "Aquanomix : surveillance a distance du traitement de l'eau",
+        "excerpt": "Plateforme de surveillance IoT avec tableaux de bord en temps reel, routines d'automatisation et controle a distance securise."
       },
       "babajob-job-marketplace": {
-        "title": "Babajob : place de marche pour emplois ouvriers"
+        "title": "Babajob : place de marche pour emplois ouvriers",
+        "excerpt": "Place de marche de recrutement avec profils de candidats, recherche employeurs et monetisation via deblocage de CV et entretiens."
       },
       "book-automation-tool": {
-        "title": "Outil d'automatisation pour texte et couverture de livre"
+        "title": "Outil d'automatisation pour texte et couverture de livre",
+        "excerpt": "Outil d'automatisation innovant pour la creation de materiels marketing de livres via generation de texte IA et workflows de design automatises."
       },
       "cannabis-ecommerce-platform": {
-        "title": "Optimiser l'integrite des donnees pour Moodiday.com"
+        "title": "Optimiser l'integrite des donnees pour Moodiday.com",
+        "excerpt": "Problemes d'integrite des donnees resolus par la refonte des jointures, l'ajout d'identifiants de session et l'amelioration de la fiabilite des rapports."
       },
       "coursera-degree-progress": {
-        "title": "Coursera : suivi et planification de progression de diplome"
+        "title": "Coursera : suivi et planification de progression de diplome",
+        "excerpt": "Experience de progression de diplome developpee qui reduit les frictions de planification et aide les apprenants a obtenir leur diplome a temps."
       },
       "data4life-patient-platform": {
-        "title": "Data4Life : plateforme patient chiffree"
+        "title": "Data4Life : plateforme patient chiffree",
+        "excerpt": "Experience de donnees de sante axee sur la confidentialite avec partage securise et acces controle par le patient."
       },
       "greenswapp-apis": {
-        "title": "GreenSwapp : API d'empreinte carbone"
+        "title": "GreenSwapp : API d'empreinte carbone",
+        "excerpt": "APIs de durabilite developpees permettant aux entreprises d'afficher l'impact environnemental dans leurs experiences."
       },
       "insurance-quoting-system": {
-        "title": "SGS Coverage : moteur de devis d'assurance"
+        "title": "SGS Coverage : moteur de devis d'assurance",
+        "excerpt": "Moteur de devis d'assurance automatise developpe pour SGS Coverage, accelerant la generation de devis et ameliorant les temps de reponse client."
       },
       "juree-legal-translations": {
-        "title": "Juree : traductions juridiques IA"
+        "title": "Juree : traductions juridiques IA",
+        "excerpt": "Workflow de traduction juridique developpe combinant precision multilingue, conformite et traitement securise de documents a grande echelle."
       },
       "levven-smart-home": {
-        "title": "Levven Electronics : application maison connectee + cloud"
+        "title": "Levven Electronics : application maison connectee + cloud",
+        "excerpt": "Developpement continu d'application et cloud pour un ecosysteme maison connectee avec controle vocal et gestion transparente des appareils."
       },
       "mycloudsync-patient-flow": {
-        "title": "MyCloudSync : tableaux de bord de flux patient en temps reel"
+        "title": "MyCloudSync : tableaux de bord de flux patient en temps reel",
+        "excerpt": "Systeme de flux patient developpe maintenant chaque role concentre, automatisant le suivi temporel et revelant les goulots d'etranglement via un tableau de bord dedie."
       },
       "propcan-real-estate-platform": {
         "title": "Propcan : plateforme d'insights immobiliers",
+        "excerpt": "Plateforme de donnees immobilieres gratuite developpee aidant acheteurs, agents et proprietaires a comparer les biens avec des insights marche transparents.",
         "bodyHtml": "<h2>Apercu du projet</h2><p>Propcan est une plateforme canadienne d'insights immobiliers concue pour rendre les donnees immobilieres plus transparentes et accessibles. La plateforme agrege les valeurs immobilieres, les donnees historiques de ventes et les tendances au niveau des quartiers, permettant aux utilisateurs d'explorer et de comparer les biens immobiliers en toute confiance.</p><p>Concu comme un produit axe sur le consommateur, Propcan met l'accent sur la clarte, la rapidite et la confiance - eliminant les frictions dans la facon dont les acheteurs, les proprietaires et les professionnels de l'immobilier comprennent le marche.</p><h2>Le defi</h2><p>Le paysage immobilier canadien est fragmente, avec des donnees critiques souvent verrouillees derriere des paywalls ou des outils difficiles a naviguer. Le defi etait de :</p><ul><li>Presenter des donnees immobilieres complexes de maniere comprehensible</li><li>Supporter la decouverte basee sur une carte sans compromettre les performances</li><li>Concevoir un systeme evolutif capable de gerer de grands ensembles de donnees et des extensions futures</li><li>Maintenir la confiance et la precision dans un domaine sensible aux donnees</li></ul><p>En meme temps, la plateforme devait sembler rapide, moderne et accessible pour les utilisateurs quotidiens - pas seulement pour les professionnels du secteur.</p><h2>Notre solution</h2><p>Nous avons concu et construit Propcan comme une application web full-stack moderne avec un fort accent sur l'utilisabilite et la maintenabilite a long terme.</p><p>Les aspects cles de la solution comprenaient :</p><ul><li>Interface utilisateur claire et intuitive axee sur la comparaison et l'exploration de proprietes</li><li>Experience de recherche guidee par carte pour faire emerger les insights geographiquement</li><li>Modeles de donnees normalises pour supporter les prix historiques, les tendances et les analyses futures</li><li>APIs backend haute performance optimisees pour les charges de lecture intensives</li><li>Architecture evolutive permettant l'ajout incremental de nouvelles regions, ensembles de donnees et fonctionnalites</li></ul><p>La plateforme a ete construite avec une stack JavaScript moderne, permettant une iteration rapide tout en maintenant une fiabilite de niveau production.</p><h2>Resultat</h2><p>Propcan a ete lance comme une plateforme immobiliere gratuite et riche en donnees qui fournit des insights significatifs sans submerger les utilisateurs. Le systeme final :</p><ul><li>A ameliore l'accessibilite aux donnees du marche immobilier</li><li>A permis des comparaisons immobilieres plus rapides et plus eclairees</li><li>A etabli une base technique solide pour la monetisation future et la croissance des fonctionnalites</li><li>A positionne le produit comme une plateforme PropTech credible sur le marche canadien</li></ul><p>Les decisions d'architecture et de conception garantissent que Propcan peut evoluer en fonction des besoins changeants du marche, des considerations reglementaires et de la disponibilite des donnees.</p>"
       },
       "real-estate-investment-app": {
-        "title": "Property Pros : application d'investissement immobilier"
+        "title": "Property Pros : application d'investissement immobilier",
+        "excerpt": "Application d'investissement immobilier developpee centralisant le suivi de portefeuille, les insights de performance et l'acces securise aux documents."
       },
       "sigxa-medical-scribe": {
-        "title": "SigXA : plateforme IA de scribe medical"
+        "title": "SigXA : plateforme IA de scribe medical",
+        "excerpt": "Plateforme de scribe medical IA developpee convertissant les conversations patient-medecin en notes cliniques structurees."
       },
       "smartvet-medical-translation": {
-        "title": "SmartVet : moteur de traduction de rapports veterinaires"
+        "title": "SmartVet : moteur de traduction de rapports veterinaires",
+        "excerpt": "Outil de traduction de rapports veterinaires developpe simplifiant l'interpretation et ameliorant la communication client."
       }
     },
     "domains": {

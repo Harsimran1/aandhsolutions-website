@@ -31,8 +31,11 @@ gallery:
   - "/case-studies/sigxa-9.png"
   - "/case-studies/sigxa-10.png"
 videoUrl: "https://youtu.be/z8GXb7YwulY"
-relatedServices: []
-relatedDomains: []
+relatedServices:
+  - "ai-integrations-automation"
+  - "web-app-development"
+relatedDomains:
+  - "healthcare"
 ---
 
 ## Project Overview

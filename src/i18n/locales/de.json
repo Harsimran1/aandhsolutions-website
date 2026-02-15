@@ -198,50 +198,65 @@
     },
     "caseStudies": {
       "aquanomix-water-monitoring": {
-        "title": "Aquanomix: Fernuberwachung von Wasseraufbereitung"
+        "title": "Aquanomix: Fernuberwachung von Wasseraufbereitung",
+        "excerpt": "IoT-Monitoring-Plattform mit Echtzeit-Dashboards, Automatisierungsroutinen und sicherer Fernsteuerung entwickelt."
       },
       "babajob-job-marketplace": {
-        "title": "Babajob: Job-Marktplatz fur Blue-Collar-Berufe"
+        "title": "Babajob: Job-Marktplatz fur Blue-Collar-Berufe",
+        "excerpt": "Jobvermittlungsplattform mit Bewerberprofilen, Arbeitgebersuche und Monetarisierung durch Lebenslauf-Freischaltungen und Interviews entwickelt."
       },
       "book-automation-tool": {
-        "title": "Automatisierungstool fur Buchtext und Cover"
+        "title": "Automatisierungstool fur Buchtext und Cover",
+        "excerpt": "Innovatives Automatisierungstool zur Erstellung von Buchmarketing-Materialien durch KI-gestutzte Texterstellung und automatisierte Design-Workflows."
       },
       "cannabis-ecommerce-platform": {
-        "title": "Datenintegritat fur Moodiday.com optimieren"
+        "title": "Datenintegritat fur Moodiday.com optimieren",
+        "excerpt": "Datenintegritatsprobleme durch Neugestaltung von Joins, Session-Identifikatoren und verbesserte Reporting-Zuverlassigkeit gelost."
       },
       "coursera-degree-progress": {
-        "title": "Coursera: Fortschritts- und Studienplanung"
+        "title": "Coursera: Fortschritts- und Studienplanung",
+        "excerpt": "Studienfortschrittserlebnis entwickelt, das die Planungsreibung reduziert und Lernenden hilft, rechtzeitig abzuschliessen."
       },
       "data4life-patient-platform": {
-        "title": "Data4Life: Verschlusselte patientenzentrierte Plattform"
+        "title": "Data4Life: Verschlusselte patientenzentrierte Plattform",
+        "excerpt": "Datenschutzorientierte Gesundheitsdatenplattform mit sicherem Teilen und patientenkontrolliertem Zugang bereitgestellt."
       },
       "greenswapp-apis": {
-        "title": "GreenSwapp: APIs fur CO2-Fusabdruck"
+        "title": "GreenSwapp: APIs fur CO2-Fusabdruck",
+        "excerpt": "Nachhaltigkeits-APIs entwickelt, die Unternehmen ermoglichen, Umweltauswirkungen in ihren Anwendungen darzustellen."
       },
       "insurance-quoting-system": {
-        "title": "SGS Coverage: Versicherungs-Angebotsengine"
+        "title": "SGS Coverage: Versicherungs-Angebotsengine",
+        "excerpt": "Automatisierte Versicherungs-Angebotsengine fur SGS Coverage entwickelt, die die Angebotserstellung beschleunigt und Kundenreaktionszeiten verbessert."
       },
       "juree-legal-translations": {
-        "title": "Juree: KI-gestutzte juristische Ubersetzungen"
+        "title": "Juree: KI-gestutzte juristische Ubersetzungen",
+        "excerpt": "Juristischen Ubersetzungs-Workflow entwickelt, der mehrsprachige Genauigkeit, Compliance und sichere Dokumentenverarbeitung im grossen Massstab kombiniert."
       },
       "levven-smart-home": {
-        "title": "Levven Electronics: Smart-Home-App + Cloud"
+        "title": "Levven Electronics: Smart-Home-App + Cloud",
+        "excerpt": "Laufende App- und Cloud-Entwicklung fur ein sprachgesteuertes Smart-Home-Okosystem mit nahtloser Geratesteuerung bereitgestellt."
       },
       "mycloudsync-patient-flow": {
-        "title": "MyCloudSync: Echtzeit-Dashboards fur Patientenfluss"
+        "title": "MyCloudSync: Echtzeit-Dashboards fur Patientenfluss",
+        "excerpt": "Patientenfluss-System entwickelt, das jede Rolle fokussiert halt, Statuszeitnahme automatisiert und Engpasse uber ein dediziertes Metriken-Dashboard aufzeigt."
       },
       "propcan-real-estate-platform": {
         "title": "Propcan: Plattform fur Immobilien-Insights",
+        "excerpt": "Kostenlose Immobiliendatenplattform entwickelt, die Kaufern, Maklern und Eigenheimbesitzern hilft, Immobilien mit transparenten Markteinblicken zu vergleichen.",
         "bodyHtml": "<h2>Projektuberblick</h2><p>Propcan ist eine kanadische Plattform fur Immobilien-Insights, die darauf ausgelegt ist, Immobiliendaten transparenter und zuganglicher zu machen. Die Plattform aggregiert Immobilienwerte, historische Verkaufsdaten und Trends auf Stadtteilebene und ermoglicht es Nutzern, Immobilien mit Vertrauen zu erkunden und zu vergleichen.</p><p>Als verbraucherorientiertes Produkt konzentriert sich Propcan auf Klarheit, Geschwindigkeit und Vertrauen – und beseitigt Reibungsverluste bei der Art und Weise, wie Kaufer, Eigenheimbesitzer und Immobilienprofis den Markt verstehen.</p><h2>Die Herausforderung</h2><p>Die kanadische Immobilienlandschaft ist fragmentiert, wobei kritische Daten oft hinter Paywalls oder schwer zu navigierenden Tools verborgen sind. Die Herausforderung bestand darin:</p><ul><li>Komplexe Immobiliendaten verstandlich zu prasentieren</li><li>Kartenbasierte Entdeckung ohne Leistungseinbussen zu unterstutzen</li><li>Ein skalierbares System zu entwerfen, das grosse Datenmengen und zukunftige Funktionserweiterungen bewaltigen kann</li><li>Vertrauen und Genauigkeit in einem datensensiblen Bereich zu gewahrleisten</li></ul><p>Gleichzeitig musste die Plattform fur Alltagsnutzer schnell, modern und zugänglich wirken – nicht nur fur Branchenprofis.</p><h2>Unsere Losung</h2><p>Wir haben Propcan als moderne Full-Stack-Webanwendung konzipiert und entwickelt, mit starkem Fokus auf Benutzerfreundlichkeit und langfristige Wartbarkeit.</p><p>Wichtige Aspekte der Losung umfassten:</p><ul><li>Ubersichtliche, intuitive Benutzeroberflache mit Fokus auf Immobilienvergleich und -erkundung</li><li>Kartengesteuerte Sucherfahrung zur geografischen Darstellung von Insights</li><li>Normalisierte Datenmodelle zur Unterstutzung historischer Preise, Trends und zukunftiger Analysen</li><li>Hochleistungs-Backend-APIs, optimiert fur leseintensive Arbeitslasten</li><li>Skalierbare Architektur, die das inkrementelle Hinzufugen neuer Regionen, Datensatze und Funktionen ermoglicht</li></ul><p>Die Plattform wurde mit einem modernen JavaScript-Stack entwickelt, der schnelle Iteration bei gleichzeitiger produktionsreifer Zuverlassigkeit ermoglicht.</p><h2>Ergebnis</h2><p>Propcan wurde als kostenlose, datenreiche Immobilienplattform gestartet, die aussagekraftige Insights liefert, ohne die Nutzer zu uberfordern. Das endgultige System:</p><ul><li>Verbesserte den Zugang zu Immobilienmarktdaten</li><li>Ermoglichte schnellere und fundiertere Immobilienvergleiche</li><li>Schuf eine solide technische Grundlage fur zukunftige Monetarisierung und Funktionserweiterung</li><li>Positionierte das Produkt als glaubwurdige PropTech-Plattform im kanadischen Markt</li></ul><p>Die Architektur- und Designentscheidungen stellen sicher, dass sich Propcan zusammen mit sich andernden Marktanforderungen, regulatorischen Erwagungen und Datenverfugbarkeit weiterentwickeln kann.</p>"
       },
       "real-estate-investment-app": {
-        "title": "Property Pros: Immobilien-Investment-App"
+        "title": "Property Pros: Immobilien-Investment-App",
+        "excerpt": "Immobilien-Investment-App entwickelt, die Portfolio-Tracking, Performance-Einblicke und sicheren Dokumentenzugriff zentralisiert."
       },
       "sigxa-medical-scribe": {
-        "title": "SigXA: KI-Plattform fur medizinische Dokumentation"
+        "title": "SigXA: KI-Plattform fur medizinische Dokumentation",
+        "excerpt": "KI-gestutzte medizinische Schreibplattform entwickelt, die Arzt-Patienten-Gesprache in strukturierte klinische Notizen umwandelt."
       },
       "smartvet-medical-translation": {
-        "title": "SmartVet: Ubersetzungs-Engine fur Veterinarberichte"
+        "title": "SmartVet: Ubersetzungs-Engine fur Veterinarberichte",
+        "excerpt": "Veterinar-Berichtsubersetzungstool entwickelt, das die Interpretation vereinfacht und die Kundenkommunikation verbessert."
       }
     },
     "domains": {

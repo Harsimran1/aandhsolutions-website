@@ -23,8 +23,11 @@ imageAlt: "Patient-centric health record platform and secure sharing flow"
 gallery:
   - "/case-studies/data4life-1.png"
 videoUrl: "https://www.youtube.com/watch?v=TSSjB0KmftU"
-relatedServices: []
-relatedDomains: []
+relatedServices:
+  - "web-app-development"
+  - "cloud-solutions-integration"
+relatedDomains:
+  - "healthcare"
 ---
 
 ## Project Overview

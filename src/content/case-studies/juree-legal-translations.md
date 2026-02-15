@@ -24,8 +24,11 @@ gallery:
   - "/case-studies/juree-2.png"
   - "/case-studies/juree-3.png"
   - "/case-studies/juree-4.png"
-relatedServices: []
-relatedDomains: []
+relatedServices:
+  - "ai-integrations-automation"
+  - "web-app-development"
+relatedDomains:
+  - "legal"
 ---
 
 ## Project Overview

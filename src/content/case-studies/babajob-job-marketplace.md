@@ -21,8 +21,11 @@ image: "/case-studies/no-image-available.png"
 imageAlt: "Babajob job marketplace screens and employer workflows"
 gallery:
   - "/case-studies/no-image-available.png"
-relatedServices: []
-relatedDomains: []
+relatedServices:
+  - "web-app-development"
+  - "mobile-app-development"
+relatedDomains:
+  - "ecommerce"
 ---
 
 ## Project Overview

@@ -32,8 +32,11 @@ gallery:
   - "/case-studies/mycloudsync-9.png"
   - "/case-studies/mycloudsync-10.png"
 videoUrl: "https://youtu.be/A-2WxUaaNvw"
-relatedServices: []
-relatedDomains: []
+relatedServices:
+  - "web-app-development"
+  - "data-analytics-visualization"
+relatedDomains:
+  - "healthcare"
 ---
 
 ## Project Overview

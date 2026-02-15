@@ -44,11 +44,10 @@ results:
     position: "Head of Marketing"
     company: "Publishing Solutions Inc"
 relatedServices:
-  - "AI Integrations & Automation"
-  - "Web App Development"
+  - "ai-integrations-automation"
+  - "web-app-development"
 relatedDomains:
-  - "Publishing"
-  - "Marketing"
+  - "ecommerce"
 ---
 
 ## Project Overview

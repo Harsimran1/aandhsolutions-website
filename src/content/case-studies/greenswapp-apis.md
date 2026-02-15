@@ -33,8 +33,13 @@ gallery:
   - "/case-studies/greenswapp-9.png"
   - "/case-studies/greenswapp-10.png"
 videoUrl: "https://youtu.be/yH2jzuff9Mg"
-relatedServices: []
-relatedDomains: []
+relatedServices:
+  - "web-app-development"
+  - "cloud-solutions-integration"
+  - "data-analytics-visualization"
+relatedDomains:
+  - "ecommerce"
+  - "manufacturing"
 ---
 
 ## Project Overview

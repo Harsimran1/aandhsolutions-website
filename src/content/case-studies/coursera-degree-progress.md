@@ -30,8 +30,11 @@ gallery:
   - "/case-studies/coursera-9.png"
   - "/case-studies/coursera-10.png"
 videoUrl: "https://youtu.be/3Omv3rCbBUw"
-relatedServices: []
-relatedDomains: []
+relatedServices:
+  - "web-app-development"
+  - "data-analytics-visualization"
+relatedDomains:
+  - "education"
 ---
 
 ## Project Overview

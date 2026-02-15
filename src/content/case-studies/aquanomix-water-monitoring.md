@@ -30,8 +30,12 @@ imageAlt: "Aquanomix monitoring dashboard and system controls"
 gallery:
   - "/case-studies/aquanomix-1.png"
 
-relatedServices: []
-relatedDomains: []
+relatedServices:
+  - "web-app-development"
+  - "cloud-solutions-integration"
+  - "data-analytics-visualization"
+relatedDomains:
+  - "manufacturing"
 ---
 
 ## Project Overview

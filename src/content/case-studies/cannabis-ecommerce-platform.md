@@ -47,13 +47,12 @@ results:
     position: "VP of Operations"
     company: "Moodiday.com"
 relatedServices:
-  - "Web App Development"
-  - "Data Analytics & Visualization"
-  - "Cloud Solutions & Integration"
+  - "web-app-development"
+  - "data-analytics-visualization"
+  - "cloud-solutions-integration"
 relatedDomains:
-  - "E-commerce"
-  - "Healthcare"
-  - "Retail"
+  - "cannabis"
+  - "ecommerce"
 ---
 
 ## Project Overview

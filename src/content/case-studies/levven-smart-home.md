@@ -25,8 +25,11 @@ image: "/case-studies/levven-1.png"
 imageAlt: "Levven smart home app and device control screens"
 gallery:
   - "/case-studies/levven-1.png"
-relatedServices: []
-relatedDomains: []
+relatedServices:
+  - "mobile-app-development"
+  - "cloud-solutions-integration"
+relatedDomains:
+  - "manufacturing"
 ---
 
 ## Project Overview

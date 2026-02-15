@@ -44,11 +44,11 @@ results:
     position: "Owner, SGS Coverage"
     company: "SGS Coverage"
 relatedServices:
-  - "Web App Development"
-  - "API Integration"
+  - "web-app-development"
+  - "cloud-solutions-integration"
 relatedDomains:
-  - "Finance"
-  - "Insurance"
+  - "insurance"
+  - "finance"
 ---
 
 ## Project Overview
