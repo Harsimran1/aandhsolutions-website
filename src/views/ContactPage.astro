@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import ContactForm from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import HeroSection from '../components/HeroSection.astro';
+import { resolveLocale } from '../lib/i18n';
+import { getPageCopy } from '../i18n/page-copy';
+
+const locale = resolveLocale(Astro.currentLocale, Astro.url.pathname);
+const copy = getPageCopy(locale);
+---
+
+<Layout title={copy.contact.title}>
+  <Header />
+  <main>
+    <HeroSection
+      title={copy.contact.heroTitle}
+      description={copy.contact.heroDescription}
+    />
+    <ContactForm />
+  </main>
+  <Footer />
+</Layout>
