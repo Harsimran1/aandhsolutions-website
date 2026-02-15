@@ -43,7 +43,7 @@ benefits:
   - "Competitive advantage through superior client service"
 relatedServices:
   - "Web App Development"
-  - "Document Automation"
+  - "AI Integrations & Automation"
   - "Cloud Solutions & Integration"
   - "Data Analytics & Visualization"
 regulations:
