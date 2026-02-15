@@ -42,8 +42,34 @@ const serviceSlugByTitle = new Map(
   allServices.map((service) => [service.data.title.trim().toLowerCase(), service.slug]),
 );
 
+const localizedServiceCopy = copy.content?.services ?? {};
+
+function normalizeServiceLabel(value: string): string {
+  return value
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .trim()
+    .replace(/\s*&\s*/g, ' and ')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
+}
+
+for (const service of allServices) {
+  const labels = [service.data.title, service.slug.replace(/-/g, ' ')];
+  const localizedTitle = localizedServiceCopy[service.slug]?.title;
+  if (localizedTitle) labels.push(localizedTitle);
+
+  for (const label of labels) {
+    const normalized = normalizeServiceLabel(label);
+    if (normalized && !serviceSlugByTitle.has(normalized)) {
+      serviceSlugByTitle.set(normalized, service.slug);
+    }
+  }
+}
+
 function resolveServiceSlug(serviceName: string): string {
-  const normalized = serviceName.trim().toLowerCase();
+  const normalized = normalizeServiceLabel(serviceName);
   const byTitle = serviceSlugByTitle.get(normalized);
   if (byTitle) return byTitle;
 

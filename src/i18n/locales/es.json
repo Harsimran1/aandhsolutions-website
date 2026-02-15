@@ -270,111 +270,479 @@
         "excerpt": "Plataformas especializadas para cumplimiento, operaciones y crecimiento en mercados altamente regulados.",
         "description": "Soluciones de software para empresas de cannabis y canamo con foco en cumplimiento, trazabilidad y eficiencia operativa.",
         "challenges": [
-          "Cumplimiento complejo en multiples jurisdicciones",
-          "Trazabilidad completa seed-to-sale",
-          "Limitaciones de banca y pagos",
-          "Complejidad fiscal y de reportes",
-          "Gestion de inventario entre cultivo, procesamiento y retail"
+          "Reglas distintas por jurisdiccion",
+          "Trazabilidad seed-to-sale completa",
+          "Complejidad fiscal y de pagos",
+          "Sincronizacion entre produccion y retail",
+          "Auditoria continua sin fricciones"
         ],
         "solutions": [
-          "Gestion de cumplimiento con reportes automatizados",
-          "Seguimiento seed-to-sale de extremo a extremo",
-          "Herramientas de pagos y gestion de efectivo",
-          "Calculo fiscal y reportes automatizados",
-          "Gestion de inventario integrada"
+          "Flujos de cumplimiento automatizados",
+          "Tracking seed-to-sale con integraciones regulatorias",
+          "Plataformas de inventario y punto de venta",
+          "Reporting fiscal y financiero estructurado",
+          "Dashboards operativos multi-sede"
         ],
         "benefits": [
-          "Menos riesgos e incumplimientos",
-          "Operaciones mas eficientes",
-          "Mayor precision de inventario",
-          "Cumplimiento fiscal simplificado",
-          "Procesos escalables para crecer"
+          "Menor riesgo regulatorio",
+          "Auditorias mas rapidas y confiables",
+          "Mayor eficiencia operativa",
+          "Mejor visibilidad de stock y margen",
+          "Base escalable para nuevos mercados"
         ],
         "regulations": [
-          "Regulaciones estatales de cannabis",
-          "Requisitos ATF",
-          "Normativa FDA para productos de canamo y CBD",
-          "Requisitos de cumplimiento DEA",
-          "Normas de impuestos y tasas especiales"
+          "State Cannabis Regulations",
+          "ATF",
+          "FDA hemp/CBD",
+          "DEA compliance",
+          "Reglas fiscales y excise tax"
         ],
-        "bodyHtml": "<h2>Tecnologia cannabis en un entorno regulatorio complejo</h2><p>El mercado del cannabis crece rapidamente y las exigencias regulatorias tambien. Disenamos sistemas que priorizan el cumplimiento y mejoran la eficiencia operativa.</p><h3>Nuestra experiencia sectorial</h3><p>Trabajamos con empresas de cultivo, manufactura, laboratorios, distribucion y retail. Nuestras plataformas conectan cumplimiento normativo con rendimiento del negocio.</p><h2>Retos que resolvemos</h2><h3>Cumplimiento multi-jurisdiccion</h3><p>Las reglas cambian segun la region. Construimos arquitecturas flexibles con trazabilidad y auditoria completas.</p><h3>Trazabilidad seed-to-sale</h3><p>Implementamos flujos de seguimiento de punta a punta con integraciones a sistemas estatales.</p><h3>Pagos e impuestos</h3><p>Nuestras soluciones cubren gestion de efectivo, analitica fiscal y reporting confiable.</p><h2>Como empezamos</h2><h3>Evaluacion de cumplimiento</h3><p>Analizamos obligaciones regulatorias, madurez actual y cuellos de botella operativos.</p><h3>Arquitectura de solucion</h3><p>Luego definimos una arquitectura escalable enfocada en cumplimiento y crecimiento.</p><h3>Implementacion y capacitacion</h3><p>Implementamos la solucion y capacitamos a tu equipo para operar de forma estable y segura.</p>"
+        "relatedServices": [
+          "Desarrollo de aplicaciones web",
+          "Integraciones de IA y automatizacion",
+          "Soluciones cloud e integracion"
+        ],
+        "bodyHtml": "<h2>Transformar el sector Cannabis con tecnologia</h2><p>Las empresas de cannabis y canamo operan en un entorno regulatorio cambiante que exige trazabilidad, control y ejecucion rapida.</p><h3>Nuestra experiencia en la industria</h3><p>Combinamos estrategia de producto, ejecucion tecnica y gestion por KPIs para crear plataformas confiables, escalables y faciles de operar.</p><h2>Retos que resolvemos</h2><h3>Reglas distintas por jurisdiccion</h3><p>Estandarizamos procesos y datos para reducir friccion operativa y mejorar la trazabilidad en puntos criticos del negocio.</p><h3>Trazabilidad seed-to-sale completa</h3><p>Disenamos integraciones estables y modelos de informacion consistentes para eliminar cuellos de botella entre sistemas.</p><h3>Complejidad fiscal y de pagos</h3><p>Implementamos monitoreo, alertas y gobierno tecnico para mantener continuidad operativa incluso en escenarios de alta demanda.</p><h2>Soluciones que entregamos</h2><p>Nuestras plataformas estan orientadas a rendimiento, cumplimiento y crecimiento sostenible:</p><ul><li>Flujos de cumplimiento automatizados</li><li>Tracking seed-to-sale con integraciones regulatorias</li><li>Plataformas de inventario y punto de venta</li><li>Reporting fiscal y financiero estructurado</li><li>Dashboards operativos multi-sede</li></ul><h2>Arquitectura y stack tecnologico</h2><p>Node.js, React, PostgreSQL, integraciones event-driven, logs de auditoria seguros y control de acceso por roles. Priorizamos componentes modulares, APIs bien definidas y despliegues confiables para acelerar entrega sin comprometer estabilidad.</p><h2>Cumplimiento y regulacion</h2><p>El cumplimiento se incorpora desde el diseno. Marcos comunes en este sector: State Cannabis Regulations, ATF, FDA hemp/CBD, DEA compliance, Reglas fiscales y excise tax. Combinamos controles tecnicos con evidencia auditable para equipos de negocio y compliance.</p><h2>Resultados e impacto de negocio</h2><p>En implementaciones similares, nuestros clientes suelen lograr:</p><ul><li>Menor riesgo regulatorio</li><li>Auditorias mas rapidas y confiables</li><li>Mayor eficiencia operativa</li><li>Mejor visibilidad de stock y margen</li><li>Base escalable para nuevos mercados</li></ul><h2>Como empezamos</h2><h3>Diagnostico inicial</h3><p>Evaluamos procesos, arquitectura, calidad de datos y capacidades del equipo para definir una hoja de ruta priorizada por impacto y riesgo.</p><h3>Implementacion por fases</h3><p>Desplegamos por iteraciones medibles, con transferencia de conocimiento y acompanamiento continuo para asegurar adopcion sostenida.</p><h2>Por que A&H Solutions</h2><p>Combinamos rigor de ingenieria con enfoque pragmatico de negocio para entregar soluciones que funcionan en produccion y escalan con tu operacion.</p>"
       },
       "ecommerce": {
         "industry": "Comercio electronico",
         "title": "Soluciones tecnologicas para e-commerce y retail",
         "excerpt": "Soluciones e-commerce modernas para aumentar ventas y optimizar operaciones.",
         "description": "Soluciones e-commerce modernas para aumentar ventas y optimizar operaciones.",
-        "bodyHtml": "<h2>Soluciones tecnologicas para e-commerce y retail</h2><p>Soluciones e-commerce modernas para aumentar ventas y optimizar operaciones.</p><h3>Enfoque por industria</h3><p>Disenamos software a medida para Comercio electronico equilibrando cumplimiento, rendimiento y escalabilidad.</p><h3>Nuestro enfoque</h3><p>Desde discovery hasta implementacion, entregamos plataformas solidas que simplifican operaciones y generan resultados medibles.</p>"
+        "challenges": [
+          "Inventario distribuido en multiples canales",
+          "Friccion en checkout y pagos",
+          "Picos de demanda en campanas",
+          "Datos de marketing no unificados",
+          "Exigencia alta en mobile performance"
+        ],
+        "solutions": [
+          "Arquitectura headless basada en APIs",
+          "Orquestacion de pedidos e inventario",
+          "Optimizacion checkout y recovery de pago",
+          "Dashboards de conversion y retencion",
+          "Infraestructura de testing continuo"
+        ],
+        "benefits": [
+          "Mayor conversion y ticket promedio",
+          "Menos abandono de carrito",
+          "Releases mas rapidos",
+          "Decisiones con mejor soporte de datos",
+          "Escalabilidad internacional"
+        ],
+        "regulations": [
+          "PCI DSS",
+          "GDPR",
+          "WCAG",
+          "Requisitos fiscales",
+          "Consent management"
+        ],
+        "relatedServices": [
+          "Desarrollo de aplicaciones web",
+          "Analitica de datos y visualizacion",
+          "Soluciones cloud e integracion"
+        ],
+        "bodyHtml": "<h2>Transformar el sector Comercio electronico con tecnologia</h2><p>Los equipos de e-commerce necesitan subir conversion, reducir costos y mantener una experiencia consistente en todos los canales.</p><h3>Nuestra experiencia en la industria</h3><p>Combinamos estrategia de producto, ejecucion tecnica y gestion por KPIs para crear plataformas confiables, escalables y faciles de operar.</p><h2>Retos que resolvemos</h2><h3>Inventario distribuido en multiples canales</h3><p>Estandarizamos procesos y datos para reducir friccion operativa y mejorar la trazabilidad en puntos criticos del negocio.</p><h3>Friccion en checkout y pagos</h3><p>Disenamos integraciones estables y modelos de informacion consistentes para eliminar cuellos de botella entre sistemas.</p><h3>Picos de demanda en campanas</h3><p>Implementamos monitoreo, alertas y gobierno tecnico para mantener continuidad operativa incluso en escenarios de alta demanda.</p><h2>Soluciones que entregamos</h2><p>Nuestras plataformas estan orientadas a rendimiento, cumplimiento y crecimiento sostenible:</p><ul><li>Arquitectura headless basada en APIs</li><li>Orquestacion de pedidos e inventario</li><li>Optimizacion checkout y recovery de pago</li><li>Dashboards de conversion y retencion</li><li>Infraestructura de testing continuo</li></ul><h2>Arquitectura y stack tecnologico</h2><p>Next.js, Node.js, busqueda en tiempo real, orquestacion de pedidos por colas y optimizacion CDN. Priorizamos componentes modulares, APIs bien definidas y despliegues confiables para acelerar entrega sin comprometer estabilidad.</p><h2>Cumplimiento y regulacion</h2><p>El cumplimiento se incorpora desde el diseno. Marcos comunes en este sector: PCI DSS, GDPR, WCAG, Requisitos fiscales, Consent management. Combinamos controles tecnicos con evidencia auditable para equipos de negocio y compliance.</p><h2>Resultados e impacto de negocio</h2><p>En implementaciones similares, nuestros clientes suelen lograr:</p><ul><li>Mayor conversion y ticket promedio</li><li>Menos abandono de carrito</li><li>Releases mas rapidos</li><li>Decisiones con mejor soporte de datos</li><li>Escalabilidad internacional</li></ul><h2>Como empezamos</h2><h3>Diagnostico inicial</h3><p>Evaluamos procesos, arquitectura, calidad de datos y capacidades del equipo para definir una hoja de ruta priorizada por impacto y riesgo.</p><h3>Implementacion por fases</h3><p>Desplegamos por iteraciones medibles, con transferencia de conocimiento y acompanamiento continuo para asegurar adopcion sostenida.</p><h2>Por que A&H Solutions</h2><p>Combinamos rigor de ingenieria con enfoque pragmatico de negocio para entregar soluciones que funcionan en produccion y escalan con tu operacion.</p>"
       },
       "education": {
         "industry": "Educacion",
         "title": "Soluciones tecnologicas para educacion",
         "excerpt": "Soluciones edtech para mejorar aprendizaje y administracion educativa.",
         "description": "Soluciones edtech para mejorar aprendizaje y administracion educativa.",
-        "bodyHtml": "<h2>Soluciones tecnologicas para educacion</h2><p>Soluciones edtech para mejorar aprendizaje y administracion educativa.</p><h3>Enfoque por industria</h3><p>Disenamos software a medida para Educacion equilibrando cumplimiento, rendimiento y escalabilidad.</p><h3>Nuestro enfoque</h3><p>Desde discovery hasta implementacion, entregamos plataformas solidas que simplifican operaciones y generan resultados medibles.</p>"
+        "challenges": [
+          "Necesidades de aprendizaje heterogeneas",
+          "Baja participacion en trayectorias largas",
+          "Sobrecarga administrativa",
+          "Privacidad de datos estudiantiles",
+          "Accesibilidad para perfiles diversos"
+        ],
+        "solutions": [
+          "LMS con rutas personalizadas",
+          "Integraciones SIS y herramientas docentes",
+          "Analytics de progreso y riesgo de abandono",
+          "Automatizacion de evaluacion y certificacion",
+          "Experiencias mobile learning"
+        ],
+        "benefits": [
+          "Mejores tasas de finalizacion",
+          "Menor carga administrativa",
+          "Decision mas rapida con KPIs academicos",
+          "Mejor experiencia para docentes y estudiantes",
+          "Escalabilidad de programas"
+        ],
+        "regulations": [
+          "FERPA",
+          "COPPA",
+          "WCAG",
+          "Privacy regulations",
+          "Acreditacion y evaluacion"
+        ],
+        "relatedServices": [
+          "Desarrollo de aplicaciones web",
+          "Desarrollo de aplicaciones moviles",
+          "Analitica de datos y visualizacion"
+        ],
+        "bodyHtml": "<h2>Transformar el sector Educacion con tecnologia</h2><p>Las organizaciones educativas necesitan plataformas que mejoren aprendizaje y eficiencia operativa al mismo tiempo.</p><h3>Nuestra experiencia en la industria</h3><p>Combinamos estrategia de producto, ejecucion tecnica y gestion por KPIs para crear plataformas confiables, escalables y faciles de operar.</p><h2>Retos que resolvemos</h2><h3>Necesidades de aprendizaje heterogeneas</h3><p>Estandarizamos procesos y datos para reducir friccion operativa y mejorar la trazabilidad en puntos criticos del negocio.</p><h3>Baja participacion en trayectorias largas</h3><p>Disenamos integraciones estables y modelos de informacion consistentes para eliminar cuellos de botella entre sistemas.</p><h3>Sobrecarga administrativa</h3><p>Implementamos monitoreo, alertas y gobierno tecnico para mantener continuidad operativa incluso en escenarios de alta demanda.</p><h2>Soluciones que entregamos</h2><p>Nuestras plataformas estan orientadas a rendimiento, cumplimiento y crecimiento sostenible:</p><ul><li>LMS con rutas personalizadas</li><li>Integraciones SIS y herramientas docentes</li><li>Analytics de progreso y riesgo de abandono</li><li>Automatizacion de evaluacion y certificacion</li><li>Experiencias mobile learning</li></ul><h2>Arquitectura y stack tecnologico</h2><p>Plataformas web modernas, autenticacion segura, reporting academico e integraciones SIS/CRM. Priorizamos componentes modulares, APIs bien definidas y despliegues confiables para acelerar entrega sin comprometer estabilidad.</p><h2>Cumplimiento y regulacion</h2><p>El cumplimiento se incorpora desde el diseno. Marcos comunes en este sector: FERPA, COPPA, WCAG, Privacy regulations, Acreditacion y evaluacion. Combinamos controles tecnicos con evidencia auditable para equipos de negocio y compliance.</p><h2>Resultados e impacto de negocio</h2><p>En implementaciones similares, nuestros clientes suelen lograr:</p><ul><li>Mejores tasas de finalizacion</li><li>Menor carga administrativa</li><li>Decision mas rapida con KPIs academicos</li><li>Mejor experiencia para docentes y estudiantes</li><li>Escalabilidad de programas</li></ul><h2>Como empezamos</h2><h3>Diagnostico inicial</h3><p>Evaluamos procesos, arquitectura, calidad de datos y capacidades del equipo para definir una hoja de ruta priorizada por impacto y riesgo.</p><h3>Implementacion por fases</h3><p>Desplegamos por iteraciones medibles, con transferencia de conocimiento y acompanamiento continuo para asegurar adopcion sostenida.</p><h2>Por que A&H Solutions</h2><p>Combinamos rigor de ingenieria con enfoque pragmatico de negocio para entregar soluciones que funcionan en produccion y escalan con tu operacion.</p>"
       },
       "finance": {
         "industry": "Finanzas",
         "title": "Soluciones tecnologicas para servicios financieros",
         "excerpt": "Soluciones fintech seguras con cumplimiento y mejor experiencia del cliente.",
         "description": "Soluciones fintech seguras con cumplimiento y mejor experiencia del cliente.",
-        "bodyHtml": "<h2>Soluciones tecnologicas para servicios financieros</h2><p>Soluciones fintech seguras con cumplimiento y mejor experiencia del cliente.</p><h3>Enfoque por industria</h3><p>Disenamos software a medida para Finanzas equilibrando cumplimiento, rendimiento y escalabilidad.</p><h3>Nuestro enfoque</h3><p>Desde discovery hasta implementacion, entregamos plataformas solidas que simplifican operaciones y generan resultados medibles.</p>"
+        "challenges": [
+          "Cumplimiento multi-jurisdiccion",
+          "Fraude y riesgo de ciberseguridad",
+          "Legacy systems costosos de integrar",
+          "Alta exigencia de disponibilidad",
+          "Trazabilidad para auditoria"
+        ],
+        "solutions": [
+          "Plataformas de cuentas y pagos",
+          "Flujos de credito y underwriting",
+          "Reporting de riesgo y cumplimiento",
+          "Procesamiento transaccional event-driven",
+          "Portales de cliente con identidad segura"
+        ],
+        "benefits": [
+          "Time-to-market mas rapido",
+          "Menor riesgo operativo",
+          "Mayor eficiencia back-office",
+          "Mejor experiencia digital de cliente",
+          "Audit trails solidos"
+        ],
+        "regulations": [
+          "KYC/AML",
+          "PCI DSS",
+          "PSD2/Open Banking",
+          "SOX controls",
+          "GDPR"
+        ],
+        "relatedServices": [
+          "Soluciones cloud e integracion",
+          "Consultoria y asesoria TI",
+          "Integraciones de IA y automatizacion"
+        ],
+        "bodyHtml": "<h2>Transformar el sector Finanzas con tecnologia</h2><p>Las empresas financieras requieren plataformas seguras, compatibles y de alto rendimiento para operaciones criticas.</p><h3>Nuestra experiencia en la industria</h3><p>Combinamos estrategia de producto, ejecucion tecnica y gestion por KPIs para crear plataformas confiables, escalables y faciles de operar.</p><h2>Retos que resolvemos</h2><h3>Cumplimiento multi-jurisdiccion</h3><p>Estandarizamos procesos y datos para reducir friccion operativa y mejorar la trazabilidad en puntos criticos del negocio.</p><h3>Fraude y riesgo de ciberseguridad</h3><p>Disenamos integraciones estables y modelos de informacion consistentes para eliminar cuellos de botella entre sistemas.</p><h3>Legacy systems costosos de integrar</h3><p>Implementamos monitoreo, alertas y gobierno tecnico para mantener continuidad operativa incluso en escenarios de alta demanda.</p><h2>Soluciones que entregamos</h2><p>Nuestras plataformas estan orientadas a rendimiento, cumplimiento y crecimiento sostenible:</p><ul><li>Plataformas de cuentas y pagos</li><li>Flujos de credito y underwriting</li><li>Reporting de riesgo y cumplimiento</li><li>Procesamiento transaccional event-driven</li><li>Portales de cliente con identidad segura</li></ul><h2>Arquitectura y stack tecnologico</h2><p>API gateways seguros, event streaming, almacenamiento cifrado, IAM y monitoreo continuo. Priorizamos componentes modulares, APIs bien definidas y despliegues confiables para acelerar entrega sin comprometer estabilidad.</p><h2>Cumplimiento y regulacion</h2><p>El cumplimiento se incorpora desde el diseno. Marcos comunes en este sector: KYC/AML, PCI DSS, PSD2/Open Banking, SOX controls, GDPR. Combinamos controles tecnicos con evidencia auditable para equipos de negocio y compliance.</p><h2>Resultados e impacto de negocio</h2><p>En implementaciones similares, nuestros clientes suelen lograr:</p><ul><li>Time-to-market mas rapido</li><li>Menor riesgo operativo</li><li>Mayor eficiencia back-office</li><li>Mejor experiencia digital de cliente</li><li>Audit trails solidos</li></ul><h2>Como empezamos</h2><h3>Diagnostico inicial</h3><p>Evaluamos procesos, arquitectura, calidad de datos y capacidades del equipo para definir una hoja de ruta priorizada por impacto y riesgo.</p><h3>Implementacion por fases</h3><p>Desplegamos por iteraciones medibles, con transferencia de conocimiento y acompanamiento continuo para asegurar adopcion sostenida.</p><h2>Por que A&H Solutions</h2><p>Combinamos rigor de ingenieria con enfoque pragmatico de negocio para entregar soluciones que funcionan en produccion y escalan con tu operacion.</p>"
       },
       "healthcare": {
         "industry": "Salud",
         "title": "Soluciones de software para salud y medicina",
         "excerpt": "Soluciones health-tech seguras y compatibles con requisitos regulatorios.",
         "description": "Soluciones health-tech seguras y compatibles con requisitos regulatorios.",
-        "bodyHtml": "<h2>Soluciones de software para salud y medicina</h2><p>Soluciones health-tech seguras y compatibles con requisitos regulatorios.</p><h3>Enfoque por industria</h3><p>Disenamos software a medida para Salud equilibrando cumplimiento, rendimiento y escalabilidad.</p><h3>Nuestro enfoque</h3><p>Desde discovery hasta implementacion, entregamos plataformas solidas que simplifican operaciones y generan resultados medibles.</p>"
+        "challenges": [
+          "Proteccion de datos clinicos sensibles",
+          "Interoperabilidad entre sistemas clinicos",
+          "Flujos de paciente fragmentados",
+          "Poca visibilidad operativa en tiempo real",
+          "Alta exigencia de disponibilidad"
+        ],
+        "solutions": [
+          "Portales de paciente y telemedicina",
+          "Integraciones HL7/FHIR",
+          "Automatizacion de admision y documentacion",
+          "Dashboards de ocupacion y outcomes",
+          "Modelos de acceso y consentimiento"
+        ],
+        "benefits": [
+          "Mejor experiencia y continuidad asistencial",
+          "Menos friccion administrativa",
+          "Mayor calidad de datos",
+          "Mejor capacidad de decision clinica",
+          "Cumplimiento reforzado"
+        ],
+        "regulations": [
+          "HIPAA",
+          "FHIR/HL7",
+          "FDA guidance",
+          "GDPR",
+          "Security audit controls"
+        ],
+        "relatedServices": [
+          "Desarrollo de aplicaciones web",
+          "Soluciones cloud e integracion",
+          "Integraciones de IA y automatizacion"
+        ],
+        "bodyHtml": "<h2>Transformar el sector Salud con tecnologia</h2><p>Las organizaciones de salud necesitan sistemas interoperables, seguros y orientados a mejores resultados clinicos.</p><h3>Nuestra experiencia en la industria</h3><p>Combinamos estrategia de producto, ejecucion tecnica y gestion por KPIs para crear plataformas confiables, escalables y faciles de operar.</p><h2>Retos que resolvemos</h2><h3>Proteccion de datos clinicos sensibles</h3><p>Estandarizamos procesos y datos para reducir friccion operativa y mejorar la trazabilidad en puntos criticos del negocio.</p><h3>Interoperabilidad entre sistemas clinicos</h3><p>Disenamos integraciones estables y modelos de informacion consistentes para eliminar cuellos de botella entre sistemas.</p><h3>Flujos de paciente fragmentados</h3><p>Implementamos monitoreo, alertas y gobierno tecnico para mantener continuidad operativa incluso en escenarios de alta demanda.</p><h2>Soluciones que entregamos</h2><p>Nuestras plataformas estan orientadas a rendimiento, cumplimiento y crecimiento sostenible:</p><ul><li>Portales de paciente y telemedicina</li><li>Integraciones HL7/FHIR</li><li>Automatizacion de admision y documentacion</li><li>Dashboards de ocupacion y outcomes</li><li>Modelos de acceso y consentimiento</li></ul><h2>Arquitectura y stack tecnologico</h2><p>Arquitectura orientada a seguridad con almacenamiento cifrado, interoperabilidad API y permisos por rol. Priorizamos componentes modulares, APIs bien definidas y despliegues confiables para acelerar entrega sin comprometer estabilidad.</p><h2>Cumplimiento y regulacion</h2><p>El cumplimiento se incorpora desde el diseno. Marcos comunes en este sector: HIPAA, FHIR/HL7, FDA guidance, GDPR, Security audit controls. Combinamos controles tecnicos con evidencia auditable para equipos de negocio y compliance.</p><h2>Resultados e impacto de negocio</h2><p>En implementaciones similares, nuestros clientes suelen lograr:</p><ul><li>Mejor experiencia y continuidad asistencial</li><li>Menos friccion administrativa</li><li>Mayor calidad de datos</li><li>Mejor capacidad de decision clinica</li><li>Cumplimiento reforzado</li></ul><h2>Como empezamos</h2><h3>Diagnostico inicial</h3><p>Evaluamos procesos, arquitectura, calidad de datos y capacidades del equipo para definir una hoja de ruta priorizada por impacto y riesgo.</p><h3>Implementacion por fases</h3><p>Desplegamos por iteraciones medibles, con transferencia de conocimiento y acompanamiento continuo para asegurar adopcion sostenida.</p><h2>Por que A&H Solutions</h2><p>Combinamos rigor de ingenieria con enfoque pragmatico de negocio para entregar soluciones que funcionan en produccion y escalan con tu operacion.</p>"
       },
       "hospitality": {
         "industry": "Hosteleria",
         "title": "Soluciones tecnologicas para hosteleria y turismo",
         "excerpt": "Soluciones digitales para hoteles, turismo y operaciones eficientes.",
         "description": "Soluciones digitales para hoteles, turismo y operaciones eficientes.",
-        "bodyHtml": "<h2>Soluciones tecnologicas para hosteleria y turismo</h2><p>Soluciones digitales para hoteles, turismo y operaciones eficientes.</p><h3>Enfoque por industria</h3><p>Disenamos software a medida para Hosteleria equilibrando cumplimiento, rendimiento y escalabilidad.</p><h3>Nuestro enfoque</h3><p>Desde discovery hasta implementacion, entregamos plataformas solidas que simplifican operaciones y generan resultados medibles.</p>"
+        "challenges": [
+          "Reservas y canales desconectados",
+          "Experiencia del huesped inconsistente",
+          "Dificultad en revenue forecasting",
+          "Operaciones manuales en terreno",
+          "Baja visibilidad multi-propiedad"
+        ],
+        "solutions": [
+          "Integraciones PMS y channel management",
+          "Portales guest para check-in y upsell",
+          "Dashboards de revenue management",
+          "Automatizacion de operaciones hoteleras",
+          "CRM para fidelizacion y reactivacion"
+        ],
+        "benefits": [
+          "Mejor ocupacion y RevPAR",
+          "Servicio mas agil",
+          "Mayor venta directa",
+          "Mejor satisfaccion del huesped",
+          "Escala operativa multi-sede"
+        ],
+        "regulations": [
+          "PCI DSS",
+          "Privacy compliance",
+          "Normativa local de turismo",
+          "Accessibility standards",
+          "Security controls"
+        ],
+        "relatedServices": [
+          "Desarrollo de aplicaciones web",
+          "Desarrollo de aplicaciones moviles",
+          "Analitica de datos y visualizacion"
+        ],
+        "bodyHtml": "<h2>Transformar el sector Hosteleria con tecnologia</h2><p>Los negocios de hospitalidad deben sincronizar reservas, servicio y revenue en tiempo real.</p><h3>Nuestra experiencia en la industria</h3><p>Combinamos estrategia de producto, ejecucion tecnica y gestion por KPIs para crear plataformas confiables, escalables y faciles de operar.</p><h2>Retos que resolvemos</h2><h3>Reservas y canales desconectados</h3><p>Estandarizamos procesos y datos para reducir friccion operativa y mejorar la trazabilidad en puntos criticos del negocio.</p><h3>Experiencia del huesped inconsistente</h3><p>Disenamos integraciones estables y modelos de informacion consistentes para eliminar cuellos de botella entre sistemas.</p><h3>Dificultad en revenue forecasting</h3><p>Implementamos monitoreo, alertas y gobierno tecnico para mantener continuidad operativa incluso en escenarios de alta demanda.</p><h2>Soluciones que entregamos</h2><p>Nuestras plataformas estan orientadas a rendimiento, cumplimiento y crecimiento sostenible:</p><ul><li>Integraciones PMS y channel management</li><li>Portales guest para check-in y upsell</li><li>Dashboards de revenue management</li><li>Automatizacion de operaciones hoteleras</li><li>CRM para fidelizacion y reactivacion</li></ul><h2>Arquitectura y stack tecnologico</h2><p>Plataformas cloud-native, integraciones PMS/CRS, frontends moviles y BI para revenue y operaciones. Priorizamos componentes modulares, APIs bien definidas y despliegues confiables para acelerar entrega sin comprometer estabilidad.</p><h2>Cumplimiento y regulacion</h2><p>El cumplimiento se incorpora desde el diseno. Marcos comunes en este sector: PCI DSS, Privacy compliance, Normativa local de turismo, Accessibility standards, Security controls. Combinamos controles tecnicos con evidencia auditable para equipos de negocio y compliance.</p><h2>Resultados e impacto de negocio</h2><p>En implementaciones similares, nuestros clientes suelen lograr:</p><ul><li>Mejor ocupacion y RevPAR</li><li>Servicio mas agil</li><li>Mayor venta directa</li><li>Mejor satisfaccion del huesped</li><li>Escala operativa multi-sede</li></ul><h2>Como empezamos</h2><h3>Diagnostico inicial</h3><p>Evaluamos procesos, arquitectura, calidad de datos y capacidades del equipo para definir una hoja de ruta priorizada por impacto y riesgo.</p><h3>Implementacion por fases</h3><p>Desplegamos por iteraciones medibles, con transferencia de conocimiento y acompanamiento continuo para asegurar adopcion sostenida.</p><h2>Por que A&H Solutions</h2><p>Combinamos rigor de ingenieria con enfoque pragmatico de negocio para entregar soluciones que funcionan en produccion y escalan con tu operacion.</p>"
       },
       "insurance": {
         "industry": "Seguros",
         "title": "Soluciones tecnologicas para seguros y correduria",
         "excerpt": "Soluciones insurtech para suscripcion, polizas y atencion al cliente.",
         "description": "Soluciones insurtech para suscripcion, polizas y atencion al cliente.",
-        "bodyHtml": "<h2>Soluciones tecnologicas para seguros y correduria</h2><p>Soluciones insurtech para suscripcion, polizas y atencion al cliente.</p><h3>Enfoque por industria</h3><p>Disenamos software a medida para Seguros equilibrando cumplimiento, rendimiento y escalabilidad.</p><h3>Nuestro enfoque</h3><p>Desde discovery hasta implementacion, entregamos plataformas solidas que simplifican operaciones y generan resultados medibles.</p>"
+        "challenges": [
+          "Procesos manuales en cotizacion y poliza",
+          "Reporting regulatorio complejo",
+          "Legacy no integrado",
+          "Claims lentos y con friccion",
+          "Poca visibilidad de riesgo comercial"
+        ],
+        "solutions": [
+          "Motores de cotizacion y rating automatizados",
+          "Gestion de ciclo de vida de polizas",
+          "Plataformas de claims con SLA",
+          "Portales para brokers y clientes",
+          "Dashboards de cumplimiento y auditoria"
+        ],
+        "benefits": [
+          "Cotizaciones mas rapidas",
+          "Menos errores operativos",
+          "Mejor experiencia para cliente y canal",
+          "Mayor productividad de equipos",
+          "Plataforma escalable para nuevos productos"
+        ],
+        "regulations": [
+          "NAIC",
+          "State Insurance Rules",
+          "Retention and privacy rules",
+          "Financial reporting",
+          "Internal controls"
+        ],
+        "relatedServices": [
+          "Consultoria y asesoria TI",
+          "Desarrollo de aplicaciones web",
+          "Analitica de datos y visualizacion"
+        ],
+        "bodyHtml": "<h2>Transformar el sector Seguros con tecnologia</h2><p>Aseguradoras y brokers deben automatizar procesos sin comprometer cumplimiento ni experiencia del cliente.</p><h3>Nuestra experiencia en la industria</h3><p>Combinamos estrategia de producto, ejecucion tecnica y gestion por KPIs para crear plataformas confiables, escalables y faciles de operar.</p><h2>Retos que resolvemos</h2><h3>Procesos manuales en cotizacion y poliza</h3><p>Estandarizamos procesos y datos para reducir friccion operativa y mejorar la trazabilidad en puntos criticos del negocio.</p><h3>Reporting regulatorio complejo</h3><p>Disenamos integraciones estables y modelos de informacion consistentes para eliminar cuellos de botella entre sistemas.</p><h3>Legacy no integrado</h3><p>Implementamos monitoreo, alertas y gobierno tecnico para mantener continuidad operativa incluso en escenarios de alta demanda.</p><h2>Soluciones que entregamos</h2><p>Nuestras plataformas estan orientadas a rendimiento, cumplimiento y crecimiento sostenible:</p><ul><li>Motores de cotizacion y rating automatizados</li><li>Gestion de ciclo de vida de polizas</li><li>Plataformas de claims con SLA</li><li>Portales para brokers y clientes</li><li>Dashboards de cumplimiento y auditoria</li></ul><h2>Arquitectura y stack tecnologico</h2><p>Motores de reglas, APIs documentadas, portales role-based y pipelines de reporting de cumplimiento. Priorizamos componentes modulares, APIs bien definidas y despliegues confiables para acelerar entrega sin comprometer estabilidad.</p><h2>Cumplimiento y regulacion</h2><p>El cumplimiento se incorpora desde el diseno. Marcos comunes en este sector: NAIC, State Insurance Rules, Retention and privacy rules, Financial reporting, Internal controls. Combinamos controles tecnicos con evidencia auditable para equipos de negocio y compliance.</p><h2>Resultados e impacto de negocio</h2><p>En implementaciones similares, nuestros clientes suelen lograr:</p><ul><li>Cotizaciones mas rapidas</li><li>Menos errores operativos</li><li>Mejor experiencia para cliente y canal</li><li>Mayor productividad de equipos</li><li>Plataforma escalable para nuevos productos</li></ul><h2>Como empezamos</h2><h3>Diagnostico inicial</h3><p>Evaluamos procesos, arquitectura, calidad de datos y capacidades del equipo para definir una hoja de ruta priorizada por impacto y riesgo.</p><h3>Implementacion por fases</h3><p>Desplegamos por iteraciones medibles, con transferencia de conocimiento y acompanamiento continuo para asegurar adopcion sostenida.</p><h2>Por que A&H Solutions</h2><p>Combinamos rigor de ingenieria con enfoque pragmatico de negocio para entregar soluciones que funcionan en produccion y escalan con tu operacion.</p>"
       },
       "legal": {
         "industry": "Legal",
         "title": "Soluciones tecnologicas para servicios legales",
         "excerpt": "Soluciones legal-tech para cumplimiento, documentos y flujos seguros.",
         "description": "Soluciones legal-tech para cumplimiento, documentos y flujos seguros.",
-        "bodyHtml": "<h2>Soluciones tecnologicas para servicios legales</h2><p>Soluciones legal-tech para cumplimiento, documentos y flujos seguros.</p><h3>Enfoque por industria</h3><p>Disenamos software a medida para Legal equilibrando cumplimiento, rendimiento y escalabilidad.</p><h3>Nuestro enfoque</h3><p>Desde discovery hasta implementacion, entregamos plataformas solidas que simplifican operaciones y generan resultados medibles.</p>"
+        "challenges": [
+          "Procesos de casos y documentos no estructurados",
+          "Imprecision en time tracking y billing",
+          "Exigencias altas de confidencialidad",
+          "Comunicacion con cliente dispersa",
+          "Obligaciones de retencion y auditoria"
+        ],
+        "solutions": [
+          "Practice management con roles granulares",
+          "Automatizacion documental y aprobaciones",
+          "Portales cliente seguros",
+          "Flujos de facturacion y registro de tiempo",
+          "Controles de cumplimiento y retencion"
+        ],
+        "benefits": [
+          "Mayor control del ciclo del caso",
+          "Menor carga administrativa",
+          "Seguridad documental reforzada",
+          "Colaboracion cliente mas eficiente",
+          "Productividad legal medible"
+        ],
+        "regulations": [
+          "Etica profesional",
+          "Data privacy",
+          "Retention obligations",
+          "Access control standards",
+          "Evidence logging"
+        ],
+        "relatedServices": [
+          "Desarrollo de aplicaciones web",
+          "Soluciones cloud e integracion",
+          "Consultoria y asesoria TI"
+        ],
+        "bodyHtml": "<h2>Transformar el sector Legal con tecnologia</h2><p>Despachos y equipos legal ops necesitan herramientas seguras para casos, documentos y facturacion.</p><h3>Nuestra experiencia en la industria</h3><p>Combinamos estrategia de producto, ejecucion tecnica y gestion por KPIs para crear plataformas confiables, escalables y faciles de operar.</p><h2>Retos que resolvemos</h2><h3>Procesos de casos y documentos no estructurados</h3><p>Estandarizamos procesos y datos para reducir friccion operativa y mejorar la trazabilidad en puntos criticos del negocio.</p><h3>Imprecision en time tracking y billing</h3><p>Disenamos integraciones estables y modelos de informacion consistentes para eliminar cuellos de botella entre sistemas.</p><h3>Exigencias altas de confidencialidad</h3><p>Implementamos monitoreo, alertas y gobierno tecnico para mantener continuidad operativa incluso en escenarios de alta demanda.</p><h2>Soluciones que entregamos</h2><p>Nuestras plataformas estan orientadas a rendimiento, cumplimiento y crecimiento sostenible:</p><ul><li>Practice management con roles granulares</li><li>Automatizacion documental y aprobaciones</li><li>Portales cliente seguros</li><li>Flujos de facturacion y registro de tiempo</li><li>Controles de cumplimiento y retencion</li></ul><h2>Arquitectura y stack tecnologico</h2><p>Arquitectura security-first, gestion documental cifrada, permisos granulares y trazabilidad de auditoria. Priorizamos componentes modulares, APIs bien definidas y despliegues confiables para acelerar entrega sin comprometer estabilidad.</p><h2>Cumplimiento y regulacion</h2><p>El cumplimiento se incorpora desde el diseno. Marcos comunes en este sector: Etica profesional, Data privacy, Retention obligations, Access control standards, Evidence logging. Combinamos controles tecnicos con evidencia auditable para equipos de negocio y compliance.</p><h2>Resultados e impacto de negocio</h2><p>En implementaciones similares, nuestros clientes suelen lograr:</p><ul><li>Mayor control del ciclo del caso</li><li>Menor carga administrativa</li><li>Seguridad documental reforzada</li><li>Colaboracion cliente mas eficiente</li><li>Productividad legal medible</li></ul><h2>Como empezamos</h2><h3>Diagnostico inicial</h3><p>Evaluamos procesos, arquitectura, calidad de datos y capacidades del equipo para definir una hoja de ruta priorizada por impacto y riesgo.</p><h3>Implementacion por fases</h3><p>Desplegamos por iteraciones medibles, con transferencia de conocimiento y acompanamiento continuo para asegurar adopcion sostenida.</p><h2>Por que A&H Solutions</h2><p>Combinamos rigor de ingenieria con enfoque pragmatico de negocio para entregar soluciones que funcionan en produccion y escalan con tu operacion.</p>"
       },
       "manufacturing": {
         "industry": "Manufactura",
         "title": "Soluciones tecnologicas para manufactura e industria",
         "excerpt": "Soluciones industriales para automatizacion y mejora continua.",
         "description": "Soluciones industriales para automatizacion y mejora continua.",
-        "bodyHtml": "<h2>Soluciones tecnologicas para manufactura e industria</h2><p>Soluciones industriales para automatizacion y mejora continua.</p><h3>Enfoque por industria</h3><p>Disenamos software a medida para Manufactura equilibrando cumplimiento, rendimiento y escalabilidad.</p><h3>Nuestro enfoque</h3><p>Desde discovery hasta implementacion, entregamos plataformas solidas que simplifican operaciones y generan resultados medibles.</p>"
+        "challenges": [
+          "Falta de visibilidad en planta",
+          "Brechas entre ERP-MES-WMS",
+          "Paradas no planificadas",
+          "Supply chain poco predecible",
+          "Reporting de cumplimiento costoso"
+        ],
+        "solutions": [
+          "Dashboards de produccion en tiempo real",
+          "Integraciones ERP/MES/IoT",
+          "Mantenimiento predictivo",
+          "Workflows de calidad y no conformidades",
+          "Monitoreo de supply chain"
+        ],
+        "benefits": [
+          "Menos paradas y merma",
+          "Mejor OEE",
+          "Mayor velocidad de respuesta operativa",
+          "Menor costo de operacion",
+          "Base para iniciativas Industria 4.0"
+        ],
+        "regulations": [
+          "ISO 9001",
+          "Safety requirements",
+          "Industry compliance",
+          "Traceability obligations",
+          "Data governance"
+        ],
+        "relatedServices": [
+          "Soluciones cloud e integracion",
+          "Analitica de datos y visualizacion",
+          "Integraciones de IA y automatizacion"
+        ],
+        "bodyHtml": "<h2>Transformar el sector Manufactura con tecnologia</h2><p>Las empresas industriales deben conectar produccion, calidad y supply chain para mejorar eficiencia.</p><h3>Nuestra experiencia en la industria</h3><p>Combinamos estrategia de producto, ejecucion tecnica y gestion por KPIs para crear plataformas confiables, escalables y faciles de operar.</p><h2>Retos que resolvemos</h2><h3>Falta de visibilidad en planta</h3><p>Estandarizamos procesos y datos para reducir friccion operativa y mejorar la trazabilidad en puntos criticos del negocio.</p><h3>Brechas entre ERP-MES-WMS</h3><p>Disenamos integraciones estables y modelos de informacion consistentes para eliminar cuellos de botella entre sistemas.</p><h3>Paradas no planificadas</h3><p>Implementamos monitoreo, alertas y gobierno tecnico para mantener continuidad operativa incluso en escenarios de alta demanda.</p><h2>Soluciones que entregamos</h2><p>Nuestras plataformas estan orientadas a rendimiento, cumplimiento y crecimiento sostenible:</p><ul><li>Dashboards de produccion en tiempo real</li><li>Integraciones ERP/MES/IoT</li><li>Mantenimiento predictivo</li><li>Workflows de calidad y no conformidades</li><li>Monitoreo de supply chain</li></ul><h2>Arquitectura y stack tecnologico</h2><p>Capa de integracion IoT, stream processing, pipelines de datos robustos y BI de planta. Priorizamos componentes modulares, APIs bien definidas y despliegues confiables para acelerar entrega sin comprometer estabilidad.</p><h2>Cumplimiento y regulacion</h2><p>El cumplimiento se incorpora desde el diseno. Marcos comunes en este sector: ISO 9001, Safety requirements, Industry compliance, Traceability obligations, Data governance. Combinamos controles tecnicos con evidencia auditable para equipos de negocio y compliance.</p><h2>Resultados e impacto de negocio</h2><p>En implementaciones similares, nuestros clientes suelen lograr:</p><ul><li>Menos paradas y merma</li><li>Mejor OEE</li><li>Mayor velocidad de respuesta operativa</li><li>Menor costo de operacion</li><li>Base para iniciativas Industria 4.0</li></ul><h2>Como empezamos</h2><h3>Diagnostico inicial</h3><p>Evaluamos procesos, arquitectura, calidad de datos y capacidades del equipo para definir una hoja de ruta priorizada por impacto y riesgo.</p><h3>Implementacion por fases</h3><p>Desplegamos por iteraciones medibles, con transferencia de conocimiento y acompanamiento continuo para asegurar adopcion sostenida.</p><h2>Por que A&H Solutions</h2><p>Combinamos rigor de ingenieria con enfoque pragmatico de negocio para entregar soluciones que funcionan en produccion y escalan con tu operacion.</p>"
       },
       "non-profit": {
         "industry": "Sin fines de lucro",
         "title": "Soluciones tecnologicas para organizaciones sin fines de lucro",
         "excerpt": "Herramientas digitales para donaciones, comunidad e impacto.",
         "description": "Herramientas digitales para donaciones, comunidad e impacto.",
-        "bodyHtml": "<h2>Soluciones tecnologicas para organizaciones sin fines de lucro</h2><p>Herramientas digitales para donaciones, comunidad e impacto.</p><h3>Enfoque por industria</h3><p>Disenamos software a medida para Sin fines de lucro equilibrando cumplimiento, rendimiento y escalabilidad.</p><h3>Nuestro enfoque</h3><p>Desde discovery hasta implementacion, entregamos plataformas solidas que simplifican operaciones y generan resultados medibles.</p>"
+        "challenges": [
+          "Presupuesto limitado para digitalizacion",
+          "Datos de donantes fragmentados",
+          "Reporting de grants manual",
+          "Coordinacion de voluntariado compleja",
+          "Baja visibilidad de impacto"
+        ],
+        "solutions": [
+          "CRM de donantes y campanas",
+          "Plataformas de voluntariado",
+          "Workflows de grants y cumplimiento",
+          "Dashboards de impacto por programa",
+          "Automatizacion de comunicacion y retencion"
+        ],
+        "benefits": [
+          "Mayor captacion y fidelizacion",
+          "Menor overhead administrativo",
+          "Mejor transparencia ante financiadores",
+          "Mayor claridad del impacto real",
+          "Escalabilidad operacional"
+        ],
+        "regulations": [
+          "IRS transparency",
+          "Donor data privacy",
+          "Grant compliance",
+          "Financial traceability",
+          "Payment security"
+        ],
+        "relatedServices": [
+          "Desarrollo de aplicaciones web",
+          "Analitica de datos y visualizacion",
+          "Consultoria y asesoria TI"
+        ],
+        "bodyHtml": "<h2>Transformar el sector Sin fines de lucro con tecnologia</h2><p>Las organizaciones sin fines de lucro requieren tecnologia eficiente para escalar impacto con recursos limitados.</p><h3>Nuestra experiencia en la industria</h3><p>Combinamos estrategia de producto, ejecucion tecnica y gestion por KPIs para crear plataformas confiables, escalables y faciles de operar.</p><h2>Retos que resolvemos</h2><h3>Presupuesto limitado para digitalizacion</h3><p>Estandarizamos procesos y datos para reducir friccion operativa y mejorar la trazabilidad en puntos criticos del negocio.</p><h3>Datos de donantes fragmentados</h3><p>Disenamos integraciones estables y modelos de informacion consistentes para eliminar cuellos de botella entre sistemas.</p><h3>Reporting de grants manual</h3><p>Implementamos monitoreo, alertas y gobierno tecnico para mantener continuidad operativa incluso en escenarios de alta demanda.</p><h2>Soluciones que entregamos</h2><p>Nuestras plataformas estan orientadas a rendimiento, cumplimiento y crecimiento sostenible:</p><ul><li>CRM de donantes y campanas</li><li>Plataformas de voluntariado</li><li>Workflows de grants y cumplimiento</li><li>Dashboards de impacto por programa</li><li>Automatizacion de comunicacion y retencion</li></ul><h2>Arquitectura y stack tecnologico</h2><p>Arquitectura cloud eficiente, integraciones CRM, pagos seguros y reporting para gobernanza. Priorizamos componentes modulares, APIs bien definidas y despliegues confiables para acelerar entrega sin comprometer estabilidad.</p><h2>Cumplimiento y regulacion</h2><p>El cumplimiento se incorpora desde el diseno. Marcos comunes en este sector: IRS transparency, Donor data privacy, Grant compliance, Financial traceability, Payment security. Combinamos controles tecnicos con evidencia auditable para equipos de negocio y compliance.</p><h2>Resultados e impacto de negocio</h2><p>En implementaciones similares, nuestros clientes suelen lograr:</p><ul><li>Mayor captacion y fidelizacion</li><li>Menor overhead administrativo</li><li>Mejor transparencia ante financiadores</li><li>Mayor claridad del impacto real</li><li>Escalabilidad operacional</li></ul><h2>Como empezamos</h2><h3>Diagnostico inicial</h3><p>Evaluamos procesos, arquitectura, calidad de datos y capacidades del equipo para definir una hoja de ruta priorizada por impacto y riesgo.</p><h3>Implementacion por fases</h3><p>Desplegamos por iteraciones medibles, con transferencia de conocimiento y acompanamiento continuo para asegurar adopcion sostenida.</p><h2>Por que A&H Solutions</h2><p>Combinamos rigor de ingenieria con enfoque pragmatico de negocio para entregar soluciones que funcionan en produccion y escalan con tu operacion.</p>"
       },
       "real-estate": {
         "industry": "Bienes raices",
         "title": "Soluciones tecnologicas para bienes raices",
         "excerpt": "Soluciones proptech para ventas, gestion y experiencia de clientes.",
         "description": "Soluciones proptech para ventas, gestion y experiencia de clientes.",
-        "bodyHtml": "<h2>Soluciones tecnologicas para bienes raices</h2><p>Soluciones proptech para ventas, gestion y experiencia de clientes.</p><h3>Enfoque por industria</h3><p>Disenamos software a medida para Bienes raices equilibrando cumplimiento, rendimiento y escalabilidad.</p><h3>Nuestro enfoque</h3><p>Desde discovery hasta implementacion, entregamos plataformas solidas que simplifican operaciones y generan resultados medibles.</p>"
+        "challenges": [
+          "Datos de mercado dispersos",
+          "Pipeline comercial lento",
+          "Baja visibilidad de valoracion y riesgo",
+          "Friccion documental en transacciones",
+          "Escalabilidad limitada del portafolio"
+        ],
+        "solutions": [
+          "CRM inmobiliario y workflows de leads",
+          "Plataformas de activos y portafolio",
+          "Dashboards de valoracion y mercado",
+          "Procesos documentales para cierre",
+          "Integraciones MLS y fuentes externas"
+        ],
+        "benefits": [
+          "Ciclos de venta mas cortos",
+          "Datos mas confiables",
+          "Decisiones de inversion mas rapidas",
+          "Mejor coordinacion entre equipos",
+          "Escala para nuevas regiones"
+        ],
+        "regulations": [
+          "Fair Housing",
+          "Data privacy",
+          "MLS rules",
+          "Retention and documentation",
+          "Digital signature security"
+        ],
+        "relatedServices": [
+          "Desarrollo de aplicaciones web",
+          "Analitica de datos y visualizacion",
+          "Soluciones cloud e integracion"
+        ],
+        "bodyHtml": "<h2>Transformar el sector Bienes raices con tecnologia</h2><p>Las empresas inmobiliarias necesitan plataformas orientadas a datos para captar leads, cerrar operaciones y optimizar portafolios.</p><h3>Nuestra experiencia en la industria</h3><p>Combinamos estrategia de producto, ejecucion tecnica y gestion por KPIs para crear plataformas confiables, escalables y faciles de operar.</p><h2>Retos que resolvemos</h2><h3>Datos de mercado dispersos</h3><p>Estandarizamos procesos y datos para reducir friccion operativa y mejorar la trazabilidad en puntos criticos del negocio.</p><h3>Pipeline comercial lento</h3><p>Disenamos integraciones estables y modelos de informacion consistentes para eliminar cuellos de botella entre sistemas.</p><h3>Baja visibilidad de valoracion y riesgo</h3><p>Implementamos monitoreo, alertas y gobierno tecnico para mantener continuidad operativa incluso en escenarios de alta demanda.</p><h2>Soluciones que entregamos</h2><p>Nuestras plataformas estan orientadas a rendimiento, cumplimiento y crecimiento sostenible:</p><ul><li>CRM inmobiliario y workflows de leads</li><li>Plataformas de activos y portafolio</li><li>Dashboards de valoracion y mercado</li><li>Procesos documentales para cierre</li><li>Integraciones MLS y fuentes externas</li></ul><h2>Arquitectura y stack tecnologico</h2><p>Arquitectura web moderna, modelos de datos geoespaciales, indexacion de busqueda y capa de integracion. Priorizamos componentes modulares, APIs bien definidas y despliegues confiables para acelerar entrega sin comprometer estabilidad.</p><h2>Cumplimiento y regulacion</h2><p>El cumplimiento se incorpora desde el diseno. Marcos comunes en este sector: Fair Housing, Data privacy, MLS rules, Retention and documentation, Digital signature security. Combinamos controles tecnicos con evidencia auditable para equipos de negocio y compliance.</p><h2>Resultados e impacto de negocio</h2><p>En implementaciones similares, nuestros clientes suelen lograr:</p><ul><li>Ciclos de venta mas cortos</li><li>Datos mas confiables</li><li>Decisiones de inversion mas rapidas</li><li>Mejor coordinacion entre equipos</li><li>Escala para nuevas regiones</li></ul><h2>Como empezamos</h2><h3>Diagnostico inicial</h3><p>Evaluamos procesos, arquitectura, calidad de datos y capacidades del equipo para definir una hoja de ruta priorizada por impacto y riesgo.</p><h3>Implementacion por fases</h3><p>Desplegamos por iteraciones medibles, con transferencia de conocimiento y acompanamiento continuo para asegurar adopcion sostenida.</p><h2>Por que A&H Solutions</h2><p>Combinamos rigor de ingenieria con enfoque pragmatico de negocio para entregar soluciones que funcionan en produccion y escalan con tu operacion.</p>"
       },
       "wellness": {
         "industry": "Bienestar",
         "title": "Soluciones tecnologicas para bienestar y salud",
         "excerpt": "Plataformas de bienestar para servicios, membresias y crecimiento.",
         "description": "Plataformas de bienestar para servicios, membresias y crecimiento.",
-        "bodyHtml": "<h2>Soluciones tecnologicas para bienestar y salud</h2><p>Plataformas de bienestar para servicios, membresias y crecimiento.</p><h3>Enfoque por industria</h3><p>Disenamos software a medida para Bienestar equilibrando cumplimiento, rendimiento y escalabilidad.</p><h3>Nuestro enfoque</h3><p>Desde discovery hasta implementacion, entregamos plataformas solidas que simplifican operaciones y generan resultados medibles.</p>"
+        "challenges": [
+          "Retencion insuficiente a largo plazo",
+          "Datos de wearables no integrados",
+          "Personalizacion a gran escala",
+          "Sensibilidad de datos de salud",
+          "Dificultad para medir outcomes"
+        ],
+        "solutions": [
+          "Plataformas de membresia y programas",
+          "Integraciones con wearables y health APIs",
+          "Journeys personalizados y coaching",
+          "Dashboards de engagement y outcomes",
+          "Automatizacion de motivacion y reactivacion"
+        ],
+        "benefits": [
+          "Mayor adherencia de usuarios",
+          "Visibilidad clara del progreso",
+          "Operacion de coaching mas eficiente",
+          "Escalabilidad B2C y B2B",
+          "Mejora continua basada en datos"
+        ],
+        "regulations": [
+          "HIPAA (when applicable)",
+          "Privacy and consent",
+          "Accessibility standards",
+          "Mobile app security",
+          "Provider compliance rules"
+        ],
+        "relatedServices": [
+          "Desarrollo de aplicaciones moviles",
+          "Integraciones de IA y automatizacion",
+          "Analitica de datos y visualizacion"
+        ],
+        "bodyHtml": "<h2>Transformar el sector Bienestar con tecnologia</h2><p>Las marcas wellness deben aumentar adherencia y demostrar resultados de programas de salud y habitos.</p><h3>Nuestra experiencia en la industria</h3><p>Combinamos estrategia de producto, ejecucion tecnica y gestion por KPIs para crear plataformas confiables, escalables y faciles de operar.</p><h2>Retos que resolvemos</h2><h3>Retencion insuficiente a largo plazo</h3><p>Estandarizamos procesos y datos para reducir friccion operativa y mejorar la trazabilidad en puntos criticos del negocio.</p><h3>Datos de wearables no integrados</h3><p>Disenamos integraciones estables y modelos de informacion consistentes para eliminar cuellos de botella entre sistemas.</p><h3>Personalizacion a gran escala</h3><p>Implementamos monitoreo, alertas y gobierno tecnico para mantener continuidad operativa incluso en escenarios de alta demanda.</p><h2>Soluciones que entregamos</h2><p>Nuestras plataformas estan orientadas a rendimiento, cumplimiento y crecimiento sostenible:</p><ul><li>Plataformas de membresia y programas</li><li>Integraciones con wearables y health APIs</li><li>Journeys personalizados y coaching</li><li>Dashboards de engagement y outcomes</li><li>Automatizacion de motivacion y reactivacion</li></ul><h2>Arquitectura y stack tecnologico</h2><p>Frontends mobile-first, cuentas seguras, integraciones con wearables y analytics de engagement/outcomes. Priorizamos componentes modulares, APIs bien definidas y despliegues confiables para acelerar entrega sin comprometer estabilidad.</p><h2>Cumplimiento y regulacion</h2><p>El cumplimiento se incorpora desde el diseno. Marcos comunes en este sector: HIPAA (when applicable), Privacy and consent, Accessibility standards, Mobile app security, Provider compliance rules. Combinamos controles tecnicos con evidencia auditable para equipos de negocio y compliance.</p><h2>Resultados e impacto de negocio</h2><p>En implementaciones similares, nuestros clientes suelen lograr:</p><ul><li>Mayor adherencia de usuarios</li><li>Visibilidad clara del progreso</li><li>Operacion de coaching mas eficiente</li><li>Escalabilidad B2C y B2B</li><li>Mejora continua basada en datos</li></ul><h2>Como empezamos</h2><h3>Diagnostico inicial</h3><p>Evaluamos procesos, arquitectura, calidad de datos y capacidades del equipo para definir una hoja de ruta priorizada por impacto y riesgo.</p><h3>Implementacion por fases</h3><p>Desplegamos por iteraciones medibles, con transferencia de conocimiento y acompanamiento continuo para asegurar adopcion sostenida.</p><h2>Por que A&H Solutions</h2><p>Combinamos rigor de ingenieria con enfoque pragmatico de negocio para entregar soluciones que funcionan en produccion y escalan con tu operacion.</p>"
       }
     },
     "services": {
