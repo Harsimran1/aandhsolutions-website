@@ -160,7 +160,7 @@ const ogLocale = getOgLocale(currentLocale);
         }
 
         const skipPrefixes = ['/favicon', '/scripts', '/logo', '/og-image', '/assets'];
-        const localePrefixPattern = /^\/(en|fr|de|es)(\/|$)/;
+        const localePrefixPattern = /^\/(en|fr|de|es)(\/|$|#|\?)/;
 
         document.querySelectorAll('a[href^="/"]').forEach((link) => {
           const href = link.getAttribute('href');

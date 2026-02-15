@@ -97,7 +97,10 @@ export function localizePath(path: string, locale: Locale): string {
   const normalizedPath = internalPath || '/';
 
   if (normalizedPath === '/') {
-    return `/${locale}${hash}`;
+    if (hash) {
+      return `/${locale}/${hash}`;
+    }
+    return `/${locale}`;
   }
 
   const cleaned = normalizedPath.startsWith('/') ? normalizedPath : `/${normalizedPath}`;
