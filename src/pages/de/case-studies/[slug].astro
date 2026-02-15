@@ -26,8 +26,12 @@ const caseCopy = caseContent[caseStudy.slug] ?? {};
 const localizedTitle = caseCopy.title || caseStudy.data.title;
 const localizedDescription = caseCopy.description || caseCopy.excerpt || caseStudy.data.description || caseStudy.data.excerpt || caseStudy.data.title;
 
-const services = await getCollection('services', ({ data }) => {
-  return !data.draft && caseStudy.data.relatedServices?.some((service) => data.title.toLowerCase().includes(service.toLowerCase()));
+const services = await getCollection('services', (service) => {
+  return !service.data.draft && caseStudy.data.relatedServices?.includes(service.slug);
+});
+
+const domains = await getCollection('domains', (domain) => {
+  return !domain.data.draft && caseStudy.data.relatedDomains?.includes(domain.slug);
 });
 
 const relatedCaseStudies = await getCollection('case-studies', ({ data }) => {
@@ -238,6 +242,25 @@ const DATE_LOCALE: Record<string, string> = {
                   </h4>
                   <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">{service.data.excerpt || service.data.description}</p>
                   <a href={localizePath(`/services/${service.slug}`, locale)} class="btn-outline btn-sm">{casePageCopy.learnMore || 'Learn More'}</a>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {domains.length > 0 && (
+          <div class="mb-12">
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">{casePageCopy.relatedIndustries || 'Related Industries'}</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {domains.map((domain) => (
+                <div class="card border border-gray-200 dark:border-gray-700 p-6">
+                  <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                    <a href={localizePath(`/industries/${domain.slug}`, locale)} class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                      {domain.data.title}
+                    </a>
+                  </h4>
+                  <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">{domain.data.excerpt || domain.data.description}</p>
+                  <a href={localizePath(`/industries/${domain.slug}`, locale)} class="btn-outline btn-sm">{casePageCopy.learnMore || 'Learn More'}</a>
                 </div>
               ))}
             </div>
