@@ -7,7 +7,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://aandhsolutions.com',
+  site: 'https://www.aandhsolutions.com',
   trailingSlash: 'always',
   redirects: {
     '/case-studies': '/en/case-studies',
