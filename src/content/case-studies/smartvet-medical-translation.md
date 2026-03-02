@@ -21,6 +21,7 @@ image: "/case-studies/smartvet-1.png"
 imageAlt: "SmartVet landing page and diagnostic report translation views"
 gallery:
   - "/case-studies/smartvet-1.png"
+  - "/case-studies/smartvet-2.png"
 relatedServices:
   - "ai-integrations-automation"
   - "web-app-development"

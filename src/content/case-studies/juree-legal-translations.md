@@ -24,6 +24,7 @@ gallery:
   - "/case-studies/juree-2.png"
   - "/case-studies/juree-3.png"
   - "/case-studies/juree-4.png"
+  - "/case-studies/juree-5.png"
 relatedServices:
   - "ai-integrations-automation"
   - "web-app-development"
