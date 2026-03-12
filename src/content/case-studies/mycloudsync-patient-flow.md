@@ -11,7 +11,7 @@ client:
   industry: "Healthcare"
   website: "http://mycloudsync.app/"
 featured: false
-draft: true
+draft: false
 tags:
   - "healthcare"
   - "dashboards"

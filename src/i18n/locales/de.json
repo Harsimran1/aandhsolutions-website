@@ -261,6 +261,11 @@
       "smartvet-medical-translation": {
         "title": "SmartVet: Ubersetzungs-Engine fur Veterinarberichte",
         "excerpt": "Veterinar-Berichtsubersetzungstool entwickelt, das die Interpretation vereinfacht und die Kundenkommunikation verbessert."
+      },
+      "sigxa-workflow-automation": {
+        "title": "SigXA: Deterministische Lead-Workflow-Automatisierung",
+        "excerpt": "Deterministische Outreach-Automatisierung mit Apollo.io und n8n umgesetzt, um Ausfuehrungskonsistenz, Follow-up-Zuverlaessigkeit und operative Transparenz zu verbessern.",
+        "description": "Deterministisches Lead-Automationssystem fuer SigXA auf Basis von Apollo.io und n8n umgesetzt; Openclaw als experimenteller Ansatz evaluiert."
       }
     },
     "domains": {
@@ -1033,6 +1038,53 @@
           "Finance",
           "Marketing",
           "Operations"
+        ]
+      },
+      "workflow-automation": {
+        "category": "Automatisierung und Orchestrierung",
+        "title": "Workflow-Automatisierung",
+        "description": "Deterministische Workflow-Automatisierung fuer Lead-Operations, CRM-Orchestrierung und zuverlaessige Ausfuehrung ueber mehrere Systeme hinweg.",
+        "excerpt": "Deterministische Automationen fuer CRM, Outreach und Operations ohne fragile manuelle Zwischenschritte.",
+        "pricingModel": "Flexible Preisgestaltung nach Workflow-Komplexitaet, Anzahl integrierter Systeme und operativem Umfang",
+        "deliverables": [
+          "Produktionsreife Workflow-Automationen",
+          "Integrierte CRM- und Outreach-Prozesse",
+          "Operative Dashboards und Runbooks",
+          "Fehlerbehandlung und Fallback-Design",
+          "Systemdokumentation",
+          "Team-Onboarding und Uebergabe"
+        ],
+        "processSteps": [
+          {
+            "title": "Workflow-Discovery",
+            "description": "Bestehende Ablaeufe, Engpaesse und Entscheidungsstellen ueber Teams und Tools hinweg erfassen"
+          },
+          {
+            "title": "Automatisierungsarchitektur",
+            "description": "Deterministische Workflow-Logik, Integrationen und Kontrollgrenzen entwerfen"
+          },
+          {
+            "title": "Implementierung",
+            "description": "Automationen ueber CRM, Orchestrierung und Kommunikationssysteme hinweg aufbauen und verbinden"
+          },
+          {
+            "title": "Validierung und Haertung",
+            "description": "Branch-Verhalten, Retries, Randfaelle und Datenkonsistenz unter realen Bedingungen testen"
+          },
+          {
+            "title": "Go-Live",
+            "description": "Mit Observability, Runbooks und rollback-sicherer Ausrollstrategie produktiv setzen"
+          },
+          {
+            "title": "Optimierung",
+            "description": "Durchsatz, Zuverlaessigkeit und Wartbarkeit anhand von Produktionssignalen verbessern"
+          }
+        ],
+        "relatedDomains": [
+          "Healthcare",
+          "Finance",
+          "E-commerce",
+          "SaaS"
         ]
       }
     }

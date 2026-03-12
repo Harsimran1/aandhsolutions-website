@@ -261,6 +261,11 @@
       "smartvet-medical-translation": {
         "title": "SmartVet : moteur de traduction de rapports veterinaires",
         "excerpt": "Outil de traduction de rapports veterinaires developpe simplifiant l'interpretation et ameliorant la communication client."
+      },
+      "sigxa-workflow-automation": {
+        "title": "SigXA : automatisation deterministe des workflows de leads",
+        "excerpt": "Automatisation outreach deterministe sur Apollo.io et n8n pour ameliorer la constance d execution, la fiabilite du suivi et la visibilite operationnelle.",
+        "description": "Mise en place d un systeme d automatisation des leads deterministe pour SigXA avec Apollo.io et n8n, avec Openclaw evalue comme piste experimentale."
       }
     },
     "domains": {
@@ -1033,6 +1038,53 @@
           "Finance",
           "Marketing",
           "Operations"
+        ]
+      },
+      "workflow-automation": {
+        "category": "Automatisation et orchestration",
+        "title": "Automatisation des workflows",
+        "description": "Service d automatisation de workflows deterministes pour les operations leads, l orchestration CRM et l execution fiable entre plusieurs systemes.",
+        "excerpt": "Construisez des automatisations deterministes qui relient CRM, outreach et operations sans etapes manuelles fragiles.",
+        "pricingModel": "Tarification flexible selon la complexite des workflows, le nombre de systemes connectes et le perimetre operationnel",
+        "deliverables": [
+          "Workflows automatises prets pour la production",
+          "Flux CRM et outreach integres",
+          "Dashboards operationnels et runbooks",
+          "Gestion des erreurs et design de fallback",
+          "Documentation systeme",
+          "Onboarding et transfert vers les equipes"
+        ],
+        "processSteps": [
+          {
+            "title": "Discovery workflow",
+            "description": "Cartographier les operations actuelles, les goulots d etranglement et les points de decision entre equipes et outils"
+          },
+          {
+            "title": "Architecture d automatisation",
+            "description": "Concevoir la logique deterministe des workflows, les integrations et les limites de controle"
+          },
+          {
+            "title": "Implementation",
+            "description": "Construire et connecter les automatisations entre CRM, orchestration et systemes de communication"
+          },
+          {
+            "title": "Validation et durcissement",
+            "description": "Tester branches, retries, cas limites et coherence des donnees en conditions reelles"
+          },
+          {
+            "title": "Mise en production",
+            "description": "Deployer avec observabilite, runbooks et sequence de rollout securisee"
+          },
+          {
+            "title": "Optimisation",
+            "description": "Ameliorer debit, fiabilite et maintenabilite a partir des signaux de production"
+          }
+        ],
+        "relatedDomains": [
+          "Healthcare",
+          "Finance",
+          "E-commerce",
+          "SaaS"
         ]
       }
     }
