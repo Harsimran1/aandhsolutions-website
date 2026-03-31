@@ -2,11 +2,60 @@
 import CityPage from '../../components/CityPage.astro';
 ---
 
-<CityPage 
+<CityPage
   city="Edmonton"
   state="Alberta"
   country="Canada"
   population="1.0 million"
-  keyIndustries={["Energy & Oil", "Technology", "Healthcare", "Education", "Government", "Manufacturing"]}
-  description="Local software development and IT consulting services in Edmonton, Alberta. Your trusted technology partner in the Edmonton Capital Region."
+  keyIndustries={[
+    'Healthcare',
+    'Real Estate',
+    'Energy & Field Operations',
+    'Education',
+    'Government',
+    'Manufacturing',
+  ]}
+  description="Edmonton custom software development and AI integration services for workflow-heavy teams across Alberta."
+  heroTitleOverride="Edmonton Custom Software & AI Integration Agency"
+  heroDescriptionOverride="We build workflow-focused software for Edmonton teams that need reliable delivery: custom web apps, AI automation, and internal platforms for healthcare, real estate, and operational businesses."
+  heroBadgeOverride="Built in Edmonton, delivering across Alberta"
+  whyChooseOverride="Why Edmonton companies choose A & H Solutions"
+  whyDescOverride="Edmonton businesses hire us when they need a team that can own planning, engineering, and delivery without losing speed or quality. Our work is strongest where operations are complex and execution must be dependable."
+  proofStats={[
+    { value: '5.0', label: 'Average Clutch Rating' },
+    { value: '4', label: 'Linked Clutch Reviews' },
+    { value: '3', label: 'Featured Workflow Case Studies' },
+    { value: 'AB', label: 'Alberta-Based Delivery' },
+  ]}
+  painPointsTitle="Why Edmonton companies hire us"
+  painPoints={[
+    'Legacy workflows that create delays, handoff errors, and reporting blind spots.',
+    'Teams that need AI features and automation without risking operational stability.',
+    'Custom platform builds where quality and timeline discipline both matter.',
+    'Growth-stage operations that need internal tools aligned to real process constraints.',
+  ]}
+  localRelevanceTitle="Edmonton and Alberta delivery fit"
+  localRelevancePoints={[
+    'Collaboration in Mountain Time with practical meeting windows for Alberta teams.',
+    'On-site or remote discovery support for teams that prefer local alignment.',
+    'Experience designing systems for regulated and workflow-heavy environments.',
+  ]}
+  featuredCaseStudiesTitle="Featured proof for Edmonton buyers"
+  featuredCaseStudies={[
+    {
+      title: 'SigXA: AI Medical Scribe Platform',
+      summary: 'Built an AI-assisted clinical documentation workflow aligned with Canadian healthcare expectations.',
+      url: '/case-studies/sigxa-medical-scribe',
+    },
+    {
+      title: 'MyCloudSync: Real-Time Patient Flow Dashboards',
+      summary: 'Delivered role-specific clinic dashboards and automated timing metrics to reduce throughput bottlenecks.',
+      url: '/case-studies/mycloudsync-patient-flow',
+    },
+    {
+      title: 'Propcan: Real Estate Data Platform',
+      summary: 'Engineered a data-rich real estate platform for faster insight delivery and operational clarity.',
+      url: '/case-studies/propcan-real-estate-platform',
+    },
+  ]}
 />

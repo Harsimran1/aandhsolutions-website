@@ -1,143 +1,59 @@
 ---
 import { resolveLocale, localizePath } from '../lib/i18n';
+import { CLUTCH_REVIEWS, REVIEW_COPY, type LocaleKey } from '../data/reviews';
+import ReviewCarousel from './ReviewCarousel.astro';
 
 const locale = resolveLocale(Astro.currentLocale, new URL(Astro.request.url).pathname);
 const localized = (path: string) => localizePath(path, locale);
+const text = REVIEW_COPY[locale as LocaleKey] ?? REVIEW_COPY.en;
 
-const contentByLocale = {
-  en: {
-    badge: 'Customer Stories',
-    title: 'What Our Clients Say',
-    desc: "Don't just take our word for it. Here's what our customers have to say about their experience with our platform.",
-    testimonials: [
-  {
-    content: "A & H Solutions built our app in record time and helped us save thousands every month. They don't just code—they think like product people.",
-    author: "Sarah Johnson",
-    position: "Founder",
-    company: "SaaS Startup",
-    avatar: "https://randomuser.me/api/portraits/women/32.jpg"
-  },
-  {
-    content: "The AI integration they built transformed our customer experience. Our engagement rates increased by 60% and operational costs dropped significantly.",
-    author: "Michael Chen",
-    position: "CTO", 
-    company: "E-commerce Platform",
-    avatar: "https://randomuser.me/api/portraits/men/46.jpg"
-  },
-  {
-    content: "Their smart engineering approach saved us $8,000 per month on infrastructure while actually improving our app's performance. Incredible value.",
-    author: "Emily Rodriguez",
-    position: "Technical Lead",
-    company: "Fintech Startup",
-    avatar: "https://randomuser.me/api/portraits/women/65.jpg"
-  }
-    ],
-    ctaTitle: 'Ready to transform your business?',
-    ctaDesc: 'Join thousands of satisfied customers who have improved their workflow with our platform.',
-    ctaBtn: 'Get Started Today',
-  },
-  de: {
-    badge: 'Kundenstimmen',
-    title: 'Was unsere Kunden sagen',
-    desc: 'Das sagen unsere Kunden uber die Zusammenarbeit mit A & H Solutions.',
-    testimonials: [
-      { content: 'A & H Solutions hat unsere App in Rekordzeit gebaut und unsere monatlichen Kosten deutlich reduziert.', author: 'Sarah Johnson', position: 'Grunderin', company: 'SaaS Startup', avatar: 'https://randomuser.me/api/portraits/women/32.jpg' },
-      { content: 'Die KI-Integration hat unser Kundenerlebnis transformiert. Mehr Engagement bei geringeren Betriebskosten.', author: 'Michael Chen', position: 'CTO', company: 'E-Commerce Plattform', avatar: 'https://randomuser.me/api/portraits/men/46.jpg' },
-      { content: 'Durch smartes Engineering sparen wir jeden Monat Infrastrukturkosten und haben zugleich bessere Performance.', author: 'Emily Rodriguez', position: 'Tech Lead', company: 'Fintech Startup', avatar: 'https://randomuser.me/api/portraits/women/65.jpg' }
-    ],
-    ctaTitle: 'Bereit fur den nachsten Schritt?',
-    ctaDesc: 'Arbeiten Sie mit einem Team, das Technik mit Business-Zielen verbindet.',
-    ctaBtn: 'Jetzt starten',
-  },
-  fr: {
-    badge: 'Temoignages clients',
-    title: 'Ce que disent nos clients',
-    desc: 'Retour d experience de clients qui ont accelere leur croissance avec nous.',
-    testimonials: [
-      { content: 'A & H Solutions a livre notre application tres vite et a reduit fortement nos couts mensuels.', author: 'Sarah Johnson', position: 'Fondatrice', company: 'Startup SaaS', avatar: 'https://randomuser.me/api/portraits/women/32.jpg' },
-      { content: 'L integration IA a nettement ameliore notre experience client et notre efficacite operationnelle.', author: 'Michael Chen', position: 'CTO', company: 'Plateforme e-commerce', avatar: 'https://randomuser.me/api/portraits/men/46.jpg' },
-      { content: 'Leur ingenierie intelligente nous a permis d economiser chaque mois tout en augmentant les performances.', author: 'Emily Rodriguez', position: 'Lead technique', company: 'Startup fintech', avatar: 'https://randomuser.me/api/portraits/women/65.jpg' }
-    ],
-    ctaTitle: 'Pret a transformer votre business ?',
-    ctaDesc: 'Rejoignez les entreprises qui accelerent avec des produits fiables et evolutifs.',
-    ctaBtn: 'Demarrer',
-  },
-  es: {
-    badge: 'Historias de clientes',
-    title: 'Lo que dicen nuestros clientes',
-    desc: 'Conoce como nuestros clientes mejoraron resultados con nuestras soluciones.',
-    testimonials: [
-      { content: 'A & H Solutions construyo nuestra app en tiempo record y redujo costos mensuales de forma notable.', author: 'Sarah Johnson', position: 'Fundadora', company: 'Startup SaaS', avatar: 'https://randomuser.me/api/portraits/women/32.jpg' },
-      { content: 'La integracion de IA mejoro nuestra experiencia de cliente y la eficiencia operativa.', author: 'Michael Chen', position: 'CTO', company: 'Plataforma e-commerce', avatar: 'https://randomuser.me/api/portraits/men/46.jpg' },
-      { content: 'Su enfoque de ingenieria inteligente redujo costos de infraestructura y mejoro rendimiento.', author: 'Emily Rodriguez', position: 'Lider tecnico', company: 'Startup fintech', avatar: 'https://randomuser.me/api/portraits/women/65.jpg' }
-    ],
-    ctaTitle: 'Listo para transformar tu negocio?',
-    ctaDesc: 'Unete a empresas que ya mejoraron su operacion con nuestras soluciones.',
-    ctaBtn: 'Comenzar hoy',
-  },
-} as const;
-
-const text = contentByLocale[locale] ?? contentByLocale.en;
-const testimonials = text.testimonials;
+const totalReviews = CLUTCH_REVIEWS.length || 1;
+const averageRating = (CLUTCH_REVIEWS.reduce((sum, review) => sum + review.rating.overall, 0) / totalReviews).toFixed(1);
+const averageRefer = (CLUTCH_REVIEWS.reduce((sum, review) => sum + review.rating.willingToRefer, 0) / totalReviews).toFixed(1);
 ---
 
 <section id="testimonials" class="section">
   <div class="container-custom">
-    <div class="text-center max-w-3xl mx-auto mb-16">
+    <div class="text-center max-w-3xl mx-auto mb-10">
       <span class="inline-block px-4 py-1 rounded-full bg-secondary-100 dark:bg-secondary-900 text-secondary-600 dark:text-secondary-300 font-medium text-sm mb-4">
         {text.badge}
       </span>
       <h2 class="mb-6 text-gray-900 dark:text-white">{text.title}</h2>
-      <p class="text-gray-600 dark:text-gray-300">
-        {text.desc}
-      </p>
+      <p class="text-gray-600 dark:text-gray-300">{text.description}</p>
     </div>
-    
-    <div class="grid md:grid-cols-3 gap-8">
-      {testimonials.map((testimonial, index) => (
-        <div 
-          class="card p-6 border border-gray-200 dark:border-gray-700 slide-up" 
-          style={`animation-delay: ${index * 150}ms`}
-        >
-          <div class="mb-6">
-            {[...Array(5)].map(() => (
-              <svg class="w-5 h-5 inline-block text-warning-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-              </svg>
-            ))}
-          </div>
-          
-          <blockquote class="mb-6 text-gray-700 dark:text-gray-300 italic">"{testimonial.content}"</blockquote>
-          
-          <div class="flex items-center">
-            <img 
-              src={testimonial.avatar} 
-              alt={testimonial.author} 
-              class="w-12 h-12 rounded-full mr-4 object-cover"
-              loading="lazy"
-            />
-            <div>
-              <p class="font-semibold text-gray-900 dark:text-white">{testimonial.author}</p>
-              <p class="text-sm text-gray-500 dark:text-gray-400">{testimonial.position}, {testimonial.company}</p>
-            </div>
-          </div>
-        </div>
-      ))}
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+      <div class="card p-4 text-center border border-gray-200 dark:border-gray-700 min-h-[120px] flex flex-col items-center justify-center">
+        <p class="text-3xl font-bold text-primary-600 dark:text-primary-400">{averageRating}</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">{text.proofStrip.ratingLabel}</p>
+      </div>
+      <div class="card p-4 text-center border border-gray-200 dark:border-gray-700 min-h-[120px] flex flex-col items-center justify-center">
+        <p class="text-3xl font-bold text-primary-600 dark:text-primary-400">100%</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">{text.proofStrip.verifiedLabel}</p>
+      </div>
+      <div class="card p-4 text-center border border-gray-200 dark:border-gray-700 min-h-[120px] flex flex-col items-center justify-center">
+        <p class="text-3xl font-bold text-primary-600 dark:text-primary-400">{averageRefer}</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">{text.proofStrip.referLabel}</p>
+      </div>
     </div>
-    
+
+    <ReviewCarousel reviews={CLUTCH_REVIEWS} cardCopy={text.card} ariaLabel={text.title} />
+
     <div class="mt-16 bg-linear-to-r from-primary-500 to-secondary-500 rounded-2xl p-8 md:p-12 relative overflow-hidden">
       <div class="absolute inset-0 bg-linear-to-r from-primary-600/30 to-secondary-600/30 backdrop-blur-xs"></div>
       <div class="relative z-10 text-center md:text-left md:flex items-center justify-between">
         <div class="mb-6 md:mb-0 md:mr-8">
-          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">{text.ctaTitle}</h3>
-          <p class="text-white/80 max-w-2xl">{text.ctaDesc}</p>
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">{text.cta.title}</h3>
+          <p class="text-white/80 max-w-2xl">{text.cta.description}</p>
         </div>
-        <a href={localized('/contact')} class="inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300 focus:outline-hidden focus:ring-2 focus:ring-offset-2 bg-white text-primary-600 hover:bg-gray-100 focus:ring-white">
-          {text.ctaBtn}
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-          </svg>
-        </a>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href={localized('/contact')} class="inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300 bg-white text-primary-600 hover:bg-gray-100">
+            {text.cta.primary}
+          </a>
+          <a href={localized('/case-studies')} class="inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300 border border-white text-white hover:bg-white/10">
+            {text.cta.secondary}
+          </a>
+        </div>
       </div>
     </div>
   </div>

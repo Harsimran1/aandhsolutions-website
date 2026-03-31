@@ -1,0 +1,83 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import HeroSection from '../components/HeroSection.astro';
+import ReviewCarousel from '../components/ReviewCarousel.astro';
+import { resolveLocale, localizePath } from '../lib/i18n';
+import { CLUTCH_REVIEWS, REVIEW_COPY, type LocaleKey } from '../data/reviews';
+
+const locale = resolveLocale(Astro.currentLocale, new URL(Astro.request.url).pathname);
+const localized = (path: string) => localizePath(path, locale);
+const text = REVIEW_COPY[locale as LocaleKey] ?? REVIEW_COPY.en;
+
+const totalReviews = CLUTCH_REVIEWS.length || 1;
+const averageRating = (CLUTCH_REVIEWS.reduce((sum, review) => sum + review.rating.overall, 0) / totalReviews).toFixed(1);
+const averageRefer = (CLUTCH_REVIEWS.reduce((sum, review) => sum + review.rating.willingToRefer, 0) / totalReviews).toFixed(1);
+const averageQualitySchedule = (
+  CLUTCH_REVIEWS.reduce((sum, review) => sum + ((review.rating.quality + review.rating.schedule) / 2), 0) / totalReviews
+).toFixed(1);
+---
+
+<Layout
+  title={`Client Reviews | A & H Solutions`}
+  description="Verified client feedback sourced from Clutch, including project outcomes, delivery quality, and communication performance."
+>
+  <Header />
+  <main>
+    <HeroSection
+      title={text.title}
+      highlightText="Clutch"
+      description={text.description}
+    />
+
+    <section class="py-16 bg-white dark:bg-gray-800">
+      <div class="container-custom">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          <div class="card p-5 min-h-[120px] text-center border border-gray-200 dark:border-gray-700 flex flex-col items-center justify-center">
+            <p class="text-3xl font-bold text-primary-600 dark:text-primary-400">{averageRating}</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300">{text.proofStrip.ratingLabel}</p>
+          </div>
+          <div class="card p-5 min-h-[120px] text-center border border-gray-200 dark:border-gray-700 flex flex-col items-center justify-center">
+            <p class="text-3xl font-bold text-primary-600 dark:text-primary-400">{averageQualitySchedule}</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300">{text.proofStrip.qualityScheduleLabel}</p>
+          </div>
+          <div class="card p-5 min-h-[120px] text-center border border-gray-200 dark:border-gray-700 flex flex-col items-center justify-center">
+            <p class="text-3xl font-bold text-primary-600 dark:text-primary-400">100%</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300">{text.proofStrip.verifiedLabel}</p>
+          </div>
+          <div class="card p-5 min-h-[120px] text-center border border-gray-200 dark:border-gray-700 flex flex-col items-center justify-center">
+            <p class="text-3xl font-bold text-primary-600 dark:text-primary-400">{averageRefer}</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300">{text.proofStrip.referLabel}</p>
+          </div>
+        </div>
+
+        <ReviewCarousel
+          reviews={CLUTCH_REVIEWS}
+          cardCopy={text.card}
+          showDetails={true}
+          ariaLabel={text.title}
+        />
+
+        <div class="mt-16 bg-linear-to-r from-primary-500 to-secondary-500 rounded-2xl p-8 md:p-12 relative overflow-hidden">
+          <div class="absolute inset-0 bg-linear-to-r from-primary-600/30 to-secondary-600/30 backdrop-blur-xs"></div>
+          <div class="relative z-10 text-center md:text-left md:flex items-center justify-between gap-6">
+            <div>
+              <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">{text.cta.title}</h3>
+              <p class="text-white/80 max-w-2xl">{text.cta.description}</p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a href={localized('/contact')} class="inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300 bg-white text-primary-600 hover:bg-gray-100">
+                {text.cta.primary}
+              </a>
+              <a href={localized('/case-studies')} class="inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300 border border-white text-white hover:bg-white/10">
+                {text.cta.secondary}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

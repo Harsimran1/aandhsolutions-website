@@ -2,6 +2,8 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import ClientLogos from '../../components/ClientLogos.astro';
+import Testimonials from '../../components/Testimonials.astro';
 import { getCollection } from 'astro:content';
 import { resolveLocale, localizePath } from '../../lib/i18n';
 import { getLocaleCopy } from '../../i18n/locale-copy';
@@ -318,6 +320,9 @@ function resolveServiceSlug(serviceName: string): string {
         )}
       </div>
     </article>
+
+    <ClientLogos />
+    <Testimonials />
   </main>
   <Footer />
 </Layout>

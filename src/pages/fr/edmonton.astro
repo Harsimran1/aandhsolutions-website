@@ -2,11 +2,60 @@
 import CityPage from '../../components/CityPage.astro';
 ---
 
-<CityPage 
+<CityPage
   city="Edmonton"
   state="Alberta"
   country="Canada"
   population="1.0 million"
-  keyIndustries={["Energy & Oil", "Technology", "Healthcare", "Education", "Government", "Manufacturing"]}
-  description="Local software development and IT consulting services in Edmonton, Alberta. Your trusted technology partner in the Edmonton Capital Region."
+  keyIndustries={[
+    'Healthcare',
+    'Real Estate',
+    'Energy & Field Operations',
+    'Education',
+    'Government',
+    'Manufacturing',
+  ]}
+  description="Services de logiciel sur mesure et d'integration IA a Edmonton pour les equipes a workflows complexes en Alberta."
+  heroTitleOverride="Agence de logiciel sur mesure et integration IA a Edmonton"
+  heroDescriptionOverride="Nous livrons des systemes centres sur les workflows pour les equipes d'Edmonton: applications web sur mesure, automatisation IA et plateformes internes pour la sante, l'immobilier et les operations."
+  heroBadgeOverride="Construit a Edmonton, livre partout en Alberta"
+  whyChooseOverride="Pourquoi les entreprises d'Edmonton choisissent A & H Solutions"
+  whyDescOverride="Les entreprises d'Edmonton nous choisissent quand elles veulent une equipe capable de porter le cadrage, l'ingenierie et la livraison avec un niveau d'execution constant. Notre valeur est forte sur les operations complexes."
+  proofStats={[
+    { value: '5.0', label: 'Note moyenne sur Clutch' },
+    { value: '4', label: 'Avis Clutch relies' },
+    { value: '3', label: 'Etudes de cas workflow en avant' },
+    { value: 'AB', label: 'Equipe basee en Alberta' },
+  ]}
+  painPointsTitle="Pourquoi les entreprises d'Edmonton nous engagent"
+  painPoints={[
+    'Des workflows historiques qui creent des delais, des erreurs de transfert et un manque de visibilite.',
+    'Des equipes qui veulent ajouter IA et automatisation sans fragiliser l operationnel.',
+    'Des projets de plateforme sur mesure ou la qualite et les delais sont critiques.',
+    'Des structures en croissance qui ont besoin d outils internes alignes sur leurs contraintes reelles.',
+  ]}
+  localRelevanceTitle="Mode de delivery adapte a Edmonton et a l'Alberta"
+  localRelevancePoints={[
+    'Collaboration en fuseau Mountain Time avec des plages realistes pour les equipes en Alberta.',
+    'Discovery sur site ou a distance selon le niveau d alignement local souhaite.',
+    'Experience des systemes pour environnements reglementes et workflows intensifs.',
+  ]}
+  featuredCaseStudiesTitle="Preuves prioritaires pour les acheteurs a Edmonton"
+  featuredCaseStudies={[
+    {
+      title: 'SigXA: plateforme IA de scribe medical',
+      summary: 'Mise en place d un workflow de documentation clinique aligne sur les attentes canadiennes.',
+      url: '/case-studies/sigxa-medical-scribe',
+    },
+    {
+      title: 'MyCloudSync: tableaux de bord temps reel du flux patient',
+      summary: 'Tableaux de bord par role et mesures automatisees pour reduire les goulots en clinique.',
+      url: '/case-studies/mycloudsync-patient-flow',
+    },
+    {
+      title: 'Propcan: plateforme de donnees immobilier',
+      summary: 'Plateforme immobilier data-intensive pour accelerer l acces aux insights et clarifier les operations.',
+      url: '/case-studies/propcan-real-estate-platform',
+    },
+  ]}
 />

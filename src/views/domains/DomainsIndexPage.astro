@@ -3,6 +3,8 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import HeroSection from '../../components/HeroSection.astro';
+import ClientLogos from '../../components/ClientLogos.astro';
+import Testimonials from '../../components/Testimonials.astro';
 import { getCollection } from 'astro:content';
 import { resolveLocale, localizePath } from '../../lib/i18n';
 import { getLocaleCopy } from '../../i18n/locale-copy';
@@ -176,6 +178,9 @@ const localized = (path: string) => localizePath(path, locale);
         </div>
       </div>
     </section>
+
+    <ClientLogos />
+    <Testimonials />
   </main>
   <Footer />
 </Layout>

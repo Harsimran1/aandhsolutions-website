@@ -177,6 +177,55 @@
   @apply animate-slide-down;
 }
 
+/* Reviews carousel */
+.review-marquee {
+  position: relative;
+  overflow: hidden;
+}
+
+.review-marquee__track {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  animation: reviewMarqueeScroll 36s linear infinite;
+  will-change: transform;
+}
+
+.review-marquee__item {
+  flex: 0 0 clamp(19rem, 32vw, 28rem);
+}
+
+.review-marquee:hover .review-marquee__track,
+.review-marquee:focus-within .review-marquee__track {
+  animation-play-state: paused;
+}
+
+@keyframes reviewMarqueeScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .review-marquee {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .review-marquee__track {
+    animation: none;
+    padding-bottom: 0.25rem;
+  }
+
+  .review-marquee__item {
+    scroll-snap-align: start;
+  }
+}
+
 /* Accessibility */
 .sr-only {
   @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;

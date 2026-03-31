@@ -2,11 +2,60 @@
 import CityPage from '../../components/CityPage.astro';
 ---
 
-<CityPage 
+<CityPage
   city="Edmonton"
   state="Alberta"
   country="Canada"
   population="1.0 million"
-  keyIndustries={["Energy & Oil", "Technology", "Healthcare", "Education", "Government", "Manufacturing"]}
-  description="Local software development and IT consulting services in Edmonton, Alberta. Your trusted technology partner in the Edmonton Capital Region."
+  keyIndustries={[
+    'Healthcare',
+    'Real Estate',
+    'Energy & Field Operations',
+    'Education',
+    'Government',
+    'Manufacturing',
+  ]}
+  description="Desarrollo de software a medida e integracion IA en Edmonton para equipos con workflows complejos en Alberta."
+  heroTitleOverride="Agencia de software a medida e integracion IA en Edmonton"
+  heroDescriptionOverride="Construimos sistemas centrados en workflows para equipos de Edmonton: apps web a medida, automatizacion con IA y plataformas internas para salud, real estate y operaciones."
+  heroBadgeOverride="Construido en Edmonton, entregado en Alberta"
+  whyChooseOverride="Por que las empresas de Edmonton eligen A & H Solutions"
+  whyDescOverride="Las empresas de Edmonton nos contratan cuando necesitan un equipo que se haga cargo de estrategia, ingenieria y entrega sin perder velocidad ni calidad. Destacamos en operaciones complejas."
+  proofStats={[
+    { value: '5.0', label: 'Valoracion media en Clutch' },
+    { value: '4', label: 'Resenas Clutch enlazadas' },
+    { value: '3', label: 'Casos workflow destacados' },
+    { value: 'AB', label: 'Equipo basado en Alberta' },
+  ]}
+  painPointsTitle="Por que empresas de Edmonton nos contratan"
+  painPoints={[
+    'Workflows heredados que generan retrasos, errores de traspaso y poca visibilidad de reportes.',
+    'Equipos que quieren sumar IA y automatizacion sin comprometer estabilidad operativa.',
+    'Plataformas a medida donde calidad y cumplimiento de tiempos son criticos.',
+    'Operaciones en crecimiento que necesitan herramientas internas alineadas al proceso real.',
+  ]}
+  localRelevanceTitle="Modelo de entrega para Edmonton y Alberta"
+  localRelevancePoints={[
+    'Colaboracion en Mountain Time con ventanas practicas para equipos de Alberta.',
+    'Discovery presencial o remoto para equipos que necesitan alineacion local.',
+    'Experiencia construyendo sistemas para entornos regulados y workflows intensivos.',
+  ]}
+  featuredCaseStudiesTitle="Pruebas clave para compradores en Edmonton"
+  featuredCaseStudies={[
+    {
+      title: 'SigXA: plataforma de escriba medico con IA',
+      summary: 'Creamos un workflow de documentacion clinica alineado con expectativas canadienses.',
+      url: '/case-studies/sigxa-medical-scribe',
+    },
+    {
+      title: 'MyCloudSync: paneles en tiempo real de flujo de pacientes',
+      summary: 'Paneles por rol y metricas automaticas para reducir cuellos de botella en clinicas.',
+      url: '/case-studies/mycloudsync-patient-flow',
+    },
+    {
+      title: 'Propcan: plataforma de datos para real estate',
+      summary: 'Ingenieria de plataforma data-rich para acelerar insights y mejorar claridad operativa.',
+      url: '/case-studies/propcan-real-estate-platform',
+    },
+  ]}
 />

@@ -4,8 +4,21 @@ import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import Features from '../components/Features.astro';
 import Contact from '../components/Contact.astro';
+import ClientLogos from '../components/ClientLogos.astro';
+import Testimonials from '../components/Testimonials.astro';
 import Footer from '../components/Footer.astro';
-import { resolveLocale } from '../lib/i18n';
+import { resolveLocale, localizePath } from '../lib/i18n';
+
+interface CityProofStat {
+  value: string;
+  label: string;
+}
+
+interface CityProofLink {
+  title: string;
+  summary: string;
+  url: string;
+}
 
 export interface Props {
   city: string;
@@ -14,6 +27,18 @@ export interface Props {
   description?: string;
   population?: string;
   keyIndustries?: string[];
+  heroTitleOverride?: string;
+  heroDescriptionOverride?: string;
+  heroBadgeOverride?: string;
+  whyChooseOverride?: string;
+  whyDescOverride?: string;
+  proofStats?: CityProofStat[];
+  painPointsTitle?: string;
+  painPoints?: string[];
+  localRelevanceTitle?: string;
+  localRelevancePoints?: string[];
+  featuredCaseStudiesTitle?: string;
+  featuredCaseStudies?: CityProofLink[];
 }
 
 const { 
@@ -22,7 +47,19 @@ const {
   country, 
   description = `Professional software development and technology consulting services in ${city}, ${state}. We help businesses transform with custom solutions.`,
   population,
-  keyIndustries = ["Technology", "Healthcare", "Finance", "Manufacturing"]
+  keyIndustries = ["Technology", "Healthcare", "Finance", "Manufacturing"],
+  heroTitleOverride,
+  heroDescriptionOverride,
+  heroBadgeOverride,
+  whyChooseOverride,
+  whyDescOverride,
+  proofStats = [],
+  painPointsTitle,
+  painPoints = [],
+  localRelevanceTitle,
+  localRelevancePoints = [],
+  featuredCaseStudiesTitle,
+  featuredCaseStudies = []
 } = Astro.props;
 
 const locale = resolveLocale(Astro.currentLocale, new URL(Astro.request.url).pathname);
@@ -215,9 +252,19 @@ const translatedIndustries = keyIndustries.map((industry) => {
 });
 
 const pageTitle = t.pageTitle;
-const heroTitle = t.heroTitle;
-const heroDescription = t.heroDescription;
-const heroBadge = t.heroBadge;
+const heroTitle = heroTitleOverride ?? t.heroTitle;
+const heroDescription = heroDescriptionOverride ?? t.heroDescription;
+const heroBadge = heroBadgeOverride ?? t.heroBadge;
+const whyChooseText = whyChooseOverride ?? t.whyChoose;
+const whyDescText = whyDescOverride ?? t.whyDesc;
+const localized = (path: string) => localizePath(path, locale);
+const caseStudyCtaByLocale = {
+  en: 'View case study ->',
+  de: 'Fallstudie ansehen ->',
+  fr: "Voir l'etude de cas ->",
+  es: 'Ver caso de exito ->',
+} as const;
+const caseStudyCta = caseStudyCtaByLocale[locale] ?? caseStudyCtaByLocale.en;
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
@@ -228,9 +275,22 @@ const heroBadge = t.heroBadge;
       description={heroDescription}
       highlightText={city}
       badge={heroBadge}
-      primaryButton={{ text: t.consultation, url: "/contact" }}
-      secondaryButton={{ text: t.work, url: "/case-studies" }}
+      primaryButton={{ text: t.consultation, url: localized('/contact') }}
+      secondaryButton={{ text: t.work, url: localized('/case-studies') }}
     />
+
+  {proofStats.length > 0 && (
+    <section class="py-8 bg-gray-50 dark:bg-gray-900/60 border-y border-gray-200 dark:border-gray-800">
+      <div class="container-custom grid grid-cols-2 md:grid-cols-4 gap-4">
+        {proofStats.map((stat) => (
+          <div class="card p-4 text-center border border-gray-200 dark:border-gray-700">
+            <p class="text-3xl font-bold text-primary-600 dark:text-primary-400">{stat.value}</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
 
   <section class="section bg-white dark:bg-secondary-950">
     <div class="container-custom">
@@ -238,9 +298,9 @@ const heroBadge = t.heroBadge;
         <span class="inline-block px-4 py-1 rounded-full bg-secondary-100 dark:bg-secondary-900 text-secondary-600 dark:text-secondary-300 font-medium text-sm mb-4">
           {t.localExpertise}
         </span>
-        <h2 class="mb-6 text-gray-900 dark:text-white">{t.whyChoose}</h2>
+        <h2 class="mb-6 text-gray-900 dark:text-white">{whyChooseText}</h2>
         <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-          {t.whyDesc}
+          {whyDescText}
         </p>
       </div>
 
@@ -291,6 +351,49 @@ const heroBadge = t.heroBadge;
       )}
     </div>
   </section>
+
+  {(painPoints.length > 0 || localRelevancePoints.length > 0 || featuredCaseStudies.length > 0) && (
+    <section class="section bg-gray-50 dark:bg-gray-800/50">
+      <div class="container-custom space-y-10">
+        {painPoints.length > 0 && (
+          <div class="card p-8 border border-gray-200 dark:border-gray-700">
+            <h3 class="text-2xl font-semibold mb-5 text-gray-900 dark:text-white">{painPointsTitle ?? `Why ${city} companies hire us`}</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+              {painPoints.map((point) => (
+                <p class="text-gray-700 dark:text-gray-300">• {point}</p>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {localRelevancePoints.length > 0 && (
+          <div class="card p-8 border border-gray-200 dark:border-gray-700">
+            <h3 class="text-2xl font-semibold mb-5 text-gray-900 dark:text-white">{localRelevanceTitle ?? `Local delivery model in ${city}`}</h3>
+            <div class="grid md:grid-cols-3 gap-4">
+              {localRelevancePoints.map((point) => (
+                <p class="text-gray-700 dark:text-gray-300">• {point}</p>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {featuredCaseStudies.length > 0 && (
+          <div class="card p-8 border border-gray-200 dark:border-gray-700">
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">{featuredCaseStudiesTitle ?? `Featured proof for ${city} buyers`}</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+              {featuredCaseStudies.map((study) => (
+                <a href={localized(study.url)} class="block rounded-xl border border-gray-200 dark:border-gray-700 p-5 hover:border-primary-400 transition-colors">
+                  <h4 class="text-lg font-semibold mb-2 text-gray-900 dark:text-white">{study.title}</h4>
+                  <p class="text-sm text-gray-600 dark:text-gray-300 mb-3">{study.summary}</p>
+                  <span class="text-sm font-medium text-primary-600 dark:text-primary-400">{caseStudyCta}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+  )}
 
   <Features />
 
@@ -373,6 +476,8 @@ const heroBadge = t.heroBadge;
     </div>
   </section>
 
+    <ClientLogos />
+    <Testimonials />
     <Contact />
   </main>
   <Footer />
