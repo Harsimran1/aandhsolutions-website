@@ -1,0 +1,73 @@
+---
+import { resolveLocale } from '../lib/i18n';
+
+const locale = resolveLocale(Astro.currentLocale, new URL(Astro.request.url).pathname);
+
+const copyByLocale = {
+  en: {
+    title: 'Did you know?',
+    body: '90% of startups fail within the first 5 years. At A & H Solutions, we leverage smart engineering and AI-powered optimization to help our clients beat those odds.',
+    point1: 'AI-driven workflows reduce development overhead and improve efficiency',
+    point2: 'Web, mobile, and AI solutions built for growth',
+    point3: 'Cost, speed & security in every product',
+  },
+  de: {
+    title: 'Schon gewusst?',
+    body: '90% der Startups scheitern in den ersten 5 Jahren. Mit smarter Technik und KI-Optimierung helfen wir unseren Kunden, diese Quote zu schlagen.',
+    point1: 'KI-gestutzte Workflows senken Entwicklungsaufwand und steigern Effizienz',
+    point2: 'Web-, Mobile- und KI-Losungen fur Wachstum',
+    point3: 'Kosten, Geschwindigkeit und Sicherheit in jedem Produkt',
+  },
+  fr: {
+    title: 'Le saviez-vous ?',
+    body: '90% des startups echouent dans les 5 premieres annees. Avec une ingenierie intelligente et l IA, nous aidons nos clients a inverser cette tendance.',
+    point1: 'Les workflows IA reduisent la charge de developpement et augmentent l efficacite',
+    point2: 'Solutions web, mobile et IA concues pour la croissance',
+    point3: 'Cout, vitesse et securite dans chaque produit',
+  },
+  es: {
+    title: 'Sabias que?',
+    body: 'El 90% de las startups fracasa en los primeros 5 anos. Con ingenieria inteligente y optimizacion con IA ayudamos a nuestros clientes a evitarlo.',
+    point1: 'Los flujos con IA reducen esfuerzo y mejoran la eficiencia',
+    point2: 'Soluciones web, moviles e IA listas para escalar',
+    point3: 'Costo, velocidad y seguridad en cada producto',
+  },
+} as const;
+
+const text = copyByLocale[locale] ?? copyByLocale.en;
+---
+
+<section class="w-full overflow-hidden">
+  <div class="relative bg-teal-400 dark:bg-teal-500 py-12 md:py-16">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
+          <div class="text-4xl mb-2">📊</div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">{text.title}</h3>
+          <p class="text-gray-700 dark:text-gray-300">{text.body}</p>
+        </div>
+
+        <div class="space-y-3">
+          <div class="flex items-center text-black dark:text-white">
+            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="font-medium">{text.point1}</span>
+          </div>
+          <div class="flex items-center text-black dark:text-white">
+            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="font-medium">{text.point2}</span>
+          </div>
+          <div class="flex items-center text-black dark:text-white">
+            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="font-medium">{text.point3}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

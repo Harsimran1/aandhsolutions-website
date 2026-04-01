@@ -4,8 +4,8 @@ import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import Features from '../components/Features.astro';
 import Contact from '../components/Contact.astro';
-import ClientLogos from '../components/ClientLogos.astro';
 import Testimonials from '../components/Testimonials.astro';
+import DidYouKnow from '../components/DidYouKnow.astro';
 import Footer from '../components/Footer.astro';
 import { resolveLocale, localizePath } from '../lib/i18n';
 
@@ -278,6 +278,8 @@ const caseStudyCta = caseStudyCtaByLocale[locale] ?? caseStudyCtaByLocale.en;
       primaryButton={{ text: t.consultation, url: localized('/contact') }}
       secondaryButton={{ text: t.work, url: localized('/case-studies') }}
     />
+    <Testimonials />
+    <DidYouKnow />
 
   {proofStats.length > 0 && (
     <section class="py-8 bg-gray-50 dark:bg-gray-900/60 border-y border-gray-200 dark:border-gray-800">
@@ -476,8 +478,6 @@ const caseStudyCta = caseStudyCtaByLocale[locale] ?? caseStudyCtaByLocale.en;
     </div>
   </section>
 
-    <ClientLogos />
-    <Testimonials />
     <Contact />
   </main>
   <Footer />
