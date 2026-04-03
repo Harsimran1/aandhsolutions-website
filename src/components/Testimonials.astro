@@ -14,12 +14,11 @@ const averageRefer = (CLUTCH_REVIEWS.reduce((sum, review) => sum + review.rating
 
 <section id="testimonials" class="section">
   <div class="container-custom">
-    <div class="text-center max-w-3xl mx-auto mb-10">
+    <div class="text-center max-w-3xl mx-auto">
       <span class="inline-block px-4 py-1 rounded-full bg-secondary-100 dark:bg-secondary-900 text-secondary-600 dark:text-secondary-300 font-medium text-sm mb-4">
         {text.badge}
       </span>
-      <h2 class="mb-6 text-gray-900 dark:text-white">{text.title}</h2>
-      <p class="text-gray-600 dark:text-gray-300">{text.description}</p>
+
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
@@ -35,6 +34,11 @@ const averageRefer = (CLUTCH_REVIEWS.reduce((sum, review) => sum + review.rating
         <p class="text-3xl font-bold text-primary-600 dark:text-primary-400">{averageRefer}</p>
         <p class="text-sm text-gray-600 dark:text-gray-300">{text.proofStrip.referLabel}</p>
       </div>
+    </div>
+        <div class="text-center max-w-3xl mx-auto mb-10">
+      <h2 class="mb-6 text-gray-900 dark:text-white">{text.title}</h2>
+      <p class="text-gray-600 dark:text-gray-300">{text.description}</p>
+
     </div>
 
     <ReviewCarousel reviews={CLUTCH_REVIEWS} cardCopy={text.card} ariaLabel={text.title} />
