@@ -37,6 +37,21 @@ export const CLIENT_LOGOS: ClientLogo[] = [
     url: 'https://propcan.com',
   },
   {
+    name: 'Syracuse University',
+    logoPath: '/clients/syracuse-university.png',
+    url: 'https://syracuse.edu',
+  },
+    {
+    name: 'The Aesthetic Experience',
+    logoPath: '/clients/the-aesthetic-experience.png',
+    url: 'https://theaestheticexperience.com',
+  },
+    {
+    name: 'Nutrabrain',
+    logoPath: '/clients/nutrabrain.png',
+    url: 'https://nutrabrainclinic.com',
+  },
+  {
     name: 'Sat Daycare & OSC',
     logoPath: '/clients/satdaycareandosc.png',
     url: 'https://satdaycareandosc.ca',
