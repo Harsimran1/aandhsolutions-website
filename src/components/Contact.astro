@@ -74,6 +74,19 @@ const text = copy.pages.contactForm ?? getLocaleCopy('en').pages.contactForm;
               <p class="text-gray-600 dark:text-gray-300">Edmonton, AB T5J 1W8</p>
             </div>
           </div>
+
+          <div class="rounded-xl border border-primary-200 dark:border-primary-800 bg-primary-50/70 dark:bg-primary-900/20 p-5 shadow-sm">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">{text.appointmentTitle}</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm">{text.appointmentDesc}</p>
+            <a
+              href="https://cal.com/harsimrank/a-h-solutions-discovery-call"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-primary-600 hover:bg-primary-700 text-white font-medium text-sm transition-colors"
+            >
+              {text.appointmentCta}
+            </a>
+          </div>
         </div>
       </div>
 
