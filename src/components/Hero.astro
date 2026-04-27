@@ -96,6 +96,23 @@ const finalBadge = badge ?? localeCopy.badge;
 const marqueeLogos = [...CLIENT_LOGOS, ...CLIENT_LOGOS];
 ---
 <section class="relative pt-24 md:pt-28 overflow-hidden hero-section">
+  <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden" aria-hidden="true">
+    <video
+      class="hero-bg-video absolute inset-0 w-full h-full object-contain"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      data-hero-video
+    >
+      <source src="/background.webm" type="video/webm" />
+      <source src="/background.mp4" type="video/mp4" />
+      <source src="/background.mov" />
+    </video>
+    <div class="absolute inset-0 bg-white/40 dark:bg-secondary-950/55"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-white/35 dark:from-secondary-950/15 dark:to-secondary-950/45"></div>
+  </div>
   <div class="container-custom relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto] gap-10 lg:gap-12 items-start">
       <div class="max-w-3xl">
@@ -168,6 +185,10 @@ const marqueeLogos = [...CLIENT_LOGOS, ...CLIENT_LOGOS];
 </section>
 
 <style>
+  .hero-bg-video {
+    filter: saturate(1.1) contrast(1.05);
+  }
+
   .hero-client-marquee {
     position: relative;
     overflow: hidden;
@@ -246,3 +267,21 @@ const marqueeLogos = [...CLIENT_LOGOS, ...CLIENT_LOGOS];
     }
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const video = document.querySelector<HTMLVideoElement>('[data-hero-video]');
+    if (!video) return;
+    const playbackRate = 0.6;
+    video.defaultPlaybackRate = playbackRate;
+    video.playbackRate = playbackRate;
+
+    const applyRate = () => {
+      video.playbackRate = playbackRate;
+    };
+
+    video.addEventListener('loadedmetadata', applyRate);
+    video.addEventListener('canplay', applyRate);
+    video.play().catch(() => {});
+  });
+</script>
