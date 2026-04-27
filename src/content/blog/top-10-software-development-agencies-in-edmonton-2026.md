@@ -36,6 +36,8 @@ Updated: **April 27, 2026**.
 
 **Why they stand out:** A & H Solutions is a strong option for teams that want practical execution across custom web apps, mobile apps, and AI-driven automation, with clear focus on startup and growth-stage delivery.
 
+Beyond service breadth, A & H Solutions has visible public proof from Clutch-backed client outcomes already featured on this site in the **Verified Client Reviews** section. Recent reviews from **SigXA**, **Cloudsync**, **Sat Daycare & OSC**, and **SmartVet AI** consistently call out delivery quality, communication transparency, and timeline reliability, which are exactly the risk areas most Edmonton buyers care about when selecting an engineering partner.
+
 **Best fit for:** Founders, scaleups, and midsize enterprises that need an Edmonton-based partner for build + iteration + hands-on technical collaboration.
 
 Website: [https://www.aandhsolutions.com](https://www.aandhsolutions.com/en/edmonton/)
@@ -134,7 +136,7 @@ Primary references reviewed for this list:
 
 - Clutch Edmonton software developer rankings (updated April 2026): [https://clutch.co/ca/developers/edmonton](https://clutch.co/ca/developers/edmonton)
 - Company websites and/or profiles:
-  - [https://www.aandhsolutions.com/edmonton/](https://www.aandhsolutions.com/edmonton/)
+  - [https://www.aandhsolutions.com](https://www.aandhsolutions.com/en/edmonton/)
   - [https://punchcard.io/](https://punchcard.io/)
   - [https://paper-leaf.com/](https://paper-leaf.com/)
   - [https://www.liftinteractive.com/contact-us](https://www.liftinteractive.com/contact-us)

@@ -36,8 +36,6 @@ const localized = (path: string) => localizePath(path, locale);
       highlightText={domainPageCopy.heroHighlight || 'Industries'}
       description={domainPageCopy.heroDescription || "Specialized software solutions tailored to your industry's unique challenges and requirements."}
     />
-    <ClientLogos />
-    <Testimonials />
     
     <section class="py-16 bg-white dark:bg-gray-800">
       <div class="container-custom">
@@ -180,6 +178,9 @@ const localized = (path: string) => localizePath(path, locale);
         </div>
       </div>
     </section>
+
+    <ClientLogos />
+    <Testimonials />
   </main>
   <Footer />
 </Layout>
