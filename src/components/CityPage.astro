@@ -275,8 +275,8 @@ const caseStudyCta = caseStudyCtaByLocale[locale] ?? caseStudyCtaByLocale.en;
       description={heroDescription}
       highlightText={city}
       badge={heroBadge}
-      primaryButton={{ text: t.consultation, url: localized('/contact') }}
-      secondaryButton={{ text: t.work, url: localized('/case-studies') }}
+      primaryButton={{ text: t.consultation, url: '/contact' }}
+      secondaryButton={{ text: t.work, url: '/case-studies' }}
     />
     <Testimonials />
     <DidYouKnow />
@@ -358,22 +358,52 @@ const caseStudyCta = caseStudyCtaByLocale[locale] ?? caseStudyCtaByLocale.en;
     <section class="section bg-gray-50 dark:bg-gray-800/50">
       <div class="container-custom space-y-10">
         {painPoints.length > 0 && (
-          <div class="card p-8 border border-gray-200 dark:border-gray-700">
-            <h3 class="text-2xl font-semibold mb-5 text-gray-900 dark:text-white">{painPointsTitle ?? `Why ${city} companies hire us`}</h3>
-            <div class="grid md:grid-cols-2 gap-4">
-              {painPoints.map((point) => (
-                <p class="text-gray-700 dark:text-gray-300">• {point}</p>
+          <div class="relative overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700 bg-gradient-to-br from-white via-primary-50/40 to-white dark:from-secondary-900 dark:via-primary-950/20 dark:to-secondary-900 p-8 shadow-sm">
+            <div class="mb-6 md:mb-8">
+              <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">{painPointsTitle ?? `Why ${city} companies hire us`}</h3>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-4 md:gap-5">
+              {painPoints.map((point, index) => (
+                <div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white/90 dark:bg-secondary-950/60 p-5">
+                  <div class="flex items-start gap-3">
+                    <div class={`inline-flex items-center justify-center shrink-0 w-10 h-10 rounded-lg ${
+                      index % 2 === 0
+                        ? 'bg-primary-100 dark:bg-primary-900/40 text-primary-600 dark:text-primary-300'
+                        : 'bg-secondary-100 dark:bg-secondary-800 text-secondary-700 dark:text-secondary-200'
+                    }`}>
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M10.29 3.86l-8 14A1 1 0 003.17 19h17.66a1 1 0 00.88-1.49l-8-14a1 1 0 00-1.74 0z"></path>
+                      </svg>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-200 leading-relaxed">{point}</p>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
         )}
 
         {localRelevancePoints.length > 0 && (
-          <div class="card p-8 border border-gray-200 dark:border-gray-700">
-            <h3 class="text-2xl font-semibold mb-5 text-gray-900 dark:text-white">{localRelevanceTitle ?? `Local delivery model in ${city}`}</h3>
-            <div class="grid md:grid-cols-3 gap-4">
-              {localRelevancePoints.map((point) => (
-                <p class="text-gray-700 dark:text-gray-300">• {point}</p>
+          <div class="relative overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700 bg-gradient-to-br from-white to-secondary-50 dark:from-secondary-900 dark:to-secondary-900/60 p-8 shadow-sm">
+            <div class="mb-6 md:mb-8">
+              <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">{localRelevanceTitle ?? `Local delivery model in ${city}`}</h3>
+            </div>
+            <div class="grid md:grid-cols-3 gap-4 md:gap-5">
+              {localRelevancePoints.map((point, index) => (
+                <div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white/90 dark:bg-secondary-950/60 p-5">
+                  <div class={`inline-flex items-center justify-center w-10 h-10 rounded-lg ${
+                    index % 3 === 0
+                      ? 'bg-primary-100 dark:bg-primary-900/40 text-primary-600 dark:text-primary-300'
+                      : index % 3 === 1
+                      ? 'bg-accent-100 dark:bg-accent-900/40 text-accent-700 dark:text-accent-300'
+                      : 'bg-secondary-100 dark:bg-secondary-800 text-secondary-700 dark:text-secondary-200'
+                  }`}>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  </div>
+                  <p class="mt-4 text-gray-700 dark:text-gray-200 leading-relaxed">{point}</p>
+                </div>
               ))}
             </div>
           </div>
