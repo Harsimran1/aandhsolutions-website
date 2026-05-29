@@ -4,7 +4,7 @@ description: "Master Docker debugging techniques by inspecting failed builds, ac
 publishedAt: "2021-12-29"
 updatedAt: "2022-07-04"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 tags:
   - "docker"

@@ -4,7 +4,7 @@ description: "Automate book cover creation with Electron.js and OpenAI. Case stu
 publishedAt: "2024-02-25"
 updatedAt: "2024-10-07"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 tags:
   - "case-studies"

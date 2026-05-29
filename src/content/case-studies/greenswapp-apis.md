@@ -4,7 +4,7 @@ description: "APIs that calculate and expose carbon footprint data for products 
 excerpt: "Built sustainability APIs that let businesses surface environmental impact within their experiences."
 publishedAt: "2024-01-10"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 client:
   name: "GreenSwapp"

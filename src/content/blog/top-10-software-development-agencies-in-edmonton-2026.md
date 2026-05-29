@@ -4,7 +4,7 @@ description: "A practical 2026 shortlist of software development agencies in Edm
 excerpt: "Looking for a reliable software development partner in Edmonton? This 2026 shortlist breaks down 10 agencies and who each team is best for."
 publishedAt: "2026-04-27"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 tags:
   - "edmonton"

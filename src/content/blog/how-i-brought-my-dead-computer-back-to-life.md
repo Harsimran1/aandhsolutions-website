@@ -4,7 +4,7 @@ description: "Learn how to fix Linux boot problems using grub debugging, FSCK tr
 publishedAt: "2022-01-23"
 updatedAt: "2022-07-04"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 tags:
   - "linux"

@@ -4,7 +4,7 @@ description: "A practical 2026 ranking of AI medical scribe software in Canada, 
 excerpt: "Comparing top AI medical scribe platforms in Canada? This 2026 shortlist ranks 10 options with a focus on implementation quality and privacy/compliance readiness."
 publishedAt: "2026-04-27"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 tags:
   - "canada"

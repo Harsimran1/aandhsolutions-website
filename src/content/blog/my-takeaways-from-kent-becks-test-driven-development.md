@@ -4,7 +4,7 @@ description: "Discover key insights from Kent Beck's TDD book. Learn why test-dr
 publishedAt: "2021-06-13"
 updatedAt: "2022-03-29"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 tags:
   - "tdd"

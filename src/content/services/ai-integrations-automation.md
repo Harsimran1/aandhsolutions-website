@@ -4,7 +4,7 @@ description: "Streamline workflows, personalize customer experiences, and future
 excerpt: "Streamline workflows, personalize customer experiences, and future-proof products with AI."
 publishedAt: "2024-01-01"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 category: "AI & Automation"
 featured: true

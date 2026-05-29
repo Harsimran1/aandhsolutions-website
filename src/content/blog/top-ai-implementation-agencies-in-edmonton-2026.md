@@ -4,7 +4,7 @@ description: "A practical 2026 shortlist of AI implementation agencies in Edmont
 excerpt: "Looking for an Edmonton AI implementation partner? This 2026 list compares 10 agencies based on execution depth, workflow integration, and real delivery proof."
 publishedAt: "2026-04-27"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 tags:
   - "edmonton"

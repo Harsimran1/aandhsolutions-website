@@ -4,7 +4,7 @@ description: "Optimize Docker images with layering, caching, multi-stage builds,
 publishedAt: "2020-10-16"
 updatedAt: "2022-03-29"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 tags:
   - "docker"

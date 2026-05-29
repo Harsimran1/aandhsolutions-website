@@ -4,7 +4,7 @@ description: "AI-driven platform that translates complex legal documents with pr
 excerpt: "Built a legal translation workflow that combines multilingual accuracy, compliance, and secure document handling at scale."
 publishedAt: "2024-01-03"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 client:
   name: "Juree"

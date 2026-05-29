@@ -4,7 +4,7 @@ description: "How we solved critical data integrity issues for a cannabis e-comm
 publishedAt: "2024-04-02"
 updatedAt: "2024-11-03"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 tags:
   - "case-studies"

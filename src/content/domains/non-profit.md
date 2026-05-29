@@ -4,7 +4,7 @@ description: "Comprehensive non-profit software development including donor mana
 excerpt: "Advanced non-profit technology solutions that maximize impact, streamline operations, and enhance stakeholder engagement for mission-driven organizations."
 publishedAt: "2024-01-15"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 industry: "Non-Profit"
 featured: false
@@ -70,7 +70,7 @@ keyMetrics:
 
 ## Empowering Social Impact Through Technology
 
-Non-profit organizations face unique challenges in maximizing their social impact while operating with limited resources. The global non-profit technology market reached $4.2 billion in 2023, reflecting growing investment in solutions that help mission-driven organizations operate more effectively. A&H Solutions specializes in creating affordable, powerful technology platforms that enable non-profits to focus on their mission while maximizing their operational efficiency.
+Non-profit organizations face unique challenges in maximizing their social impact while operating with limited resources. The global non-profit technology market reached $4.2 billion in 2023, reflecting growing investment in solutions that help mission-driven organizations operate more effectively. A & H Solutions specializes in creating affordable, powerful technology platforms that enable non-profits to focus on their mission while maximizing their operational efficiency.
 
 ### Our Non-Profit Technology Expertise
 
@@ -215,7 +215,7 @@ Comprehensive training programs ensure your team can effectively use new technol
 ### Ongoing Partnership
 We provide ongoing support, updates, and enhancements to ensure your technology continues to serve your evolving needs.
 
-## Why Choose A&H Solutions for Non-Profits?
+## Why Choose A & H Solutions for Non-Profits?
 
 - **Mission Alignment**: Deep commitment to supporting organizations that create positive social impact
 - **Non-Profit Pricing**: Flexible, affordable pricing models designed for non-profit budgets

@@ -4,7 +4,7 @@ description: "Professional iOS, Android, and cross-platform mobile app developme
 excerpt: "iOS, Android, and cross-platform apps designed for seamless user experiences and future growth."
 publishedAt: "2024-01-01"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 category: "Development"
 featured: true

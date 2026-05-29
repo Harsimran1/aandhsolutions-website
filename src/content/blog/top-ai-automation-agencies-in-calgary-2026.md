@@ -4,7 +4,7 @@ description: "A practical 2026 shortlist of AI automation agencies in Calgary fo
 excerpt: "Evaluating AI automation partners in Calgary? This 2026 list compares 10 agencies based on delivery capability, real-world automation depth, and Calgary market presence."
 publishedAt: "2026-05-29"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 tags:
   - "calgary"

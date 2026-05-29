@@ -4,7 +4,7 @@ description: "Flexible, secure, and cost-efficient cloud infrastructure solution
 excerpt: "Flexible, secure, and cost-efficient cloud infrastructure tailored to your scaling needs."
 publishedAt: "2024-01-01"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 category: "Cloud & Infrastructure"
 featured: true

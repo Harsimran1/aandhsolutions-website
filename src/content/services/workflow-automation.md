@@ -4,7 +4,7 @@ description: "Deterministic workflow automation services for lead operations, CR
 excerpt: "Build deterministic automations that connect CRM, outreach, and operations systems without brittle manual steps."
 publishedAt: "2026-03-11"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 category: "Automation & Orchestration"
 featured: false

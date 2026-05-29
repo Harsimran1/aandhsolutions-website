@@ -4,7 +4,7 @@ description: "Virtual medical assistant that reduces clinical documentation burd
 excerpt: "Built an AI medical scribe platform that converts patient–provider conversations into structured clinical notes."
 publishedAt: "2024-01-02"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 client:
   name: "SigXA"

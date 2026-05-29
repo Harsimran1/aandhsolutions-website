@@ -4,7 +4,7 @@ description: "Automate log rotation in Linux using Ansible. Complete tutorial wi
 publishedAt: "2021-11-13"
 updatedAt: "2022-07-04"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 tags:
   - "linux"

@@ -4,7 +4,7 @@ description: "Build scalable, secure, and high-performance web applications that
 excerpt: "Scalable, secure, and high-performance web applications built to power your business."
 publishedAt: "2024-01-01"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 category: "Development"
 featured: true

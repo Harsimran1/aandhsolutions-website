@@ -4,7 +4,7 @@ description: "Patient-centric health data platform with end-to-end encryption bu
 excerpt: "Delivered a privacy-first health data experience with secure sharing and patient-controlled access."
 publishedAt: "2024-01-12"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 client:
   name: "Data4Life / Smart4Health"

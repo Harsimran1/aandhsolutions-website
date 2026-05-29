@@ -19,7 +19,7 @@ const isDefaultLocale = locale === 'en';
 const domainIndustry = translatedDomain.industry || domain.data.industry;
 const domainTitle = translatedDomain.title || domain.data.title;
 const domainExcerpt = translatedDomain.excerpt || domain.data.excerpt;
-const domainDescription = translatedDomain.description || domain.data.description || translatedDomain.excerpt || domain.data.excerpt || `${domainTitle} solutions from A&H Solutions`;
+const domainDescription = translatedDomain.description || domain.data.description || translatedDomain.excerpt || domain.data.excerpt || `${domainTitle} solutions from A & H Solutions`;
 const localizedBodyHtml = translatedDomain.bodyHtml || null;
 const domainKeyMetrics = translatedDomain.keyMetrics ?? (isDefaultLocale ? domain.data.keyMetrics : []);
 const domainRegulations = translatedDomain.regulations ?? (isDefaultLocale ? domain.data.regulations : []);
@@ -83,7 +83,7 @@ function resolveServiceSlug(serviceName: string): string {
 }
 ---
 
-<Layout title={`${domainTitle} - A&H Solutions`} description={domainDescription}>
+<Layout title={`${domainTitle} - A & H Solutions`} description={domainDescription}>
   <Header />
   <main>
     <article class="pt-32 pb-16 md:pt-40 md:pb-24">

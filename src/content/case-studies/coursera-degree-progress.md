@@ -4,7 +4,7 @@ description: "Degree planning platform that helps learners visualize progress, i
 excerpt: "Built a degree progress experience that reduces planning friction and helps learners graduate on time."
 publishedAt: "2024-01-08"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 client:
   name: "Coursera"

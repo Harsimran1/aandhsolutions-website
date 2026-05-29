@@ -143,7 +143,7 @@ async function migratePosts() {
         publishedAt: formatDate(post.published_at || post.created_at),
         ...(post.updated_at && { updatedAt: formatDate(post.updated_at) }),
         author: {
-          name: post.author ? (post.author.name || 'A&H Solutions Team') : 'A&H Solutions Team',
+          name: post.author ? (post.author.name || 'A & H Solutions Team') : 'A & H Solutions Team',
           email: post.author && post.author.email ? post.author.email : 'team@aandhsolutions.com',
           ...(post.author && post.author.profile_image && { avatar: post.author.profile_image })
         },

@@ -1,26 +1,26 @@
 {
   "pages": {
     "home": {
-      "title": "A&H Solutions | aandhsolutions.com - Custom App Development & AI Integrations",
-      "description": "A&H Solutions (aandhsolutions.com) builds custom apps, web platforms, and AI integrations for startups and enterprises. 90% of startups fail - we refuse to accept it. Smarter engineering and AI-driven workflows save costs without losing speed or security."
+      "title": "A & H Solutions | aandhsolutions.com - Custom App Development & AI Integrations",
+      "description": "A & H Solutions (aandhsolutions.com) builds custom apps, web platforms, and AI integrations for startups and enterprises. 90% of startups fail - we refuse to accept it. Smarter engineering and AI-driven workflows save costs without losing speed or security."
     },
     "pricing": {
-      "title": "Pricing - A&H Solutions",
-      "description": "Flexible pricing options for custom software development, AI integrations, cloud solutions, and consulting services from A&H Solutions."
+      "title": "Pricing - A & H Solutions",
+      "description": "Flexible pricing options for custom software development, AI integrations, cloud solutions, and consulting services from A & H Solutions."
     },
     "contact": {
       "title": "Contact Us - A & H Solutions",
       "heroTitle": "Contact Us",
       "heroDescription": "We're here to help with any questions you might have about our services.",
-      "description": "Contact A&H Solutions to discuss your custom software, AI integration, cloud, or data project requirements."
+      "description": "Contact A & H Solutions to discuss your custom software, AI integration, cloud, or data project requirements."
     },
     "freeProjectBlueprint": {
-      "title": "FREE Project Blueprint & Technical Roadmap | A&H Solutions",
+      "title": "FREE Project Blueprint & Technical Roadmap | A & H Solutions",
       "description": "Get a comprehensive 25-30 page project blueprint absolutely free. Includes technical architecture, wireframes, risk analysis, and implementation roadmap. Transform your idea into a actionable development plan."
     },
     "blog": {
-      "title": "Blog - A&H Solutions",
-      "description": "Latest insights, tutorials, and updates from A&H Solutions development team.",
+      "title": "Blog - A & H Solutions",
+      "description": "Latest insights, tutorials, and updates from A & H Solutions development team.",
       "heroTitle": "Latest Updates & News",
       "heroHighlight": "Updates",
       "heroDescription": "Stay up to date with our latest product updates, feature releases, and company news.",
@@ -37,10 +37,10 @@
       "moreLabel": "more"
     },
     "caseStudies": {
-      "title": "Case Studies - A&H Solutions",
+      "title": "Case Studies - A & H Solutions",
       "heroTitle": "Case Studies",
       "heroHighlight": "Studies",
-      "heroDescription": "See how our clients are achieving success with A&H Solutions.",
+      "heroDescription": "See how our clients are achieving success with A & H Solutions.",
       "readFullCaseStudy": "Read Full Case Study",
       "defaultCardLabel": "Case Study",
       "comingSoonTitle": "Case Studies Coming Soon",
@@ -52,10 +52,10 @@
       "getBlueprint": "Get My Free Blueprint",
       "blueprintFootnote": "Delivered in 3-5 business days \u2022 No obligation",
       "readyTitle": "Ready to achieve similar results?",
-      "readyDescription": "Let A&H Solutions help transform your business with our proven expertise. Our team is ready to help you succeed.",
+      "readyDescription": "Let A & H Solutions help transform your business with our proven expertise. Our team is ready to help you succeed.",
       "learnAboutUs": "Learn About Us",
       "backToCaseStudies": "Back to Case Studies",
-      "teamLabel": "A&H Solutions Team",
+      "teamLabel": "A & H Solutions Team",
       "projectDetails": "Project Details",
       "clientLabel": "Client",
       "visitWebsite": "Visit Website",
@@ -71,11 +71,11 @@
       "moreCaseStudiesSuffix": "Case Studies",
       "readCaseStudy": "Read Case Study",
       "tagsLabel": "Tags",
-      "description": "Browse A&H Solutions case studies and real client outcomes across healthcare, real estate, finance, education, and SaaS."
+      "description": "Browse A & H Solutions case studies and real client outcomes across healthcare, real estate, finance, education, and SaaS."
     },
     "domains": {
-      "title": "Industries - A&H Solutions",
-      "description": "Industry-specific software solutions from A&H Solutions. Healthcare, finance, e-commerce, and more.",
+      "title": "Industries - A & H Solutions",
+      "description": "Industry-specific software solutions from A & H Solutions. Healthcare, finance, e-commerce, and more.",
       "heroTitle": "Industries We Serve",
       "heroHighlight": "Industries",
       "heroDescription": "Specialized software solutions tailored to your industry's unique challenges and requirements.",

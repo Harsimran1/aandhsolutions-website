@@ -4,7 +4,7 @@ description: "Mobile-first platform that lets investors track real estate portfo
 excerpt: "Developed a real estate investment app that centralizes portfolio tracking, performance insights, and secure document access."
 publishedAt: "2024-01-07"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 client:
   name: "Real Estate Investment Platform"

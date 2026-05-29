@@ -4,7 +4,7 @@ description: "Set up Raspberry Pi 3 headless without monitor or keyboard. Comple
 publishedAt: "2020-06-18"
 updatedAt: "2021-06-03"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 tags:
   - "general"

@@ -4,7 +4,7 @@ description: "Master Go interfaces with practical examples. Learn when to export
 publishedAt: "2022-10-03"
 updatedAt: "2022-10-26"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 tags:
   - "golang"

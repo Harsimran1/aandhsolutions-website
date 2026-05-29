@@ -4,7 +4,7 @@ description: "Automated system for generating book marketing copy and covers, re
 excerpt: "Innovative automation tool that streamlined book marketing material creation through AI-powered copy generation and automated design workflows."
 publishedAt: "2023-05-15"
 author:
-  name: "A&H Solutions Team"  
+  name: "A & H Solutions Team"  
   email: "contact@aandhsolutions.com"
 client:
   name: "Publishing Solutions Inc"

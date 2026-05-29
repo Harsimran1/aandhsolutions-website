@@ -4,7 +4,7 @@ description: "Platform that translates veterinary diagnostic reports into clear,
 excerpt: "Built a veterinary report translation tool that streamlines interpretation and improves client communication."
 publishedAt: "2024-01-04"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 client:
   name: "SmartVet"

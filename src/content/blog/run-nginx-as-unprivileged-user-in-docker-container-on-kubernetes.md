@@ -4,7 +4,7 @@ description: "Secure your Kubernetes nginx deployment by running containers as n
 publishedAt: "2021-06-03"
 updatedAt: "2022-03-29"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 tags:
   - "nginx"

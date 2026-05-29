@@ -4,7 +4,7 @@ description: "Automated insurance quoting engine built on Compulife APIs to redu
 excerpt: "Developed an automated insurance quoting engine for SGS Coverage that streamlined quote generation and improved customer response times."
 publishedAt: "2024-01-06"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 client:
   name: "SGS Coverage"
@@ -39,7 +39,7 @@ results:
     - label: "Development Hours"
       value: "40 hours"
   testimonial:
-    quote: "A&H Solutions, through its founder Harsimran, did a fantastic job helping to configure a life insurance quote engine for my insurance brokerage. Their responsiveness, patience, and diligence is top-notch."
+    quote: "A & H Solutions, through its founder Harsimran, did a fantastic job helping to configure a life insurance quote engine for my insurance brokerage. Their responsiveness, patience, and diligence is top-notch."
     author: "Clay Owens"
     position: "Owner, SGS Coverage"
     company: "SGS Coverage"
@@ -153,7 +153,7 @@ const QuoteEngine = {
 - Enhanced competitive positioning in the market
 
 ### Client Testimonial
-*"A&H Solutions transformed our entire quoting process. What used to take us half an hour now takes just a few minutes, and our customers love the instant quotes. The system has been rock-solid since launch, and the team's ongoing support has been exceptional."* - Clay Owens, SGS Coverage
+*"A & H Solutions transformed our entire quoting process. What used to take us half an hour now takes just a few minutes, and our customers love the instant quotes. The system has been rock-solid since launch, and the team's ongoing support has been exceptional."* - Clay Owens, SGS Coverage
 
 ## Technical Challenges Overcome
 

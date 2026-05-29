@@ -4,7 +4,7 @@ description: "Implement secure email verification using JWT tokens. Learn statel
 publishedAt: "2018-09-13"
 updatedAt: "2021-06-14"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 tags:
   - "security"

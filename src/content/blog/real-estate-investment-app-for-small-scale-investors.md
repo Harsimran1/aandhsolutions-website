@@ -4,7 +4,7 @@ description: "Real estate investment app case study using React Native and Golan
 publishedAt: "2023-06-06"
 updatedAt: "2024-10-06"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 tags:
   - "case-studies"

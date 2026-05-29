@@ -4,7 +4,7 @@ description: "Comprehensive cannabis software development including compliance t
 excerpt: "Advanced cannabis technology solutions that ensure compliance, streamline operations, and support growth in the highly regulated cannabis industry."
 publishedAt: "2024-01-15"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 industry: "Cannabis"
 featured: false
@@ -70,7 +70,7 @@ keyMetrics:
 
 ## Navigating Cannabis Technology in a Complex Regulatory Environment
 
-The cannabis industry represents one of the fastest-growing markets in North America, with legal sales reaching $33 billion in 2023. However, success in this industry requires sophisticated technology solutions that ensure regulatory compliance while optimizing operations. A&H Solutions specializes in creating comprehensive cannabis technology platforms that help businesses thrive in this highly regulated environment.
+The cannabis industry represents one of the fastest-growing markets in North America, with legal sales reaching $33 billion in 2023. However, success in this industry requires sophisticated technology solutions that ensure regulatory compliance while optimizing operations. A & H Solutions specializes in creating comprehensive cannabis technology platforms that help businesses thrive in this highly regulated environment.
 
 ### Our Cannabis Industry Expertise
 
@@ -215,7 +215,7 @@ Cannabis technology implementations require careful attention to compliance requ
 ### Ongoing Compliance Support
 Cannabis regulations change frequently. We provide ongoing updates and support to maintain compliance as regulations evolve.
 
-## Why Choose A&H Solutions for Cannabis?
+## Why Choose A & H Solutions for Cannabis?
 
 - **Cannabis Expertise**: Deep understanding of cannabis regulations and operational challenges
 - **Compliance Focus**: Systems designed with compliance as the primary consideration

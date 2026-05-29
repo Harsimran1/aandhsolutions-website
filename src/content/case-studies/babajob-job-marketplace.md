@@ -4,7 +4,7 @@ description: "Job marketplace connecting employers with blue-collar workers acro
 excerpt: "Built a hiring marketplace with jobseeker profiles, employer search, and revenue from resume unlocks and interviews."
 publishedAt: "2024-01-11"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 client:
   name: "Babajob (Quikr Jobs)"

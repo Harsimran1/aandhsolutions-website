@@ -4,7 +4,7 @@ description: "Secure, cloud-connected platform for monitoring and controlling wa
 excerpt: "Built an IoT monitoring platform with real-time dashboards, automation routines, and secure remote control."
 publishedAt: "2024-01-05"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 client:
   name: "Aquanomix"

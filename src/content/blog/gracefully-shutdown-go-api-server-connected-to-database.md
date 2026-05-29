@@ -4,7 +4,7 @@ description: "Learn how to gracefully shutdown Go API servers with database conn
 publishedAt: "2020-04-13"
 updatedAt: "2021-06-03"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 tags:
   - "golang"

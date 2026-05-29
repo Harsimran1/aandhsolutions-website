@@ -4,7 +4,7 @@ description: "Insurance quoting system built with React.js and Compulife APIs. C
 publishedAt: "2023-07-08"
 updatedAt: "2023-08-08"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 tags:
   - "case-studies"

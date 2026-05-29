@@ -4,7 +4,7 @@ description: "Compare Siege vs Apache JMeter for load testing APIs. Discover whi
 publishedAt: "2021-03-24"
 updatedAt: "2021-06-03"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 tags:
   - "performance"

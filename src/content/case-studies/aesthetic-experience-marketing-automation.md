@@ -4,7 +4,7 @@ description: "Automated sales and marketing workflows for a beauty company — s
 excerpt: "End-to-end automation connecting appointment software, CRM, and Shopify — eliminating manual work and launching a Mother's Day campaign on deadline."
 publishedAt: "2026-05-24"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 client:
   name: "The Aesthetic Experience"

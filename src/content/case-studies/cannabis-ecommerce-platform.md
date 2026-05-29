@@ -4,7 +4,7 @@ description: "Solved critical data integrity issues for Moodiday.com, improving 
 excerpt: "Resolved data integrity issues by redesigning joins, adding session identifiers, and improving reporting reliability."
 publishedAt: "2023-04-20"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 client:
   name: "Moodiday.com"

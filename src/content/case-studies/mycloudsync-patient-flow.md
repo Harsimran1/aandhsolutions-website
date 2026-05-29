@@ -4,7 +4,7 @@ description: "Role-based dashboards that deliver real-time patient flow visibili
 excerpt: "Built a patient flow system that keeps each role focused, automates state timing, and surfaces bottlenecks through a dedicated metrics dashboard."
 publishedAt: "2024-01-14"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 client:
   name: "MyCloudSync"

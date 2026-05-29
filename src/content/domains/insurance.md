@@ -4,7 +4,7 @@ description: "Comprehensive insurance software development including quoting sys
 excerpt: "Advanced insurance technology solutions that streamline operations, improve accuracy, and enhance customer experience while ensuring regulatory compliance."
 publishedAt: "2024-01-15"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 industry: "Insurance"
 featured: true
@@ -70,7 +70,7 @@ keyMetrics:
 
 ## Modernizing Insurance Through Technology
 
-The insurance industry is undergoing rapid digital transformation. From AI-powered underwriting to automated claims processing, technology is reshaping how insurance products are developed, sold, and serviced. A&H Solutions specializes in creating innovative insurance technology solutions that help carriers, brokers, and agencies thrive in this evolving landscape.
+The insurance industry is undergoing rapid digital transformation. From AI-powered underwriting to automated claims processing, technology is reshaping how insurance products are developed, sold, and serviced. A & H Solutions specializes in creating innovative insurance technology solutions that help carriers, brokers, and agencies thrive in this evolving landscape.
 
 ### Our Insurance Technology Expertise
 
@@ -218,7 +218,7 @@ We implement solutions in phases to minimize disruption to your operations while
 ### Training & Change Management
 Comprehensive training programs ensure your team can fully utilize new technology capabilities while maintaining compliance and operational excellence.
 
-## Why Choose A&H Solutions for Insurance?
+## Why Choose A & H Solutions for Insurance?
 
 - **Insurance Expertise**: Deep knowledge of insurance operations, regulations, and best practices
 - **Compliance Focus**: Built-in regulatory compliance for all insurance applications

@@ -4,7 +4,7 @@ description: "Mobile app and cloud platform for controlling smart home outlets, 
 excerpt: "Delivered ongoing app and cloud development for a voice-enabled smart home ecosystem with seamless device control."
 publishedAt: "2024-01-09"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 client:
   name: "Levven Electronics"

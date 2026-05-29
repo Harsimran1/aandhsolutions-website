@@ -4,7 +4,7 @@ description: "Designed and implemented a deterministic lead automation system fo
 excerpt: "Built deterministic outreach automation across Apollo.io and n8n to improve execution consistency, follow-up reliability, and operational visibility."
 publishedAt: "2026-03-11"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 client:
   name: "SigXA"

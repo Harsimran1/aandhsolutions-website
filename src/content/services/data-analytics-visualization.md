@@ -4,7 +4,7 @@ description: "Transform raw data into actionable insights with comprehensive ana
 excerpt: "Turn raw data into actionable insights with interactive dashboards and clear reporting tools."
 publishedAt: "2024-01-01"
 author:
-  name: "A&H Solutions Team"
+  name: "A & H Solutions Team"
   email: "contact@aandhsolutions.com"
 category: "Analytics & BI"
 featured: true

@@ -12,7 +12,7 @@ export interface Props {
 const { 
   title, 
   description = "Modern SaaS landing page template with responsive design and modular sections.",
-  keywords = "aandhsolutions, A&H Solutions, custom app development, AI integrations, web development, mobile apps",
+  keywords = "aandhsolutions, A & H Solutions, custom app development, AI integrations, web development, mobile apps",
   ogImage = "/og-image.jpg"
 } = Astro.props;
 
@@ -35,7 +35,7 @@ const ogLocale = getOgLocale(currentLocale);
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
-    <meta name="author" content="A&H Solutions" />
+    <meta name="author" content="A & H Solutions" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonicalUrl} />
     {hrefLangLinks.map((item) => (
@@ -49,7 +49,7 @@ const ogLocale = getOgLocale(currentLocale);
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={`https://www.aandhsolutions.com${ogImage}`} />
-    <meta property="og:site_name" content="A&H Solutions" />
+    <meta property="og:site_name" content="A & H Solutions" />
     <meta property="og:locale" content={ogLocale} />
     
     <!-- Twitter -->
@@ -91,48 +91,71 @@ const ogLocale = getOgLocale(currentLocale);
       });
     </script>
     
-    <!-- Structured Data -->
+    <!-- Structured Data: Organization + LocalBusiness -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "A&H Solutions",
+      "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
+      "name": "A & H Solutionsns",
       "alternateName": "aandhsolutions",
       "url": "https://www.aandhsolutions.com",
       "logo": "https://www.aandhsolutions.com/logo.png",
       "image": "https://www.aandhsolutions.com/og-image.jpg",
+      "founder": {
+        "@type": "Person",
+        "name": "Harsimran Kaur"
+      },
       "sameAs": [
         "https://www.linkedin.com/company/aandhsolutions",
-        "https://github.com/aandhsolutions"
+        "https://github.com/aandhsolutions",
+        "https://clutch.co/profile/ah-solutions-3"
       ],
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "customer service",
-        "telephone": "+1-805-394-3014",
+        "telephone": "+1-825-436-9647",
         "email": "contact@aandhsolutions.com",
-        "url": "https://www.aandhsolutions.com/contact"
+        "url": "https://www.aandhsolutions.com/en/contact"
       },
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "1209 Mountain Road PL NE",
-        "addressLocality": "Albuquerque",
-        "addressRegion": "NM",
-        "postalCode": "87110",
-        "addressCountry": "US"
+        "addressLocality": "Edmonton",
+        "addressRegionA & H Solutions
+        "addressCountry": "CA"
       },
-      "description": "A&H Solutions builds custom apps, web platforms, and AI integrations for startups and enterprises.",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 53.5461,
+        "longitude": -113.4938
+      },
+      "description": "A & H Solutions builds custom software, AI automation, and workflow systems for healthcare, real estate, and operational teams across Canada.",
       "foundingDate": "2020",
       "priceRange": "$$",
       "knowsAbout": [
-        "Custom App Development",
         "AI Integrations",
-        "Web Development",
+        "Workflow Automation",
+        "Custom Software Development",
+        "Web App Development",
         "Mobile App Development",
-        "Cloud Solutions",
-        "Data Analytics",
-        "Software Development"
+        "Sales & Marketing Automation",
+        "Healthcare Technology"
       ],
-      "areaServed": "Worldwide"
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Edmonton",
+          "containedInPlace": { "@type": "State", "name": "Alberta" }
+        },
+        {
+          "@type": "City",
+          "name": "Calgary",
+          "containedInPlace": { "@type": "State", "name": "Alberta" }
+        },
+        {
+          "@type": "Country",
+          "name": "Canada"
+        }
+      ]
     }
     </script>
     
