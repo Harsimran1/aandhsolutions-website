@@ -36,6 +36,8 @@ relatedServices:
   - "web-app-development"
 relatedDomains:
   - "healthcare"
+downloadUrl: "/case-studies/pdfs/App_Dev__Mktg_Landing_Page_for_AI_Medical_Scribe_Company.pdf"
+clutchUrl: "https://clutch.co/go-to-review/2968624c-fc17-4936-9124-dddbfe825ae3/445175"
 ---
 
 ## Project Overview

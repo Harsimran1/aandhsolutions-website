@@ -5,6 +5,7 @@ import Footer from '../../../components/Footer.astro';
 import { getCollection } from 'astro:content';
 import { SUPPORTED_LOCALES, resolveLocale, localizePath } from '../../../lib/i18n';
 import { getLocaleCopy } from '../../../i18n/locale-copy';
+import { CLUTCH_REVIEWS } from '../../../data/reviews';
 
 export const prerender = true;
 
@@ -35,6 +36,11 @@ const localizedDeliverables = serviceCopy.deliverables ?? service.data.deliverab
 const localizedProcessSteps = serviceCopy.processSteps ?? service.data.processSteps;
 const localizedPricingModel = serviceCopy.pricingModel || service.data.pricing?.model;
 const localizedRelatedDomains = serviceCopy.relatedDomains ?? service.data.relatedDomains ?? [];
+
+const allCaseStudies = await getCollection('case-studies', ({ data }) => !data.draft);
+const relatedCaseStudies = allCaseStudies.filter((cs) =>
+  cs.data.relatedServices?.includes(service.slug)
+);
 
 const allDomains = await getCollection('domains', ({ data }) => !data.draft);
 const normalizedDomainSlug = new Map<string, string>();
@@ -192,6 +198,116 @@ const text = ui[locale] ?? ui.en;
         )}
       </div>
     </article>
+    {relatedCaseStudies.length > 0 && (
+      <section class="py-16 bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+        <div class="container-custom">
+          <div class="text-center mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3">Work That Proves It</h2>
+            <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Real projects delivered using {localizedTitle}.</p>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {relatedCaseStudies.map((cs) => {
+              const topMetric = cs.data.results?.metrics?.[0];
+              const hasImage = cs.data.image && !cs.data.image.includes('no-image-available');
+              const heroImage = hasImage
+                ? (cs.data.gallery && cs.data.gallery.length > 0 ? cs.data.gallery[0] : cs.data.image)
+                : null;
+              return (
+                <div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 flex flex-col hover:shadow-md transition-shadow overflow-hidden">
+                  {heroImage && (
+                    <div class="h-40 overflow-hidden bg-gray-100 dark:bg-gray-700">
+                      <img
+                        src={heroImage}
+                        alt={cs.data.imageAlt || cs.data.title}
+                        class="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
+                  <div class="p-6 flex flex-col flex-1">
+                    <div class="flex flex-wrap items-center gap-2 mb-3">
+                      {cs.data.client && (
+                        <span class="px-2 py-0.5 rounded-full bg-secondary-100 dark:bg-secondary-900 text-secondary-600 dark:text-secondary-300 text-xs font-medium">
+                          {cs.data.client.industry}
+                        </span>
+                      )}
+                      {cs.data.tags.slice(0, 2).map((tag) => (
+                        <span class="px-2 py-0.5 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 text-xs">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <h3 class="text-base font-semibold text-gray-900 dark:text-white mb-2">{cs.data.title}</h3>
+                    {(cs.data.excerpt || cs.data.description) && (
+                      <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 flex-1 line-clamp-2">{cs.data.excerpt || cs.data.description}</p>
+                    )}
+                    {topMetric && (
+                      <div class="bg-primary-50 dark:bg-primary-900/20 rounded-lg p-3 mb-4">
+                        <p class="text-xl font-bold text-primary-600 dark:text-primary-400 leading-tight">{topMetric.value}</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{topMetric.label}</p>
+                      </div>
+                    )}
+                    <a href={localized(`/case-studies/${cs.slug}`)} class="btn-outline btn-sm w-full text-center mt-auto">
+                      Read Case Study
+                    </a>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <div class="text-center mt-10">
+            <a href={localized('/case-studies')} class="btn-outline">View All Case Studies</a>
+          </div>
+        </div>
+      </section>
+    )}
+
+    {CLUTCH_REVIEWS.length > 0 && (
+      <section class="py-16 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+        <div class="container-custom">
+          <div class="text-center mb-10">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 rounded-full mb-4">
+              <span class="text-yellow-500 text-sm">★★★★★</span>
+              <span class="text-orange-600 dark:text-orange-400 text-sm font-medium">Verified on Clutch</span>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3">What Clients Say</h2>
+            <p class="text-gray-600 dark:text-gray-300">Every review is verified and published on Clutch.</p>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {CLUTCH_REVIEWS.slice(0, 3).map((review) => (
+              <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 flex flex-col">
+                <div class="text-yellow-400 text-lg mb-3">★★★★★</div>
+                <blockquote class="text-gray-700 dark:text-gray-300 text-sm italic leading-relaxed mb-4 flex-1">
+                  "{review.quote}"
+                </blockquote>
+                <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
+                  <p class="font-semibold text-gray-900 dark:text-white text-sm">
+                    {review.reviewer === 'Anonymous' ? review.reviewerRole : review.reviewer}
+                  </p>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">{review.reviewerRole}, {review.company}</p>
+                  <p class="text-xs text-gray-400 dark:text-gray-500 mt-0.5">{review.industry} · {review.location}</p>
+                  <a
+                    href={review.clutchUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 text-xs text-orange-600 dark:text-orange-400 hover:underline mt-3 font-medium"
+                  >
+                    Read full review on Clutch
+                    <svg class="w-3 h-3" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
+                      <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div class="text-center mt-10">
+            <a href={localized('/reviews')} class="btn-outline">See All Reviews</a>
+          </div>
+        </div>
+      </section>
+    )}
   </main>
   <Footer />
 </Layout>

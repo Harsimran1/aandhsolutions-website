@@ -59,6 +59,8 @@ const caseStudies = defineCollection({
     canonicalUrl: z.string().url().optional(),
     relatedServices: z.array(z.string()).default([]),
     relatedDomains: z.array(z.string()).default([]),
+    downloadUrl: z.string().optional(),
+    clutchUrl: z.string().url().optional(),
   }),
 });
 

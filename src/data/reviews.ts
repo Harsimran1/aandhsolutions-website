@@ -24,6 +24,27 @@ export interface ClutchReviewRecord {
 
 export const CLUTCH_REVIEWS: ClutchReviewRecord[] = [
   {
+    id: '459499',
+    quote: "A & H Solutions was highly committed to ensuring timely delivery, so no money was lost in the process.",
+    reviewer: 'Anonymous',
+    reviewerRole: 'Executive',
+    company: 'The Aesthetic Experience',
+    services: 'E-Commerce Development, Robotics Process Automation',
+    projectCost: 'Less than $10,000',
+    projectPeriod: 'Apr. - May 2026',
+    date: 'May 24, 2026',
+    location: 'West Linn, Oregon',
+    industry: 'Beauty',
+    rating: {
+      overall: 5.0,
+      quality: 5.0,
+      schedule: 5.0,
+      cost: 5.0,
+      willingToRefer: 5.0,
+    },
+    clutchUrl: 'https://clutch.co/go-to-review/2968624c-fc17-4936-9124-dddbfe825ae3/459499',
+  },
+  {
     id: '445175',
     quote: "I was impressed with A & H Solutions' timely delivery and product quality.",
     reviewer: 'Kathleen West',
