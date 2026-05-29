@@ -39,12 +39,13 @@ export interface Props {
   localRelevancePoints?: string[];
   featuredCaseStudiesTitle?: string;
   featuredCaseStudies?: CityProofLink[];
+  includeLocalSchema?: boolean;
 }
 
-const { 
-  city, 
-  state, 
-  country, 
+const {
+  city,
+  state,
+  country,
   description = `Professional software development and technology consulting services in ${city}, ${state}. We help businesses transform with custom solutions.`,
   population,
   keyIndustries = ["Technology", "Healthcare", "Finance", "Manufacturing"],
@@ -59,7 +60,8 @@ const {
   localRelevanceTitle,
   localRelevancePoints = [],
   featuredCaseStudiesTitle,
-  featuredCaseStudies = []
+  featuredCaseStudies = [],
+  includeLocalSchema = false,
 } = Astro.props;
 
 const locale = resolveLocale(Astro.currentLocale, new URL(Astro.request.url).pathname);
@@ -268,6 +270,33 @@ const caseStudyCta = caseStudyCtaByLocale[locale] ?? caseStudyCtaByLocale.en;
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
+  {includeLocalSchema && (
+    <script type="application/ld+json" slot="head" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
+      "name": "A & H Solutions",
+      "url": "https://www.aandhsolutions.com",
+      "telephone": "+1-825-436-9647",
+      "email": "contact@aandhsolutions.com",
+      "founder": { "@type": "Person", "name": "Harsimran Kaur" },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": city,
+        "addressRegion": state,
+        "addressCountry": country === "Canada" ? "CA" : country,
+      },
+      "description": description,
+      "areaServed": {
+        "@type": "City",
+        "name": city,
+        "containedInPlace": { "@type": "State", "name": state },
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/aandhsolutions",
+        "https://clutch.co/profile/ah-solutions-3",
+      ],
+    })} />
+  )}
   <Header />
   <main>
     <Hero 
