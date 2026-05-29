@@ -15,6 +15,7 @@ draft: false
 tags:
   - "healthcare"
   - "dashboards"
+  - "ai"
   - "real-time"
   - "workflow"
 technologies: []

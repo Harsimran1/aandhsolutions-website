@@ -13,6 +13,7 @@ featured: false
 draft: false
 tags:
   - "automation"
+  - "ai"
   - "ai-integration"
   - "publishing"
   - "workflow-optimization"

@@ -17,6 +17,7 @@ tags:
   - "automation"
   - "workflow"
   - "crm"
+  - "ai"
 technologies:
   - "Apollo.io"
   - "n8n"
