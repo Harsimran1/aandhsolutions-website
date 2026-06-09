@@ -1,9 +1,11 @@
 ---
 import { SUPPORTED_LOCALES, resolveLocale, localizePath, switchLocalePath } from '../lib/i18n';
 import { getDictionary } from '../i18n/dictionaries';
+import { getLocaleCopy } from '../i18n/locale-copy';
 
 const locale = resolveLocale(Astro.currentLocale, new URL(Astro.request.url).pathname);
 const t = getDictionary(locale);
+const contactText = getLocaleCopy(locale).pages.contactForm ?? getLocaleCopy('en').pages.contactForm;
 const cityLabelMap = {
   en: {
     '/toronto': 'Toronto',
@@ -151,8 +153,9 @@ const languageOptions = SUPPORTED_LOCALES.map((code) => ({
 }));
 
 const localized = (path: string) => localizePath(path, locale);
+const discoveryCallUrl = 'https://cal.com/harsimrank/a-h-solutions-discovery-call';
 ---
-<header class="fixed w-full bg-white/90 dark:bg-secondary-950/90 backdrop-blur-xs z-50 py-4 transition-colors duration-300">
+<header class="fixed w-full bg-white/90 dark:bg-secondary-950/90 backdrop-blur-xs z-50 py-3 transition-colors duration-300">
   <div class="container-custom flex items-center justify-between">
     <a href={localized('/')} class="flex items-center" aria-label="Go to homepage">
       <img
@@ -160,27 +163,26 @@ const localized = (path: string) => localizePath(path, locale);
         width="40"
         height="40"
         alt="A & H Solutions"
-        class="h-10 w-auto"
+        class="h-9 w-auto"
         loading="eager"
         fetchpriority="high"
         decoding="async"
       />
-      <span class="hidden xl:inline ml-2 text-xl font-display font-semibold text-secondary-900 dark:text-white">A & H Solutions</span>
+      <span class="hidden 2xl:inline ml-2 text-lg font-display font-semibold text-secondary-900 dark:text-white">A & H Solutions</span>
     </a>
 
-    <nav class="hidden md:flex items-center space-x-8">
-      <a href={localized('/')} class="text-[15px] text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">{t.nav.home}</a>
-      <a href={localized('/#features')} class="text-[15px] text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">{t.nav.services}</a>
-      <a href={localized('/domains')} class="text-[15px] text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">{industriesLabel}</a>
-      <a href={localized('/case-studies')} class="text-[15px] text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">{t.nav.caseStudies}</a>
-      <a href={localized('/blog')} class="text-[15px] text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">{t.nav.blog}</a>
-      <a href={localized('/contact')} class="text-[15px] text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">{t.nav.contact}</a>
+    <nav class="hidden lg:flex items-center space-x-5">
+      <a href={localized('/')} class="text-sm text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">{t.nav.home}</a>
+      <a href={localized('/#features')} class="text-sm text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">{t.nav.services}</a>
+      <a href={localized('/domains')} class="text-sm text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">{industriesLabel}</a>
+      <a href={localized('/case-studies')} class="text-sm text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">{t.nav.caseStudies}</a>
+      <a href={localized('/contact')} class="text-sm text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">{t.nav.contact}</a>
 
       <div x-data="{ open: false }" class="relative">
         <button
           @click="open = !open"
           @click.away="open = false"
-          class="flex items-center text-[15px] text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors"
+          class="flex items-center text-sm text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors"
         >
           {t.nav.resources}
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -232,12 +234,12 @@ const localized = (path: string) => localizePath(path, locale);
       </div>
     </nav>
 
-    <div class="flex items-center space-x-4">
+    <div class="flex items-center space-x-3">
       <div x-data="{ openLocale: false }" class="relative hidden sm:block">
         <button
           @click="openLocale = !openLocale"
           @click.away="openLocale = false"
-          class="px-3 py-2 rounded-md text-sm border border-secondary-200 dark:border-secondary-700 text-secondary-700 dark:text-secondary-200"
+          class="px-2.5 py-1.5 rounded-md text-sm border border-secondary-200 dark:border-secondary-700 text-secondary-700 dark:text-secondary-200"
           aria-label="Select language"
         >
           {locale.toUpperCase()}
@@ -268,12 +270,19 @@ const localized = (path: string) => localizePath(path, locale);
         </svg>
       </button>
 
-      <a href={localized('/free-project-blueprint')} class="hidden sm:inline-flex btn-primary">{t.nav.freeBlueprint}</a>
+      <a
+        href={discoveryCallUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hidden sm:inline-flex btn-primary whitespace-nowrap text-sm"
+      >
+        {contactText.appointmentCta}
+      </a>
 
       <div x-data="{ open: false, showAllPages: false }">
         <button
           @click="open = !open"
-          class="md:hidden p-2 rounded-md text-secondary-600 hover:text-secondary-900 dark:text-secondary-300 dark:hover:text-white focus:outline-hidden focus:ring-2 focus:ring-primary-500"
+          class="lg:hidden p-2 rounded-md text-secondary-600 hover:text-secondary-900 dark:text-secondary-300 dark:hover:text-white focus:outline-hidden focus:ring-2 focus:ring-primary-500"
           aria-label="Toggle menu"
         >
           <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -295,6 +304,14 @@ const localized = (path: string) => localizePath(path, locale);
           class="absolute top-16 right-4 w-52 py-2 bg-white dark:bg-secondary-900 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-hidden"
           x-cloak
         >
+          <a
+            href={discoveryCallUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mx-3 mb-2 flex items-center justify-center rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-700"
+          >
+            {contactText.appointmentCta}
+          </a>
           <a href={localized('/#features')} class="block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">{t.nav.services}</a>
           <a href={localized('/domains')} class="block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">{industriesLabel}</a>
           <a href={localized('/case-studies')} class="block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">{t.nav.caseStudies}</a>
